@@ -35,9 +35,8 @@ const routes: Routes = [
   {
     path:'project/:id',
     component: P005ProjectDetailComponent,},
-  {
-    path:'project/:id',
-    component: P005ProjectDetailComponent,},
+
+
 ]
 
 
