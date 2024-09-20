@@ -36,6 +36,9 @@ const routes: Routes = [
     path:'project/:id',
     component: P005ProjectDetailComponent,},
 ]
+
+
+
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
