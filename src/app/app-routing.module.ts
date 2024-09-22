@@ -1,17 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {P001HomeComponent} from "./p-web/pages/p001-home/p001-home.component";
+import { P001HomeComponent } from './p-web/pages/p001-home/p001-home.component';
 
 const routes: Routes = [
   {
-    path:'',
+    path: '',
     component: P001HomeComponent,
-  }
+  },
 ];
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
