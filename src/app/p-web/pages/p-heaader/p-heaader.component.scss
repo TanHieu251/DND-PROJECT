@@ -1,0 +1,90 @@
+/* header.component.scss */
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+
+  width: 1440px;
+  height: 138px;
+
+  .header-logo {
+    flex: 0 0 auto; /* Đảm bảo logo có kích thước cố định */
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 175px;
+      height: 108px;
+      object-fit: contain; /* Đảm bảo logo giữ tỉ lệ gốc nếu thay đổi kích thước */
+    }
+  }
+
+  .header-search {
+    flex: 1; /* Cân bằng search bar ở giữa */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 600px; /* Tối đa chiều rộng cho search bar */
+
+    input {
+      width: 100%;
+      padding: 10px 15px;
+      border: 1px solid #ddd; /* Tinh chỉnh viền */
+      border-radius: 20px;
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        border-color: #aaa; /* Đổi màu viền khi focus */
+        outline: none;
+      }
+    }
+
+    .search-btn {
+      position: absolute;
+      right: 15px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      color: #888;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        color: #333;
+      }
+    }
+  }
+
+  .header-user-icons {
+    flex: 0 0 auto; /* Đảm bảo các icon user không bị co giãn */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .icon-btn {
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+      cursor: pointer;
+      font-size: 14px; /* Điều chỉnh kích thước chữ */
+      color: #666;
+      transition: color 0.3s ease;
+
+      .k-icon {
+        margin-right: 8px;
+        font-size: 20px; /* Tinh chỉnh kích thước icon */
+      }
+
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+}
