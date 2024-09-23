@@ -1,0 +1,27 @@
+.footer {
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-top: 1px solid #ccc;
+
+  .footer-logo {
+    img {
+      width: 150px;
+      height: auto;
+    }
+  }
+
+  .footer-info {
+    h3 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    p {
+      margin: 5px 0;
+      color: #666;
+    }
+  }
+}
