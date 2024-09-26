@@ -1,34 +1,29 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, Input, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-intro',
   templateUrl: './intro.component.html',
-  styleUrl: './intro.component.scss'
+  styleUrls: ['./intro.component.scss']
 })
 export class IntroComponent {
+  @Input() title: string = 'Welcome';
+  @Input() description: string = 'Default description text goes here...';
+  @Input() imageSrc: string = 'assets/image3.png';
+  @Input() buttonText: string = 'Xem Công Ty';
+  @Input() isRight: boolean = false;  // For components with image on the right
+  @Input() isLeft: boolean = true;    // For components with image on the left
+
   textActive: boolean = false;
   imgActive: boolean = false;
 
-  // @HostListener('window:scroll', ['$event'])
-  // onScroll(event: Event):void{
-  //   const textContainer = document.querySelector('.text-continer') as HTMLElement;
-  //   const imageBox = document.querySelector('.image-box') as HTMLElement;
+  constructor(private elementRef: ElementRef) {}
 
-  //   const containerPosition = textContainer.getBoundingClientRect();
-
-  //   if(containerPosition.top < window.innerHeight && containerPosition.bottom >= 0 ){
-  //     this.textActive = true;
-  //     this.imgActive = true;
-  //   }
-  // }
   @HostListener('window:scroll', ['$event'])
-  onScroll(event: Event): void {
-    const textContainer = document.querySelector('.text-container') as HTMLElement;
-    const imageBox = document.querySelector('.image-box') as HTMLElement;
+  onScroll(): void {
+    const containerPosition = this.elementRef.nativeElement.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight;
 
-    const containerPosition = textContainer.getBoundingClientRect();
-
-    if (containerPosition.top < window.innerHeight && containerPosition.bottom >= 0) {
+    if (containerPosition < screenPosition) {
       this.textActive = true;
       this.imgActive = true;
     }

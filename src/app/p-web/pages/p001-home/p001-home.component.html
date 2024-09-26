@@ -5,13 +5,29 @@
     <div class="home-header-2">
       <app-p-header2></app-p-header2>
     </div>
+
   <div class="home-content">
+
     <div class="banner">
       <app-banner></app-banner>
     </div>
-    
+
     <div class="intro">
-      <app-intro></app-intro>
+      <app-intro class="right"
+        [title]="'WELCOME'"
+        [description]="'Tại DND, chúng tôi trao quyền cho mọi người bằng công nghệ để thúc đẩy quá trình chuyển đổi các ngành công nghiệp cần thiết nhằm tạo dựng một xã hội ít carbon và giải quyết các thách thức năng lượng của thế giới.'"
+        [buttonText]="'Xem Công Ty'"
+        [imageSrc]="'assets/image 3.png'"
+        [isRight]="false">
+      </app-intro>
+
+      <app-intro class="left"
+        [title]="'Việc làm và sự nghiệp'"
+        [description]="'Con người của chúng tôi tạo nên sự khác biệt. Chúng kết nối, sáng tạo và giúp chúng ta đi đúng hướng trong việc thay đổi hệ thống năng lượng của thế giới. Tìm hiểu thêm về sự nghiệp tại DND và cách bạn có thể làm cho ngày mai trở nên khác biệt ngay hôm nay.'"
+        [buttonText]="'Liên hệ'"
+        [imageSrc]="'assets/image 4.png'"
+        [isLeft]="false">
+      </app-intro>
     </div>
 
   </div>

@@ -1,11 +1,11 @@
-<div class="container">
+<div class="container" [class.right]="isRight">
   <div class="text-container" [class.active]="textActive">
-    <h2 class="welcome-text"><span class="highlight">WELCOME</span></h2>
-      <p>Tại DND, chúng tôi trao quyền cho mọi người bằng công nghệ để thúc đẩy quá trình chuyển đổi các ngành công nghiệp cần thiết nhằm tạo dựng một xã hội ít carbon và giải quyết các thách thức năng lượng của thế giới.</p>
-    <button class="company-btn">XEM CÔNG TY</button>
+    <h2 class="welcome-text"><span class="highlight">{{ title }}</span></h2>
+    <p>{{ description }}</p>
+    <button class="company-btn">{{ buttonText }}</button>
   </div>
   <div class="image-box" [class.active]="imgActive">
-    <img src="assets/alien-5847308.jpg" alt="energy sector">
+    <img [src]="imageSrc" alt="image description">
   </div>
 </div>
 

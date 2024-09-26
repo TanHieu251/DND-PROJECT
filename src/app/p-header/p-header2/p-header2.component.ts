@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './p-header2.component.scss'
 })
 export class Header2Component {
+  menu=[{name:"Trang chur",routes:"/home"}]
 
 }
