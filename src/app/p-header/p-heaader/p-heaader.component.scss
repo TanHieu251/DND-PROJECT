@@ -11,10 +11,11 @@
   // border-bottom: 1px solid #ccc;
 
   .header-logo {
-    flex: 1;
+    // flex: 1;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    margin-left: 50px;
     cursor: pointer;
 
     img {
@@ -25,7 +26,7 @@
   }
 
   .header-search {
-    flex: 1;
+    // flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,7 +34,7 @@
 
     input {
       width: 100%;
-      max-width: 500px;
+      width: 500px;
       padding: 8px 12px;
       border: 1px solid #ccc;
       border-radius: 20px;
@@ -52,10 +53,11 @@
   }
 
   .header-icons {
-    flex: 1;
+    // flex: 1;
     display: flex;
     justify-content: flex-end;
-    margin-left: 60px;
+    margin-right: 60px;
+    // padding-right: 60px;
 
     .icon-btn-login, .icon-btn-card {
       display: flex;
@@ -66,7 +68,7 @@
       padding: 10px;
       // background-color: white;
       // border-radius: 5px;
-      // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+      // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
       &:hover {
         color: #000;
