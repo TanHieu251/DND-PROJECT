@@ -8,24 +8,23 @@
   margin: 0 auto;
   overflow: hidden;
 
-  &.right{
-    // flex-direction: row-reverse;
+  &.left {
+    flex-direction: row-reverse;
   }
 
   .text-container {
     position: relative;
-    width: 40%;
-    // top: 20%;
-    left: 15%;
+    width: 50%;
+    right: 10%;
     z-index: 2;
     background-color: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transform: translateX(-100%);
+    transform: translateX(100%);
 
-   &.active {
-     animation: slideInLeft 1s forwards;
+    &.active {
+      animation: slideInRight 1s forwards;
     }
 
     .welcome-text {
@@ -51,8 +50,8 @@
 
     .company-btn {
       margin-top: 20px;
-      margin-left: 400px;
       padding: 10px 20px;
+      margin-left: 500px;
       background-color: #348BD2;
       color: #fff;
       border: none;
@@ -67,19 +66,20 @@
     }
   }
 
-    .image-box {
-      padding: 10px;
-      transform: translateX(100%);
+  .image-box {
+    padding: 10px;
+    // padding-right: 30px;
+    transform: translateX(-100%);
 
-      &.active {
-          animation: slideInRight 1s forwards;
-        }
+    &.active {
+      animation: slideInLeft 1s forwards;
+    }
 
     img {
       width: 737px;
       height: 450px;
       border-radius: 10px;
-      // margin-right: 50px;
+      // margin-left: 50px;
     }
   }
 
@@ -95,4 +95,3 @@
     }
   }
 }
-
