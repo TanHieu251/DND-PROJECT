@@ -1,0 +1,15 @@
+<div class="related-info">
+  <h3>THÔNG TIN LIÊN QUAN</h3>
+  <div class="info-grid">
+    <div class="info-card" *ngFor="let info of infos">
+      <img [src]="info.imageUrl" alt="{{ info.title }}" />
+      <div class="info-content">
+        <h4>{{ info.title }}</h4>
+        <a [href]="info.link">
+          <span class="fa-solid fa-arrow-right"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+

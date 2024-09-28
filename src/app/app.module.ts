@@ -18,6 +18,7 @@ import { P005ProjectComponent } from './p-web/pages/p005-project/p005-project.co
 import { P003ContactComponent } from './p-web/pages/p003-contact/p003-contact.component';
 import { P004ProductDetailComponent } from './p-web/pages/p004-product-detail/p004-product-detail.component';
 import { ContactComponent } from './p-web/shared/components/contact/contact.component';
+import { MoreInformationComponent } from './p-web/shared/components/more-information/more-information.component';
 // import { InputsModule } from '@progress/kendo-angular-inputs';
 // import { ButtonsModule } from '@progress/kendo-angular-buttons';
 
@@ -41,7 +42,8 @@ const routes: Routes = [
     IntroComponent,
     ContactComponent,
     ProjectSlideComponent,
-    ProductItemComponent
+    ProductItemComponent,
+    MoreInformationComponent
   ],
   imports: [
     BrowserModule,
