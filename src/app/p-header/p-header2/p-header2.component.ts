@@ -6,6 +6,13 @@ import { Component } from '@angular/core';
   styleUrl: './p-header2.component.scss'
 })
 export class Header2Component {
-  menu=[{name:"Trang chur",routes:"/home"}]
 
+  menu = [
+    { name: 'Trang chủ', routes: '/home' },
+    { name: 'Giới thiệu công ty', routes: '/about' },
+    { name: 'Sản phẩm', routes: '/products' },
+    { name: 'Dự án', routes: '/projects' },
+    { name: 'Liên hệ', routes: '/contact' }
+  ];
+  
 }

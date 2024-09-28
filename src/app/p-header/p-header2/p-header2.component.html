@@ -1,9 +1,7 @@
 <div class="more-information">
   <ul class="menu-infor">
-    <li><a href="#home">Trang chủ</a></li>
-    <li><a href="#about">Giới thiệu công ty</a></li>
-    <li><a href="#products">Sản phẩm</a></li>
-    <li><a href="#projects">Dự án</a></li>
-    <li><a href="#contact">Liên hệ</a></li>
+    <li *ngFor="let item of menu">
+      <a [routerLink]="item.routes">{{ item.name }}</a>
+    </li>
   </ul>
 </div>

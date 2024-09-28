@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,8 +12,20 @@ import { BannerComponent } from './p-web/shared/components/banner/banner.compone
 import { IntroComponent } from './p-web/shared/components/intro/intro.component';
 import { ProjectSlideComponent } from './p-web/shared/components/project-slide/project-slide.component';
 import { ProductItemComponent } from './p-web/shared/components/product-item/product-item.component';
+import { P002CompanyComponent } from './p-web/pages/p002-company/p002-company.component';
+import { P004ProductComponent } from './p-web/pages/p004-product/p004-product.component';
+import { P005ProjectComponent } from './p-web/pages/p005-project/p005-project.component';
+import { P003ContactComponent } from './p-web/pages/p003-contact/p003-contact.component';
 // import { InputsModule } from '@progress/kendo-angular-inputs';
 // import { ButtonsModule } from '@progress/kendo-angular-buttons';
+
+const routes: Routes = [
+  { path: 'home', component: P001HomeComponent },
+  { path: 'about', component: P002CompanyComponent },
+  { path: 'products', component: P004ProductComponent },
+  { path: 'projects', component: P005ProjectComponent },
+  { path: 'contact', component: P003ContactComponent }
+];
 
 @NgModule({
   declarations: [
@@ -29,6 +42,8 @@ import { ProductItemComponent } from './p-web/shared/components/product-item/pro
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule.forRoot(routes)
+
     // InputsModule,
     // ButtonsModule
   ],
