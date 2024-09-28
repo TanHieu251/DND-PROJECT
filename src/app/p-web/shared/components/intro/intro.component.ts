@@ -24,6 +24,8 @@ export class IntroComponent {
     const screenPosition = window.innerHeight;
 
     if (containerPosition < screenPosition) {
+      // this.isRight= true;
+      // this.isLeft= true;
       this.textActive = true;
       this.imgActive = true;
     }

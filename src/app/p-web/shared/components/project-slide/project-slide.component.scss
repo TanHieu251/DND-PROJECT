@@ -1,0 +1,125 @@
+.featured-project {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  border: 2px solid #348BD2;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+
+  .project-header {
+    h2 {
+      font-family: Arial, sans-serif;
+      font-size: 32px;
+      font-weight: bold;
+      font-style: italic;
+      color: black;
+      margin-bottom: 20px;
+      border-top: 5px solid #0056b3;
+      display: inline-block;
+      padding-top: 5px;
+    }
+  }
+
+  .project-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .project-image {
+      flex: 1;
+      margin-right: 20px;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    .project-info {
+      flex: 1.5;
+      h3 {
+        font-family: Arial, sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+        font-style: italic;
+        color: #348BD2;
+        margin-bottom: 10px;
+        padding-left: 100px;
+      }
+
+      p {
+        max-width:700px;
+        font-family: Arial, sans-serif;
+        font-size: 24px;
+        font-style: italic;
+        color: #333;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      a {
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        color: #DE7272;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 50px;
+        text-decoration: underline;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .action-row {
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+    align-items: flex-end;
+    margin-top: 20px;
+
+    a {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      color: #DE7272;
+      text-decoration: underline;
+      display: inline-block;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .project-navigation {
+      text-align: right;
+
+      .nav-button {
+        font-size: 20px;
+        background-color: #348BD2;
+        color: white;
+        border: none;
+        border-radius: 6%;
+        padding: 3px 15px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+
+        &:not(:last-child) {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}

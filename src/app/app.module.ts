@@ -9,7 +9,8 @@ import { Header2Component } from './p-header/p-header2/p-header2.component';
 import { PFooterComponent } from './p-footer/p-footer/p-footer.component';
 import { BannerComponent } from './p-web/shared/components/banner/banner.component';
 import { IntroComponent } from './p-web/shared/components/intro/intro.component';
-
+import { ProjectSlideComponent } from './p-web/shared/components/project-slide/project-slide.component';
+import { ProductItemComponent } from './p-web/shared/components/product-item/product-item.component';
 // import { InputsModule } from '@progress/kendo-angular-inputs';
 // import { ButtonsModule } from '@progress/kendo-angular-buttons';
 
@@ -21,7 +22,9 @@ import { IntroComponent } from './p-web/shared/components/intro/intro.component'
     Header2Component,
     PFooterComponent,
     BannerComponent,
-    IntroComponent
+    IntroComponent,
+    ProjectSlideComponent,
+    ProductItemComponent
   ],
   imports: [
     BrowserModule,

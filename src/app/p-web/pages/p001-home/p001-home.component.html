@@ -12,14 +12,25 @@
       <app-banner></app-banner>
     </div>
 
-    <div class="intro">
-      <app-intro class="right"
+    <app-intro class="right"
         [title]="'WELCOME'"
         [description]="'Tại DND, chúng tôi trao quyền cho mọi người bằng công nghệ để thúc đẩy quá trình chuyển đổi các ngành công nghiệp cần thiết nhằm tạo dựng một xã hội ít carbon và giải quyết các thách thức năng lượng của thế giới.'"
         [buttonText]="'Xem Công Ty'"
         [imageSrc]="'assets/image 3.png'"
         [isRight]="false">
       </app-intro>
+
+      <app-project-slide
+        [titleBig]="'Dự án tiêu biểu'"
+        [imageSrc]="'assets/projectimage.png'"
+        [title]="'Nhà máy điện Trạch Nhơn 3 và 4'"
+        [description]="'Dự án nhà máy điện Nhơn Trạch 3, 4 là công trình trọng điểm quốc gia, được xây dựng tại khu công nghiệp Ông Kèo, xã Phước Khánh, huyện Nhơn Trạch, tỉnh Đồng Nai. Dự án có quy mô công suất 1.500MW, tổng mức đầu tư 1,4 tỷ USD. Khi đi vào hoạt động, dự án sẽ bổ sung khoảng 9 tỷ kWh điện/năm cho hệ thống điện quốc gia.'"
+        [buttonText]="'Xem thêm dự án'">
+      </app-project-slide>
+
+      <app-product-item>
+        
+      </app-product-item>
 
       <app-intro class="left"
         [title]="'Việc làm và sự nghiệp'"
@@ -28,7 +39,8 @@
         [imageSrc]="'assets/image 4.png'"
         [isLeft]="false">
       </app-intro>
-    </div>
+
+
 
   </div>
 
