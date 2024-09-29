@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,8 +20,6 @@ import { P003ContactComponent } from './p-web/pages/p003-contact/p003-contact.co
 import { P004ProductDetailComponent } from './p-web/pages/p004-product-detail/p004-product-detail.component';
 import { ContactComponent } from './p-web/shared/components/contact/contact.component';
 import { MoreInformationComponent } from './p-web/shared/components/more-information/more-information.component';
-// import { InputsModule } from '@progress/kendo-angular-inputs';
-// import { ButtonsModule } from '@progress/kendo-angular-buttons';
 
 const routes: Routes = [
   { path: 'home', component: P001HomeComponent },
@@ -29,6 +28,7 @@ const routes: Routes = [
   {path: 'productdetails', component:P004ProductDetailComponent},
   { path: 'projects', component: P005ProjectComponent },
   { path: 'contact', component: P003ContactComponent }
+
 ];
 
 @NgModule({
@@ -43,16 +43,17 @@ const routes: Routes = [
     ContactComponent,
     ProjectSlideComponent,
     ProductItemComponent,
-    MoreInformationComponent
+    MoreInformationComponent,
+    P002CompanyComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    CommonModule
 
-    // InputsModule,
-    // ButtonsModule
   ],
+  // exports:[RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })
