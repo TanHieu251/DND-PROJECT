@@ -1,12 +1,12 @@
-<div class="container" [class.left]="isLeft">
+<div class="container" [class.left]="isLeft" *ngFor="let contact of contacts">
   <div class="text-container" [class.active]="textActive">
-    <h2 class="welcome-text"><span class="highlight">{{ title }}</span></h2>
-    <p>{{ description }}</p>
-    <button [routerLink]="'/contact'" class="company-btn">{{ buttonText }}</button>
+    <h2 class="welcome-text"><span class="highlight">{{ contact.title }}</span></h2>
+    <p>{{ contact.description }}</p>
+    <button [routerLink]="'/contact'" class="company-btn">{{ contact.buttonText }}</button>
   </div>
-  
+
   <div class="image-box" [class.active]="imgActive">
-    <img [src]="imageSrc" alt="image description">
+    <img [src]="contact.imageSrc" alt="image description">
   </div>
 </div>
 

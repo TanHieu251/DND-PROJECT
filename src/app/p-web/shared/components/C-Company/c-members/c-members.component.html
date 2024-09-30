@@ -1,0 +1,11 @@
+<div class="founder-container">
+  <h2 class="title">THÀNH VIÊN SÁNG LẬP</h2>
+  <div class="founder-list">
+    <div class="founder" *ngFor="let member of members">
+      <div class="founder-img">
+        <img [src]="member.image" alt="founder image">
+      </div>
+      <p class="founder-name">{{member.name}}</p>
+    </div>
+  </div>
+</div>

@@ -1,26 +1,24 @@
+
 <div class="featured-project">
   <div class="project-header">
-    <h2>{{titleBig}}</h2>
+    <h2>{{ titleBig }}</h2>
   </div>
 
   <div class="project-content">
     <div class="project-image">
-      <img [src]="imageSrc" alt="image description">
+      <img [src]="projects[currentProjectIndex].imageSrc" alt="image description">
     </div>
 
     <div class="project-info">
-       <h3>{{title}}</h3>
-          <p> {{description}}</p>
-          <div class="action-row">
-            <a  [routerLink]="'/projects'">{{buttonText}}</a>
-            <div class="project-navigation">
-              <button class="nav-button ">&laquo;</button>
-              <button class="nav-button ">&raquo;</button>
-            </div>
-          </div>
-
+      <h3>{{ projects[currentProjectIndex].title }}</h3>
+      <p>{{ projects[currentProjectIndex].description }}</p>
+      <div class="action-row">
+        <a [routerLink]="'/projects'">{{ buttonText }}</a>
+        <div class="project-navigation">
+          <button class="nav-button" (click)="prevProject()">&laquo;</button>
+          <button class="nav-button" (click)="nextProject()">&raquo;</button>
+        </div>
+      </div>
     </div>
   </div>
-
-
 </div>

@@ -6,12 +6,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // padding: 10px;
   background-color: #fff;
-  border-bottom: 10px solid #ccc;
+  // border-bottom: 1px solid #ccc;
 
   .header-logo {
-    // flex: 1;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -26,7 +24,6 @@
   }
 
   .header-search {
-    // flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,11 +50,9 @@
   }
 
   .header-icons {
-    // flex: 1;
     display: flex;
     justify-content: flex-end;
     margin-right: 60px;
-    // padding-right: 60px;
 
     .icon-btn-login, .icon-btn-card {
       display: flex;
@@ -66,9 +61,6 @@
       margin-left: 20px;
       cursor: pointer;
       padding: 10px;
-      // background-color: white;
-      // border-radius: 5px;
-      // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
       &:hover {
         color: #000;
@@ -80,7 +72,6 @@
         color:#aaa ;
       }
       span{
-        // font-size: 14px;
         color:#aaa ;
       }
     }

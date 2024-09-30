@@ -1,16 +1,11 @@
-import { MoreInformationComponent } from './p-web/shared/components/C-Home/more-information/more-information.component';
-import { ContactComponent } from './p-web/shared/components/C-Home/contact/contact.component';
-import { ProductItemComponent } from './p-web/shared/components/C-Home/product-item/product-item.component';
-import { ProjectSlideComponent } from './p-web/shared/components/C-Home/project-slide/project-slide.component';
-import { IntroComponent } from './p-web/shared/components/C-Home/intro/intro.component';
-import { BannerComponent } from './p-web/shared/components/C-Home/banner/banner.component';
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { HeaaderComponent } from './p-header/p-heaader/p-heaader.component';
 import { P001HomeComponent } from './p-web/pages/p001-home/p001-home.component';
 import { Header2Component } from './p-header/p-header2/p-header2.component';
@@ -21,6 +16,16 @@ import { P005ProjectComponent } from './p-web/pages/p005-project/p005-project.co
 import { P003ContactComponent } from './p-web/pages/p003-contact/p003-contact.component';
 import { P004ProductDetailComponent } from './p-web/pages/p004-product-detail/p004-product-detail.component';
 import { SlideBannerComponent } from './p-web/shared/components/C-Company/slide-banner/slide-banner.component';
+import { MoreInformationComponent } from './p-web/shared/components/C-Home/more-information/more-information.component';
+import { ContactComponent } from './p-web/shared/components/C-Home/contact/contact.component';
+import { ProductItemComponent } from './p-web/shared/components/C-Home/product-item/product-item.component';
+import { ProjectSlideComponent } from './p-web/shared/components/C-Home/project-slide/project-slide.component';
+import { IntroComponent } from './p-web/shared/components/C-Home/intro/intro.component';
+import { BannerComponent } from './p-web/shared/components/C-Home/banner/banner.component';
+import { CContentComponent } from './p-web/shared/components/C-Company/c-content/c-content.component';
+import { CMembersComponent } from './p-web/shared/components/C-Company/c-members/c-members.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { CContactComponent } from './p-web/shared/components/c-contact/c-contact/c-contact.component';
 
 const routes: Routes = [
   { path: 'home', component: P001HomeComponent },
@@ -46,17 +51,23 @@ const routes: Routes = [
     ProductItemComponent,
     MoreInformationComponent,
     P002CompanyComponent,
-    SlideBannerComponent
-  ],
+    SlideBannerComponent,
+    CContentComponent,
+    CMembersComponent,
+    CContactComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
 
   ],
   // exports:[RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
