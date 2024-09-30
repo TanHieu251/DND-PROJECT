@@ -1,5 +1,5 @@
 .more-information {
-  // position: fixed;
+  position: relative;
   width: auto;
   height: auto;
   background-color: #348BD2;
@@ -12,6 +12,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    // position: fixed;
 
     li {
       margin-right: 20px;
@@ -35,3 +36,4 @@
     }
   }
 }
+

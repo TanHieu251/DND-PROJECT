@@ -29,6 +29,5 @@ export class IntroComponent {
       // this.textActive=false;
       // this.imgActive=false;
     }
-
   }
 }
