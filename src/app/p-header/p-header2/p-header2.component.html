@@ -1,0 +1,7 @@
+<div class="more-information">
+  <ul class="menu-infor">
+    <li *ngFor="let item of menu">
+      <a [routerLink]="item.routes">{{ item.name }}</a>
+    </li>
+  </ul>
+</div>

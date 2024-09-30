@@ -1,0 +1,12 @@
+<div class="container" [class.left]="isLeft">
+  <div class="text-container" [class.active]="textActive">
+    <h2 class="welcome-text"><span class="highlight">{{ title }}</span></h2>
+    <p>{{ description }}</p>
+    <button [routerLink]="'/contact'" class="company-btn">{{ buttonText }}</button>
+  </div>
+  
+  <div class="image-box" [class.active]="imgActive">
+    <img [src]="imageSrc" alt="image description">
+  </div>
+</div>
+

@@ -1,0 +1,39 @@
+.more-information {
+  position: relative;
+  width: auto;
+  height: auto;
+  background-color: #348BD2;
+  padding: 10px 30px;
+
+  .menu-infor {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    // position: fixed;
+
+    li {
+      margin-right: 20px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        padding: 5px 10px;
+        transition: color 0.3s;
+        font-size: 20px;
+
+        // &:hover {
+        //   // color: #007bff;
+        // }
+      }
+    }
+  }
+}
+
