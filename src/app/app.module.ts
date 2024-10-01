@@ -54,7 +54,8 @@ const routes: Routes = [
     SlideBannerComponent,
     CContentComponent,
     CMembersComponent,
-    CContactComponent
+    CContactComponent,
+    P003ContactComponent
     ],
   imports: [
     BrowserModule,
@@ -67,6 +68,7 @@ const routes: Routes = [
   ],
   // exports:[RouterModule],
   providers: [],
+  // schemas:[CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 
