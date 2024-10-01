@@ -1,0 +1,13 @@
+
+<div class="vision-mission-container">
+  <h1>Về Công Ty Chúng Tôi</h1>
+  <div *ngFor="let section of contentCompany" class="section">
+    <div class="text-content" [class.active]="textActive">
+      <h2>{{ section.title }}</h2>
+      <p [innerHTML]="section.description"></p>
+    </div>
+    <div class="image-content" [class.active]="imgActive">
+      <img [src]="section.imageSrc" [alt]="section.title">
+    </div>
+  </div>
+</div>

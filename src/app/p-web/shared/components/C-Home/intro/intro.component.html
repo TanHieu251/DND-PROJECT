@@ -1,11 +1,14 @@
 <div class="container" [class.right]="isRight">
-  <div class="text-container" [class.active]="textActive">
-    <h2 class="welcome-text"><span class="highlight">{{ title }}</span></h2>
-    <p>{{ description }}</p>
-    <button [routerLink]="'/about'" class="company-btn">{{ buttonText }}</button>
+  <div class="introHome" *ngFor="let intro of informations">
+      <div class="text-container" [class.active]="textActive">
+        <h2 class="welcome-text"><span class="highlight">{{ intro.title }}</span></h2>
+        <p>{{ intro.description }}</p>
+        <button [routerLink]="'/about'" class="company-btn">{{ intro.buttonText }}</button>
+      </div>
+
+    <div class="image-box" [class.active]="imgActive">
+      <img [src]="intro.imageSrc" alt="image description">
+    </div>
   </div>
 
-  <div class="image-box" [class.active]="imgActive">
-    <img [src]="imageSrc" alt="image description">
-  </div>
 </div>
