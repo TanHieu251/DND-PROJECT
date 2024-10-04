@@ -1,0 +1,24 @@
+<!-- <div class="product-banner">
+  <div class="banner-cover" *ngFor="let product of productsBanner">
+      <div class="image">
+        <img [src]="product.image" alt="Product Image">
+      </div>
+      <div class="button-search">
+        <button [routerLink]="'/productdetails'">{{ product.name }}</button>
+      </div>
+  </div>
+
+</div> -->
+<div class="product-banner">
+  <div class="banner-cover" *ngFor="let product of productsBanner">
+      <div class="image">
+        <img [src]="product.image" alt="Product Image">
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Tìm kiếm sản phẩm">
+        <button [routerLink] ="'/productdetails/:id'" type="submit">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+  </div>
+</div>

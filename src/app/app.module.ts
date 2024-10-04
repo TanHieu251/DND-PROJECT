@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NgxPaginationModule} from 'ngx-pagination';
 
 import { HeaaderComponent } from './p-header/p-heaader/p-heaader.component';
 import { P001HomeComponent } from './p-web/pages/p001-home/p001-home.component';
@@ -26,6 +27,9 @@ import { CContentComponent } from './p-web/shared/components/C-Company/c-content
 import { CMembersComponent } from './p-web/shared/components/C-Company/c-members/c-members.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CContactComponent } from './p-web/shared/components/c-contact/c-contact/c-contact.component';
+import { ProductBannerComponent } from './p-web/shared/components/C-products/product-banner/product-banner.component';
+import { ProductListComponent } from './p-web/shared/components/C-products/product-list/product-list.component';
+
 
 const routes: Routes = [
   { path: 'home', component: P001HomeComponent },
@@ -55,7 +59,11 @@ const routes: Routes = [
     CContentComponent,
     CMembersComponent,
     CContactComponent,
-    P003ContactComponent
+    P003ContactComponent,
+    P004ProductComponent,
+    P004ProductDetailComponent,
+    ProductBannerComponent,
+    ProductListComponent
     ],
   imports: [
     BrowserModule,
@@ -64,7 +72,7 @@ const routes: Routes = [
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
-
+    NgxPaginationModule
   ],
   // exports:[RouterModule],
   providers: [],

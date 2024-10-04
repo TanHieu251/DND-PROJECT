@@ -1,0 +1,40 @@
+<div class="products-container">
+  <div class="sidebar" >
+    <h3>Danh mục</h3>
+    <ul *ngFor="let item of items">
+      <li>{{item.title}}</li>
+      <i class="fa fa-chevron-down"></i>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <div class="header">
+      <h2>Sản Phẩm</h2>
+      <button class="sort-btn"> <i class="fa fa-chevron-down"></i> Giá thấp đến cao </button>
+    </div>
+
+    <div class="products-grid">
+      <div class="product-card" *ngFor="let product of getDisplayedProducts()">
+        <img [src]="product.image" alt="{{product.name}}" />
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.description }}</p>
+        <div class="price">{{ product.price }} VND</div>
+        <div class="availability" [ngClass]="{'available': product.inStock, 'out-of-stock': !product.inStock}">
+          {{ product.inStock ? 'Còn hàng' : 'Hết hàng' }}
+        </div>
+      </div>
+    </div>
+
+    <div class="pagination">
+      <div class="pagination-controls">
+        <!-- <button (click)="setPage(1)" [disabled]="currentPage === 1"></button> -->
+        <button (click)="setPage(currentPage - 1)" [disabled]="currentPage === 1">&laquo;</button>
+        <ng-container *ngFor="let page of displayedPages">
+          <button (click)="setPage(page)" [class.active]="currentPage === page">{{ page }}</button>
+        </ng-container>
+        <button (click)="setPage(currentPage + 1)" [disabled]="currentPage === totalPages">&raquo;</button>
+        <!-- <button (click)="setPage(totalPages)" [disabled]="currentPage === totalPages"></button> -->
+      </div>
+    </div>
+  </div>
+</div>
