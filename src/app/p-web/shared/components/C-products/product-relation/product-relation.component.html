@@ -1,0 +1,19 @@
+<div class="products-container">
+  <div class="header">
+    <h2>{{productTitle}}</h2>
+    <button [routerLink]="'/products'" class="view-all-btn">{{buttonText}}</button>
+  </div>
+
+  <div class="products-grid">
+    <div class="product-card" *ngFor="let product of products">
+      <img [src]="product.image" alt="{{product.name}}">
+      <h3 [routerLink]="'/productdetails'">{{product.name}}</h3>
+      <p>{{product.description}}</p>
+      <div class="price">{{product.price}}</div>
+      <div class="availability" [ngClass]="{'available': product.status === 'available',
+          'out-of-stock': product.status === 'out-of-stock'}">
+        {{product.availability}}
+      </div>
+    </div>
+  </div>
+</div>

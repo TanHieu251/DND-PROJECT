@@ -15,9 +15,6 @@ export class CContactComponent {
     email: "service.vn@dnd.com",
     website: "https://dnd.vn",
     socialLinks: [
-      // { name: 'Facebook', url: 'https://www.facebook.com/tanhieu36/', link: '#' },
-      // { name: 'LinkedIn', url: 'assets/icon-linkedin.png', link: '#' },
-      // { name: 'YouTube', url: 'assets/icon-youtube.png', link: '#' }
       { platform: 'Facebook', url: 'https://www.facebook.com/tanhieu36/', iconClass: 'fab fa-facebook fa-2x' },
       { platform: 'Instagram', url: 'https://instagram.com', iconClass: 'fab fa-instagram fa-2x' },
       { platform: 'Linkedin', url: 'https://www.linkedin.com/learning/', iconClass: 'fa-brands fa-linkedin fa-2x' },
@@ -43,7 +40,8 @@ export class CContactComponent {
       businessField: ['', Validators.required],
       role: ['', Validators.required],
       referenceDevice: ['', Validators.required],
-      other: ['']
+      other: [''],
+      // checkbox:['', Validators.required]
     });
   }
 

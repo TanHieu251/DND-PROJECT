@@ -73,7 +73,6 @@ export class ProductListComponent {
   ]
 
   products = [
-
     {
       name: 'LS ACB Metasol 1',
       description: 'Metasol ACB (Air Circuit Breaker) của LS đáp ứng dòng ngắt mạch...',

@@ -29,6 +29,9 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CContactComponent } from './p-web/shared/components/c-contact/c-contact/c-contact.component';
 import { ProductBannerComponent } from './p-web/shared/components/C-products/product-banner/product-banner.component';
 import { ProductListComponent } from './p-web/shared/components/C-products/product-list/product-list.component';
+import { ProductDetailComponent } from './p-web/shared/components/C-products/product-detail/product-detail.component';
+import { ProductInforRelationComponent } from './p-web/shared/components/C-products/product-infor-relation/product-infor-relation.component';
+import { ProductRelationComponent } from './p-web/shared/components/C-products/product-relation/product-relation.component';
 
 
 const routes: Routes = [
@@ -62,8 +65,11 @@ const routes: Routes = [
     P003ContactComponent,
     P004ProductComponent,
     P004ProductDetailComponent,
+    ProductDetailComponent,
     ProductBannerComponent,
-    ProductListComponent
+    ProductListComponent,
+    ProductInforRelationComponent,
+    ProductRelationComponent
     ],
   imports: [
     BrowserModule,
