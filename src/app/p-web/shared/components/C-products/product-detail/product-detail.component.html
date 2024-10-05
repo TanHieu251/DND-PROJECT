@@ -6,10 +6,10 @@
     </div>
   </div>
 
-  <div class="product-info">
-    <h1>{{ product.name }}</h1>
+  <div class="product-info" *ngIf="product; else noProduct">
+    <h1 [routerLink]="'/productdetails/{{ product.code }}'">{{ product.name }}</h1>
     <p>Mã hàng: {{ product.code }}</p>
-    <p>Tình trạng: <span [ngClass]="{'in-stock': product.status === 'Còn hàng', 'out-of-stock': product.status === 'Hết hàng'}">{{ product.status }}</span></p>
+    <p>Tình trạng: <span [ngClass]="{'in-stock': product.inStock === 'Còn hàng', 'out-of-stock': product.inStock === 'Hết hàng'}">{{ product.inStock }}</span></p>
 
     <div class="product-price">
       <span class="price">{{ product.price }} VND</span>
@@ -29,4 +29,9 @@
       </div>
     </div>
   </div>
+  <ng-template #noProduct>
+
+    <p>Sản phẩm không tồn tại</p>
+  </ng-template>
+
 </div>
