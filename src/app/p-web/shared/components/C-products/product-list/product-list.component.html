@@ -19,14 +19,14 @@
           <img [src]="product.image" alt="{{product.name}}" />
           <h3 routerLink="'productdetails/{{ product.name }}'">{{ product.name }}</h3>
           <p>{{ product.description }}</p>
-          <!-- <p>{{product.id}}</p> -->
           <div class="price">{{ product.price }} </div>
-          <div class="availability" [ngClass]="{'available': product.inStock, 'out-of-stock': !product.inStock}">
-            {{ product.inStock ? 'Còn hàng' : 'Hết hàng' }}
+          <div class="availability" [ngClass]="{'available': product.status, 'out-of-stock': !product.status}">
+            {{ product.status ? 'Còn hàng' : 'Hết hàng' }}
           </div>
-        </div>
+        </div>  
       </div>
     </div>
+
 
     <div class="pagination">
       <div class="pagination-controls">
