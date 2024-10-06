@@ -41,17 +41,27 @@
 .product-info p {
   margin: 5px 0;
   font-size: 18px;
+
+}
+.product-info{
+  .availability {
+    font-size: 18px;
+
+    &.available {
+      color: green;
+    }
+
+    &.out-of-stock {
+      color: red;
+    }
+  }
 }
 
-.in-stock {
-  color: green;
-  font-weight: bold;
-}
 
 .product-price {
   margin: 10px 0;
   font-size: 24px;
-  color: red;
+  color: black;
 }
 
 .product-quantity {

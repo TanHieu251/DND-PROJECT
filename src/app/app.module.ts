@@ -40,7 +40,7 @@ const routes: Routes = [
   { path: 'products', component: P004ProductComponent },
   // {path:'', redirectTo:'/products/:name', pathMatch:'full' },
   // {path:'products-list', component: ProductListComponent},
-  {path: 'productdetails/:name', component:ProductDetailComponent},
+  {path: 'productdetails/:name', component:P004ProductDetailComponent},
   { path: 'projects', component: P005ProjectComponent },
   { path: 'contact', component: P003ContactComponent }
 

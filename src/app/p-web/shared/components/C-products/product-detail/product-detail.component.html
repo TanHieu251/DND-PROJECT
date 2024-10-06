@@ -8,10 +8,10 @@
 
   <div class="product-info" >
     <h1>{{ product.name }}</h1>
-    <p>Mã hàng: {{ product.code }}</p>
-    <p>Tình trạng:
-       <span [ngClass]="{'in-stock': product.status === 'Còn hàng', 'out-of-stock':
-        product.status === 'Hết hàng'}">{{ product.status }}</span>
+    <p [ngClass]="{'code': product.code}">Mã hàng: {{ product.code }}</p>
+    <p class="status">Tình trạng:
+       <span class="availability" [ngClass]="{'available': product.status,
+       'out-of-stock': !product.status}">{{ product.status ? 'Còn hàng' : 'Hết hàng' }}</span>
     </p>
 
     <div class="product-price">
@@ -35,6 +35,6 @@
 
 </div>
 <!-- <p>works!</p> -->
-<ng-template #noProduct>
+  <ng-template #noProduct>
     <p>Sản phẩm không tồn tại</p>
   </ng-template>

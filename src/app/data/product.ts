@@ -7,7 +7,7 @@ export const productData =[
       name: 'Thiết bị điện ABC 1',
       description: 'Thiết bị điện ABC mang lại hiệu suất tối ưu trong việc cắt mạch...',
       price: '60,000 VND',
-      status: false,
+      status:false,
       availability: 'Còn hàng',
       image: 'assets/image 5.png',
       thumbnail:'assets/image 5.png',
@@ -287,4 +287,11 @@ export const productData =[
       status: 'Hết hàng',
       image: 'assets/equipment40.png',
     }
+]
+
+
+export const descriptionProducts = [
+  {
+    description: ''
+  }
 ]
