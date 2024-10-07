@@ -1,13 +1,16 @@
-/* header.component.scss */
+
 .header {
-  // position: fixed;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 138px;
+  height: 90px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
-  // border-bottom: 1px solid #ccc;
+  z-index: 1000;
+  border-bottom: 1px solid #ccc;
 
   .header-logo {
     display: flex;
@@ -17,8 +20,8 @@
     cursor: pointer;
 
     img {
-      width: 175px;
-      height: 108px;
+      width: 90px;
+      height: 60px;
       margin-right: 50px;
     }
   }
@@ -30,7 +33,6 @@
     position: relative;
 
     input {
-      width: 100%;
       width: 500px;
       padding: 8px 12px;
       border: 1px solid #ccc;
@@ -69,12 +71,12 @@
       i {
         font-size: 24px;
         margin-bottom: 8px;
-        color:#aaa ;
+        color: #aaa;
       }
-      span{
-        color:#aaa ;
+
+      span {
+        color: #aaa;
       }
     }
   }
-
 }

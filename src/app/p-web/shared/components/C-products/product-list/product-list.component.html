@@ -23,7 +23,7 @@
           <div class="availability" [ngClass]="{'available': product.status, 'out-of-stock': !product.status}">
             {{ product.status ? 'Còn hàng' : 'Hết hàng' }}
           </div>
-        </div>  
+        </div>
       </div>
     </div>
 
@@ -39,3 +39,5 @@
     </div>
   </div>
 </div>
+
+<!-- <app-product-infor-relation [product]="selectedProduct"></app-product-infor-relation> -->
