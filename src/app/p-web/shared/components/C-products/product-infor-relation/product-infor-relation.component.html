@@ -1,10 +1,15 @@
 <div class="tabs">
-  <ul>
+  <ul class="tab-title" >
     <li *ngFor="let tab of tabs; let i = index"
-        [class.active]="selectedTab === i"
+      [ngClass]="{'active-tab': selectedTab === i}"
         (click)="selectTab(i)" >
       {{ tab.title }}
     </li>
+          <!-- <li *ngFor="let tab of tabs; let i = index"
+            [class.active]="selectedTab === i"
+            (click)="selectTab(i)" >
+            {{ tab.title }}
+          </li> -->
   </ul>
 
   <div class="tab-content" *ngIf="product">
@@ -16,8 +21,5 @@
 
 </div>
 
-<!-- <ng-template #noProducts>
-  <p>Chua co danh gia</p>
-</ng-template> -->
 
 

@@ -8,7 +8,7 @@ import { productData } from '../../../../../data/product';
 })
 export class ProductItemComponent implements OnInit{
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    // throw new Error('Method not implemented.');
   }
 
   @Input() productTitle: string='Sản phẩm'
@@ -16,7 +16,7 @@ export class ProductItemComponent implements OnInit{
 
   products = [
     {
-      id:'001',
+      // id:'001',
       name: 'Thiết bị điện ABC 1',
       description: 'Thiết bị điện ABC mang lại hiệu suất tối ưu trong việc cắt mạch...',
       price: '60,000 VND',

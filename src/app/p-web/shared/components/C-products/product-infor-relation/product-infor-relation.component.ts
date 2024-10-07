@@ -14,6 +14,7 @@ export class ProductInforRelationComponent implements OnInit {
   selectedTab = 0;
 
   constructor (private activatedRoute: ActivatedRoute){}
+
   ngOnInit() {
     let productName = this.activatedRoute.snapshot.paramMap.get('name');
     if(productName){
