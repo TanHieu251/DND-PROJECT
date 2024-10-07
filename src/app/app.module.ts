@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NgxPaginationModule} from 'ngx-pagination';
 
 import { HeaaderComponent } from './p-header/p-heaader/p-heaader.component';
 import { P001HomeComponent } from './p-web/pages/p001-home/p001-home.component';
@@ -26,12 +27,20 @@ import { CContentComponent } from './p-web/shared/components/C-Company/c-content
 import { CMembersComponent } from './p-web/shared/components/C-Company/c-members/c-members.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CContactComponent } from './p-web/shared/components/c-contact/c-contact/c-contact.component';
+import { ProductBannerComponent } from './p-web/shared/components/C-products/product-banner/product-banner.component';
+import { ProductListComponent } from './p-web/shared/components/C-products/product-list/product-list.component';
+import { ProductDetailComponent } from './p-web/shared/components/C-products/product-detail/product-detail.component';
+import { ProductInforRelationComponent } from './p-web/shared/components/C-products/product-infor-relation/product-infor-relation.component';
+import { ProductRelationComponent } from './p-web/shared/components/C-products/product-relation/product-relation.component';
+
 
 const routes: Routes = [
   { path: 'home', component: P001HomeComponent },
   { path: 'about', component: P002CompanyComponent },
   { path: 'products', component: P004ProductComponent },
-  {path: 'productdetails', component:P004ProductDetailComponent},
+  // {path:'', redirectTo:'/products/:name', pathMatch:'full' },
+  // {path:'products-list', component: ProductListComponent},
+  {path: 'productdetails/:name', component:P004ProductDetailComponent},
   { path: 'projects', component: P005ProjectComponent },
   { path: 'contact', component: P003ContactComponent }
 
@@ -54,7 +63,15 @@ const routes: Routes = [
     SlideBannerComponent,
     CContentComponent,
     CMembersComponent,
-    CContactComponent
+    CContactComponent,
+    P003ContactComponent,
+    P004ProductComponent,
+    P004ProductDetailComponent,
+    ProductDetailComponent,
+    ProductBannerComponent,
+    ProductListComponent,
+    ProductInforRelationComponent,
+    ProductRelationComponent
     ],
   imports: [
     BrowserModule,
@@ -63,10 +80,11 @@ const routes: Routes = [
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
-
+    NgxPaginationModule
   ],
   // exports:[RouterModule],
   providers: [],
+  // schemas:[CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 

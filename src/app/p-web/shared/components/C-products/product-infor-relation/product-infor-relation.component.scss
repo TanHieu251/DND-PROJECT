@@ -1,0 +1,39 @@
+.product-cover{
+  background-color: aliceblue;
+  width: 80%;
+  border-radius: 20px;
+  margin-left: 170px;
+
+  .tabs {
+  margin-top: 30px;
+  display: flex;
+  // justify-content: space-between;
+  border-bottom: 2px solid #d9d9d9;
+
+  .tab-title {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 24px;
+    color: #000;
+
+    &.active-tab {
+      border-bottom: 3px solid #007bff;
+      color: white;
+      background-color: #007bff;
+      border-radius: 10px 10px 0 0;
+    }
+  }
+}
+
+.tab-content {
+  padding: 20px;
+  font-size: 18px;
+  // background-color: #f9f9f9;
+  // border: 1px solid #d9d9d9;
+  border-radius: 5px;
+  margin-top: -1px;
+}
+}
+

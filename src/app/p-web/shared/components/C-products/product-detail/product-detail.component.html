@@ -1,0 +1,40 @@
+<div class="product-detail" *ngIf="product; else noProduct">
+    <div class="product-image">
+      <img [src]="product.image" alt="{{ product.name }}">
+      <div class="product-thumbnail">
+        <img [src]="product.thumbnail" alt="{{ product.name }} Thumbnail">
+      </div>
+    </div>
+
+  <div class="product-info" >
+    <h1>{{ product.name }}</h1>
+    <p [ngClass]="{'code': product.code}">Mã hàng: {{ product.code }}</p>
+    <p class="status">Tình trạng:
+       <span class="availability" [ngClass]="{'available': product.status,
+       'out-of-stock': !product.status}">{{ product.status ? 'Còn hàng' : 'Hết hàng' }}</span>
+    </p>
+
+    <div class="product-price">
+      <span class="price">{{ product.price }} VND</span>
+    </div>
+
+    <div class="product-quantity">
+      <button class="quantity-btn">-</button>
+      <input type="number" value="1" min="1" />
+      <button class="quantity-btn">+</button>
+    </div>
+
+    <div class="product-actions">
+      <button class="add-cart-btn">Thêm vào giỏ hàng</button>
+      <div class="action-buttons">
+        <button class="buy-now-btn">Mua ngay</button>
+        <button class="contact-btn">Liên hệ tư vấn</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- <p>works!</p> -->
+  <ng-template #noProduct>
+    <p>Sản phẩm không tồn tại</p>
+  </ng-template>

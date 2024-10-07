@@ -1,0 +1,17 @@
+<div class="product-cover">
+  <div class="tabs">
+    <button
+      *ngFor="let tab of tabs; let i = index"
+      (click)="selectTab(i)"
+      [ngClass]="{'active-tab': selectedTab === i}"
+      class="tab-title"
+    >
+      {{ tab.title }}
+    </button>
+  </div>
+
+  <div class="tab-content">
+    <p>{{ tabs[selectedTab].content }}</p>
+  </div>
+</div>
+
