@@ -1,17 +1,23 @@
-<div class="product-cover">
-  <div class="tabs">
-    <button
-      *ngFor="let tab of tabs; let i = index"
-      (click)="selectTab(i)"
-      [ngClass]="{'active-tab': selectedTab === i}"
-      class="tab-title"
-    >
+<div class="tabs">
+  <ul>
+    <li *ngFor="let tab of tabs; let i = index"
+        [class.active]="selectedTab === i"
+        (click)="selectTab(i)" >
       {{ tab.title }}
-    </button>
+    </li>
+  </ul>
+
+  <div class="tab-content" *ngIf="product">
+    <div *ngIf="selectedTab === 0">{{product?.descriptionRelation}}</div>
+    <div *ngIf="selectedTab === 1">{{product?.features}}</div>
+    <div *ngIf="selectedTab === 2">{{product?.specifications}}</div>
+    <div *ngIf="selectedTab === 3">{{product?.reviews}}</div>
   </div>
 
-  <div class="tab-content">
-    <p>{{ tabs[selectedTab].content }}</p>
-  </div>
 </div>
+
+<!-- <ng-template #noProducts>
+  <p>Chua co danh gia</p>
+</ng-template> -->
+
 

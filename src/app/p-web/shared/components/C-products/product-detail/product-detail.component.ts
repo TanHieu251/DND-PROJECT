@@ -9,6 +9,7 @@ import { productData } from '../../../../../data/product';
   styleUrls: ['./product-detail.component.scss']
 })
 export class ProductDetailComponent implements OnInit {
+  
   product:any;
 
   constructor(private activatedRoute: ActivatedRoute){}

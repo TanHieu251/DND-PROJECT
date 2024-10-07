@@ -38,9 +38,8 @@ const routes: Routes = [
   { path: 'home', component: P001HomeComponent },
   { path: 'about', component: P002CompanyComponent },
   { path: 'products', component: P004ProductComponent },
-  // {path:'', redirectTo:'/products/:name', pathMatch:'full' },
-  // {path:'products-list', component: ProductListComponent},
   {path: 'productdetails/:name', component:P004ProductDetailComponent},
+  {path: 'productdetails/:name', component:ProductInforRelationComponent},
   { path: 'projects', component: P005ProjectComponent },
   { path: 'contact', component: P003ContactComponent }
 

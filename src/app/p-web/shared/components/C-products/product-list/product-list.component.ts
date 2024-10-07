@@ -16,6 +16,15 @@ export class ProductListComponent {
   totalPages: number = 0;
   itemPerPage: number = 12;
   displayedPages: number[] = [];
+  // selectedProduct: any = this.products[0];  
+
+  // selectProduct(productName: string) {
+  //   this.selectedProduct = this.products.find(p => p.name === productName);
+  // }
+
+  // selectProductByName(){
+
+  // }
 
   viewDetialProduct(productname: string){
     this.router.navigate(['/productdetails', productname])
