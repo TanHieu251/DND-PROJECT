@@ -1,16 +1,12 @@
 <div class="products-container"  >
   <div class="sidebar" >
     <h1>Danh mục</h1>
-    <!-- <ul *ngFor="let item of items">
-      <li>{{item.title}}</li>
-      <i class="fa fa-chevron-down"></i>
-    </ul> -->
-    <ul *ngFor="let item of items">
-      <li (click)="toggleItem(item)">
+    <ul *ngFor="let item of items" class="cover-item">
+      <li (click)="toggleItem(item)" class="title">
         {{item.title}}
-        <i class="fa fa-chevron-down"></i>
+        <i class="fa fa-chevron-down icons"></i>
       </li>
-      <ul *ngIf="item.isOpen">
+      <ul *ngIf="item.isOpen" class="sub-title">
         <li *ngFor="let subcategory of item.subcategories">{{subcategory}}</li>
       </ul>
     </ul>
