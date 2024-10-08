@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './p-heaader.component.scss'
 })
 export class HeaaderComponent {
-
+  reloadPage(){
+    window.location.href='/home';
+  }
 }

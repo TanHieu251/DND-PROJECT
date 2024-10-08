@@ -9,10 +9,13 @@ import { productData } from '../../../../../data/product';
   styleUrls: ['./product-detail.component.scss']
 })
 export class ProductDetailComponent implements OnInit {
-  
+
   product:any;
 
   constructor(private activatedRoute: ActivatedRoute){}
+  // reloadPage(){
+  //   window.location.href = '/';
+  // }
 
   ngOnInit() {
     let productName = this.activatedRoute.snapshot.paramMap.get('name');

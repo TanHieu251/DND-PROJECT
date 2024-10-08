@@ -14,6 +14,9 @@ export class ProductItemComponent implements OnInit{
   @Input() productTitle: string='Sản phẩm'
   @Input() buttonText: string = 'Xem tất cả'
 
+  viewDetialProduct(productName: string){
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
   products = [
     {
       // id:'001',

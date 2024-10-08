@@ -1,6 +1,6 @@
 <div class="more-information">
-  <ul class="menu-infor">
-    <li *ngFor="let item of menu">
+  <ul class="menu-infor" >
+    <li *ngFor="let item of menu" (click)="reloadPage(item.routes)">
       <a [routerLink]="item.routes">{{ item.name }}</a>
     </li>
   </ul>

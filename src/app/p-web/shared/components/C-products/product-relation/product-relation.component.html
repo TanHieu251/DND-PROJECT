@@ -12,8 +12,8 @@
       <div class="price">{{product.price}}</div>
       <div class="availability" >
         <span class="availability" [ngClass]="{'available': product.status,
-          'out-of-stock': !product.status}">{{ product.status ? 'Còn hàng' : 'Hết hàng' }}</span>
-        <!-- {{product.availability}} -->
+          'out-of-stock': !product.status}">
+          {{ product.status ? 'Còn hàng' : 'Hết hàng' }}</span>
       </div>
     </div>
   </div>

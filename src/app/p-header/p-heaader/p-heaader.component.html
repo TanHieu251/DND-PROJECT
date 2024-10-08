@@ -1,7 +1,7 @@
 <!-- header.component.html -->
 <div class="header">
   <!-- Logo Section -->
-  <div [routerLink]="'/home'" class="header-logo">
+  <div [routerLink]="'/home'" class="header-logo" (click)="reloadPage()">
     <img src="assets/logo.png" alt="Logo" />
   </div>
 

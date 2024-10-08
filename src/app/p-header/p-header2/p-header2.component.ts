@@ -14,5 +14,18 @@ export class Header2Component {
     { name: 'Dự án', routes: '/projects' },
     { name: 'Liên hệ', routes: '/contact' }
   ];
-  
+  reloadPage(route: string){
+    if(route === '/home'){
+      window.location.href = route;
+    } else if(route === '/about'){
+      window.location.href = route;
+    } else if(route === '/products'){
+      window.location.href = route;
+    } else if(route === '/projects'){
+      window.location.href = route;
+    } else{
+      window.location.href = route;
+    }
+  }
+
 }

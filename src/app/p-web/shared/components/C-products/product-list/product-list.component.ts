@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { productData } from '../../../../../data/product';
+import { Item } from '../../../../../data/product';
 
 
 @Component({
@@ -16,19 +17,14 @@ export class ProductListComponent {
   totalPages: number = 0;
   itemPerPage: number = 12;
   displayedPages: number[] = [];
-  // selectedProduct: any = this.products[0];  
-
-  // selectProduct(productName: string) {
-  //   this.selectedProduct = this.products.find(p => p.name === productName);
-  // }
-
-  // selectProductByName(){
-
-  // }
+  itemToggle: any;
+  // selectedProduct: any = this.products[0];
 
   viewDetialProduct(productname: string){
     this.router.navigate(['/productdetails', productname])
+    window.scrollTo({top: 0, behavior:'smooth'});
   }
+
   constructor(private router: Router){
     this.totalPages = Math.ceil(this.products.length / this.itemPerPage);
     this.calculateDisplayedPages();
@@ -66,22 +62,42 @@ export class ProductListComponent {
     const endIndex = startIndex + this.itemPerPage;
     return this.products.slice(startIndex, endIndex);
   }
+  reloadPage()
+  {
+    window.location.href = '/';
+  }
+
+
 
   items = [
     {
-      title:'Thiết Bị Điện Hạ Thế'
+      title:'Thiết Bị Điện Hạ Thế',
+      subcategories: ['Thiết Bị Điện Hạ Thế 1', 'Thiết Bị Điện Hạ Thế 2', 'Thiết Bị Điện Hạ Thế 3'],
+      isOpen: false
     },
     {
-      title:'Thiết Bị Truyền Tải và Phân Phối Điện'
+      title:'Thiết Bị Truyền Tải và Phân Phối Điện',
+      subcategories: ['Thiết Bị Truyền Tải và Phân Phối Điện 1', 'Thiết Bị Truyền Tải và Phân Phối Điện 2'],
+      isOpen: false
     },
     {
-      title:'Thiết Bị Theo Dõi và Đo Lường'
+      title:'Thiết Bị Theo Dõi và Đo Lường',
+      subcategories: ['Thiết Bị Theo Dõi và Đo Lường 1', 'Thiết Bị Theo Dõi và Đo Lường 2', 'Thiết Bị Theo Dõi và Đo Lường 3'],
+      isOpen: false
     },
     {
-      title:'Công Tắc Ổ Cắm'
+      title:'Công Tắc Ổ Cắm',
+      subcategories: ['Công Tắc Ổ Cắm 1'],
+      isOpen: false
     },
     {
-      title:'Thiết Bị Năng Lượng Mới'
+      title:'Thiết Bị Năng Lượng Mới',
+      subcategories: ['Thiết Bị Năng Lượng Mới 1', 'Thiết Bị Năng Lượng Mới 2'],
+      isOpen: false
     },
   ]
+
+  toggleItem(itemToggle: Item) {
+    itemToggle.isOpen = !itemToggle.isOpen;
+  }
 }

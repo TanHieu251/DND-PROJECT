@@ -8,13 +8,14 @@
       .tab-title {
         display: inline-flex;
         border-bottom: 2px solid #d9d9d9;
-        padding: 10px 20px;
+        padding: 0px 0px;
         cursor: pointer;
         background: none;
         font-size: 22px;
         color: #000;
 
         li {
+          // text-align: left;
           text-decoration: none;
           list-style-type: none;
           padding: 10px;
