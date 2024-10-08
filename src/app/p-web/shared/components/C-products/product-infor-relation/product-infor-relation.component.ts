@@ -5,7 +5,7 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-product-infor-relation',
   templateUrl: './product-infor-relation.component.html',
-  styleUrls: ['./product-infor-relation.component.scss']
+  styleUrls: ['./product-infor-relation.component.scss'],
 })
 export class ProductInforRelationComponent implements OnInit {
 
