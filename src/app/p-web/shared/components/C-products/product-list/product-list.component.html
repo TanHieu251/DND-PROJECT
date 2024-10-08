@@ -1,9 +1,18 @@
-<div class="products-container">
+<div class="products-container"  >
   <div class="sidebar" >
-    <h3>Danh mục</h3>
-    <ul *ngFor="let item of items">
+    <h1>Danh mục</h1>
+    <!-- <ul *ngFor="let item of items">
       <li>{{item.title}}</li>
       <i class="fa fa-chevron-down"></i>
+    </ul> -->
+    <ul *ngFor="let item of items">
+      <li (click)="toggleItem(item)">
+        {{item.title}}
+        <i class="fa fa-chevron-down"></i>
+      </li>
+      <ul *ngIf="item.isOpen">
+        <li *ngFor="let subcategory of item.subcategories">{{subcategory}}</li>
+      </ul>
     </ul>
   </div>
 
@@ -13,7 +22,7 @@
       <button class="sort-btn"> <i class="fa fa-chevron-down"></i> Giá thấp đến cao </button>
     </div>
 
-    <div class="products-grid">
+    <div class="products-grid" (click)="reloadPage()">
       <div class="product-card" *ngFor="let product of getDisplayedProducts()">
         <div (click)="viewDetialProduct(product.name)">
           <img [src]="product.image" alt="{{product.name}}" />
@@ -27,7 +36,6 @@
       </div>
     </div>
 
-
     <div class="pagination">
       <div class="pagination-controls">
         <button (click)="setPage(currentPage - 1)" [disabled]="currentPage === 1">&laquo;</button>
@@ -39,5 +47,3 @@
     </div>
   </div>
 </div>
-
-<!-- <app-product-infor-relation [product]="selectedProduct"></app-product-infor-relation> -->

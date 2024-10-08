@@ -1,4 +1,8 @@
-
+export interface Item {
+  title: string;
+  subcategories: string[];
+  isOpen: boolean;
+}
 
 export const productData =[
 

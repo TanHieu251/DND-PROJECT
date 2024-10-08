@@ -1,3 +1,52 @@
+::ng-deep {
+  app-product-infor-relation {
+    .tabs {
+      background-color: aliceblue;
+      border-radius: 20px;
+      margin-left: 260px;
+
+      .tab-title {
+        display: inline-flex;
+        border-bottom: 2px solid #d9d9d9;
+        padding: 0px 0px;
+        cursor: pointer;
+        background: none;
+        font-size: 22px;
+        color: #000;
+
+        li {
+          // text-align: left;
+          text-decoration: none;
+          list-style-type: none;
+          padding: 10px;
+          margin-right: 20px;
+          transition: background-color 0.3s ease;
+
+          &:not(.active-tab) {
+            background-color: white;
+          }
+
+          &.active-tab {
+            background-color: #007bff;
+            color: white;
+            border-radius: 10px 10px 0 0;
+          }
+        }
+      }
+    }
+
+    .tab-content {
+      width: 76.2%;
+      font-size: 18px;
+      background-color: #f9f9f9;
+      border: 1px solid #d9d9d9;
+      border-radius: 5px;
+      margin-top: -1px;
+      padding: 20px;
+    }
+  }
+}
+=======
 ::ng-deep{
   app-product-infor-relation{
     .tabs{
