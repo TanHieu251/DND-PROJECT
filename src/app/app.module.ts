@@ -18,7 +18,7 @@ import { P003ContactComponent } from './p-web/pages/p003-contact/p003-contact.co
 import { P004ProductDetailComponent } from './p-web/pages/p004-product-detail/p004-product-detail.component';
 import { SlideBannerComponent } from './p-web/shared/components/C-Company/slide-banner/slide-banner.component';
 import { MoreInformationComponent } from './p-web/shared/components/C-Home/more-information/more-information.component';
-import { ContactComponent } from './p-web/shared/components/C-Home/contact/contact.component'; 
+import { ContactComponent } from './p-web/shared/components/C-Home/contact/contact.component';
 import { ProductItemComponent } from './p-web/shared/components/C-Home/product-item/product-item.component';
 import { ProjectSlideComponent } from './p-web/shared/components/C-Home/project-slide/project-slide.component';
 import { IntroComponent } from './p-web/shared/components/C-Home/intro/intro.component';
@@ -26,12 +26,15 @@ import { BannerComponent } from './p-web/shared/components/C-Home/banner/banner.
 import { CContentComponent } from './p-web/shared/components/C-Company/c-content/c-content.component';
 import { CMembersComponent } from './p-web/shared/components/C-Company/c-members/c-members.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { CContactComponent } from './p-web/shared/components/c-contact/c-contact/c-contact.component'; 
+import { CContactComponent } from './p-web/shared/components/c-contact/c-contact/c-contact.component';
 import { ProductBannerComponent } from './p-web/shared/components/C-products/product-banner/product-banner.component';
 import { ProductListComponent } from './p-web/shared/components/C-products/product-list/product-list.component';
 import { ProductDetailComponent } from './p-web/shared/components/C-products/product-detail/product-detail.component';
 import { ProductInforRelationComponent } from './p-web/shared/components/C-products/product-infor-relation/product-infor-relation.component';
 import { ProductRelationComponent } from './p-web/shared/components/C-products/product-relation/product-relation.component';
+import { ProjectListComponent } from './p-web/shared/components/C-project/project-list/project-list.component';
+import { ProjectDetailComponent } from './p-web/shared/components/C-project/project-detail/project-detail.component';
+
 
 
 const routes: Routes = [
@@ -66,11 +69,14 @@ const routes: Routes = [
     P003ContactComponent,
     P004ProductComponent,
     P004ProductDetailComponent,
+    P005ProjectComponent,
     ProductDetailComponent,
     ProductBannerComponent,
     ProductListComponent,
     ProductInforRelationComponent,
-    ProductRelationComponent
+    ProductRelationComponent,
+    ProjectListComponent,
+    ProjectDetailComponent
     ],
   imports: [
     BrowserModule,

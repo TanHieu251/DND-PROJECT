@@ -310,6 +310,14 @@ export const productData =[
     }
 ]
 
+export const projectsData = [
+  {
+    image:'assets/alien-5847308.jpg',
+    title:'Dự án Nhà máy điện Nhơn Trạch 3 và 4',
+    description:'Dự án nhà máy điện Nhơn Trạch 3, 4 là công trình trọng điểm quốc gia, được xây dựng tại khu công nghiệp Ông Kèo, xã Phước Khánh, huyện Nhơn Trạch ...',
+  }
+]
+
 
 export const descriptionProducts = [
   {
