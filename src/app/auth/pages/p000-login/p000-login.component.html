@@ -1,1 +1,45 @@
-<p>p000-login works!</p>
+<div class="p00-login">
+    <!-- TITLE -->
+    <div class="login-container">
+        <div class="login-left">
+            <div class="login-header"><span class="login-title">ĐĂNG NHẬP</span></div>
+            <div class="login-content">
+                <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <div class="input-form ">
+                        <i class="fa-solid fa-user icon"></i>
+                        <input class="inp" type="text" formControlName="Email" placeholder="Email">
+
+                    </div>
+                    <div class="input-form">
+                        <i class="fa-solid fa-lock-open icon"></i>
+                        <input class="inp" type="password" formControlName="password" placeholder="Password">
+                    </div>
+                    <div class="label-form">
+                        <div class="forget-pass"><span class="text">Quên mật khẩu</span></div>
+                    </div>
+                    <div class="button-login"><button class="btn-login" [disabled]="loginForm.invalid"
+                            type="submit">ĐĂNG NHẬP</button></div>
+                    <div class="register"><span class="text">Chưa có tài khoản ?
+                            <a class="link" [routerLink]="['/routePath']"> Đăng ký</a>
+
+                        </span></div>
+
+                </form>
+            </div>
+            <div class="login-with">
+                <div class="login-btn ">
+                    <button class="btn fb">
+                        <i class="fa-brands fa-facebook"></i>
+                        Đăng nhập với Facebook</button>
+
+                    <button class="btn gg">
+                        <i class="fa-brands fa-google"></i>
+                        Đăng nhập với Google</button>
+                </div>
+            </div>
+        </div>
+        <div class="login-right">
+            <img class="login-banner" [src]="img" alt="">
+        </div>
+    </div>
+</div>

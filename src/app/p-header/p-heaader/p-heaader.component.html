@@ -15,12 +15,17 @@
   <div class="header-icons">
     <div class="icon-btn-login">
       <i class="fa-solid fa-user"></i>
-      <span>Đăng nhập</span>
+      <!-- <span>  Đăng nhập</span> -->
+      <span *ngIf="!isLoggedIn()"> <!-- changed to *ngIf -->
+        <a [routerLink]="['/login']">ĐĂNG NHẬP</a>
+      </span>
+      <span *ngIf="isLoggedIn()">
+        <span (click)="onLogOut()">Đăng xuất</span>
+      </span>
+
     </div>
     <div class="icon-btn-card">
       <i class="fa-solid fa-cart-plus"></i>
       <span>Giỏ hàng</span>
     </div>
   </div>
-
-</div>
