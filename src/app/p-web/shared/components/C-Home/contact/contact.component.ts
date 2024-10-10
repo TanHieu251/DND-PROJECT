@@ -1,4 +1,5 @@
 import { Component, ElementRef, HostListener, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -12,6 +13,13 @@ export class ContactComponent {
   @Input() buttonText: string = 'Xem Công Ty';
   @Input() isLeft: boolean = false;
 
+  reloadPage(){
+    // window.location.href = '/';
+    // window.scrollTo(0,0)
+    window.scrollTo({top: 0, behavior:'smooth'});
+  }
+
+
   textActive: boolean = false;
   imgActive: boolean = false;
   contacts =[
@@ -23,8 +31,12 @@ export class ContactComponent {
     }
   ]
 
-  constructor(private elementRef: ElementRef) {}
-
+  constructor(private elementRef: ElementRef, private router: Router) {}
+  goToContact(){
+    this.router.navigate(['/contact']).then(() =>{
+      window.scrollTo({top: 0, behavior:'smooth'});
+    })
+  }
   @HostListener('window:scroll', ['$event'])
   onScroll(): void {
     const containerPosition = this.elementRef.nativeElement.getBoundingClientRect().top;

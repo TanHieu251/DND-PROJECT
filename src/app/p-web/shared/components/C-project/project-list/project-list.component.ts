@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { projectsData } from '../../../../../data/product';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-project-list',
@@ -9,4 +10,10 @@ import { projectsData } from '../../../../../data/product';
 export class ProjectListComponent {
   projects = projectsData;
 
+  constructor(private router: Router){}
+
+  goToProjectDetail(projectTitle:string){
+    this.router.navigate(['/project-detail', projectTitle])
+    window.scrollTo({top: 0, behavior:'smooth'});
+  }
 }

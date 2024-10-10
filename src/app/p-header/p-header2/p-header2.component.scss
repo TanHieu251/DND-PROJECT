@@ -1,36 +1,38 @@
+::ng-deep {
+  app-p-header2 {
+    .more-information {
+      position: fixed;
+      top: 90px;
+      left: 0;
+      width: 100%;
+      background-color: #348BD2;
+      padding: 10px 30px;
+      z-index: 10001;
 
+      .menu-infor {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
 
-.more-information {
-  position: fixed;
-  top: 90px; /* Đặt dưới header */
-  left: 0;
-  width: 100%;
-  background-color: #348BD2;
-  padding: 10px 30px;
-  z-index: 999; /* Đảm bảo menu nằm phía trên nội dung nhưng dưới header */
+        li {
+          margin-right: 20px;
 
-  .menu-infor {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+          &:last-child {
+            margin-right: 0;
+          }
 
-    li {
-      margin-right: 20px;
-
-      &:last-child {
-        margin-right: 0;
-      }
-
-      a {
-        text-decoration: none;
-        color: #fff;
-        font-weight: bold;
-        padding: 5px 10px;
-        transition: color 0.3s;
-        font-size: 20px;
+          a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: color 0.3s;
+            font-size: 20px;
+          }
+        }
       }
     }
   }

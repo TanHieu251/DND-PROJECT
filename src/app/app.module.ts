@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgxPaginationModule} from 'ngx-pagination';
 
-import { HeaaderComponent } from './p-header/p-heaader/p-heaader.component';
+import { HeaderComponent } from './p-header/p-heaader/p-heaader.component';
 import { P001HomeComponent } from './p-web/pages/p001-home/p001-home.component';
 import { Header2Component } from './p-header/p-header2/p-header2.component';
 import { PFooterComponent } from './p-footer/p-footer/p-footer.component';
@@ -36,6 +36,8 @@ import { AuthModule } from './auth/auth.module';
 import { provideHttpClient } from '@angular/common/http';
 import { ProjectListComponent } from './p-web/shared/components/C-project/project-list/project-list.component';
 import { ProjectDetailComponent } from './p-web/shared/components/C-project/project-detail/project-detail.component';
+import { P005ProjectDetailComponent } from './p-web/pages/p005-project-detail/p005-project-detail.component';
+import { ImageProjectComponent } from './p-web/shared/components/C-project/image-project/image-project.component';
 
 
 
@@ -46,15 +48,16 @@ const routes: Routes = [
   {path: 'productdetails/:name', component:P004ProductDetailComponent},
   {path: 'productdetails/:name', component:ProductInforRelationComponent},
   { path: 'projects', component: P005ProjectComponent },
-  { path:'project-detail', component:ProjectDetailComponent},
+  { path:'project-detail', component:P005ProjectDetailComponent},
+  { path:'project-detail/:title', component:ProjectDetailComponent},
   { path: 'contact', component: P003ContactComponent }
 
-];
+  ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaaderComponent,
+    HeaderComponent,
     P001HomeComponent,
     Header2Component,
     PFooterComponent,
@@ -73,13 +76,15 @@ const routes: Routes = [
     P004ProductComponent,
     P004ProductDetailComponent,
     P005ProjectComponent,
+    P005ProjectDetailComponent,
     ProductDetailComponent,
     ProductBannerComponent,
     ProductListComponent,
     ProductInforRelationComponent,
     ProductRelationComponent,
     ProjectListComponent,
-    ProjectDetailComponent
+    ProjectDetailComponent,
+    ImageProjectComponent
     ],
   imports: [
     BrowserModule,

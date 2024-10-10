@@ -1,15 +1,16 @@
-<!-- <div class="project-container">
-  <h1>Dự án Nhà máy điện Nhơn Trạch 3 và 4</h1>
-  <div class="project-content" *ngFor="let projectDetail of projectDetailSections">
+<div class="project-container">
+
+  <div class="project-content" *ngIf="projectDetail">
+    <h1>{{ projectDetail.title }}</h1>
       <div class="project-image">
-        <img [src]="projectDetail.imageSrc" alt="{{projectDetail.title}}">
-    </div>
-    <div class="project-details">
+        <img [src]="projectDetail.image" alt="{{projectDetail.title}}">
+      </div>
+    <div class="project-details" >
       <div >
-        <h3>{{ projectDetail.title }}</h3>
-        <p>{{ projectDetail.content }}</p>
+        <p>{{ projectDetail.description }}</p>
+        <!-- <p>{{ projectDetail.scope }}</p>
+        <p>{{ projectDetail.reviews }}</p> -->
       </div>
     </div>
   </div>
-
-</div> -->
+</div>

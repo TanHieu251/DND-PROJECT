@@ -31,9 +31,9 @@ export class P000LoginComponent {
     console.log('asdasdsa');
     if (this.loginForm.valid) {
       this.APILogin(this.loginForm.value);
-      // if (this.tokenStorage != "") {
-      //   this.router.navigate(['/']);
-      // }
+      if (this.tokenStorage != "") {
+        this.router.navigate(['/home']);
+      }
     } else {
       console.log('Form is invalid');
     }
@@ -47,5 +47,9 @@ export class P000LoginComponent {
       }
 
     });
+  }
+
+  loginToHomePage(){
+
   }
 }

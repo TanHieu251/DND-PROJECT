@@ -13,7 +13,7 @@
       <h3>{{ projects[currentProjectIndex].title }}</h3>
       <p>{{ projects[currentProjectIndex].description }}</p>
       <div class="action-row">
-        <a [routerLink]="'/projects'">{{ buttonText }}</a>
+        <a (click)="goToProject()"  [routerLink]="'/projects'">{{ buttonText }}</a>
         <div class="project-navigation">
           <button class="nav-button" (click)="prevProject()">&laquo;</button>
           <button class="nav-button" (click)="nextProject()">&raquo;</button>

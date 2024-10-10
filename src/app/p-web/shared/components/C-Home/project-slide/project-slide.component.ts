@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-project-slide',
@@ -10,8 +11,15 @@ export class ProjectSlideComponent {
   @Input() title: string= 'Title';
   @Input() description: string= 'Description';
   @Input() imageSrc: string= 'assets/images/projectimage.jpg';
-  @Input() buttonText: string='Xem thêm dự án'
+  @Input() buttonText: string='Xem thêm dự án';
 
+  constructor(private router: Router){}
+
+  goToProject(){
+    this.router.navigate(['/projects']).then(() =>{
+      window.scrollTo({top: 0, behavior:'smooth'});
+    })
+  }
   projects = [
     {
       title: 'Nhà máy điện Trạch Nhơn 3 và 4',

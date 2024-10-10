@@ -312,7 +312,7 @@ export const productData =[
 
 export const projectsData = [
   {
-    image:'assets/projectimage.png',
+    image:'assets/nhamaydien.png',
     title:'Dự án Nhà máy điện Nhơn Trạch 3 và 4',
     description:'Dự án nhà máy điện Nhơn Trạch 3, 4 là công trình trọng điểm quốc gia, được xây dựng tại khu công nghiệp Ông Kèo, xã Phước Khánh, huyện Nhơn Trạch ...',
   },
@@ -333,30 +333,37 @@ export const projectsData = [
   },
 ]
 
-export const projectsDetailList = [
-  // {
-  //   imageSrc:'assets/projectimage.png',
-  //   title:'',
-  //   description:'123',
-  //   // scope:'',
-  //   // reviews:''
-  // },
-  // {
-  //   // imageSrc:'assets/projectimage.png',
-  //   title2:'Project Scope',
-  //   // description:'',
-  //   scope:'',
-  //   reviews:''
-  // },
-  // {
-  //   // imageSrc:'assets/projectimage.png',
-  //   title3:'Reviews',
-  //   // description:'',
-  //   scope:'',
-  //   reviews:''
-  // },
-  // { title: projectDetail.title, content: projectDetail.description },
-  // { title: projectDetail.title2, content: projectDetail.scope },
-  // { title: projectDetail.title3, content: projectDetail.reviews }
-]
 
+
+// export const projectsDetailInfor = [
+//   {
+//     image:'assets/projectimage.png',
+//     title:'Dự án Nhà máy điện Nhơn Trạch 3 và 4',
+//     description:'Dự án nhà máy điện Nhơn Trạch 3, 4 là công trình trọng điểm quốc gia, được xây dựng tại khu công nghiệp Ông Kèo, xã Phước Khánh, huyện Nhơn Trạch ...',
+//   },
+//   {
+//     image:'assets/cauthuthiem.png',
+//     title:'Công trình cầu vượt Thủ Thiêm',
+//     description: 'Cầu vượt Thủ Thiêm là một trong những dự án giao thông quan trọng tại TP.HCM, nối liền quận 2 và quận 1. Với tổng vốn đầu tư 800 triệu USD, dự án hứa hẹn sẽ giảm tải giao thông khu vực trung tâm, đồng thời tạo động lực phát triển kinh tế khu vực Thủ Thiêm.',
+//   },
+//   {
+//     image:'assets/caotocBN.png',
+//     title:'Dự án đường cao tốc Bắc - Nam',
+//     description: 'Dự án đường cao tốc Bắc - Nam là công trình trọng điểm quốc gia với chiều dài hơn 2.100km, đi qua 20 tỉnh, thành phố từ Bắc vào Nam. Tổng mức đầu tư khoảng 12 tỷ USD, khi hoàn thành sẽ rút ngắn thời gian di chuyển giữa các vùng và phát triển kinh tế - xã hội.',
+//   },
+//   {
+//     image:'assets/nhamaynuoc.png',
+//     title:'Nhà máy nước Củ Chi',
+//     description: 'Nhà máy nước Củ Chi là dự án quan trọng nhằm cung cấp nước sạch cho khu vực phía Tây TP.HCM. Với tổng công suất 500.000m³/ngày, dự án sẽ góp phần cải thiện chất lượng nước sinh hoạt cho người dân. Tổng mức đầu tư của dự án là 500 triệu USD.',
+//   },
+
+// ]
+
+export const ImageProject = [
+  { id: 1, url: 'assets/projectimage.png' },
+  { id: 2, url: 'assets/projectimage.png' },
+  { id: 3, url: 'assets/projectimage.png' },
+  { id: 4, url: 'assets/projectimage.png' },
+  { id: 5, url: 'assets/projectimage.png' },
+  { id: 6, url: 'assets/projectimage.png' }
+]

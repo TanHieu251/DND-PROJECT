@@ -5,10 +5,11 @@
           <img [src]="project.image" alt="{{project.image}}">
       </div>
       <div class="project-details">
-          <!-- <a [routerLink]="'/project-detail'" class="project-title">{{project.title}}</a> -->
+          <a (click)="goToProjectDetail(project.title)" class="project-title">{{project.title}}</a>
           <p class="project-description">
               {{project.description}}
           </p>
+          <a class="project-link" (click)="goToProjectDetail(project.title)">Xem chi tiết</a>
           <!-- <a [routerLink]="'/project-detail'" class="project-link">Xem chi tiết</a> -->
       </div>
   </div>

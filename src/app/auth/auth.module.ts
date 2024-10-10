@@ -4,21 +4,24 @@ import { P001RegisterComponent } from './pages/p001-register/p001-register.compo
 import { P000LoginComponent } from './pages/p000-login/p000-login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Route, RouterLink } from '@angular/router';
+import { Route, RouterLink, Routes } from '@angular/router';
 
+const routes: Routes =[
+  // { path: '', component: P000LoginComponent },
+]
 @NgModule({
   declarations: [
     P000LoginComponent,
     P001RegisterComponent,
-    
+
   ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     RouterLink
-    
+
   ],
-  
+
 })
 export class AuthModule { }

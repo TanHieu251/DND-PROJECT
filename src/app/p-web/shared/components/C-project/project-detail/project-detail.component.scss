@@ -1,49 +1,52 @@
-::ng-deep{
-  app-project-detail{
+::ng-deep {
+  app-project-detail {
     .project-container {
-      max-width: 900px;
+      // max-width: 1200px;
+      // width: 100%;
       margin: 0 auto;
       padding: 20px;
       text-align: center;
       height: auto;
-      margin-top: 150px;
-  }
+      // margin-top: 150px;
+      background-color: #f9f9f9;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
 
-  .project-container h1 {
-      font-size: 28px;
+    h1 {
+      font-size: 36px;
       color: #007bff;
       font-weight: bold;
-      margin-bottom: 20px;
-  }
+      margin-bottom: 30px;
+    }
 
-  .project-image img {
-      width: 100%;
-      height: auto;
-      border-radius: 5px;
+    .project-image {
       margin-bottom: 20px;
-  }
 
-  .project-details {
+      img {
+        width: 50%;
+        height: 400px;
+        // border-radius: 10px;
+        // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    .project-details {
       text-align: left;
-  }
+      margin-top: 20px;
 
-  .project-details h3 {
-      font-size: 18px;
-      font-weight: bold;
-      font-style: italic;
-      margin-bottom: 10px;
-  }
+      p {
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 15px;
+        line-height: 1.6;
+      }
 
-  .project-details p {
-      font-size: 16px;
-      margin-bottom: 15px;
-  }
-
-  .project-details p::before {
-      content: '• ';
-      font-weight: bold;
-      color: black;
-  }
-
+      p::before {
+        content: '• ';
+        font-weight: bold;
+        color: #007bff;
+      }
+    }
   }
 }

@@ -17,8 +17,9 @@
                     <div class="label-form">
                         <div class="forget-pass"><span class="text">Quên mật khẩu</span></div>
                     </div>
-                    <div class="button-login"><button class="btn-login" [disabled]="loginForm.invalid"
-                            type="submit">ĐĂNG NHẬP</button></div>
+                    <div class="button-login">
+                      <button class="btn-login" [disabled]="loginForm.invalid"
+                            type="submit" (click)="loginToHomePage()">ĐĂNG NHẬP</button></div>
                     <div class="register"><span class="text">Chưa có tài khoản ?
                             <a class="link" [routerLink]="['/routePath']"> Đăng ký</a>
 

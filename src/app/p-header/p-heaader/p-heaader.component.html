@@ -1,31 +1,38 @@
-<!-- header.component.html -->
+  <!-- header.component.html -->
 <div class="header">
   <!-- Logo Section -->
-  <div [routerLink]="'/home'" class="header-logo" (click)="reloadPage()">
+  <div [routerLink]="'/home'" class="header-logo" >
     <img src="assets/logo.png" alt="Logo" />
   </div>
 
-  <div class="header-search">
+  <!-- <div class="header-search">
     <input type="text" placeholder="Tìm kiếm sản phẩm" />
     <button class="search-btn">
       <i class="fa-solid fa-magnifying-glass"></i>
     </button>
+  </div> -->
+
+  <div class="more-information">
+    <ul class="menu-infor">
+      <li *ngFor="let item of menu" (click)="reloadPage(item.routes)">
+        <a [routerLink]="item.routes">{{ item.name }}</a>
+      </li>
+    </ul>
   </div>
 
   <div class="header-icons">
     <div class="icon-btn-login">
       <i class="fa-solid fa-user"></i>
-      <!-- <span>  Đăng nhập</span> -->
-      <span *ngIf="!isLoggedIn()"> <!-- changed to *ngIf -->
+      <span *ngIf="!isLoggedIn()">
         <a [routerLink]="['/login']">ĐĂNG NHẬP</a>
       </span>
       <span *ngIf="isLoggedIn()">
         <span (click)="onLogOut()">Đăng xuất</span>
       </span>
-
     </div>
     <div class="icon-btn-card">
       <i class="fa-solid fa-cart-plus"></i>
       <span>Giỏ hàng</span>
     </div>
   </div>
+</div>
