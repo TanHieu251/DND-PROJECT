@@ -44,6 +44,7 @@ const routes: Routes = [
   {path: 'productdetails/:name', component:P004ProductDetailComponent},
   {path: 'productdetails/:name', component:ProductInforRelationComponent},
   { path: 'projects', component: P005ProjectComponent },
+  { path:'project-detail', component:ProjectDetailComponent},
   { path: 'contact', component: P003ContactComponent }
 
 ];

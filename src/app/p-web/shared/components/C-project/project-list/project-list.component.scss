@@ -1,65 +1,66 @@
-
-::ng-deep{
-  app-project-list{
+::ng-deep {
+  app-project-list {
     .project-container {
-      // position: relative;
-      // height: ;
-      // display: flex;
+      height: auto;
       margin-top: 150px;
-      text-align: center;
-      // margin: 20px;
-  }
+    }
 
-  .project-container h2 {
-      font-size: 24px;
+    .project-container h2 {
+      margin-left: 20px;
+      font-size: 42px;
       font-style: italic;
       font-weight: bold;
       margin-bottom: 20px;
-  }
-
-  .project-card {
-    width: 100%;
-      display: flex;
-      border: 1px solid #007bff;
-      // padding: 10px;
-      border-radius: 5px;
-      // max-width: 900px;
-      height: auto;
-      // margin: 0 auto;
-  }
-
-  .image img {
-      width: 100px;
-      height: 100px;
-      border-radius: 5px;
-  }
-
-  .project-details {
-      flex-grow: 1;
-      padding-left: 10px;
-  }
-
-  .project-title {
-      color: #007bff;
-      font-weight: bold;
-      font-size: 16px;
-      display: block;
-      margin-bottom: 5px;
-  }
-
-  .project-description {
-      font-size: 14px;
-      color: #333;
-      margin-bottom: 10px;
-  }
-
-  .project-link {
-      color: red;
-      font-size: 14px;
-      text-decoration: none;
-      font-style: italic;
+      border-top: 5px solid #007bff;
+      display: inline-flex;
     }
 
-  }
+    .project-card {
+      width: 90%;
+      display: flex;
+      padding: 10px;
+      border-radius: 5px;
+      height: auto;
+      position: relative;
+    }
 
+    .image img {
+      padding-left: 30px;
+      width: 380px;
+      height: auto;
+      border-radius: 5px;
+      gap: 5px;
+    }
+
+    .project-details {
+      text-align: left;
+      padding-left: 30px;
+    }
+
+    .project-title {
+      color: #007bff;
+      font-weight: bold;
+      font-size: 24px;
+      display: block;
+      margin-bottom: 5px;
+      text-decoration: none;
+    }
+
+    .project-description {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .project-link {
+      color: red;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: underline;
+      // font-style: italic;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+    }
+  }
 }

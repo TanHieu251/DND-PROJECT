@@ -7,7 +7,7 @@
         Nếu Quý khách hàng đang cần tư vấn về thiết bị điện và giải pháp năng lượng giúp tối ưu chi phí, đảm bảo chất lượng kỹ thuật và tiêu chuẩn an toàn, đừng ngần ngại liên hệ với phòng Kinh Doanh và Hỗ Trợ Kỹ Thuật chúng tôi tại Việt Nam.
       </p>
 
-      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <!-- <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <input type="text" formControlName="firstName" placeholder="Tên" required>
           <input type="text" formControlName="lastName" placeholder="Họ" required>
@@ -42,7 +42,7 @@
         </div>
 
         <button type="submit" class="btn-submit" [disabled]="contactForm.invalid">Đăng Ký</button>
-      </form>
+      </form> -->
     </div>
 
     <div class="contact-info">
@@ -51,10 +51,10 @@
       <p>{{contactInfo.phone}}</p>
       <p><a href="mailto:{{contactInfo.email}}">{{contactInfo.email}}</a></p>
       <p><a href="{{contactInfo.website}}">{{contactInfo.website}}</a></p>
-      <ng-container *ngFor="let social of contactInfo.socialLinks">
+      <!-- <ng-container *ngFor="let social of contactInfo.socialLinks">
         <a [href]="social.url" target="_blank">
           <i [ngClass]="social.iconClass"></i></a>
-      </ng-container>
+      </ng-container> -->
     </div>
   </div>
 </div>

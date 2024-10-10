@@ -1,9 +1,15 @@
+
 .footer {
-  // padding-top: 100px;
+  // top: 110px;
   display: flex;
   justify-content: space-between;
   padding: 20px;
   background-color: #f0f0f0;
+  // position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
 .footer-logo img {
@@ -42,4 +48,8 @@
 
 .footer-info i:hover {
   color: #0056b3;
+}
+
+body {
+  margin-bottom: 120px;
 }

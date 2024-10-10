@@ -28,13 +28,13 @@ export class ProjectSlideComponent {
     {
       title: 'Dự án đường cao tốc Bắc - Nam',
       description: 'Dự án đường cao tốc Bắc - Nam là công trình trọng điểm quốc gia với chiều dài hơn 2.100km, đi qua 20 tỉnh, thành phố từ Bắc vào Nam. Tổng mức đầu tư khoảng 12 tỷ USD, khi hoàn thành sẽ rút ngắn thời gian di chuyển giữa các vùng và phát triển kinh tế - xã hội.',
-      imageSrc: 'assets/projectimage.png',
+      imageSrc: 'assets/caotocBN.png',
       link: ''
     },
     {
       title: 'Nhà máy nước Củ Chi',
       description: 'Nhà máy nước Củ Chi là dự án quan trọng nhằm cung cấp nước sạch cho khu vực phía Tây TP.HCM. Với tổng công suất 500.000m³/ngày, dự án sẽ góp phần cải thiện chất lượng nước sinh hoạt cho người dân. Tổng mức đầu tư của dự án là 500 triệu USD.',
-      imageSrc: 'assets/projectimage.png',
+      imageSrc: 'assets/nhamaynuoc.png',
       link: ''
     }
   ]
