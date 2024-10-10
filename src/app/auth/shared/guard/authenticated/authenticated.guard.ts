@@ -1,4 +1,4 @@
-import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, CanLoad, GuardResult, MaybeAsync, RouterStateSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, GuardResult, MaybeAsync, RouterStateSnapshot } from '@angular/router';
 
 export class authenticatedGuard implements CanActivate{
   constructor() {}

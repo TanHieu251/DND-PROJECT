@@ -32,6 +32,8 @@ import { ProductListComponent } from './p-web/shared/components/C-products/produ
 import { ProductDetailComponent } from './p-web/shared/components/C-products/product-detail/product-detail.component';
 import { ProductInforRelationComponent } from './p-web/shared/components/C-products/product-infor-relation/product-infor-relation.component';
 import { ProductRelationComponent } from './p-web/shared/components/C-products/product-relation/product-relation.component';
+import { AuthModule } from './auth/auth.module';
+import { provideHttpClient } from '@angular/common/http';
 import { ProjectListComponent } from './p-web/shared/components/C-project/project-list/project-list.component';
 import { ProjectDetailComponent } from './p-web/shared/components/C-project/project-detail/project-detail.component';
 
@@ -85,10 +87,11 @@ const routes: Routes = [
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    AuthModule
   ],
   // exports:[RouterModule],
-  providers: [],
+  providers: [provideHttpClient()],
   // schemas:[CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
