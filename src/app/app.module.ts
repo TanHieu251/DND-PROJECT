@@ -1,12 +1,9 @@
-
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
-import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgxPaginationModule} from 'ngx-pagination';
 
+<<<<<<< HEAD
 import { HeaderComponent } from './p-header/p-heaader/p-heaader.component';
 import { P001HomeComponent } from './p-web/pages/p001-home/p001-home.component';
 import { Header2Component } from './p-header/p-header2/p-header2.component';
@@ -96,10 +93,19 @@ const routes: Routes = [
     NgxPaginationModule,
     AuthModule
   ],
+=======
+import { provideHttpClient } from '@angular/common/http';
+import { PWebModule } from './p-web/p-web.module';
+import { P000LoginComponent } from './auth/pages/p000-login/p000-login.component';
+import { AuthModule } from './auth/auth.module';
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, AuthModule, PWebModule],
+>>>>>>> e23f0e5cd921e98d9ce74c2ac1e33266427156a3
   // exports:[RouterModule],
   providers: [provideHttpClient()],
   // schemas:[CUSTOM_ELEMENTS_SCHEMA],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-
-export class AppModule { }
+export class AppModule {}

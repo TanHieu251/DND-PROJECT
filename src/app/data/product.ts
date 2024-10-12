@@ -312,14 +312,31 @@ export const productData =[
 
 export const projectsData = [
   {
-    image:'assets/nhamaydien.png',
-    title:'Dự án Nhà máy điện Nhơn Trạch 3 và 4',
-    description:'Dự án nhà máy điện Nhơn Trạch 3, 4 là công trình trọng điểm quốc gia, được xây dựng tại khu công nghiệp Ông Kèo, xã Phước Khánh, huyện Nhơn Trạch ...',
+    title: "Dự án Nhà máy điện Nhơn Trạch 3 và 4",
+    image: "assets/projectimage.png",
+    description: "Dự án nhà máy điện Nhơn Trạch 3 và 4 (Nhơn Trạch 3,4) là dự án trọng điểm quốc gia, thuộc Quy hoạch điện 7 điều chỉnh, được Chính phủ giao cho Tổng công ty Điện lực Dầu khí Việt Nam - CTCP (PV Power) làm chủ đầu tư. Với tổng mức đầu tư 1,4 tỷ USD, Liên danh nhà thầu EPC là Tổng công ty Lắp máy Việt Nam (Lilama) và Samsung C&T, dự án được sử dụng các thiết bị chính do GE (Hoa Kỳ) thiết kế và chế tạo. Đây là dự án nhiệt điện sở sử dụng nhiên liệu khí LNG đầu tiên tại Việt Nam. Là một trong số ít tổ máy tua-bin khí có công suất (trên 500MW) cũng như hiệu suất khí (trên 60%) lớn nhất trên thế giới. Khi đi vào hoạt động, dự án sẽ góp phần thực hiện cam kết phát thải ròng về 0 vào năm 2050 của Chính phủ tại COP26 và bổ sung 9 tỷ kWh điện/năm cho hệ thống điện Quốc gia.",
+    objectives: [
+      "Cung cấp điện cho khu vực miền Nam",
+      "Đảm bảo nguồn năng lượng tái tạo"
+    ],
+    timeline: {
+      start: "01/01/2024",
+      end: "31/12/2026",
+      milestones: [
+        { date: "01/06/2024", description: "Hoàn thành giai đoạn 1" },
+        { date: "01/12/2025", description: "Bắt đầu giai đoạn 2" }
+      ]
+    },
+    stakeholders: [
+      "EVN",
+      "Bộ Công Thương",
+      "Nhà thầu xây dựng ABC"
+    ]
   },
   {
     image:'assets/cauthuthiem.png',
     title:'Công trình cầu vượt Thủ Thiêm',
-    description: 'Cầu vượt Thủ Thiêm là một trong những dự án giao thông quan trọng tại TP.HCM, nối liền quận 2 và quận 1. Với tổng vốn đầu tư 800 triệu USD, dự án hứa hẹn sẽ giảm tải giao thông khu vực trung tâm, đồng thời tạo động lực phát triển kinh tế khu vực Thủ Thiêm.',
+    description: 'Cầu Thủ Thiêm là một cây cầu bắc qua sông Sài Gòn, nối liền quận Bình Thạnh và thành phố Thủ Đức, Thành phố Hồ Chí Minh. Cầu có 6 làn xe, nối Khu đô thị mới Thủ Thiêm và trung tâm hiện hữu của thành phố và được thông xe vào năm 2005.[a] Tổng kinh phí xây dựng cầu lên đến 1.099,6 tỷ đồng. Tổng thầu là Tổng công ty xây dựng số 1 thuộc Bộ Xây dựng. Cầu Thủ Thiêm dài 1.250 m, phần cầu chính gồm 5 nhịp, 6 làn xe; phần cầu dẫn phía Bình Thạnh gồm bốn nhánh, mỗi nhánh 2 làn xe; cầu dẫn phía thành phố Thủ Đức dài 160 m, rộng tương đương 6 làn xe. Nút giao phía quận Bình Thạnh gồm một hầm chui trực thông dài 460 m trên đường Nguyễn Hữu Cảnh, rộng 4 làn xe. Đường dẫn phía thành phố Thủ Đức dài 280 m, mặt cắt ngang 47 m. Đường gom có tổng chiều dài 1.460 m, phía quận Bình Thạnh rộng 10,5 m, phía thành phố Thủ Đức rộng 9,5 m. Điểm đầu dự án là giao giữa đường Ngô Tất Tố với đường Nguyễn Hữu Cảnh, phường 22, Bình Thạnh. Điểm cuối dự án kết nối với đường Lương Định Của (thành phố Thủ Đức); tuyến chạy theo tim đường Ngô Tất Tố hiện hữu vượt sông Sài Gòn. Cầu Thủ Thiêm được hợp long vào lúc 8 giờ 15 phút sáng ngày 29 tháng 11 năm 2007. Ông Lê Hoàng Quân - Chủ tịch Ủy ban Nhân dân Thành phố Hồ Chí Minh - đã cho mẻ bê tông đầu tiên vào vị trí hợp long của cầu.',
   },
   {
     image:'assets/caotocBN.png',
@@ -331,33 +348,8 @@ export const projectsData = [
     title:'Nhà máy nước Củ Chi',
     description: 'Nhà máy nước Củ Chi là dự án quan trọng nhằm cung cấp nước sạch cho khu vực phía Tây TP.HCM. Với tổng công suất 500.000m³/ngày, dự án sẽ góp phần cải thiện chất lượng nước sinh hoạt cho người dân. Tổng mức đầu tư của dự án là 500 triệu USD.',
   },
+
 ]
-
-
-
-// export const projectsDetailInfor = [
-//   {
-//     image:'assets/projectimage.png',
-//     title:'Dự án Nhà máy điện Nhơn Trạch 3 và 4',
-//     description:'Dự án nhà máy điện Nhơn Trạch 3, 4 là công trình trọng điểm quốc gia, được xây dựng tại khu công nghiệp Ông Kèo, xã Phước Khánh, huyện Nhơn Trạch ...',
-//   },
-//   {
-//     image:'assets/cauthuthiem.png',
-//     title:'Công trình cầu vượt Thủ Thiêm',
-//     description: 'Cầu vượt Thủ Thiêm là một trong những dự án giao thông quan trọng tại TP.HCM, nối liền quận 2 và quận 1. Với tổng vốn đầu tư 800 triệu USD, dự án hứa hẹn sẽ giảm tải giao thông khu vực trung tâm, đồng thời tạo động lực phát triển kinh tế khu vực Thủ Thiêm.',
-//   },
-//   {
-//     image:'assets/caotocBN.png',
-//     title:'Dự án đường cao tốc Bắc - Nam',
-//     description: 'Dự án đường cao tốc Bắc - Nam là công trình trọng điểm quốc gia với chiều dài hơn 2.100km, đi qua 20 tỉnh, thành phố từ Bắc vào Nam. Tổng mức đầu tư khoảng 12 tỷ USD, khi hoàn thành sẽ rút ngắn thời gian di chuyển giữa các vùng và phát triển kinh tế - xã hội.',
-//   },
-//   {
-//     image:'assets/nhamaynuoc.png',
-//     title:'Nhà máy nước Củ Chi',
-//     description: 'Nhà máy nước Củ Chi là dự án quan trọng nhằm cung cấp nước sạch cho khu vực phía Tây TP.HCM. Với tổng công suất 500.000m³/ngày, dự án sẽ góp phần cải thiện chất lượng nước sinh hoạt cho người dân. Tổng mức đầu tư của dự án là 500 triệu USD.',
-//   },
-
-// ]
 
 export const ImageProject = [
   { id: 1, url: 'assets/projectimage.png' },
