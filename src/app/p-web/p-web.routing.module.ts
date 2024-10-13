@@ -7,6 +7,7 @@ import { P002CompanyComponent } from './pages/p002-company/p002-company.componen
 import { P003ContactComponent } from './pages/p003-contact/p003-contact.component';
 import { P004ProductComponent } from './pages/p004-product/p004-product.component';
 import { P004ProductDetailComponent } from './pages/p004-product-detail/p004-product-detail.component';
+import { P005ProjectComponent } from './pages/p005-project/p005-project.component';
 import { P005ProjectDetailComponent } from './pages/p005-project-detail/p005-project-detail.component';
 
 const routes: Routes = [
@@ -36,15 +37,15 @@ const routes: Routes = [
         component: P004ProductComponent,
       },
       {
-        path: 'products/:id',
+        path: 'products/:name',
         component: P004ProductDetailComponent,
       },
       {
         path: 'projects',
-        component: P005ProjectDetailComponent,
+        component: P005ProjectComponent,
       },
       {
-        path: 'projects/:id',
+        path: 'projects/:title',
         component: P005ProjectDetailComponent,
       },
     ],
