@@ -2,14 +2,13 @@
   <h2>Dự án</h2>
   <div class="project-card" *ngFor="let project of projects">
       <div class="image">
-          <img [src]="project.image" alt="{{project.image}}">
+        <img [src]="project.image" alt="{{project.image}}">
       </div>
       <div class="project-details">
-          <a href="#" class="project-title">{{project.title}}</a>
-          <p class="project-description">
-              {{project.description}}
-          </p>
-          <a href="#" class="project-link">Xem chi tiết</a>
+        <a (click)="goToProjectDetail(project.title)" class="project-title">{{project.title}}</a>
+        <p class="project-description">{{ project.description | slice:0:500 }}...</p>
+        <a class="project-link" (click)="goToProjectDetail(project.title)">Xem chi tiết</a>
+        <!-- <a [routerLink]="'/project-detail'" class="project-link">Xem chi tiết</a> -->
       </div>
   </div>
 </div>

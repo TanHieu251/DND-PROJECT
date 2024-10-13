@@ -18,6 +18,7 @@ export class ProductListComponent {
   itemPerPage: number = 12;
   displayedPages: number[] = [];
   itemToggle: any;
+  sortOrder: string = 'asc'
   // selectedProduct: any = this.products[0];
 
   viewDetialProduct(productname: string){
@@ -57,11 +58,29 @@ export class ProductListComponent {
     }
   }
 
-  getDisplayedProducts(){
+  getDisplayedProducts() {
+    const sortedProducts = this.products.sort((a, b) => {
+      // const priceA = Number(a.price);
+      // const priceB = Number(b.price);
+      const priceA = Number(a.price.replace(/[^0-9.-]+/g, ''));
+      const priceB = Number(b.price.replace(/[^0-9.-]+/g, ''));
+
+      if (isNaN(priceA) || isNaN(priceB)) {
+        return 0;
+      }
+
+      if (this.sortOrder === 'asc') {
+        return priceA - priceB;
+      } else {
+        return priceB - priceA;
+      }
+    });
+
     const startIndex = (this.currentPage - 1) * this.itemPerPage;
     const endIndex = startIndex + this.itemPerPage;
-    return this.products.slice(startIndex, endIndex);
+    return sortedProducts.slice(startIndex, endIndex);
   }
+
   reloadPage()
   {
     window.location.href = '/';
@@ -99,5 +118,9 @@ export class ProductListComponent {
 
   toggleItem(itemToggle: Item) {
     itemToggle.isOpen = !itemToggle.isOpen;
+  }
+
+  toggleSort(){
+    this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
   }
 }

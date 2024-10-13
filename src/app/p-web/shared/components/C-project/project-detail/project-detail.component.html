@@ -1,1 +1,38 @@
-<p>project-detail works!</p>
+<div *ngIf="projectDetail" class="project-container">
+  <h1>{{ projectDetail.title }}</h1>
+
+  <div class="projectDetail-image">
+    <img [src]="projectDetail.image" alt="{{ projectDetail.title }}" />
+  </div>
+
+  <div class="projectDetail-description">
+    <p>{{ projectDetail.description }}</p>
+  </div>
+
+  <div class="projectDetail-objectives">
+    <h2>Mục tiêu chính</h2>
+    <ul>
+      <li *ngFor="let objective of projectDetail.objectives">{{ objective }}</li>
+    </ul>
+  </div>
+
+  <div class="projectDetail-timeline">
+    <h2>Thời gian thực hiện</h2>
+    <p><strong>Bắt đầu:</strong> {{ projectDetail.timeline.start }}</p>
+    <p><strong>Kết thúc:</strong> {{ projectDetail.timeline.end }}</p>
+
+    <h3>Các mốc thời gian</h3>
+    <ul>
+      <li *ngFor="let milestone of projectDetail.timeline.milestones">
+        <strong>{{ milestone.date }}:</strong> {{ milestone.description }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="projectDetail-stakeholders">
+    <h2>Các bên liên quan</h2>
+    <ul>
+      <li *ngFor="let stakeholder of projectDetail.stakeholders">{{ stakeholder }}</li>
+    </ul>
+  </div>
+</div>

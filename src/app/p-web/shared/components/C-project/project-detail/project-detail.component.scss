@@ -1,0 +1,120 @@
+::ng-deep {
+  app-project-detail {
+    .project-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 90px;
+      position: sticky;
+
+      h1 {
+        text-align: center;
+        font-size: 32px;
+        margin-bottom: 20px;
+        color: #1e73be;
+      }
+
+      .projectDetail-image {
+        text-align: center;
+        margin-bottom: 20px;
+
+        img {
+          width: 70%;
+          height: auto;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+      }
+
+      .projectDetail-description {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        color: #333;
+      }
+
+      .projectDetail-objectives {
+        margin-bottom: 30px;
+
+        h2 {
+          font-size: 24px;
+          margin-bottom: 10px;
+          color: #1e73be;
+        }
+
+        ul {
+          list-style: disc;
+          padding-left: 20px;
+
+          li {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: #555;
+          }
+        }
+      }
+
+      .projectDetail-timeline {
+        margin-bottom: 30px;
+
+        h2 {
+          font-size: 24px;
+          margin-bottom: 10px;
+          color: #1e73be;
+        }
+
+        p {
+          font-size: 18px;
+          color: #333;
+          margin-bottom: 10px;
+        }
+
+        h3 {
+          font-size: 22px;
+          margin-top: 20px;
+          color: #1e73be;
+        }
+
+        ul {
+          list-style: none;
+          padding-left: 0;
+
+          li {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 10px;
+
+            strong {
+              color: #1e73be;
+            }
+          }
+        }
+      }
+
+      .projectDetail-stakeholders {
+        margin-bottom: 30px;
+
+        h2 {
+          font-size: 24px;
+          margin-bottom: 10px;
+          color: #1e73be;
+        }
+
+        ul {
+          list-style: disc;
+          padding-left: 20px;
+
+          li {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: #555;
+          }
+        }
+      }
+    }
+
+  }
+}

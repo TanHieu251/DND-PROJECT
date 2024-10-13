@@ -3,7 +3,7 @@
       <div class="text-container" [class.active]="textActive">
         <h2 class="welcome-text"><span class="highlight">{{ intro.title }}</span></h2>
         <p>{{ intro.description }}</p>
-        <button [routerLink]="'/about'" class="company-btn">{{ intro.buttonText }}</button>
+        <button (click)="goToCompany()" [routerLink]="'/about'" class="company-btn">{{ intro.buttonText }}</button>
       </div>
 
     <div class="image-box" [class.active]="imgActive">

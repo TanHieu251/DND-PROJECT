@@ -1,4 +1,5 @@
 import { Component, HostListener, Input, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-intro',
@@ -15,6 +16,7 @@ export class IntroComponent {
   textActive: boolean = false;
   imgActive: boolean = false;
 
+
   informations =[{
     title:'Welcome',
     description:'Tại DND, chúng tôi trao quyền cho mọi người bằng công nghệ để thúc đẩy quá trình chuyển đổi các ngành công nghiệp cần thiết nhằm tạo dựng một xã hội ít carbon và giải quyết các thách thức năng lượng của thế giới.',
@@ -22,7 +24,13 @@ export class IntroComponent {
     imageSrc:'assets/image 3.png',
   }]
 
-  constructor(private elementRef: ElementRef) {}
+  constructor(private elementRef: ElementRef, private router:Router) {}
+
+  goToCompany(){
+    this.router.navigate(['/about']).then(() =>{
+      window.scrollTo({top: 0, behavior:'smooth'});
+    })
+  }
 
   @HostListener('window:scroll', ['$event'])
   onScroll(): void {
