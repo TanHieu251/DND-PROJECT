@@ -1,8 +1,8 @@
-<div class="container" [class.left]="isLeft" *ngFor="let contact of contacts" (click)="reloadPage()">
+<div class="container" [class.left]="isLeft" *ngFor="let contact of contacts" >
   <div class="text-container" [class.active]="textActive">
     <h2 class="welcome-text"><span class="highlight">{{ contact.title }}</span></h2>
     <p>{{ contact.description }}</p>
-    <button (click)="goToContact()" [routerLink]="'/contact'" class="company-btn">{{ contact.buttonText }}</button>
+    <button (click)="goToContact()" [routerLink]="'/contacts'" class="company-btn">{{ contact.buttonText }}</button>
   </div>
 
   <div class="image-box" [class.active]="imgActive">

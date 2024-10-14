@@ -8,7 +8,6 @@ import { Component, HostListener, ElementRef, Input } from '@angular/core';
 export class CContentComponent {
 
     section: any;
-    // selectedSection = this.sections[0];
 
     contentCompany = [
       {
@@ -45,32 +44,18 @@ export class CContentComponent {
   textActive: boolean = false;
   imgActive: boolean = false;
 
-  // constructor(private elementRef: ElementRef) {}
-  // @HostListener('window:scroll',['$event'])
-  //   onScroll():void{
-  //     const containerPosition = this.elementRef.nativeElement.getBoundingClientRect().top;
-  //     const screenPosition = window.innerHeight;
-
-  //     if(containerPosition < screenPosition){
-  //       this.textActive = true;
-  //       this.imgActive = true;
-  //     } else{
-  //       this.textActive = false;
-  //       this.imgActive = false;
-  //     }
-  //   }
   constructor(private elementRef: ElementRef) {}
 
   @HostListener('window:scroll', ['$event'])
   onScroll(): void {
     const sections = this.elementRef.nativeElement.querySelectorAll('.section');
 
-    sections.forEach((section: Element) => { // Specify 'Element' as the type
+    sections.forEach((section: Element) => {
       const sectionPosition = section.getBoundingClientRect().top;
       const screenPosition = window.innerHeight;
 
-      if (sectionPosition < screenPosition) {
-        section.classList.add('active'); // Add active class to show section
+      if (sectionPosition <= screenPosition) {
+        section.classList.add('active');
       } else {
         section.classList.remove('active'); // Remove active class when out of view
       }

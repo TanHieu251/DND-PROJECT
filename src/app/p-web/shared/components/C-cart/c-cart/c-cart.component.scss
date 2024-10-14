@@ -1,0 +1,113 @@
+::ng-deep{
+    app-c-cart{
+
+      .cart-container{
+        position: static;
+        margin-top: 100px;
+
+        display: flex;
+        align-items: center;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 16px;
+        margin-bottom: 16px;
+        background-color: #f8f8f8;
+
+        .image-cart{
+          flex: 1;
+          // width: 100px;
+          // height: 100px;
+          // margin-right: 16px;
+          img{
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            object-fit: cover;
+          }
+        }
+        .content-cart{
+          flex: 3;
+          margin-left: 15px;
+
+          h3.title{
+          font-size: 22px;
+          }
+          .description{
+            color: #666;
+          }
+          // .stock{
+          //   color: #28a745;
+          //   font-weight: 500;
+          // }
+        }
+        .quantity-cart{
+          flex: 2;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .quatity-btn-cart{
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            font-size: 1rem;
+            width: 32px;
+            height: 20px;
+            cursor: pointer;
+            border-radius: 0;
+            margin: 0 8px;
+
+            &:hover{
+              background-color: #0056b3;
+            }
+          }
+          input{
+            width: 20%;
+            // padding: 0 4px;
+            text-align: center;
+            // border: none;
+            border-radius: 5px;
+            color: #fff;
+            // background-color: black;
+            // font-size: 1rem;
+          }
+          .stock{
+            color: #28a745;
+            font-weight: 500;
+          }
+        }
+        .quantity-cart{
+          flex: 2;
+          display: flex;
+          text-align: right;
+          // align-items: center;
+          // justify-content: center;
+          p{
+            margin: 10px;
+            color: #666;
+            font-size: 1rem;
+          }
+        }
+        .remove-cart{
+          flex: 1;
+          text-align: right;
+
+          .remove-btn{
+            background-color: #dc3545;
+            border: none;
+            padding: 12px;
+            border-radius: 10%;
+            cursor: pointer;
+            &:hover{
+              background-color: #c82333;
+            }
+            i{
+              font-size: 1.3rem;
+            }
+          }
+        }
+
+      }
+
+  }
+}

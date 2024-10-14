@@ -21,7 +21,7 @@ export class ProductListComponent {
   sortOrder: string = 'asc'
 
   viewDetailProduct(productName: string){
-    this.router.navigate(['/products', productName])
+    this.router.navigate(['/product', productName])
     window.scrollTo({top: 0, behavior:'smooth'});
   }
 

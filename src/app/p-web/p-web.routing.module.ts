@@ -9,6 +9,7 @@ import { P004ProductComponent } from './pages/p004-product/p004-product.componen
 import { P004ProductDetailComponent } from './pages/p004-product-detail/p004-product-detail.component';
 import { P005ProjectComponent } from './pages/p005-project/p005-project.component';
 import { P005ProjectDetailComponent } from './pages/p005-project-detail/p005-project-detail.component';
+import { P006CartComponent } from './pages/p006-cart/p006-cart/p006-cart.component';
 
 const routes: Routes = [
 
@@ -29,7 +30,7 @@ const routes: Routes = [
         component: P002CompanyComponent,
       },
       {
-        path: 'contact',
+        path: 'contacts',
         component: P003ContactComponent,
       },
       {
@@ -37,7 +38,7 @@ const routes: Routes = [
         component: P004ProductComponent,
       },
       {
-        path: 'products/:name',
+        path: 'product/:name',
         component: P004ProductDetailComponent,
       },
       {
@@ -48,6 +49,10 @@ const routes: Routes = [
         path: 'projects/:title',
         component: P005ProjectDetailComponent,
       },
+      {
+        path: 'cart',
+        component: P006CartComponent,
+      }
     ],
   },
 ];
