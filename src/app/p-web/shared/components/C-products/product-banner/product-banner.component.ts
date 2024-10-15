@@ -9,8 +9,9 @@ import { Router } from '@angular/router';
 })
 export class ProductBannerComponent {
   productList = productData;
+  // filteredProducts = this.filteredProducts;
   searchTerm: string = '';
-  searchResults: any;
+  // searchResults: any;
 
   constructor(private router: Router){}
 
@@ -20,14 +21,16 @@ export class ProductBannerComponent {
       name: 'search'
     }
   ]
-  searchProduct(){
+  searchProduct(): void{
     const foundProduct = this.productList.find(p =>{
       p.name.toLowerCase().includes(this.searchTerm.toLowerCase());
     });
+    
     if(foundProduct){
-      this.router.navigate(['/productdetails', foundProduct.name])
+      this.router.navigate(['/products', foundProduct.name])
     } else{
       alert('Không tìm thấy sản phẩm nào phù hợp với từ khóa bạn tìm.');
     }
   }
+
 }

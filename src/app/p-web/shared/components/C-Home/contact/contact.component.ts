@@ -13,15 +13,14 @@ export class ContactComponent {
   @Input() buttonText: string = 'Xem Công Ty';
   @Input() isLeft: boolean = false;
 
-  reloadPage(){
-    // window.location.href = '/';
-    // window.scrollTo(0,0)
-    window.scrollTo({top: 0, behavior:'smooth'});
-  }
+  // reloadPage(){
+  //   window.scrollTo({top: 0, behavior:'smooth'});
+  // }
 
 
   textActive: boolean = false;
   imgActive: boolean = false;
+
   contacts =[
     {
       title:'Việc làm và sự nghiệp',
@@ -33,7 +32,7 @@ export class ContactComponent {
 
   constructor(private elementRef: ElementRef, private router: Router) {}
   goToContact(){
-    this.router.navigate(['/contact']).then(() =>{
+    this.router.navigate(['/contacts']).then(() =>{
       window.scrollTo({top: 0, behavior:'smooth'});
     })
   }

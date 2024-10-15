@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import {PWebRoutingModule} from "./p-web.routing.module";
 import { Header2Component } from '../p-header/p-header2/p-header2.component';
 import { PFooterComponent } from '../p-footer/p-footer/p-footer.component';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet, Routes } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
 import { P001HomeComponent } from './pages/p001-home/p001-home.component';
 import { BannerComponent } from './shared/components/C-Home/banner/banner.component';
@@ -31,10 +31,14 @@ import { ProjectListComponent } from './shared/components/C-project/project-list
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HeaderComponent } from '../p-header/p-heaader/p-heaader.component';
-import { P005ProjectDetailComponent } from './pages/p005-project-detail/p005-project-detail.component';
 import { AuthServiceService } from '../auth/shared/services/auth-service.service';
 
 
+import { P005ProjectDetailComponent } from './pages/p005-project-detail/p005-project-detail.component';
+import { ImageProjectComponent } from './shared/components/C-project/image-project/image-project.component';
+import { CCartComponent } from './shared/components/C-cart/c-cart/c-cart.component';
+import { P006CartComponent } from './pages/p006-cart/p006-cart/p006-cart.component';
+import { MessageCartComponent } from './shared/components/C-message/message-cart/message-cart.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +69,11 @@ import { AuthServiceService } from '../auth/shared/services/auth-service.service
     ProductRelationComponent,
     ProjectDetailComponent,
     ProjectListComponent,
-    P005ProjectDetailComponent
+    P005ProjectDetailComponent,
+    ImageProjectComponent,
+    CCartComponent,
+    P006CartComponent,
+    MessageCartComponent
 
   ],
   imports: [
@@ -76,6 +84,7 @@ import { AuthServiceService } from '../auth/shared/services/auth-service.service
     ReactiveFormsModule,
     FormsModule,
     NgxPaginationModule,
+    RouterLink
 
   ],
   providers:[AuthServiceService],

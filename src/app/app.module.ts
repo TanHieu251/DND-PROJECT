@@ -4,6 +4,8 @@ import {
   provideHttpClient,
   withInterceptors,
 } from '@angular/common/http';
+
+
 import { PWebModule } from './p-web/p-web.module';
 import { AuthModule } from './auth/auth.module';
 import { AppComponent } from './app.component';
@@ -39,6 +41,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     { provide: MAT_DIALOG_DATA, useValue: {} },
     { provide: MatDialogRef, useValue: {} },
   ],
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}

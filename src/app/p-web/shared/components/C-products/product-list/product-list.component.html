@@ -27,12 +27,13 @@
 
     <div class="products-grid" (click)="reloadPage()">
       <div class="product-card" *ngFor="let product of getDisplayedProducts()">
-        <div (click)="viewDetialProduct(product.name)">
+        <div (click)="viewDetailProduct(product.name)">
           <img [src]="product.image" alt="{{product.name}}" />
-          <h3 routerLink="'productdetails/{{ product.name }}'">{{ product.name }}</h3>
+          <h3 routerLink="'product/{{ product.name }}'">{{ product.name }}</h3>
           <p>{{ product.description }}</p>
           <div class="price">{{ product.price }} </div>
-          <div class="availability" [ngClass]="{'available': product.status, 'out-of-stock': !product.status}">
+          <div class="availability" [ngClass]="{'available': product.status,
+             'out-of-stock': !product.status}">
             {{ product.status ? 'Còn hàng' : 'Hết hàng' }}
           </div>
         </div>

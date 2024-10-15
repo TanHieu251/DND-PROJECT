@@ -25,7 +25,7 @@
     </div>
 
     <div class="product-actions">
-      <button class="add-cart-btn">Thêm vào giỏ hàng</button>
+      <button class="add-cart-btn" (click)="addToCart()">Thêm vào giỏ hàng</button>
       <div class="action-buttons">
         <button class="buy-now-btn">Mua ngay</button>
         <button class="contact-btn">Liên hệ tư vấn</button>
@@ -34,7 +34,10 @@
   </div>
 
 </div>
-<!-- <p>works!</p> -->
+
+  <div class="notification" *ngIf="successMessage">
+    {{ successMessage }}
+  </div>
   <ng-template #noProduct>
     <p class="noProduct">Sản phẩm không tồn tại</p>
   </ng-template>

@@ -5,7 +5,6 @@ export interface Item {
 }
 
 export const productData =[
-
     {
       id:'001',
       name: 'Thiết bị điện ABC 1',
@@ -19,7 +18,6 @@ export const productData =[
       availability: 'Còn hàng',
       image: 'assets/image 5.png',
       thumbnail:'assets/image 5.png',
-      // code.name.split(' ').join('').toUpperCase() + Math.floor(Math.random() * 1000) + 1
     },
     {
       name: 'Thiết bị điện DEF 2',
