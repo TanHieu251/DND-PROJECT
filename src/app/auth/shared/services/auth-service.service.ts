@@ -1,9 +1,11 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment, url } from '../../../../evironment/environment';
 import { DTOLogin } from '../DTO/DTOLogin';
-import { map, Observable } from 'rxjs';
+import { catchError, map, Observable } from 'rxjs';
 import { jwtDecode } from 'jwt-decode';
+import { DTORegister } from '../DTO/DTORegister';
+import { DTOResetPassword } from '../DTO/DTOResetPassword';
 // import { jwtDecode } from 'jwt-decode';
 
 @Injectable({
@@ -16,8 +18,9 @@ export class AuthServiceService {
 
   constructor(private http: HttpClient) {}
 
+  //#region LOGIN
   onLogin(data: DTOLogin): Observable<any> {
-    return this.http.post(`${this.apiUrl+url.login}`, data).pipe(
+    return this.http.post(`${this.apiUrl + url.login}`, data).pipe(
       map((res: any) => {
         if (res) {
           localStorage.setItem(this.tokenKey, res.token);
@@ -33,7 +36,7 @@ export class AuthServiceService {
     return !this.isTokenExpired();
   }
 
-private  isTokenExpired() {
+  private isTokenExpired() {
     const token = this.onGetToken();
     if (!token) return true;
     const decoded = jwtDecode(token);
@@ -46,7 +49,56 @@ private  isTokenExpired() {
     localStorage.removeItem(this.tokenKey);
   }
 
-  private onGetToken(): string | null {
+  public onGetToken(): string | null {
     return localStorage.getItem(this.tokenKey || '');
   }
+
+  //#endregion
+
+  //#region REGISTER
+  onRegister(req: DTORegister) {
+    return this.http.post(`${this.apiUrl + url.register}`, req).pipe(
+      map((res: any) => {
+        if (res) {
+          return res;
+        }
+      })
+    );
+  }
+  //#endregion
+
+  //#region PASSWORD
+  forgotPassword(email: string): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    return this.http
+      .post<any>(`${this.apiUrl + url.forgotPassword}`, email, {
+        headers: headers,
+      })
+      .pipe(
+        map((res) => {
+          if (res) return res;
+          else return null;
+        })
+      );
+  }
+
+  resetPassword(req: DTOResetPassword): Observable<DTOResetPassword> {
+    return this.http
+      .post<DTOResetPassword>(`${this.apiUrl + url.resetPassword}`, req)
+      .pipe(
+        map((res) => {
+          if (!res) {
+            throw new Error('No response received from the server');
+          }
+          return res;
+        }),
+        catchError((error) => {
+          console.error('Error resetting password:', error);
+          throw error;
+        })
+      );
+  }
+  //#endregion
 }

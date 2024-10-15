@@ -1,7 +1,6 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {PWebRoutingModule} from "./p-web.routing.module";
-import { HeaderComponent } from '../p-header/p-heaader/p-heaader.component';
 import { Header2Component } from '../p-header/p-header2/p-header2.component';
 import { PFooterComponent } from '../p-footer/p-footer/p-footer.component';
 import { RouterLink, RouterOutlet, Routes } from '@angular/router';
@@ -31,6 +30,10 @@ import { ProjectDetailComponent } from './shared/components/C-project/project-de
 import { ProjectListComponent } from './shared/components/C-project/project-list/project-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { HeaderComponent } from '../p-header/p-heaader/p-heaader.component';
+import { AuthServiceService } from '../auth/shared/services/auth-service.service';
+
+
 import { P005ProjectDetailComponent } from './pages/p005-project-detail/p005-project-detail.component';
 import { ImageProjectComponent } from './shared/components/C-project/image-project/image-project.component';
 import { CCartComponent } from './shared/components/C-cart/c-cart/c-cart.component';
@@ -83,6 +86,8 @@ import { MessageCartComponent } from './shared/components/C-message/message-cart
     NgxPaginationModule,
     RouterLink
 
-  ]
+  ],
+  providers:[AuthServiceService],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class PWebModule { }

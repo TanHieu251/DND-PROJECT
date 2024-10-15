@@ -1,7 +1,10 @@
-body{
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+body {
   margin: 0;
   padding: 0;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+  height: auto;
 }

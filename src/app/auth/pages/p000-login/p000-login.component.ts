@@ -3,6 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthServiceService } from '../../shared/services/auth-service.service';
 import { DTOLogin } from '../../shared/DTO/DTOLogin';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { P001RegisterComponent } from '../p001-register/p001-register.component';
+import { ResetPasswordComponent } from '../../shared/components/reset-password/reset-password.component';
 
 @Component({
   selector: 'app-p000-login',
@@ -15,15 +18,19 @@ export class P000LoginComponent {
 
   //common
   tokenStorage: string = '';
+  dataFromDialog: any;
+
+  //FORM
 
   loginForm: FormGroup;
   constructor(
     private fb: FormBuilder,
     private authService: AuthServiceService,
-    private router: Router
+    private router: Router,
+    private dialog: MatDialog
   ) {
     this.loginForm = this.fb.group({
-      Email: ['', [Validators.required]],
+      Email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
     });
   }
@@ -31,7 +38,7 @@ export class P000LoginComponent {
     console.log('asdasdsa');
     if (this.loginForm.valid) {
       this.APILogin(this.loginForm.value);
-      if (this.tokenStorage != "") {
+      if (this.tokenStorage != '') {
         this.router.navigate(['/home']);
       }
     } else {
@@ -42,14 +49,42 @@ export class P000LoginComponent {
   APILogin(data: DTOLogin) {
     this.authService.onLogin(data).subscribe((res) => {
       this.tokenStorage = res.token;
-      if (this.tokenStorage != "") {
+      if (this.tokenStorage != '') {
         this.router.navigate(['/']);
       }
-
     });
   }
 
-  loginToHomePage(){
+  onForGotPassword() {
+    const dialogRef = this.dialog.open(ResetPasswordComponent, {
+      width: 'fit-content',
+      height: 'fit-content',
+      hasBackdrop: true,
+      disableClose: true,
+      data: { isReset: true },
+    });
+    dialogRef.afterClosed().subscribe((data) => {
+      this.dataFromDialog = data.form;
+      if (data.clicked === 'submit') {
+        console.log('Sumbit button clicked');
+      }
+    });
+  }
 
+  onRegister() {
+    // this.isRegister = true;
+    const dialogRef = this.dialog.open(P001RegisterComponent, {
+      width: 'fit-content',
+      height: 'fit-content',
+      hasBackdrop: true,
+      disableClose: true,
+    });
+
+    dialogRef.afterClosed().subscribe((data) => {
+      this.dataFromDialog = data.form;
+      if (data.clicked === 'submit') {
+        console.log('Sumbit button clicked');
+      }
+    });
   }
 }

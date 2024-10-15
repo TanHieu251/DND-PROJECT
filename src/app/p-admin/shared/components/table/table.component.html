@@ -1,0 +1,82 @@
+<div class="mat-elevation-z8 myCustomTable">
+    <table mat-table [dataSource]="dataSource">
+        <!-- Checkbox Column -->
+        <ng-container matColumnDef="select">
+            <th mat-header-cell *matHeaderCellDef>
+                <mat-checkbox (change)="$event ? masterToggle() : null"
+                    [checked]="selection.hasValue() && isAllSelected()"
+                    [indeterminate]="selection.hasValue() && !isAllSelected()">
+                </mat-checkbox>
+            </th>
+            <td mat-cell *matCellDef="let row" (click)="$event.stopPropagation()">
+                <mat-checkbox (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)"
+                    (click)="$event.stopPropagation(); onSelectionChange()">
+                </mat-checkbox>
+            </td>
+        </ng-container>
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="title" style="min-width: 800px">
+            <th mat-header-cell *matHeaderCellDef style="padding-left: 16px; min-width: 800px">
+                Câu hỏi
+            </th>
+            <td mat-cell *matCellDef="let element">
+                <h3 class="title-row" [title]="element.title">
+                    {{ element.title }}
+                </h3>
+                <div class="sub-title">
+                    <span>{{ element.code }}</span>
+                    <span class="question-line"></span>
+                    <span>{{ element.typeQuestion }}</span>
+                </div>
+            </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="group" style="width: 250px; min-width: 250px">
+            <th mat-header-cell *matHeaderCellDef style="min-width: 250px">
+                Phân nhóm
+            </th>
+            <td mat-cell *matCellDef="let element">{{ element.group }}</td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="time" style="min-width: 250px">
+            <th mat-header-cell *matHeaderCellDef style="text-align: center; min-width: 250px">
+                Thời gian làm
+            </th>
+            <td mat-cell *matCellDef="let element" style="text-align: center">
+                {{ element.time | second }}
+            </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="status" style="min-width: 250px">
+            <th mat-header-cell *matHeaderCellDef style="text-align: right; padding-right: 32px; min-width: 250px">
+                Tình trạng
+            </th>
+            <td mat-cell *matCellDef="let element" style="text-align: right"
+                [style.color]="element.status | status : 'color'">
+                <span class="text-status">{{ element.status | status : "text" }}</span>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="popup">
+            <th mat-header-cell *matHeaderCellDef style="width: 40px"></th>
+            <td mat-cell *matCellDef="let element" style="width: 40px; border-left: 1px solid #cbd0d5">
+                <div class="button-container">
+<!--                  <button class="button-popup" (click)="toggleSmallPopup($event, element)">-->
+                    <button class="button-popup" >
+                        <span class="show-popup">...</span>
+                    </button>
+                </div>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"
+            [ngClass]="{ 'selected-row': selection.isSelected(row) }"></tr>
+    </table>
+</div>
+
+<mat-paginator [pageSizeOptions]="[8, 10, 50]" showFirstLastButtons></mat-paginator>
