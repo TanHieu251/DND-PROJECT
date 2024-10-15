@@ -19,10 +19,9 @@ export class ProductListComponent {
   displayedPages: number[] = [];
   itemToggle: any;
   sortOrder: string = 'asc'
-  // selectedProduct: any = this.products[0];
 
-  viewDetialProduct(productname: string){
-    this.router.navigate(['/productdetails', productname])
+  viewDetailProduct(productName: string){
+    this.router.navigate(['/product', productName])
     window.scrollTo({top: 0, behavior:'smooth'});
   }
 
@@ -60,8 +59,6 @@ export class ProductListComponent {
 
   getDisplayedProducts() {
     const sortedProducts = this.products.sort((a, b) => {
-      // const priceA = Number(a.price);
-      // const priceB = Number(b.price);
       const priceA = Number(a.price.replace(/[^0-9.-]+/g, ''));
       const priceB = Number(b.price.replace(/[^0-9.-]+/g, ''));
 
@@ -86,7 +83,13 @@ export class ProductListComponent {
     window.location.href = '/';
   }
 
+  toggleItem(itemToggle: Item) {
+    itemToggle.isOpen = !itemToggle.isOpen;
+  }
 
+  toggleSort(){
+    this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
+  }
 
   items = [
     {
@@ -116,11 +119,4 @@ export class ProductListComponent {
     },
   ]
 
-  toggleItem(itemToggle: Item) {
-    itemToggle.isOpen = !itemToggle.isOpen;
-  }
-
-  toggleSort(){
-    this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
-  }
 }

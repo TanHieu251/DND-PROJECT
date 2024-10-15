@@ -1,4 +1,3 @@
-// import { projectsDetailInfor } from './../../../../../data/product';
 
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';

@@ -5,24 +5,29 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 10px;
-      margin-top: 20px;
+      // gap: 80px;
+      // margin-top: 60px;
+      // margin-top: 10px;
 
-      h1{
+      // padding-left: 30px;
+      .h1class{
+        display: inline-block;
         padding-left: 30px;
+      }
+      h1{
+        border-top: 5px solid #348BD2;
+
+        display: inline-block;
       }
 
       .section {
         margin: 10px;
-        // width: 90%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        // gap: 10px;
         opacity: 0;
         transition: opacity 0.5s ease-in-out;
         background-color: white;
-        // border: 2px solid #348BD2;
         border-radius: 5px;
 
         &:nth-child(even) {
@@ -38,7 +43,7 @@
           width: 55%;
           z-index: 2;
           background-color: white;
-          padding: 20px;
+          // padding: 20px;
           margin: 10px;
           border-radius: 10px;
           box-shadow: 1px 0px 2px 1px rgba(0, 0, 0, 0.1);

@@ -1,0 +1,7 @@
+<div *ngIf="cartItems.length === 0" class="empty-cart">
+  <p>Chưa có hàng được thêm vào giỏ hàng.</p>
+</div>
+
+<div *ngIf="cartItems.length > 0">
+  <app-c-cart *ngFor="let item of cartItems" [item]="item"></app-c-cart>
+</div>

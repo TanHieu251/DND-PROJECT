@@ -12,8 +12,8 @@ export class ProjectListComponent {
 
   constructor(private router: Router){}
 
-  goToProjectDetail(projectTitle:string){
-    this.router.navigate(['/project-detail', projectTitle])
+  goToProjectDetail(projectTitle: string){
+    this.router.navigate(['/projects', projectTitle])
     window.scrollTo({top: 0, behavior:'smooth'});
   }
 }

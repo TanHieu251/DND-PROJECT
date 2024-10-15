@@ -2,14 +2,16 @@
   app-product-detail{
     position: sticky;
     margin-top: 120px;
+
     .product-detail {
       display: flex;
       justify-content: space-between;
       padding-top: 150px;
-      border: 1px solid #ddd;
+      // border: 1px solid #ddd;
       border-radius: 8px;
       max-width: 1000px;
       margin: 0 auto;
+      // background-color: #00bfff;
     }
 
     .product-image {
@@ -140,4 +142,13 @@
     color: red;
     padding-left: 60px;
   }
+}
+
+.notification {
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 10px;
 }
