@@ -10,18 +10,26 @@
                         <input class="inp" type="text" formControlName="Email" placeholder="Email">
 
                     </div>
+
+                    <small *ngIf=" loginForm.get('Email')?.invalid && loginForm.get('Email')?.touched">*Email không
+                        hợp lệ</small>
                     <div class="input-form">
                         <i class="fa-solid fa-lock-open icon"></i>
                         <input class="inp" type="password" formControlName="password" placeholder="Password">
+
                     </div>
+                    <small *ngIf=" loginForm.get('password')?.invalid && loginForm.get('password')?.touched">*Mật
+                        khẩu
+                        không
+                        hợp lệ</small>
                     <div class="label-form">
-                        <div class="forget-pass"><span class="text">Quên mật khẩu</span></div>
+                        <div class="forget-pass"><span class="text" (click)="onForGotPassword()">Quên mật khẩu</span></div>
                     </div>
                     <div class="button-login">
-                      <button class="btn-login" [disabled]="loginForm.invalid"
-                            type="submit" (click)="loginToHomePage()">ĐĂNG NHẬP</button></div>
+                        <button class="btn-login" [disabled]="loginForm.invalid" type="submit">ĐĂNG NHẬP</button>
+                    </div>
                     <div class="register"><span class="text">Chưa có tài khoản ?
-                            <a class="link" [routerLink]="['/routePath']"> Đăng ký</a>
+                            <a class="link" (click)="onRegister()"> Đăng ký</a>
 
                         </span></div>
 

@@ -1,11 +1,23 @@
-import { ActivatedRouteSnapshot, CanActivate, GuardResult, MaybeAsync, RouterStateSnapshot } from '@angular/router';
+import {
+  ActivatedRouteSnapshot,
+  CanActivate,
+  GuardResult,
+  MaybeAsync,
+  RouterStateSnapshot,
+} from '@angular/router';
+import { AuthServiceService } from '../../services/auth-service.service';
 
-export class authenticatedGuard implements CanActivate{
-  constructor() {}
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): MaybeAsync<GuardResult> {
-    throw new Error('Method not implemented.');
+export class AuthenticatedGuard implements CanActivate {
+  constructor(private authService: AuthServiceService) {}
+
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): MaybeAsync<GuardResult> {
+    if (this.authService.isLoggedIn()) {
+      return true;
+    } else {
+      return false; 
+    }
   }
-
-
-
 }

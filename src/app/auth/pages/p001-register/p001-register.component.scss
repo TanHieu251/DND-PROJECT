@@ -1,0 +1,126 @@
+::ng-deep {
+    .mat-mdc-dialog-surface {
+        border-radius: 30px;
+        // background-image: url(https://i.pinimg.com/enabled_lo/564x/9e/8f/d3/9e8fd32293081da622290db1a10fe436.jpg);
+        background-color: whitesmoke;
+    }
+
+    app-p001-register {
+        .p001-register {
+            width: 600px;
+            height: 700px;
+            position: relative;
+            .close{
+                position: absolute;
+                top: 30px;
+                right: 30px;
+                .icon-close{
+                    font-size: 20px;
+                    cursor: pointer;
+                    &:hover{
+                        opacity: 70%;
+                    }
+                }
+            }
+
+            .register-title {
+                text-align: center;
+                padding-top: 20px;
+
+                .title-text {
+                    font-size: 30px;
+                    font-weight: 600;
+                    color: #348BD2;
+                }
+            }
+
+            .ant-form {
+                padding-top: 20px;
+
+                .btn-register {
+                    .ant-form-item-control {
+                        margin-left: 0;
+
+                        .btn {
+                            width: 100%;
+                            height: 40px;
+                            background-color: #348BD2;
+                            color: white;
+                            border: none;
+                            border-radius: 10px;
+                            font-size: 16px;
+                            font-weight: 600;
+
+                            &:hover {
+                                opacity: 70%;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+
+                .register-area {
+                    .ant-form-item-control {
+                        margin-left: 0;
+
+                        .ant-form-item-control-input-content {
+                            max-width: 90%;
+
+                            .text-agree {
+                                color: black;
+                            }
+                        }
+                    }
+                }
+
+                .ant-form-item {
+                    justify-content: center;
+
+
+                    .input-form {
+                        .ant-form-item-control-input {
+                            .ant-form-item-control-input-content {
+
+
+                                position: relative;
+                                width: 100%;
+                                margin-top: 10px;
+
+                                .icon {
+                                    position: absolute;
+                                    left: 10px;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                    color: #aaa;
+                                    z-index: 5;
+                                }
+
+                                .inp {
+                                    height: 40px;
+                                    padding-left: 35px;
+                                    width: 100%;
+                                    border-radius: 10px;
+                                    border: none;
+                                    outline: 1px solid black;
+                                    font-weight: 700;
+
+                                    &:hover {
+                                        outline: 2px solid #348BD2;
+                                    }
+
+                                    &:focus {
+                                        outline: 2px solid #348BD2;
+                                    }
+
+                                }
+
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

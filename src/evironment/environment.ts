@@ -4,5 +4,9 @@ export const environment={
 }
 
 export const url={
-    login:"Accounts/SignIn"
+    login:"Accounts/SignIn",
+    register:"Accounts/SignUp",
+    forgotPassword:"Accounts/forgot-password",
+    resetPassword:"Accounts/reset-password"
+
 }

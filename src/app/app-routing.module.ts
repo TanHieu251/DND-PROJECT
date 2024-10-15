@@ -1,19 +1,28 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { P001HomeComponent } from './p-web/pages/p001-home/p001-home.component';
 import { P000LoginComponent } from './auth/pages/p000-login/p000-login.component';
-import { PWebModule } from './p-web/p-web.module';
-import { LayoutComponent } from './p-web/layout/layout.component';
+import { ResetPasswordComponent } from './auth/shared/components/reset-password/reset-password.component';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren:()=> import('./p-web/p-web.module').then(x=>x.PWebModule)
+    loadChildren: () =>
+      import('./p-web/p-web.module').then((x) => x.PWebModule),
   },
   {
-    path:'login',
-    component:P000LoginComponent
-  }
+    path: 'admin',
+    loadChildren: () =>
+      import('./p-admin/p-admin.module').then((x) => x.PAdminModule),
+  },
+  {
+    path: 'login',
+    component: P000LoginComponent,
+  },
+  {
+    path: 'reset-password',
+    component: ResetPasswordComponent,
+    data: { isReset: true },
+  },
 ];
 
 @NgModule({

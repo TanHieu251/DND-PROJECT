@@ -1,1 +1,74 @@
-<p>p001-register works!</p>
+<div class="p001-register">
+    <div class="close" (click)="closeDialog()"><i class="fa-solid fa-xmark icon-close"></i></div>
+    <div class="register-title">
+        <span class="title-text">ĐĂNG KÝ</span>
+    </div>
+    <form nz-form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <!-- Email -->
+        <nz-form-item>
+            <nz-form-control class="input-form" [nzSm]="14" [nzXs]="24">
+                <i class="fa-solid fa-envelope icon"></i>
+                <input class="inp" nz-input placeholder="Email" formControlName="email" />
+            </nz-form-control>
+        </nz-form-item>
+        <!-- fullName -->
+        <nz-form-item>
+            <nz-form-control [nzSm]="14" [nzXs]="24" class="input-form">
+                <i class="fa-solid fa-phone icon"></i>
+
+                <input type="text" class="inp" nz-input placeholder="Full Name" formControlName="fullName" />
+            </nz-form-control>
+        </nz-form-item>
+
+        <!-- Username -->
+        <nz-form-item>
+            <nz-form-control [nzSm]="14" [nzXs]="24" class="input-form">
+                <i class="fa-solid fa-user icon"></i>
+
+                <input class="inp" nz-input placeholder="UserName" formControlName="userName" />
+            </nz-form-control>
+        </nz-form-item>
+
+        <!-- Password -->
+        <nz-form-item>
+            <nz-form-control [nzSm]="14" [nzXs]="24" class="input-form">
+                <i class="fa-solid fa-lock-open icon"></i>
+
+                <input class="inp" nz-input placeholder="Password" type="password" formControlName="password"
+                    id="password" />
+            </nz-form-control>
+        </nz-form-item>
+
+        <!-- Confirm Password -->
+        <nz-form-item>
+            <nz-form-control [nzSm]="14" [nzXs]="24" class="input-form">
+                <i class="fa-solid fa-lock-open icon"></i>
+
+                <input class="inp" nz-input type="password" placeholder="Confirm Password"
+                    formControlName="confirmPassword" id="confirmPassword" />
+            </nz-form-control>
+        </nz-form-item>
+
+
+
+
+
+        <!-- Checkbox for agreement -->
+        <nz-form-item nz-row class="register-area">
+            <nz-form-control [nzSpan]="14" [nzOffset]="6">
+                <label nz-checkbox formControlName="agree">
+                    <span class="text-agree">
+                        Tôi đã đọc, hiểu và chấp thuận Chính sách Bảo mật , Các Điều khoản và Điều kiện của trang Web.
+                    </span>
+                </label>
+            </nz-form-control>
+        </nz-form-item>
+
+        <!-- Submit Button -->
+        <nz-form-item nz-row class="btn-register" (click)="onSubmit()">
+            <nz-form-control [nzSpan]="14" [nzOffset]="6">
+                <button class="btn" nz-button nzType="primary">ĐĂNG KÝ</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</div>
