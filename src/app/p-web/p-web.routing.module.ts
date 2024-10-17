@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { LayoutComponent } from './layout/layout.component';
 import { P001HomeComponent } from './pages/p001-home/p001-home.component';
@@ -58,7 +59,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports:
+  [
+    RouterModule.forChild(routes),
+    FormsModule
+  ],
   exports: [RouterModule],
 })
 export class PWebRoutingModule {}

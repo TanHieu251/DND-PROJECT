@@ -12,6 +12,8 @@ import { Item } from '../../../../../data/product';
 export class ProductListComponent {
   products = productData;
   status: boolean = true;
+  searchTerm: string = '';
+  filteredProducts: any[] =this.products;
 
   currentPage: number = 1;
   totalPages: number = 0;
@@ -20,9 +22,44 @@ export class ProductListComponent {
   itemToggle: any;
   sortOrder: string = 'asc'
 
+    items = [
+    {
+      title:'Thiết Bị Điện Hạ Thế',
+      subcategories: ['Thiết Bị Điện Hạ Thế 1', 'Thiết Bị Điện Hạ Thế 2', 'Thiết Bị Điện Hạ Thế 3'],
+      isOpen: false
+    },
+    {
+      title:'Thiết Bị Truyền Tải và Phân Phối Điện',
+      subcategories: ['Thiết Bị Truyền Tải và Phân Phối Điện 1', 'Thiết Bị Truyền Tải và Phân Phối Điện 2'],
+      isOpen: false
+    },
+    {
+      title:'Thiết Bị Theo Dõi và Đo Lường',
+      subcategories: ['Thiết Bị Theo Dõi và Đo Lường 1', 'Thiết Bị Theo Dõi và Đo Lường 2', 'Thiết Bị Theo Dõi và Đo Lường 3'],
+      isOpen: false
+    },
+    {
+      title:'Công Tắc Ổ Cắm',
+      subcategories: ['Công Tắc Ổ Cắm 1'],
+      isOpen: false
+    },
+    {
+      title:'Thiết Bị Năng Lượng Mới',
+      subcategories: ['Thiết Bị Năng Lượng Mới 1', 'Thiết Bị Năng Lượng Mới 2'],
+      isOpen: false
+    },
+  ]
+  productsBanner = [
+    {
+      image: 'assets/bannerProduct.png',
+      name: 'search'
+    }
+  ];
+
   viewDetailProduct(productName: string){
     this.router.navigate(['/product', productName])
     window.scrollTo({top: 0, behavior:'smooth'});
+    // console.log('products.name')
   }
 
   constructor(private router: Router){
@@ -91,32 +128,18 @@ export class ProductListComponent {
     this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
   }
 
-  items = [
-    {
-      title:'Thiết Bị Điện Hạ Thế',
-      subcategories: ['Thiết Bị Điện Hạ Thế 1', 'Thiết Bị Điện Hạ Thế 2', 'Thiết Bị Điện Hạ Thế 3'],
-      isOpen: false
-    },
-    {
-      title:'Thiết Bị Truyền Tải và Phân Phối Điện',
-      subcategories: ['Thiết Bị Truyền Tải và Phân Phối Điện 1', 'Thiết Bị Truyền Tải và Phân Phối Điện 2'],
-      isOpen: false
-    },
-    {
-      title:'Thiết Bị Theo Dõi và Đo Lường',
-      subcategories: ['Thiết Bị Theo Dõi và Đo Lường 1', 'Thiết Bị Theo Dõi và Đo Lường 2', 'Thiết Bị Theo Dõi và Đo Lường 3'],
-      isOpen: false
-    },
-    {
-      title:'Công Tắc Ổ Cắm',
-      subcategories: ['Công Tắc Ổ Cắm 1'],
-      isOpen: false
-    },
-    {
-      title:'Thiết Bị Năng Lượng Mới',
-      subcategories: ['Thiết Bị Năng Lượng Mới 1', 'Thiết Bị Năng Lượng Mới 2'],
-      isOpen: false
-    },
-  ]
+  searchProduct(): void {
+    this.filteredProducts = this.products.filter(p =>
+      p.name.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+      p.description.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
 
+    if (this.filteredProducts.length > 0) {
+      this.router.navigate(['/products', this.filteredProducts[0].name]);
+      // alert('da tim thay san pham')
+      // console.log(products.name)
+    } else {
+      alert('Không tìm thấy sản phẩm nào phù hợp với từ khóa bạn tìm.');
+    }
+  }
 }

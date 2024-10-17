@@ -40,7 +40,8 @@ export class HeaderComponent implements OnInit {
     { name: 'Giới thiệu', routes: '/about' },
     { name: 'Sản phẩm', routes: '/products' },
     { name: 'Dự án', routes: '/projects' },
-    { name: 'Liên hệ', routes: '/contacts' }
+    { name: 'Tin tức', routes: '/news' },
+    { name: 'Liên hệ', routes: '/contacts' },
   ];
   reloadPage(route: string){
     if(route === '/home'){

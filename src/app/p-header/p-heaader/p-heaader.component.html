@@ -1,6 +1,4 @@
-  <!-- header.component.html -->
 <div class="header">
-  <!-- Logo Section -->
   <div [routerLink]="'/home'" class="header-logo" >
     <img src="assets/logo.png" alt="Logo" />
   </div>
@@ -26,7 +24,7 @@
     <div class="icon-btn-card">
       <i class="fa-solid fa-cart-plus"></i>
       <span [routerLink]="['/cart']">Giỏ hàng</span>
-      <span class="cart-count" *ngIf="cartCount > 0">{{ cartCount }}</span> 
+      <span class="cart-count" *ngIf="cartCount > 0">{{ cartCount }}</span>
     </div>
   </div>
 </div>
