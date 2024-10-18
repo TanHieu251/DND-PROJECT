@@ -56,7 +56,8 @@ export class ProductListComponent {
     }
   ];
 
-  viewDetailProduct(productName: string){
+  viewDetailProduct(productName: string, ){
+    // event.stopPropagation();
     this.router.navigate(['/product', productName])
     window.scrollTo({top: 0, behavior:'smooth'});
     // console.log('products.name')
@@ -95,7 +96,9 @@ export class ProductListComponent {
   }
 
   getDisplayedProducts() {
-    const sortedProducts = this.products.sort((a, b) => {
+    const productsToDisplay = this.filteredProducts.length > 0 ? this.filteredProducts : this.products;
+
+    const sortedProducts = productsToDisplay.sort((a, b) => {
       const priceA = Number(a.price.replace(/[^0-9.-]+/g, ''));
       const priceB = Number(b.price.replace(/[^0-9.-]+/g, ''));
 
@@ -133,13 +136,18 @@ export class ProductListComponent {
       p.name.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
       p.description.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
+    console.log(this.products);
 
     if (this.filteredProducts.length > 0) {
-      this.router.navigate(['/products', this.filteredProducts[0].name]);
-      // alert('da tim thay san pham')
-      // console.log(products.name)
-    } else {
+      console.log('Filtered Products:', this.filteredProducts);
+
+      // this.router.navigate(['/products', this.filteredProducts[0].name]);
+      } else {
       alert('Không tìm thấy sản phẩm nào phù hợp với từ khóa bạn tìm.');
     }
+  }
+  clearSearch(): void {
+    this.searchTerm = '';
+    this.filteredProducts = [];
   }
 }
