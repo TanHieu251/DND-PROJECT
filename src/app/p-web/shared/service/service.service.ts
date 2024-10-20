@@ -32,6 +32,6 @@ export class ServiceService {
 
   private updateCartCount() {
     const totalItems = this.cartItems.reduce((total, item) => total + item.quantity, 0);
-    this.cartCount.next(totalItems); // Update the cart count observable
+    this.cartCount.next(totalItems);
   }
 }

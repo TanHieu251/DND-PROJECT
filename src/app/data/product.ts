@@ -46,7 +46,7 @@ export const productData = [
     status: false,
     availability: 'Hết hàng',
     image: 'assets/image 5.png',
-    
+
   },
   {
     id: 'DND003',
@@ -361,7 +361,6 @@ export const productData = [
     image: 'assets/image 5.png',
   },
 ];
-
 
 export const projectsData = [
   {

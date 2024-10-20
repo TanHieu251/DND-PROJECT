@@ -40,7 +40,7 @@
         <div (click)="viewDetailProduct(product.name)">
           <img [src]="product.image" alt="{{ product.name }}" />
           <h3 routerLink="'product/{{product.name}}'">{{ product.name }}</h3>
-          <!-- <h3 [routerLink]="['/products', product.name]" (click)="$event.stopPropagation()">
+          <!-- <h3 [routerLink]="['/product', product.name]" (click)="$event.stopPropagation()">
             {{ product.name }}
           </h3> -->
           <p>{{ product.description }}</p>

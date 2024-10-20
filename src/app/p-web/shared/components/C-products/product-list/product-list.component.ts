@@ -56,7 +56,7 @@ export class ProductListComponent {
     }
   ];
 
-  viewDetailProduct(productName: string, ){
+  viewDetailProduct(productName: string ){
     // event.stopPropagation();
     this.router.navigate(['/product', productName])
     window.scrollTo({top: 0, behavior:'smooth'});
