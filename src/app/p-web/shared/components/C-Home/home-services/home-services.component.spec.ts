@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PHeader2Component } from './p-header2.component';
+import { HomeServicesComponent } from './home-services.component';
 
-describe('PHeader2Component', () => {
-  let component: PHeader2Component;
-  let fixture: ComponentFixture<PHeader2Component>;
+describe('HomeServicesComponent', () => {
+  let component: HomeServicesComponent;
+  let fixture: ComponentFixture<HomeServicesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PHeader2Component]
+      declarations: [HomeServicesComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(PHeader2Component);
+    fixture = TestBed.createComponent(HomeServicesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

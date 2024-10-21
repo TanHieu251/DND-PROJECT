@@ -1,4 +1,4 @@
-<div class="container" [class.right]="isRight">
+<!-- <div class="container" [class.right]="isRight">
   <div class="introHome" *ngFor="let intro of informations">
       <div class="text-container" [class.active]="textActive">
         <h2 class="welcome-text"><span class="highlight">{{ intro.title }}</span></h2>
@@ -8,6 +8,52 @@
 
     <div class="image-box" [class.active]="imgActive">
       <img [src]="intro.imageSrc" alt="image description">
+    </div>
+  </div>
+
+</div> -->
+
+
+<div class="about-us flex flex-row w-full items-center  relative">
+  <div class="about-left w-1/2   items-center  flex flex-row justify-center ">
+    <div class="about-left-content w-3/5 items-center">
+      <div class="about-name ">Về chúng tôi <span class="text-name text-6xl"> DND</span></div>
+      <div class="about-company uppercase">Công Ty TNHH sản xuất Thương mại Dịch vụ DND</div>
+      <div class="about-description">Tại DND, chúng tôi trao quyền cho mọi người bằng công nghệ để thúc đẩy quá
+        trình chuyển đổi các ngành công nghiệp cần thiết nhằm tạo dựng một xã hội ít carbon và giải quyết các thách thức
+        năng lượng của thế giới.</div>
+      <a routerLink="/about" class="link-active ">
+        <span class="text"> Xem thêm</span>
+        <i class=" fas fa-arrow-right ml-3 icon"></i></a>
+    </div>
+  </div>
+
+  <!-- right -->
+
+  <div class="about-right flex flex-row flex-1 justify-center">
+    <div
+      class="box-link bg-cover bg-[url(https://www.biendongco.vn/resources/upload/ESTEC-thiet%20bi%20dien%20cong%20nghiep%202.jpg)]">
+      <div class="child-content ">
+        <span><i class="fa-regular fa-gem"></i></span>
+        <span>Hiệu quả</span>
+      </div>
+      <div class="overlay-hover"></div>
+    </div>
+    <div class="box-link bg-cover bg-[url(https://alpha.creativecirclecdn.com/nmcwyw/original/20240226-102543-f5cdc263f5ec303c9fe35ddaf55099ab.jpg)]">
+      <div class="child-content ">
+        <span><i class="fa-regular fa-gem"></i></span>
+        <span>Sứ mệnh</span>
+      </div>
+      <div class="overlay-hover"></div>
+
+    </div>
+    <div class="box-link bg-cover bg-[url(https://upload.wikimedia.org/wikipedia/commons/8/84/NIGU_Strain_tower.JPG)]">
+      <div class="child-content ">
+        <span><i class="fa-regular fa-gem"></i></span>
+        <span>Phát triển</span>
+      </div>
+      <div class="overlay-hover"></div>
+
     </div>
   </div>
 

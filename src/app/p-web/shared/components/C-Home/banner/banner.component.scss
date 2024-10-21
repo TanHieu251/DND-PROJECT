@@ -1,21 +1,13 @@
 .banner {
   position: relative;
   width: 100%;
-  height: 550px;
-  padding-top: 160px;
+  // height: 550px;
+  // padding-top: 160px;
 
-  .banner-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-  }
+
 
   .banner-content {
-    position: relative;
+    position: absolute;
     z-index: 2;
     display: flex;
     flex-direction: column;
@@ -24,14 +16,16 @@
     height: 100%;
     color: white;
     text-align: center;
+    top: 0;
+    right: 180px;
 
-    h1 {
-      font-size: 48px;
-      font-weight: bold;
-      font-style: oblique;
+    .text {
+      font-size: 87px;
+      font-weight: 500;
       margin: 0;
-      padding-left: 1000px;
-      color: #0066cc;
+      font-family: "Gasoek One", sans-serif;
+      font-style: italic;
+
     }
   }
 }

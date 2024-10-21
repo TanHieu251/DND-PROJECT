@@ -11,7 +11,6 @@ export class ContactComponent {
   @Input() description: string = 'Default description text goes here...';
   @Input() imageSrc: string = 'assets/image3.png';
   @Input() buttonText: string = 'Xem Công Ty';
-  @Input() isLeft: boolean = false;
 
   // reloadPage(){
   //   window.scrollTo({top: 0, behavior:'smooth'});

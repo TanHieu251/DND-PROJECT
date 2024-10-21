@@ -4,8 +4,11 @@ import { AuthServiceService } from '../../shared/services/auth-service.service';
 import { DTOLogin } from '../../shared/DTO/DTOLogin';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { P001RegisterComponent } from '../p001-register/p001-register.component';
+import { P001RegisterComponent } from '../../shared/components/p001-register/p001-register.component';
 import { ResetPasswordComponent } from '../../shared/components/reset-password/reset-password.component';
+import { DTOAuthResponse } from '../../shared/DTO/DTOAuthResponse';
+import { NotificationServiceService } from '../../../p-lib/services/notification-service.service';
+import { Until_check } from '../../../p-lib/until/until';
 
 @Component({
   selector: 'app-p000-login',
@@ -27,7 +30,8 @@ export class P000LoginComponent {
     private fb: FormBuilder,
     private authService: AuthServiceService,
     private router: Router,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private notifiService: NotificationServiceService
   ) {
     this.loginForm = this.fb.group({
       Email: ['', [Validators.required, Validators.email]],
@@ -35,24 +39,15 @@ export class P000LoginComponent {
     });
   }
   onSubmit() {
-    console.log('asdasdsa');
     if (this.loginForm.valid) {
       this.APILogin(this.loginForm.value);
       if (this.tokenStorage != '') {
         this.router.navigate(['/home']);
       }
     } else {
-      console.log('Form is invalid');
+      console.log('error');
+      this.notifiService.error('Form is invalid');
     }
-  }
-
-  APILogin(data: DTOLogin) {
-    this.authService.onLogin(data).subscribe((res) => {
-      this.tokenStorage = res.token;
-      if (this.tokenStorage != '') {
-        this.router.navigate(['/']);
-      }
-    });
   }
 
   onForGotPassword() {
@@ -87,4 +82,30 @@ export class P000LoginComponent {
       }
     });
   }
+
+  //#region  API
+
+  /**
+   *  API đăng nhập tài khoản
+   * @param data DTOLOgin
+   */
+  APILogin(data: DTOLogin) {
+    this.authService.onLogin(data).subscribe(
+      (res: DTOAuthResponse) => {
+        if (Until_check.hasListValue(res)) {
+          this.tokenStorage = res.Token;
+          this.notifiService.success('Đăng hập thành công');
+          if (this.tokenStorage != '') {
+            this.router.navigate(['/']);
+          }
+        } else {
+          this.notifiService.error('Đăng nhập không thành công ');
+        }
+      },
+      (error) => {
+        this.notifiService.error('Đã xảy ra lỗi khi đăng nhập', error);
+      }
+    );
+  }
+  //#endregion
 }
