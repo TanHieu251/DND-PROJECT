@@ -7,8 +7,8 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
 export class NotificationServiceService {
   constructor(private notification: NzNotificationService) {}
 
-  success(content: string) {
-    this.notification.success('', content, {
+  success(content: string, content2?: string) {
+    this.notification.success('', content + content2, {
       nzDuration: 5000,
       nzAnimate: true,
       nzPauseOnHover: true,
@@ -16,8 +16,8 @@ export class NotificationServiceService {
     });
   }
 
-  error(content: string) {
-    this.notification.error('', content, {
+  error(content: string, content2?: string) {
+    this.notification.error('', content + content2, {
       nzDuration: 5000,
       nzAnimate: true,
       nzPauseOnHover: true,
@@ -25,8 +25,8 @@ export class NotificationServiceService {
     });
   }
 
-  warning(content: string) {
-    this.notification.warning('', content, {
+  warning(content: string, content2?: string) {
+    this.notification.warning('', content + content2, {
       nzDuration: 5000,
       nzAnimate: true,
       nzPauseOnHover: true,

@@ -1,10 +1,4 @@
-<div class="products-container">
-  <div class="header">
-    <h2>{{productTitle}}</h2>
-    <button [routerLink]="'/products'" class="view-all-btn">{{buttonText}}</button>
-  </div>
-
-  <div class="products-grid">
+<!-- <div class="products-grid">
     <div class="product-card" *ngFor="let product of products" >
       <img [src]="product.image" alt="{{product.name}}">
       <h3 [routerLink]="['/product',product.name]" (click)="viewDetialProduct(product.name)">{{product.name}}</h3>
@@ -15,6 +9,29 @@
         'out-of-stock': !product.status}">
         {{ product.status ? 'Còn hàng' : 'Hết hàng' }}</span>
      </p>
+    </div>
+  </div>
+ -->
+
+
+<div *ngFor="let item of products" class="product-container">
+  <div class="product-content relative">
+    <div class="product-img">
+      <img class="img" [src]="item.thumbnail" alt="">
+    </div>
+    <div class="product-info text-black">
+      <div class="name underline italic">
+        <span>{{item.name}}</span>
+      </div>
+      <div class="description"><span>{{item.description}}</span></div>
+
+    </div>
+    <div class="product-footer absolute bottom-3 right-0 left-0 flex justify-between px-[10px] items-center ">
+      <div class="price"><span>{{item.price}}</span></div>
+      <div class="stock">
+        <span *ngIf="item.stockQuantity" class="text-[#17ED45]">Còn hàng</span>
+        <span *ngIf="!item.stockQuantity" class="text-[#ED3717]"> Hết hàng</span>
+      </div>
     </div>
   </div>
 </div>

@@ -11,11 +11,11 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
-import { AuthServiceService } from '../../shared/services/auth-service.service';
+import { AuthServiceService } from '../../services/auth-service.service';
 import { Router } from '@angular/router';
-import { DTOLogin } from '../../shared/DTO/DTOLogin';
+import { DTOLogin } from '../../DTO/DTOLogin';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { DTORegister } from '../../shared/DTO/DTORegister';
+import { DTORegister } from '../../DTO/DTORegister';
 
 @Component({
   selector: 'app-p001-register',

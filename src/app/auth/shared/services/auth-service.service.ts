@@ -6,6 +6,9 @@ import { catchError, map, Observable } from 'rxjs';
 import { jwtDecode } from 'jwt-decode';
 import { DTORegister } from '../DTO/DTORegister';
 import { DTOResetPassword } from '../DTO/DTOResetPassword';
+import { NotificationServiceService } from '../../../p-lib/services/notification-service.service';
+import { DTOAuthResponse } from '../DTO/DTOAuthResponse';
+import { Until_check } from '../../../p-lib/until/until';
 // import { jwtDecode } from 'jwt-decode';
 
 @Injectable({
@@ -16,13 +19,16 @@ export class AuthServiceService {
   apiUrl: string = environment.apiUrl;
   private tokenKey = 'token';
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private noficiService: NotificationServiceService
+  ) {}
 
   //#region LOGIN
-  onLogin(data: DTOLogin): Observable<any> {
+  onLogin(data: DTOLogin): Observable<DTOAuthResponse> {
     return this.http.post(`${this.apiUrl + url.login}`, data).pipe(
       map((res: any) => {
-        if (res) {
+        if (Until_check.hasListValue(res)) {
           localStorage.setItem(this.tokenKey, res.token);
           return res;
         }
@@ -30,9 +36,11 @@ export class AuthServiceService {
     );
   }
 
+  //#region TOKEN
+
   isLoggedIn(): boolean {
     const token = this.onGetToken();
-    if (!token) return false;
+    if (!Until_check.hasValueString(token)) return false;
     return !this.isTokenExpired();
   }
 
@@ -45,21 +53,26 @@ export class AuthServiceService {
     return isTokenExpired;
   }
 
-  onLogout() {
-    localStorage.removeItem(this.tokenKey);
-  }
-
   public onGetToken(): string | null {
     return localStorage.getItem(this.tokenKey || '');
   }
 
   //#endregion
 
+  //#region LOGOUT
+  onLogout() {
+    localStorage.removeItem(this.tokenKey);
+  }
+  //#endregion
+
+  //#endregion
+
   //#region REGISTER
+
   onRegister(req: DTORegister) {
     return this.http.post(`${this.apiUrl + url.register}`, req).pipe(
       map((res: any) => {
-        if (res) {
+        if (Until_check.hasListValue(res)) {
           return res;
         }
       })
@@ -68,7 +81,13 @@ export class AuthServiceService {
   //#endregion
 
   //#region PASSWORD
-  forgotPassword(email: string): Observable<any> {
+
+  /**
+   * API QUÊN MẬT KHẨU
+   * @param email EMAIL
+   * @returns
+   */
+  forgotPassword(email: string): Observable<DTOAuthResponse> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
     });
@@ -77,13 +96,18 @@ export class AuthServiceService {
         headers: headers,
       })
       .pipe(
-        map((res) => {
-          if (res) return res;
+        map((res: any) => {
+          if (Until_check.hasListValue(res)) return res;
           else return null;
         })
       );
   }
 
+  /**
+   * API CẬP NHẬT MẬT KHẨU
+   * @param req DTO RESET PASSWORD
+   * @returns
+   */
   resetPassword(req: DTOResetPassword): Observable<DTOResetPassword> {
     return this.http
       .post<DTOResetPassword>(`${this.apiUrl + url.resetPassword}`, req)
@@ -95,7 +119,7 @@ export class AuthServiceService {
           return res;
         }),
         catchError((error) => {
-          console.error('Error resetting password:', error);
+          this.noficiService.error(`Error resetting password: ${error}`);
           throw error;
         })
       );

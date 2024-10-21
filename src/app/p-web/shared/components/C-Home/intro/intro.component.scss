@@ -1,91 +1,230 @@
-.introHome {
+// .introHome {
+//   position: relative;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center; // Căn giữa nội dung
+//   padding: 20px;
+//   border-radius: 10px;
+//   margin: 0 auto;
+//   overflow: hidden;
+
+//   .text-container {
+//     position: relative;
+//     width: 40%;
+//     // left: 10%;
+//     z-index: 2;
+//     background-color: white;
+//     padding: 10px;
+//     border-radius: 10px;
+//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//     transform: translateX(-100%);
+
+//     &.active {
+//       animation: slideInLeft 1s forwards;
+//     }
+
+//     .welcome-text {
+//       font-size: 32px;
+//       font-weight: bold;
+//       position: relative;
+
+//       .highlight {
+//         font-style: italic;
+//         display: inline-block;
+//         padding-top: 5px;
+//         border-top: 5px solid #348BD2;
+//       }
+//     }
+
+//     p {
+//       background-color: #fff;
+//       margin-top: 30px;
+//       line-height: 1.6;
+//       color: #000;
+//       font-size: 24px;
+//     }
+
+//     .company-btn {
+//       margin-top: 20px;
+//       padding: 10px 20px;
+//       background-color: #348BD2;
+//       color: #fff;
+//       border: none;
+//       border-radius: 50px;
+//       cursor: pointer;
+//       font-size: 16px;
+//       transition: background-color 0.3s ease;
+
+//       &:hover {
+//         background-color: #0056b3;
+//       }
+//     }
+//   }
+
+//   .image-box {
+//     right: 20%;
+//     padding: 10px;
+//     transform: translateX(100%);
+
+//     &.active {
+//       animation: slideInRight 1s forwards;
+//     }
+
+//     img {
+//       width: 700px;
+//       height: 450px;
+//       border-radius: 10px;
+//     }
+//   }
+
+//   @keyframes slideInLeft {
+//     to {
+//       transform: translateX(0);
+//     }
+//   }
+
+//   @keyframes slideInRight {
+//     to {
+//       transform: translateX(0);
+//     }
+//   }
+// }
+
+
+.about-us {
+  background-color: rgb(241 250 254);
+  height: 90vh;
+  border-top: 1px solid blue;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center; // Căn giữa nội dung
-  padding: 20px;
-  border-radius: 10px;
-  margin: 0 auto;
-  overflow: hidden;
 
-  .text-container {
-    position: relative;
-    width: 40%;
-    // left: 10%;
-    z-index: 2;
-    background-color: white;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transform: translateX(-100%);
+  &::after {
+    content: "";
+    // background-image: url('../../../../../../assets/DNDLogo.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 360px;
+    left: 270px;
+    // background-size: 450px;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+  }
 
-    &.active {
-      animation: slideInLeft 1s forwards;
-    }
+  .about-left {
+    z-index: 1;
 
-    .welcome-text {
-      font-size: 32px;
-      font-weight: bold;
-      position: relative;
+    .about-left-content {
+      .about-name {
+        font-size: 40px;
+        line-height: 90px;
 
-      .highlight {
-        font-style: italic;
-        display: inline-block;
-        padding-top: 5px;
-        border-top: 5px solid #348BD2;
+        .text-name {
+          color: #348BD2;
+          font-weight: 700;
+          font-size: 80px;
+        }
+      }
+
+      .about-company {
+        font-size: 20px;
+        line-height: 30px;
+        color: rgb(0 82 128);
+      }
+
+      .about-description {
+        font-size: 20px;
+        line-height: 30px;
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+      }
+
+      .link-active {
+        font-size: 20px;
+        line-height: 30px;
+        color: rgb(0 82 128);
+
+        &:hover {
+          .text {
+            opacity: 70%;
+          }
+
+          .icon {
+            opacity: 70%;
+          }
+        }
       }
     }
 
-    p {
-      background-color: #fff;
-      margin-top: 30px;
-      line-height: 1.6;
-      color: #000;
-      font-size: 24px;
-    }
+  }
 
-    .company-btn {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #348BD2;
-      color: #fff;
-      border: none;
-      border-radius: 50px;
+  .about-right {
+    z-index: 1;
+    .box-link {
+      width: 280px;
+      height: 90vh;
+      --tw-skew-x: -6deg;
+      transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+      position: relative;
       cursor: pointer;
-      font-size: 16px;
-      transition: background-color 0.3s ease;
+
+      .child-content {
+        position: absolute;
+        font-size: 17px;
+        line-height: 24px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        font-weight: 700;
+        left: 0;
+        right: 0;
+        bottom: 100px;
+        color: white;
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        transition: ease-in-out .3s;
+
+      }
+
+      .overlay-hover {
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: ease-in-out .5s;
+        z-index: 3;
+        position: absolute;
+        background: linear-gradient(183.75deg, rgba(10, 50, 90, .6) .99%, #00093a 96.63%);
+      }
+
+      &::before {
+        background: linear-gradient(184.72deg, hsla(0, 0%, 100%, 0) 44.15%, #348bd2 99.9%);
+        position: absolute !important;
+        bottom: 0px !important;
+        right: 0px !important;
+        left: 0px !important;
+        height: 100% !important;
+        width: 100% !important;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        --tw-content: "" !important;
+        content: var(--tw-content) !important;
+      }
 
       &:hover {
-        background-color: #0056b3;
+        .child-content {
+          bottom: 500px;
+          transition: ease-in-out .5s;
+          font-size: 30px;
+        }
+
+        .overlay-hover {
+          opacity: 100%;
+          transition: ease-in-out .5s;
+
+        }
       }
     }
-  }
 
-  .image-box {
-    right: 20%;
-    padding: 10px;
-    transform: translateX(100%);
-
-    &.active {
-      animation: slideInRight 1s forwards;
-    }
-
-    img {
-      width: 700px;
-      height: 450px;
-      border-radius: 10px;
-    }
-  }
-
-  @keyframes slideInLeft {
-    to {
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes slideInRight {
-    to {
-      transform: translateX(0);
-    }
   }
 }

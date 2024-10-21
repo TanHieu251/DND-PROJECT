@@ -7,6 +7,8 @@ export const url={
     login:"Accounts/SignIn",
     register:"Accounts/SignUp",
     forgotPassword:"Accounts/forgot-password",
-    resetPassword:"Accounts/reset-password"
+    resetPassword:"Accounts/reset-password",
+    refreshToken:"Accounts/refresh",
+    Rekove:"Accounts/rekove",
 
 }

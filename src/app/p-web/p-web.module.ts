@@ -1,7 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {PWebRoutingModule} from "./p-web.routing.module";
-import { Header2Component } from '../p-header/p-header2/p-header2.component';
+import { PWebRoutingModule } from './p-web.routing.module';
 import { PFooterComponent } from '../p-footer/p-footer/p-footer.component';
 import { RouterLink, RouterOutlet, Routes } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
@@ -30,7 +29,7 @@ import { ProjectDetailComponent } from './shared/components/C-project/project-de
 import { ProjectListComponent } from './shared/components/C-project/project-list/project-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { HeaderComponent } from '../p-header/p-heaader/p-heaader.component';
+import { HeaderComponent } from './shared/components/p-heaader/p-heaader.component';
 import { AuthServiceService } from '../auth/shared/services/auth-service.service';
 
 
@@ -39,11 +38,12 @@ import { ImageProjectComponent } from './shared/components/C-project/image-proje
 import { CCartComponent } from './shared/components/C-cart/c-cart/c-cart.component';
 import { P006CartComponent } from './pages/p006-cart/p006-cart/p006-cart.component';
 import { MessageCartComponent } from './shared/components/C-message/message-cart/message-cart.component';
-
+import { ProductListHomeComponent } from './shared/components/C-Home/product-list-home/product-list-home.component';
+import { HomeServicesComponent } from './shared/components/C-Home/home-services/home-services.component';
+import { HomeNewsComponent } from './shared/components/C-Home/home-news/home-news.component';
 @NgModule({
   declarations: [
     HeaderComponent,
-    Header2Component,
     PFooterComponent,
     LayoutComponent,
     P001HomeComponent,
@@ -64,7 +64,6 @@ import { MessageCartComponent } from './shared/components/C-message/message-cart
     P005ProjectComponent,
     ProductDetailComponent,
     ProductBannerComponent,
-    ProductListComponent,
     ProductInforRelationComponent,
     ProductRelationComponent,
     ProjectDetailComponent,
@@ -73,8 +72,12 @@ import { MessageCartComponent } from './shared/components/C-message/message-cart
     ImageProjectComponent,
     CCartComponent,
     P006CartComponent,
-    MessageCartComponent
-
+    MessageCartComponent,
+    ProductListComponent,
+    ProductListHomeComponent,
+    HomeServicesComponent,
+    HomeNewsComponent
+    
   ],
   imports: [
     CommonModule,
@@ -84,10 +87,9 @@ import { MessageCartComponent } from './shared/components/C-message/message-cart
     ReactiveFormsModule,
     FormsModule,
     NgxPaginationModule,
-    RouterLink
-
+    RouterLink,
   ],
-  providers:[AuthServiceService],
-  schemas:[CUSTOM_ELEMENTS_SCHEMA]
+  providers: [AuthServiceService],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class PWebModule { }
+export class PWebModule {}

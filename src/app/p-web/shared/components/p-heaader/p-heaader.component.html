@@ -1,0 +1,65 @@
+<!-- <div class="header">
+  <div [routerLink]="'/home'" class="header-logo" >
+    <img src="assets/DNDLogo.png" alt="Logo" />
+  </div>
+
+  <div class="more-information">
+    <ul class="menu-infor">
+      <li *ngFor="let item of menu" (click)="reloadPage(item.routes)">
+        <a [routerLink]="item.routes">{{ item.name }}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="header-icons">
+    <div class="icon-btn-login">
+      <i class="fa-solid fa-user"></i>
+      <span *ngIf="!isLoggedIn()">
+        <a [routerLink]="['/login']">ĐĂNG NHẬP</a>
+      </span>
+      <span *ngIf="isLoggedIn()">
+        <span (click)="onLogOut()">Đăng xuất</span>
+      </span>
+    </div>
+    <div class="icon-btn-card">
+      <i class="fa-solid fa-cart-plus"></i>
+      <span [routerLink]="['/cart']">Giỏ hàng</span>
+      <span class="cart-count" *ngIf="cartCount > 0">{{ cartCount }}</span> 
+    </div>
+  </div>
+</div>
+ -->
+
+
+<div class="bg-blue-400 flex flex-row justify-around items-center  h-16 header">
+  <div [routerLink]="'/home'" class="header-logo px-5">
+    <img src="assets/DNDLogo.png" alt="Logo" />
+  </div>
+  <div class="more-information fs">
+    <ul class="menu-infor">
+      <li *ngFor="let item of menu" class="h-[46px] " routerLinkActive="active-link">
+        <a [routerLink]="item.routes">{{ item.name }}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="header-icons flex flex-row items-center gap-7">
+    <div class="search ">
+      <i class="fa-solid fa-magnifying-glass icon-searchs " ></i>
+    </div>
+    <div class="icon-btn-login flex flex-col items-center">
+      <i class="fa-solid fa-user"></i>
+      <span *ngIf="!isLoggedIn()">
+        <a class="link-login" [routerLink]="['/login']">ĐĂNG NHẬP</a>
+      </span>
+      <span *ngIf="isLoggedIn()">
+        <span (click)="onLogOut()">Đăng xuất</span>
+      </span>
+    </div>
+    <div class="icon-btn-card flex flex-col items-center">
+      <i class="fa-solid fa-cart-plus"></i>
+      <span class="link-cart" [routerLink]="['/cart']">Giỏ hàng</span>
+      <span class="cart-count" *ngIf="cartCount > 0">{{ cartCount }}</span>
+    </div>
+  </div>
+</div>
