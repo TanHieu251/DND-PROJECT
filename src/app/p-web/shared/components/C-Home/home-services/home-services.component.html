@@ -1,0 +1,28 @@
+<div class="home-service">
+    <div class="service-container">
+        <div class="banner-service">
+            <img class="banner"
+                src="https://www.cnet.com/a/img/resize/acdf2f3b28fe3fb4515a2b4e842a486cf6213e2f/hub/2022/10/10/f2ff9ef7-f016-459d-b88a-a8a68270c315/solar-gettyimages-525206743.jpg?auto=webp&fit=crop&height=900&width=1200"
+                alt="">
+        </div>
+        <div class="title-service absolute right-10 top-8"><span class="text-4xl text-white   font-semibold">Dịch vụ của chúng tôi</span></div>
+        <div class="service-group">
+            <div class="service-group-content w-full h-full relative">
+                <div *ngFor="let item of serviceItems; let i = index" class="service-item absolute my-auto top-0 bottom-0" [ngStyle]="{
+                        'z-index': serviceItems.length - i, 
+                        'left': (i*350 + -80) + 'px'
+                     }">
+                    <div class="service-thumbnail">
+                        <img class="thumbnail" [src]="item.thumbnail" alt="">
+                    </div>
+                    <div class="service-infor">
+                        <div class="service-title"><span class="title text-3xl">{{ item.title }}</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="change-route absolute bottom-9 shadow-md text-white z-10 font-semibold text-lg right-40 underline ">
+            <span>Xem tất cả  dịch vụ -></span>
+        </div>
+    </div>
+</div>

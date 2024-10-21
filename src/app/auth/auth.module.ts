@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { P001RegisterComponent } from './pages/p001-register/p001-register.component';
+import { P001RegisterComponent } from './shared/components/p001-register/p001-register.component';
 import { P000LoginComponent } from './pages/p000-login/p000-login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
@@ -10,8 +10,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { ResetPasswordComponent } from './shared/components/reset-password/reset-password.component';
-import { NzButtonModule, NzButtonSize } from 'ng-zorro-antd/button';
-
+import { NzButtonModule } from 'ng-zorro-antd/button';
 
 @NgModule({
   declarations: [
@@ -30,7 +29,6 @@ import { NzButtonModule, NzButtonSize } from 'ng-zorro-antd/button';
     NzFormModule,
     NzCheckboxModule,
     NzButtonModule,
-
   ],
 })
 export class AuthModule {}
