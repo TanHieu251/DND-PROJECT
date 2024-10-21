@@ -4,7 +4,7 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #348BD2;
+  // background-color: #348BD2;
   border-radius: 10px;
 
   .header {
@@ -46,18 +46,11 @@
     gap: 30px;
 
     .product-card {
-      // width: 100%;
-      // border: 1px solid #333;
-      // border-radius: 10px;
-      // padding: 10px;
-      // text-align: center;
-      // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      // background-color: #fff;
       background-color: #fff;
       border-radius: 10px;
       padding: 10px;
       text-align: center;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 10px 4px 8px rgba(0, 0, 0, 0.1);
       position: relative;
 
       img {

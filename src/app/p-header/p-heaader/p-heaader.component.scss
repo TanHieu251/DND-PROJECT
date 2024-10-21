@@ -5,15 +5,12 @@
       justify-content: space-between;
       align-items: center;
       padding: 10px 60px;
-      background-color: #1e73be;
-      // border-bottom: 1px solid #ddd;
+      background-color: #062264;
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       z-index: 1000;
-      // height: 100px;
-      // padding: 10px;
     }
 
     .header-logo {
@@ -27,31 +24,36 @@
     .header-icons {
       display: flex;
       align-items: center;
+      justify-content: space-around;
+      gap: 30px;
 
-      .icon-btn-login
-       {
+      .icon-btn-login,
+      .icon-btn-card {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        margin-left: 20px;
         color: #fff;
         font-weight: bold;
 
-
-        a {
-          color: inherit;
-          text-decoration: none;
+        i {
+          font-size: 24px;
+          margin-bottom: 5px;
         }
 
-        i {
-          margin-right: 5px;
+        a,
+        span {
+          color: inherit;
+          text-decoration: none;
+          font-size: 14px;
         }
 
         &:hover {
           cursor: pointer;
-          color: #0056b3;
+          color: #0066CC;
         }
       }
-      .icon-btn-card{
+
+      .icon-btn-card {
         position: relative;
 
         .cart-count {
@@ -70,21 +72,22 @@
     .more-information {
       display: flex;
       justify-content: center;
+      text-align: center;
 
       .menu-infor {
         list-style: none;
         display: flex;
-        gap: 50px;
+        gap: 40px;
 
         li {
+          padding-top: 20px;
           a {
             text-decoration: none;
             font-size: 20px;
             color: #fff;
-            // font-weight: bold;
 
             &:hover {
-              color: #0056b3;
+              color: #0066CC;
               text-decoration: none;
             }
           }
@@ -92,8 +95,9 @@
       }
     }
 
+
     body {
-      padding-top: 60px;
+      padding-top: 0px;
     }
 
     .main-content {
