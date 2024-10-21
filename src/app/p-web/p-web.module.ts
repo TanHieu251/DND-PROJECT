@@ -29,7 +29,6 @@ import { ProjectDetailComponent } from './shared/components/C-project/project-de
 import { ProjectListComponent } from './shared/components/C-project/project-list/project-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { HeaderComponent } from './shared/components/p-heaader/p-heaader.component';
 import { AuthServiceService } from '../auth/shared/services/auth-service.service';
 
 
@@ -41,6 +40,7 @@ import { MessageCartComponent } from './shared/components/C-message/message-cart
 import { ProductListHomeComponent } from './shared/components/C-Home/product-list-home/product-list-home.component';
 import { HomeServicesComponent } from './shared/components/C-Home/home-services/home-services.component';
 import { HomeNewsComponent } from './shared/components/C-Home/home-news/home-news.component';
+import { HeaderComponent } from './shared/components/p-heaader/p-heaader.component';
 @NgModule({
   declarations: [
     HeaderComponent,

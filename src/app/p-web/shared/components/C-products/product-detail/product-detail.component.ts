@@ -21,16 +21,16 @@ export class ProductDetailComponent implements OnInit {
     if(productName){
       this.product = this.products.find(p => p.name === productName);
     }
-    // console.warn(productName);
   }
   products = productData.map( dtp =>({
+    id: dtp.id,
     name: dtp.name,
     description: dtp.description,
     price: dtp.price,
     status: dtp.status ,
     image: dtp.image,
     thumbnail: dtp.image,
-    code: dtp.name.split(' ').join('').toUpperCase() + Math.floor(Math.random() * 1000) + 1  // Generate unique code for each product
+    code: dtp.name.split(' ').join('').toUpperCase() + Math.floor(Math.random() * 1000) + 1
   }))
 
   addToCart() {

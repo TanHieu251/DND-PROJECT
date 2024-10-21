@@ -1,17 +1,27 @@
-<div class="products-container"  >
-  <div class="sidebar" >
+<div class="product-banner">
+  <div class="banner-cover" *ngFor="let product of productsBanner">
+    <div class="image">
+      <img [src]="product.image" alt="Product Image">
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Tìm kiếm sản phẩm" [(ngModel)]="searchTerm">
+      <button (click)="searchProduct()" type="submit">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="products-container">
+  <div class="sidebar">
     <h1>Danh mục</h1>
     <ul *ngFor="let item of items" class="cover-item">
       <div class="sub-icons">
-        <li (click)="toggleItem(item)" class="title">
-          {{item.title}}
-
-        </li>
+        <li (click)="toggleItem(item)" class="title">{{ item.title }}</li>
         <i class="fa fa-chevron-down"></i>
       </div>
-
       <ul *ngIf="item.isOpen" class="sub-title">
-        <li *ngFor="let subcategory of item.subcategories">{{subcategory}}</li>
+        <li *ngFor="let subcategory of item.subcategories">{{ subcategory }}</li>
       </ul>
     </ul>
   </div>
@@ -25,15 +35,17 @@
       </button>
     </div>
 
-    <div class="products-grid" (click)="reloadPage()">
-      <div class="product-card" *ngFor="let product of getDisplayedProducts()">
+    <div class="products-grid" *ngFor="let product of getDisplayedProducts()">
+      <div class="product-card" *ngFor="let product of (filteredProducts.length > 0 ? filteredProducts : products)">
         <div (click)="viewDetailProduct(product.name)">
-          <img [src]="product.image" alt="{{product.name}}" />
-          <h3 routerLink="'product/{{ product.name }}'">{{ product.name }}</h3>
+          <img [src]="product.image" alt="{{ product.name }}" />
+          <h3 routerLink="'product/{{product.name}}'">{{ product.name }}</h3>
+          <!-- <h3 [routerLink]="['/product', product.name]" (click)="$event.stopPropagation()">
+            {{ product.name }}
+          </h3> -->
           <p>{{ product.description }}</p>
-          <div class="price">{{ product.price }} </div>
-          <div class="availability" [ngClass]="{'available': product.status,
-             'out-of-stock': !product.status}">
+          <div class="price">{{ product.price }}</div>
+          <div class="availability" [ngClass]="{ 'available': product.status, 'out-of-stock': !product.status }">
             {{ product.status ? 'Còn hàng' : 'Hết hàng' }}
           </div>
         </div>
