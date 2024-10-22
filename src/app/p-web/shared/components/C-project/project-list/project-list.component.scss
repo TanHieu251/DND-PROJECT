@@ -1,12 +1,13 @@
 ::ng-deep {
   .project-container {
     // height: auto;
-    margin-top: 90px;
-    text-align: center;
+    margin-top: 40px;
+    // text-align: left;
+    // padding-left: 30px;
     // position: absolute;
 
     h2 {
-      // margin-left: 70px;
+      margin-left: 70px;
       text-align: center;
       font-size: 42px;
       font-style: italic;
@@ -33,6 +34,8 @@
   .image img {
     padding-left: 30px;
     width: 380px;
+    // text-align: center;
+    // align-items: center;
     height: auto;
     border-radius: 5px;
     gap: 5px;

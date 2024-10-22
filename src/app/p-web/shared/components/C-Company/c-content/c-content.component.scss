@@ -12,11 +12,13 @@
       .h1class{
         display: inline-block;
         padding-left: 30px;
-      }
-      h1{
-        border-top: 5px solid #348BD2;
-
+        font-size: 45px;
+        h1{
+        // border-top: 5px solid #348BD2;
+          font-weight: bold;
         display: inline-block;
+
+      }
       }
 
       .section {

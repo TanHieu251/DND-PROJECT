@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Route, Router } from '@angular/router';
 
+// import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-project-slide',
   templateUrl: './project-slide.component.html',
@@ -16,7 +17,7 @@ export class ProjectSlideComponent {
   constructor(private router: Router){}
 
   goToProject(){
-    this.router.navigate(['/projects']).then(() =>{
+    this.router.navigate(['/project']).then(() =>{
       window.scrollTo({top: 0, behavior:'smooth'});
     })
   }
@@ -50,13 +51,13 @@ export class ProjectSlideComponent {
   currentProjectIndex = 0;
 
 
-  nextProject(){
-    this.currentProjectIndex = (this.currentProjectIndex + 1) % this.projects.length
-  }
-  prevProject(){
-    // this.currentProjectIndex =
-    // (this.currentProjectIndex - 1 + this.projects.length) % this.projects.length;
-    this.currentProjectIndex = (this.currentProjectIndex - 1 + this.projects.length) % this.projects.length;
+  // nextProject(){
+  //   this.currentProjectIndex = (this.currentProjectIndex + 1) % this.projects.length
+  // }
+  // prevProject(){
+  //   // this.currentProjectIndex =
+  //   // (this.currentProjectIndex - 1 + this.projects.length) % this.projects.length;
+  //   this.currentProjectIndex = (this.currentProjectIndex - 1 + this.projects.length) % this.projects.length;
 
-  }
+  // }
 }
