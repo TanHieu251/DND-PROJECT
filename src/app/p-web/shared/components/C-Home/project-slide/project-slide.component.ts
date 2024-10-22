@@ -24,7 +24,7 @@ export class ProjectSlideComponent {
     {
       title: 'Nhà máy điện Trạch Nhơn 3 và 4',
       description: 'Dự án nhà máy điện Nhơn Trạch 3, 4 là công trình trọng điểm quốc gia, được xây dựng tại khu công nghiệp Ông Kèo, xã Phước Khánh, huyện Nhơn Trạch, tỉnh Đồng Nai. Dự án có quy mô công suất 1.500MW, tổng mức đầu tư 1,4 tỷ USD. Khi đi vào hoạt động, dự án sẽ bổ sung khoảng 9 tỷ kWh điện/năm cho hệ thống điện quốc gia.',
-      imageSrc: 'assets/projectimage.png',
+      imageSrc: 'https://lilama.com.vn/sites/default/files/2_14.jpg',
       link: ''
     },
     {
