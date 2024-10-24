@@ -15,13 +15,13 @@
 
 
 <div *ngFor="let item of products" class="product-container">
-  <div class="product-content relative">
+  <div class="product-content relative" (click)="viewDetailProduct(item.name)">
     <div class="product-img">
       <img class="img" [src]="item.thumbnail" alt="">
     </div>
     <div class="product-info text-black">
       <div class="name underline italic">
-        <span>{{item.name}}</span>
+        <span [routerLink]="['product/{{item.name}}']">{{item.name}}</span>
       </div>
       <div class="description"><span>{{item.description}}</span></div>
 

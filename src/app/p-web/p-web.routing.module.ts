@@ -48,7 +48,7 @@ const routes: Routes = [
         component: P005ProjectComponent,
       },
       {
-        path: 'projects/:title',
+        path: 'project/:title',
         component: P005ProjectDetailComponent,
       },
       {

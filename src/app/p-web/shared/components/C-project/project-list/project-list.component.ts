@@ -13,7 +13,7 @@ export class ProjectListComponent {
   constructor(private router: Router){}
 
   goToProjectDetail(projectTitle: string){
-    this.router.navigate(['/projects', projectTitle])
+    this.router.navigate(['/project', projectTitle])
     window.scrollTo({top: 0, behavior:'smooth'});
   }
 }

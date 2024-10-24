@@ -14,8 +14,8 @@
   </div>
 
   <div class="header-icons flex flex-row items-center gap-7">
-    <div class="search ">
-      <i class="fa-solid fa-magnifying-glass icon-searchs " ></i>
+    <div class="search">
+      <i class="fa-solid fa-magnifying-glass icon-searchs" (click)="openSearchPopup()"></i>
     </div>
     <div class="icon-btn-login flex flex-col items-center">
       <i class="fa-solid fa-user"></i>
@@ -30,6 +30,72 @@
       <i class="fa-solid fa-cart-plus"></i>
       <span class="link-cart" [routerLink]="['/cart']">Giỏ hàng</span>
       <span class="cart-count" *ngIf="cartCount > 0">{{ cartCount }}</span>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" *ngIf="isPopupVisible">
+  <div class="popup-container">
+    <div class="close" (click)="closePopup()">×</div>
+    <div class="popup-content">
+      <div class="form-container">
+        <div class="menu-container" mat-fixed>
+          <div class="close" (click)="closeMenu()">×</div>
+          <div class="mat-elevation-z8 menu-row">
+            <div *ngFor="let element of menuSearch" class="menu-item" (click)="selectMenu(element.name)">
+              {{ element.name }}
+            </div>
+          </div>
+        </div>
+        <div class="search-bar">
+          <input type="text" placeholder="Tìm kiếm sản phẩm" [(ngModel)]="searchTerm">
+          <button (click)="searchItem()" type="submit">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+
+        <!-- Content Section -->
+        <div *ngIf="selectedMenu" class="content-container">
+          <div *ngIf="selectedMenu === 'Dự án'">
+            <table mat-table [dataSource]="projectsData" class="mat-elevation-z8">
+              <ng-container matColumnDef="info">
+                <th mat-header-cell *matHeaderCellDef> Project Info </th>
+                <td mat-cell *matCellDef="let project">
+                  <div class="info-container">
+                    <div class="project-name">{{ project.title }}</div>
+                    <div class="project-description">{{ project.description | slice:0:300 }}...</div>
+                  </div>
+                  <mat-card>
+                    <img class="img-project" mat-card-image [src]="project.image" alt="Project Image">
+                  </mat-card>
+                </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="['info']"></tr>
+              <tr mat-row *matRowDef="let row; columns: ['info']"></tr>
+            </table>
+          </div>
+
+
+          <div *ngIf="selectedMenu === 'Sản phẩm'">
+            <table mat-table [dataSource]="productData" class="mat-elevation-z8">
+              <ng-container matColumnDef="info">
+                <th mat-header-cell *matHeaderCellDef> Product Info </th>
+                <td mat-cell *matCellDef="let product">
+                  <div class="product-info-container">
+                    <div class="product-name">{{ product.name }}</div>
+                    <div class="product-price">{{ product.price  }}</div>
+                  </div>
+                  <mat-card>
+                    <img class="img-product" mat-card-image [src]="product.image" alt="Product Image">
+                  </mat-card>
+                </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="['info']"></tr>
+              <tr mat-row *matRowDef="let row; columns: ['info']"></tr>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

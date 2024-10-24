@@ -4,8 +4,8 @@
   width: 100%;
   height: auto;
   overflow: hidden;
-  position: sticky;
-  margin-top: 80px;
+  // position: sticky;
+  // margin-top: 80px;
 }
 
 .slides {
@@ -56,7 +56,7 @@
 
 button {
   position: absolute;
-  top: 45%;
+  top: 30%;
   transform: translateY(-50%);
   background-color: #333;
   color: white;

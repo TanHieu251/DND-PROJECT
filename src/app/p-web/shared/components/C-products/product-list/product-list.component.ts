@@ -23,31 +23,31 @@ export class ProductListComponent {
   sortOrder: string = 'asc'
 
     items = [
-    {
-      title:'Thiết Bị Điện Hạ Thế',
-      subcategories: ['Thiết Bị Điện Hạ Thế 1', 'Thiết Bị Điện Hạ Thế 2', 'Thiết Bị Điện Hạ Thế 3'],
-      isOpen: false
-    },
-    {
-      title:'Thiết Bị Truyền Tải và Phân Phối Điện',
-      subcategories: ['Thiết Bị Truyền Tải và Phân Phối Điện 1', 'Thiết Bị Truyền Tải và Phân Phối Điện 2'],
-      isOpen: false
-    },
-    {
-      title:'Thiết Bị Theo Dõi và Đo Lường',
-      subcategories: ['Thiết Bị Theo Dõi và Đo Lường 1', 'Thiết Bị Theo Dõi và Đo Lường 2', 'Thiết Bị Theo Dõi và Đo Lường 3'],
-      isOpen: false
-    },
-    {
-      title:'Công Tắc Ổ Cắm',
-      subcategories: ['Công Tắc Ổ Cắm 1'],
-      isOpen: false
-    },
-    {
-      title:'Thiết Bị Năng Lượng Mới',
-      subcategories: ['Thiết Bị Năng Lượng Mới 1', 'Thiết Bị Năng Lượng Mới 2'],
-      isOpen: false
-    },
+      {
+        title: 'Thiết Bị Điện Hạ Thế',
+        subcategories: ['Máy cắt hạ thế', 'Aptomat', 'Contactor', 'Rơ le bảo vệ', 'Tụ bù'],
+        isOpen: false
+      },
+      {
+        title: 'Thiết Bị Truyền Tải và Phân Phối Điện',
+        subcategories: ['Máy biến áp', 'Tủ trung thế', 'Máy cắt trung thế', 'Cầu dao phụ tải'],
+        isOpen: false
+      },
+      {
+        title: 'Thiết Bị Theo Dõi và Đo Lường',
+        subcategories: ['Ampe kìm', 'Đồng hồ vạn năng', 'Cảm biến nhiệt độ', 'Thiết bị đo dòng rò', 'Đồng hồ đo điện áp'],
+        isOpen: false
+      },
+      {
+        title: 'Công Tắc Ổ Cắm',
+        subcategories: ['Công tắc điện', 'Ổ cắm điện', 'Ổ cắm công nghiệp', 'Ổ cắm kéo dài'],
+        isOpen: false
+      },
+      {
+        title: 'Thiết Bị Năng Lượng Mới',
+        subcategories: ['Tấm pin mặt trời', 'Inverter năng lượng mặt trời', 'Bộ điều khiển sạc', 'Hệ thống lưu trữ năng lượng'],
+        isOpen: false
+      }
   ]
   productsBanner = [
     {

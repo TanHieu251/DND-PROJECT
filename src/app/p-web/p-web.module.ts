@@ -30,6 +30,7 @@ import { ProjectListComponent } from './shared/components/C-project/project-list
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AuthServiceService } from '../auth/shared/services/auth-service.service';
+import { MatTableModule } from '@angular/material/table';
 
 
 import { P005ProjectDetailComponent } from './pages/p005-project-detail/p005-project-detail.component';
@@ -41,6 +42,7 @@ import { ProductListHomeComponent } from './shared/components/C-Home/product-lis
 import { HomeServicesComponent } from './shared/components/C-Home/home-services/home-services.component';
 import { HomeNewsComponent } from './shared/components/C-Home/home-news/home-news.component';
 import { HeaderComponent } from './shared/components/p-heaader/p-heaader.component';
+import { SearchDialogComponent } from './shared/components/search-dialog/search-dialog.component';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -76,8 +78,9 @@ import { HeaderComponent } from './shared/components/p-heaader/p-heaader.compone
     ProductListComponent,
     ProductListHomeComponent,
     HomeServicesComponent,
-    HomeNewsComponent
-    
+    HomeNewsComponent,
+    SearchDialogComponent
+
   ],
   imports: [
     CommonModule,
@@ -88,6 +91,7 @@ import { HeaderComponent } from './shared/components/p-heaader/p-heaader.compone
     FormsModule,
     NgxPaginationModule,
     RouterLink,
+    MatTableModule,
   ],
   providers: [AuthServiceService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

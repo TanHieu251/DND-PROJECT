@@ -35,11 +35,12 @@
       </button>
     </div>
 
-    <div class="products-grid" *ngFor="let product of getDisplayedProducts()">
-      <div class="product-card" *ngFor="let product of (filteredProducts.length > 0 ? filteredProducts : products)">
+    <div class="products-grid">
+      <div class="product-card" *ngFor="let product of getDisplayedProducts()">
+        <!-- (filteredProducts.length > 0 ? filteredProducts : products)" -->
         <div (click)="viewDetailProduct(product.name)">
           <img [src]="product.image" alt="{{ product.name }}" />
-          <h3 routerLink="'product/{{product.name}}'">{{ product.name }}</h3>
+          <h3 [routerLink]="['product/{{product.name}}']">{{ product.name }}</h3>
           <!-- <h3 [routerLink]="['/product', product.name]" (click)="$event.stopPropagation()">
             {{ product.name }}
           </h3> -->
