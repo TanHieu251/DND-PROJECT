@@ -31,8 +31,8 @@ export const productData = [
       price: '150,000 VND',
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/cau-dao-tu-dong.jpg',
-      thumbnail: 'https://example.com/images/thumb/cau-dao-tu-dong.jpg'
+      image: 'assets/cau-dao-tu-dong.png',
+      thumbnail: 'assets/cau-dao-tu-dong.png'
     },
     {
       id: 'DND002',
@@ -440,7 +440,7 @@ export const productData = [
       image: 'https://example.com/images/pin-nang-luong-50w.jpg',
       thumbnail: 'https://example.com/images/thumb/pin-nang-luong-50w.jpg'
     },
-    
+
     {
       id: 'DND031',
       name: 'Bộ Chuyển Đổi Năng Lượng Mặt Trời',
