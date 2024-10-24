@@ -1,21 +1,27 @@
-<div *ngFor="let item of products" class="product-container">
-  <div class="product-content relative">
-    <div class="product-img">
-      <img class="img" [src]="item.thumbnail" alt="">
-    </div>
-    <div class="product-info text-black">
-      <div class="name underline italic">
-        <span>{{item.name}}</span>
-      </div>
-      <div class="description"><span>{{item.description}}</span></div>
+<div class="project">
+  <div class="project-container">
+    <div class="title">
+      <span class="text-white">Các Dự Án Của Chúng Tôi</span>
 
-    </div>
-    <div class="product-footer absolute bottom-3 right-0 left-0 flex justify-between px-[10px] items-center ">
-      <div class="price"><span>{{item.price}}</span></div>
-      <div class="stock">
-        <span *ngIf="item.stockQuantity" class="text-[#17ED45]">Còn hàng</span>
-        <span *ngIf="!item.stockQuantity" class="text-[#ED3717]"> Hết hàng</span>
+
+      <div class="project-content pt-20 flex flex-row flex-nowrap justify-center gap-1">
+        <div class="project-item" *ngFor="let project of projects">
+          <div class="item-overlay"></div>
+          <img class="project-img" [src]="project.imageSrc" alt="">
+          <div class="project-description absolute bottom-32 right-0 left-0">
+            <div class="project-text text-white text-center">
+              <span class="title">{{project.title}}</span>
+            </div>
+          </div>
+          <div class="project-button text-center absolute bottom-7 right-0 left-0">
+            <button class="text-black btn" [routerLink]="['/project', project.title]">Xem Thêm</button>
+          </div>
+
+          <div class="change-route absolute bottom-9 text-white z-10 left-8 underline ">
+            <span [routerLink]="'/projects'">Xem tất cả dự án
+              <i class="fas fa-arrow-right ml-3 icon"></i>
+            </span>
+
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
