@@ -1,0 +1,47 @@
+<div *ngIf="selectedMenu" class="menu-container visible">
+  <h3>Menu</h3>
+  <table mat-table [dataSource]="menu" class="mat-elevation-z8">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element" (click)="selectMenu(element.name)">
+        {{ element.name }}
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="['name']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['name']"></tr>
+  </table>
+</div>
+
+<div *ngIf="selectedMenu" class="content-container">
+  <h3>{{ selectedMenu }}</h3>
+  <button mat-button (click)="clearSelection()">Back to Menu</button>
+  <div *ngIf="selectedMenu === 'Dự án'">
+    <table mat-table [dataSource]="projectsData" class="mat-elevation-z8">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Project Name </th>
+        <td mat-cell *matCellDef="let project">{{ project.name }}</td>
+      </ng-container>
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef> Description </th>
+        <td mat-cell *matCellDef="let project">{{ project.description }}</td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="['name', 'description']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['name', 'description']"></tr>
+    </table>
+  </div>
+
+  <div *ngIf="selectedMenu === 'Sản phẩm'">
+    <table mat-table [dataSource]="productData" class="mat-elevation-z8">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Product Name </th>
+        <td mat-cell *matCellDef="let product">{{ product.name }}</td>
+      </ng-container>
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef> Price </th>
+        <td mat-cell *matCellDef="let product">{{ product.price }}</td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="['name', 'price']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['name', 'price']"></tr>
+    </table>
+  </div>
+</div>
