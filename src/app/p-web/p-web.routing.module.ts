@@ -11,6 +11,7 @@ import { P004ProductDetailComponent } from './pages/p004-product-detail/p004-pro
 import { P005ProjectComponent } from './pages/p005-project/p005-project.component';
 import { P005ProjectDetailComponent } from './pages/p005-project-detail/p005-project-detail.component';
 import { P006CartComponent } from './pages/p006-cart/p006-cart/p006-cart.component';
+import { P008ServiceComponent } from './pages/p008-service/service/p008-service.component';
 
 const routes: Routes = [
 
@@ -54,6 +55,10 @@ const routes: Routes = [
       {
         path: 'cart',
         component: P006CartComponent,
+      },
+      {
+        path: 'services',
+        component: P008ServiceComponent,
       }
     ],
   },

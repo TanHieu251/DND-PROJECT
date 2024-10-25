@@ -1,0 +1,131 @@
+::ng-deep {
+  app-service-content {
+    .service-container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      padding: 30px;
+      // background-color: #f5f7fa;
+
+
+      .service-item {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        // padding: 25px;
+        border-radius: 12px;
+        // box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+        gap: 10px;
+
+        &:nth-child(even) {
+          flex-direction: row-reverse;
+          content: '';
+          background: url('/assets/background11.jpg') no-repeat center center;
+          background-size: cover;
+          opacity: 1;
+        }
+
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-content {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          // background-color: #f6f6f6;
+          border-radius: 10px;
+          padding: 10px;
+
+          &:nth-child(even) {
+            padding-right: 0;
+          }
+
+          .service-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            position: relative;
+
+            &::after {
+              content: '';
+              position: absolute;
+              left: 0;
+              bottom: -5px;
+              width: 50px;
+              height: 3px;
+              background-color: #3498db;
+              border-radius: 2px;
+            }
+          }
+
+          .service-description {
+            font-size: 18px;
+            color: #5d7287;
+            line-height: 1.6;
+            margin-bottom: 20px;
+          }
+
+          .service-features,
+          .service-process {
+            margin-top: 20px;
+
+            h3 {
+              font-size: 20px;
+              font-weight: 600;
+              color: #34495e;
+              margin-bottom: 10px;
+            }
+
+            ul,
+            ol {
+              padding-left: 20px;
+              margin: 0;
+
+              li {
+                font-size: 18px;
+                color: #555;
+                line-height: 1.6;
+                margin-bottom: 8px;
+
+                &::before {
+                  content: '•';
+                  color: #3498db;
+                  font-weight: bold;
+                  display: inline-block;
+                  width: 1em;
+                  margin-left: -1em;
+                }
+              }
+            }
+          }
+        }
+
+        .service-image {
+          margin-top: 15px;
+          width: 50%;
+          height: auto;
+          border-radius: 8px;
+          overflow: hidden;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+          margin-left: 30px;
+
+          &:nth-child(even) {
+            margin-left: 0;
+            margin-right: 30px;
+          }
+
+          img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+  }
+}

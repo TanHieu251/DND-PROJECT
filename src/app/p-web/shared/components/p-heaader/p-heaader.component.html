@@ -54,7 +54,6 @@
           </button>
         </div>
 
-        <!-- Content Section -->
         <div *ngIf="selectedMenu" class="content-container">
           <div *ngIf="selectedMenu === 'Dự án'">
             <table mat-table [dataSource]="projectsData" class="mat-elevation-z8">
@@ -74,7 +73,6 @@
               <tr mat-row *matRowDef="let row; columns: ['info']"></tr>
             </table>
           </div>
-
 
           <div *ngIf="selectedMenu === 'Sản phẩm'">
             <table mat-table [dataSource]="productData" class="mat-elevation-z8">

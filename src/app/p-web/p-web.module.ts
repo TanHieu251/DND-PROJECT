@@ -43,6 +43,9 @@ import { HomeServicesComponent } from './shared/components/C-Home/home-services/
 import { HomeNewsComponent } from './shared/components/C-Home/home-news/home-news.component';
 import { HeaderComponent } from './shared/components/p-heaader/p-heaader.component';
 import { SearchDialogComponent } from './shared/components/search-dialog/search-dialog.component';
+import { P008ServiceComponent } from './pages/p008-service/service/p008-service.component';
+import { ServiceBannerComponent } from './shared/components/C-Services/service-banner/service-banner.component';
+import { ServiceContentComponent } from './shared/components/C-Services/service-content/service-content.component';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -79,7 +82,11 @@ import { SearchDialogComponent } from './shared/components/search-dialog/search-
     ProductListHomeComponent,
     HomeServicesComponent,
     HomeNewsComponent,
-    SearchDialogComponent
+    SearchDialogComponent,
+    P008ServiceComponent,
+    ServiceBannerComponent,
+    ServiceContentComponent
+
 
   ],
   imports: [

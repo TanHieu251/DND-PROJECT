@@ -772,3 +772,71 @@ export const ImageProject = [
   { id: 5, url: 'assets/projectimage.png' },
   { id: 6, url: 'assets/projectimage.png' }
 ]
+
+export const serviceData = [
+  {
+    name: 'Dịch vụ lắp đặt điện',
+    description: 'Cung cấp và lắp đặt các thiết bị điện cho nhà ở và công nghiệp.',
+    image:'assets/suachapdien-1536x1024.png',
+    features: [
+      'Thiết bị chất lượng cao',
+      'Đội ngũ kỹ thuật chuyên nghiệp',
+      'Đáp ứng nhanh chóng yêu cầu của khách hàng'
+    ],
+    process: [
+      'Tiếp nhận yêu cầu của khách hàng',
+      'Khảo sát thực tế và lên phương án',
+      'Thực hiện lắp đặt',
+      'Bàn giao và hướng dẫn sử dụng'
+    ]
+  },
+  {
+    name: 'Dịch vụ bảo trì hệ thống',
+    description: 'Bảo trì định kỳ và sửa chữa các thiết bị trong hệ thống điện.',
+    image:'/assets/baotrihethong.jpg',
+    features: [
+      'Hỗ trợ 24/7',
+      'Kiểm tra định kỳ miễn phí',
+      'Sửa chữa nhanh chóng'
+    ],
+    process: [
+      'Tiếp nhận thông tin yêu cầu bảo trì',
+      'Kiểm tra và chẩn đoán tình trạng',
+      'Thực hiện sửa chữa hoặc thay thế',
+      'Kiểm tra lại và bàn giao hệ thống'
+    ]
+  },
+  {
+    name: 'Dịch vụ kiểm tra an toàn điện',
+    description: 'Kiểm tra an toàn điện định kỳ cho các công trình dân dụng và công nghiệp.',
+    image: '/assets/kiemtraantoandien.jpg',
+    features: [
+      'Đánh giá toàn diện tình trạng hệ thống điện',
+      'Tư vấn cải thiện và nâng cấp hệ thống',
+      'Đội ngũ chuyên gia nhiều kinh nghiệm'
+    ],
+    process: [
+      'Tiếp nhận yêu cầu kiểm tra từ khách hàng',
+      'Tiến hành kiểm tra thực tế hệ thống',
+      'Báo cáo kết quả kiểm tra và đề xuất giải pháp',
+      'Thực hiện các biện pháp khắc phục (nếu cần)'
+    ]
+  },
+  {
+    name: 'Dịch vụ sửa chữa sự cố điện',
+    description: 'Khắc phục các sự cố liên quan đến hệ thống điện trong thời gian ngắn nhất.',
+    image: '/assets/suachuasuco.jpg',
+    features: [
+      'Phục vụ nhanh chóng 24/7',
+      'Sử dụng thiết bị và linh kiện chính hãng',
+      'Giá cả hợp lý, minh bạch'
+    ],
+    process: [
+      'Tiếp nhận thông tin sự cố',
+      'Khảo sát và chẩn đoán nguyên nhân',
+      'Thực hiện sửa chữa và kiểm tra lại hệ thống',
+      'Bàn giao và hướng dẫn khách hàng sử dụng an toàn'
+    ]
+  }
+
+]
