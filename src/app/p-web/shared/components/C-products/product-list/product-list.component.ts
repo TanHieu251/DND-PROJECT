@@ -14,38 +14,40 @@ export class ProductListComponent {
   status: boolean = true;
   searchTerm: string = '';
   filteredProducts: any[] =this.products;
+  selectedCategory: string = '';
 
   currentPage: number = 1;
   totalPages: number = 0;
   itemPerPage: number = 12;
   displayedPages: number[] = [];
+  
   itemToggle: any;
   sortOrder: string = 'asc'
 
     items = [
       {
-        title: 'Thiết Bị Điện Hạ Thế',
-        subcategories: ['Máy cắt hạ thế', 'Aptomat', 'Contactor', 'Rơ le bảo vệ', 'Tụ bù'],
+        subcategories: 'Thiết Bị Điện Hạ Thế',
+        // subcategories: ['Máy cắt hạ thế', 'Aptomat', 'Contactor', 'Rơ le bảo vệ', 'Tụ bù'],
         isOpen: false
       },
       {
-        title: 'Thiết Bị Truyền Tải và Phân Phối Điện',
-        subcategories: ['Máy biến áp', 'Tủ trung thế', 'Máy cắt trung thế', 'Cầu dao phụ tải'],
+        subcategories: 'Thiết Bị Truyền Tải và Phân Phối Điện',
+        // subcategories: ['Máy biến áp', 'Tủ trung thế', 'Máy cắt trung thế', 'Cầu dao phụ tải'],
         isOpen: false
       },
       {
-        title: 'Thiết Bị Theo Dõi và Đo Lường',
-        subcategories: ['Ampe kìm', 'Đồng hồ vạn năng', 'Cảm biến nhiệt độ', 'Thiết bị đo dòng rò', 'Đồng hồ đo điện áp'],
+        subcategories: 'Thiết Bị Theo Dõi và Đo Lường',
+        // subcategories: ['Ampe kìm', 'Đồng hồ vạn năng', 'Cảm biến nhiệt độ', 'Thiết bị đo dòng rò', 'Đồng hồ đo điện áp'],
         isOpen: false
       },
       {
-        title: 'Công Tắc Ổ Cắm',
-        subcategories: ['Công tắc điện', 'Ổ cắm điện', 'Ổ cắm công nghiệp', 'Ổ cắm kéo dài'],
+        subcategories: 'Công Tắc Ổ Cắm',
+        // subcategories: ['Công tắc điện', 'Ổ cắm điện', 'Ổ cắm công nghiệp', 'Ổ cắm kéo dài'],
         isOpen: false
       },
       {
-        title: 'Thiết Bị Năng Lượng Mới',
-        subcategories: ['Tấm pin mặt trời', 'Inverter năng lượng mặt trời', 'Bộ điều khiển sạc', 'Hệ thống lưu trữ năng lượng'],
+        subcategories: 'Thiết Bị Năng Lượng Mới',
+        // subcategories: ['Tấm pin mặt trời', 'Inverter năng lượng mặt trời', 'Bộ điều khiển sạc', 'Hệ thống lưu trữ năng lượng'],
         isOpen: false
       }
   ]
@@ -56,6 +58,10 @@ export class ProductListComponent {
     }
   ];
 
+   constructor(private router: Router){
+    this.totalPages = Math.ceil(this.products.length / this.itemPerPage);
+    this.calculateDisplayedPages();
+  }
   viewDetailProduct(productName: string ){
     // event.stopPropagation();
     this.router.navigate(['/product', productName])
@@ -63,9 +69,41 @@ export class ProductListComponent {
     // console.log('products.name')
   }
 
-  constructor(private router: Router){
-    this.totalPages = Math.ceil(this.products.length / this.itemPerPage);
-    this.calculateDisplayedPages();
+  filterProductsByCategory(category: string){
+    this.selectedCategory = category;
+    switch (category) {
+      case 'Thiết Bị Điện Hạ Thế':
+        this.filteredProducts = this.products.filter(product =>
+          product.name.includes('Cầu Dao') ||
+          product.name.includes('Aptomat')
+        );
+        break;
+      case 'Thiết Bị Truyền Tải và Phân Phối Điện':
+        this.filteredProducts = this.products.filter(product =>
+          product.name.includes('Bộ Truyền Tải') ||
+          product.name.includes('Biến Áp')
+        );
+        break;
+      case 'Thiết Bị Theo Dõi và Đo Lường':
+        this.filteredProducts = this.products.filter(product =>
+          product.name.includes('Đồng Hồ') ||
+          product.name.includes('Cảm Ứng')
+        );
+        break;
+      case 'Công Tắc Ổ Cắm':
+        this.filteredProducts = this.products.filter(product =>
+          product.name.includes('Công Tắc')
+        );
+        break;
+      case 'Thiết Bị Năng Lượng Mới':
+        this.filteredProducts = this.products.filter(product =>
+          product.name.includes('Pin Mặt Trời') ||
+          product.name.includes('Inverter')
+        );
+        break;
+      default:
+        this.filteredProducts = this.products; // Show all if no filter
+    }
   }
   onItemPerPageChange(event: any) {
     this.itemPerPage = event;
@@ -121,10 +159,6 @@ export class ProductListComponent {
   reloadPage()
   {
     window.location.href = '/';
-  }
-
-  toggleItem(itemToggle: Item) {
-    itemToggle.isOpen = !itemToggle.isOpen;
   }
 
   toggleSort(){

@@ -1,84 +1,82 @@
 ::ng-deep {
-  .project-container {
-    // height: auto;
-    margin-top: 40px;
-    // text-align: left;
-    // padding-left: 30px;
-    // position: absolute;
+  app-project-list{
 
-    h2 {
-      margin-left: 70px;
-      text-align: center;
-      font-size: 42px;
-      font-style: italic;
+  .project-container {
+    margin-top: 20px;
+
+      h2 {
+        margin-left: 70px;
+        text-align: center;
+        font-size: 42px;
+        font-style: italic;
+        font-weight: bold;
+        margin-bottom: 20px;
+        border-top: 5px solid #007bff;
+        display: inline-flex;
+      }
+    }
+
+    .project-card {
+      // width: 100%;
+      justify-content: center;
+      display: flex;
+      padding: 40px;
+      border-radius: 5px;
+      height: auto;
+      position: relative;
+      margin-bottom: 30px;
+      // background-color: #f9f9f9;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .image img {
+      padding-left: 30px;
+      max-width: 500px;
+      // text-align: center;
+      // align-items: center;
+      height: auto;
+      border-radius: 5px;
+      gap: 5px;
+    }
+
+    .project-details {
+      text-align: left;
+      padding-left: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-title {
+      color: #007bff;
       font-weight: bold;
-      margin-bottom: 20px;
-      border-top: 5px solid #007bff;
-      display: inline-flex;
+      font-size: 24px;
+      display: block;
+      margin-bottom: 5px;
+      text-decoration: none;
+    }
+
+    .project-description {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    a.project-title {
+      text-decoration: none;
+      color: #007bff;
+      cursor: pointer;
+    }
+
+    a.project-link {
+      font-size: 16px;
+      font-weight: 700;
+      bottom: 10px;
+      text-decoration: underline;
+      color: red;
+      cursor: pointer;
+      text-align: right;
     }
   }
-
-  .project-card {
-    // width: 90%;
-    justify-content: center;
-    display: flex;
-    padding: 40px;
-    border-radius: 5px;
-    height: auto;
-    position: relative;
-    margin-bottom: 30px;
-    // background-color: #f9f9f9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-
-  .image img {
-    padding-left: 30px;
-    width: 380px;
-    // text-align: center;
-    // align-items: center;
-    height: auto;
-    border-radius: 5px;
-    gap: 5px;
-  }
-
-  .project-details {
-    text-align: left;
-    padding-left: 20px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .project-title {
-    color: #007bff;
-    font-weight: bold;
-    font-size: 24px;
-    display: block;
-    margin-bottom: 5px;
-    text-decoration: none;
-  }
-
-  .project-description {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 10px;
-  }
-
-   a.project-title {
-    text-decoration: none;
-    color: #007bff;
-    cursor: pointer;
-  }
-
-  a.project-link {
-    font-size: 16px;
-    font-weight: 700;
-    bottom: 10px;
-    text-decoration: underline;
-    color: red;
-    cursor: pointer;
-    text-align: right;
-  }
-
 }

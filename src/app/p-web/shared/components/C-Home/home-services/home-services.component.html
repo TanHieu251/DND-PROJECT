@@ -9,20 +9,22 @@
         <div class="service-group">
             <div class="service-group-content w-full h-full relative">
                 <div *ngFor="let item of serviceItems; let i = index" class="service-item absolute my-auto top-0 bottom-0" [ngStyle]="{
-                        'z-index': serviceItems.length - i, 
+                        'z-index': serviceItems.length - i,
                         'left': (i*350 + -80) + 'px'
                      }">
                     <div class="service-thumbnail">
                         <img class="thumbnail" [src]="item.thumbnail" alt="">
                     </div>
                     <div class="service-infor">
-                        <div class="service-title"><span class="title text-3xl">{{ item.title }}</span></div>
+                        <div class="service-title" ><span [routerLink]="['services/{{item.title}}']" class="title text-3xl">{{ item.title }}</span></div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="change-route absolute bottom-9 shadow-md text-white z-10 font-semibold text-lg right-40 underline ">
-            <span>Xem tất cả  dịch vụ -></span>
+        <div class="change-route absolute bottom-9 shadow-md text-white z-10 font-semibold text-lg right-4 underline ">
+          <span [routerLink]="['product/{{item.name}}']">Xem tất cả  dịch vụ
+            <i class="fas fa-arrow-right ml-3 icon"></i>
+          </span>
         </div>
     </div>
 </div>

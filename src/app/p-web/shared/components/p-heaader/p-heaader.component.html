@@ -1,6 +1,3 @@
-
-
-
 <div class="bg-blue-400 flex flex-row justify-around items-center  h-16 header">
   <div [routerLink]="'/home'" class="header-logo px-5">
     <img src="assets/DNDLogo.png" alt="Logo" />
@@ -39,9 +36,10 @@
     <div class="close" (click)="closePopup()">×</div>
     <div class="popup-content">
       <div class="form-container">
+
         <div class="menu-container" mat-fixed>
           <div class="close" (click)="closeMenu()">×</div>
-          <div class="mat-elevation-z8 menu-row">
+          <div class="mat-elevation-z8 menu-row " mat-fixed>
             <div *ngFor="let element of menuSearch" class="menu-item" (click)="selectMenu(element.name)">
               {{ element.name }}
             </div>
@@ -58,7 +56,7 @@
           <div *ngIf="selectedMenu === 'Dự án'">
             <table mat-table [dataSource]="projectsData" class="mat-elevation-z8">
               <ng-container matColumnDef="info">
-                <th mat-header-cell *matHeaderCellDef> Project Info </th>
+                <th mat-header-cell *matHeaderCellDef> Thông tin dự án </th>
                 <td mat-cell *matCellDef="let project">
                   <div class="info-container">
                     <div class="project-name">{{ project.title }}</div>
@@ -75,12 +73,46 @@
           </div>
 
           <div *ngIf="selectedMenu === 'Sản phẩm'">
-            <table mat-table [dataSource]="productData" class="mat-elevation-z8">
+            <table mat-table [dataSource]="paginatedProducts" class="mat-elevation-z8">
               <ng-container matColumnDef="info">
-                <th mat-header-cell *matHeaderCellDef> Product Info </th>
+                <th mat-header-cell *matHeaderCellDef> Thông tin sản phẩm </th>
                 <td mat-cell *matCellDef="let product">
                   <div class="product-info-container">
                     <div class="product-name">{{ product.name }}</div>
+                    <div class="product-price">{{ product.description  }}</div>
+                  </div>
+                  <mat-card>
+                    <img class="img-product" mat-card-image [src]="product.image" alt="Product Image">
+                  </mat-card>
+                </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="['info']"></tr>
+              <tr mat-row *matRowDef="let row; columns: ['info']"></tr>
+            </table>
+            <!-- <mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              aria-label="Select page">
+            </mat-paginator> -->
+            <div class="pagination">
+              <div class="pagination-controls">
+                <button (click)="setPage(currentPage - 1)" [disabled]="currentPage === 1">&laquo;</button>
+                <ng-container *ngFor="let page of displayedPages">
+                  <button (click)="setPage(page)" [class.active]="currentPage === page">{{ page }}</button>
+                </ng-container>
+                <button (click)="setPage(currentPage + 1)" [disabled]="currentPage === totalPages">&raquo;</button>
+              </div>
+            </div>
+          </div>
+
+
+          <div *ngIf="selectedMenu === 'Dịch vụ'">
+            <table mat-table [dataSource]="serviceData" class="mat-elevation-z8">
+              <ng-container matColumnDef="info">
+                <th mat-header-cell *matHeaderCellDef> Thông tin dịch vụ </th>
+                <td mat-cell *matCellDef="let product">
+                  <div class="product-info-container">
+                    <div class="product-name">{{ product.title }}</div>
                     <div class="product-price">{{ product.description  }}</div>
                   </div>
                   <mat-card>

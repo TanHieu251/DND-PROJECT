@@ -29,7 +29,7 @@ export const productData = [
       specifications: 'Dòng định mức: 16A; Điện áp: 220V; Kích thước: 80x45x60mm.',
       reviews: 'Sản phẩm chất lượng, bảo vệ an toàn cho hệ thống điện.',
       price: '150,000 VND',
-      status: true,
+      status: false,
       availability: 'Còn hàng',
       image: 'assets/cau-dao-tu-dong.png',
       thumbnail: 'assets/cau-dao-tu-dong.png'
@@ -45,8 +45,8 @@ export const productData = [
       price: '5,000,000 VND',
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/bo-truyen-tai-dien.jpg',
-      thumbnail: 'https://example.com/images/thumb/bo-truyen-tai-dien.jpg'
+      image: 'assets/botruyentai3pha.png',
+      thumbnail: 'assets/botruyentai3pha.png'
     },
     {
       id: 'DND003',
@@ -59,8 +59,8 @@ export const productData = [
       price: '350,000 VND',
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/cong-tac-cam-ung.jpg',
-      thumbnail: 'https://example.com/images/thumb/cong-tac-cam-ung.jpg'
+      image: 'assets/cong-tac-wifi-thong-minh-sw702-wifi (6).jpg',
+      thumbnail: 'assets/cong-tac-wifi-thong-minh-sw702-wifi (6).jpg'
     },
     {
       id: 'DND004',
@@ -73,8 +73,8 @@ export const productData = [
       price: '900,000 VND',
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/dong-ho-do-cong-suat.jpg',
-      thumbnail: 'https://example.com/images/thumb/dong-ho-do-cong-suat.jpg'
+      image: 'assets/donghocongsuatdientu.png',
+      thumbnail: 'assets/donghocongsuatdientu.png'
     },
     {
       id: 'DND005',
@@ -87,8 +87,8 @@ export const productData = [
       price: '4,500,000 VND',
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/tam-pin-nang-luong.jpg',
-      thumbnail: 'https://example.com/images/thumb/tam-pin-nang-luong.jpg'
+      image: 'assets/pinnlmt.jpg',
+      thumbnail: 'assets/pinnlmt.jpg'
     },
     {
       id: 'DND006',
@@ -101,8 +101,8 @@ export const productData = [
       price: '1,200,000 VND',
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/thiet-bi-chong-set.jpg',
-      thumbnail: 'https://example.com/images/thumb/thiet-bi-chong-set.jpg'
+      image: 'assets/chong-set-van-2-min.jpg',
+      thumbnail: 'assets/chong-set-van-2-min.jpg',
     },
     {
       id: 'DND007',
@@ -115,8 +115,8 @@ export const productData = [
       price: '15,000,000 VND',
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/bien-ap-truyen-tai.jpg',
-      thumbnail: 'https://example.com/images/thumb/bien-ap-truyen-tai.jpg'
+      image: 'assets/trambienapdl.jpg',
+      thumbnail: 'assets/trambienapdl.jpg'
     },
     {
       id: 'DND008',
@@ -129,8 +129,8 @@ export const productData = [
       price: '600,000 VND',
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/cong-tac-dieu-khien.jpg',
-      thumbnail: 'https://example.com/images/thumb/cong-tac-dieu-khien.jpg'
+      image: 'src/assets/congtacdktx.png',
+      thumbnail: 'src/assets/congtacdktx.png'
     },
     {
       id: 'DND009',
@@ -143,8 +143,8 @@ export const productData = [
       price: '1,000,000 VND',
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/bo-dieu-khien-sac.jpg',
-      thumbnail: 'https://example.com/images/thumb/bo-dieu-khien-sac.jpg'
+      image: 'assets/bodieukhientampinmattroi.png',
+      thumbnail: 'assets/bodieukhientampinmattroi.png'
     },
     {
       id: 'DND010',
@@ -157,8 +157,8 @@ export const productData = [
       price: '12,000,000 VND',
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/may-phat-dien.jpg',
-      thumbnail: 'https://example.com/images/thumb/may-phat-dien.jpg'
+      image: 'assets/mayphatdien.jpg',
+      thumbnail: 'assets/mayphatdien.jpg'
     },
     {
       id: 'DND011',
@@ -171,8 +171,8 @@ export const productData = [
       price: '100,000 VND',
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/o-cam-da-nang.jpg',
-      thumbnail: 'https://example.com/images/thumb/o-cam-da-nang.jpg'
+      image: 'assets/ocamdien.jpg',
+      thumbnail: 'assets/ocamdien.jpg'
     },
     {
       id: 'DND012',
@@ -185,8 +185,8 @@ export const productData = [
       price: '1,200,000 VND',
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/thiet-bi-do-ap-suat.jpg',
-      thumbnail: 'https://example.com/images/thumb/thiet-bi-do-ap-suat.jpg'
+      image: 'assets/thietbidoapsuat.jpg',
+      thumbnail: 'assets/thietbidoapsuat.jpg'
     },
     {
       id: 'DND013',
@@ -199,8 +199,8 @@ export const productData = [
       price: '6,000,000 VND',
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/bo-chuyen-doi-tan-so.jpg',
-      thumbnail: 'https://example.com/images/thumb/bo-chuyen-doi-tan-so.jpg'
+      image: 'assets/bochuyendoitanso.png',
+      thumbnail: 'assets/bochuyendoitanso.png'
     },
     {
       id: 'DND014',
@@ -213,8 +213,8 @@ export const productData = [
       price: '180,000 VND',
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/cong-tac-doi.jpg',
-      thumbnail: 'https://example.com/images/thumb/cong-tac-doi.jpg'
+      image: 'assets/contacdoi.png',
+      thumbnail: 'assets/contacdoi.png'
     },
     {
       id: 'DND015',
@@ -227,8 +227,8 @@ export const productData = [
       price: '4,000,000 VND',
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/pin-luu-tru-nang-luong.jpg',
-      thumbnail: 'https://example.com/images/thumb/pin-luu-tru-nang-luong.jpg'
+      image: 'assets/hoppinnlmt.png',
+      thumbnail: 'assets/hoppinnlmt.png'
     },
     {
       id: 'DND016',
@@ -241,8 +241,8 @@ export const productData = [
       price: '2,500,000 VND',
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/bien-ap-1-pha.jpg',
-      thumbnail: 'https://example.com/images/thumb/bien-ap-1-pha.jpg'
+      image: 'assets/bien-ap-1-pha-vao-220v-ra-12v-11kva100a-fushin_1342.png',
+      thumbnail: 'assets/bien-ap-1-pha-vao-220v-ra-12v-11kva100a-fushin_1342.png'
     },
     {
       id: 'DND017',
@@ -255,8 +255,8 @@ export const productData = [
       price: '850,000 VND',
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/thiet-bi-theo-doi-nang-luong.jpg',
-      thumbnail: 'https://example.com/images/thumb/thiet-bi-theo-doi-nang-luong.jpg'
+      image: 'assets/giam-sat-dien-nang-h1.png',
+      thumbnail: 'assets/giam-sat-dien-nang-h1.png'
     },
     {
       id: 'DND018',
@@ -269,8 +269,8 @@ export const productData = [
       price: '1,800,000 VND',
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/may-bien-ap-dien-tu.jpg',
-      thumbnail: 'https://example.com/images/thumb/may-bien-ap-dien-tu.jpg'
+      image: 'assets/maybienapdientu.jpg',
+      thumbnail: 'assets/maybienapdientu.jpg'
     },
     {
       id: 'DND019',
@@ -283,8 +283,8 @@ export const productData = [
       price: '1,000,000 VND',
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/dong-ho-do-dien-tro.jpg',
-      thumbnail: 'https://example.com/images/thumb/dong-ho-do-dien-tro.jpg'
+      image: 'assets/donghododientro.png',
+      thumbnail: 'assets/donghododientro.png'
     },
     {
       id: 'DND020',
@@ -297,8 +297,8 @@ export const productData = [
       price: '30,000,000 VND',
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/tu-phan-phoi-dien.jpg',
-      thumbnail: 'https://example.com/images/thumb/tu-phan-phoi-dien.jpg'
+      image: 'assets/tuphanphoidien.jpg',
+      thumbnail: 'assets/tuphanphoidien.jpg'
     },
     {
       id: 'DND021',
@@ -662,8 +662,8 @@ export const productData = [
       price: '400,000 VND',
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/bang-mach-dieu-khien.jpg',
-      thumbnail: 'https://example.com/images/thumb/bang-mach-dieu-khien.jpg'
+            image: 'assets/trambienapdl.jpg',
+      thumbnail: 'assets/trambienapdl.jpg'
   },
   {
       id: 'DND047',
@@ -676,8 +676,8 @@ export const productData = [
       price: '600,000 VND',
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/den-led-ngoai-troi.jpg',
-      thumbnail: 'https://example.com/images/thumb/den-led-ngoai-troi.jpg'
+      image: 'assets/trambienapdl.jpg',
+      thumbnail: 'assets/trambienapdl.jpg'
   },
   {
       id: 'DND048',
@@ -721,7 +721,7 @@ export const productData = [
       image: 'https://example.com/images/may-hut-bui-cong-nghiep.jpg',
       thumbnail: 'https://example.com/images/thumb/may-hut-bui-cong-nghiep.jpg'
   }
-];
+]
 
 export const projectsData = [
   {
@@ -747,9 +747,26 @@ export const projectsData = [
     ]
   },
   {
+    title: "Công trình cầu vượt Thủ Thiêm",
     image:'assets/cauthuthiem.png',
-    title:'Công trình cầu vượt Thủ Thiêm',
     description: 'Cầu Thủ Thiêm là một cây cầu bắc qua sông Sài Gòn, nối liền quận Bình Thạnh và thành phố Thủ Đức, Thành phố Hồ Chí Minh. Cầu có 6 làn xe, nối Khu đô thị mới Thủ Thiêm và trung tâm hiện hữu của thành phố và được thông xe vào năm 2005.[a] Tổng kinh phí xây dựng cầu lên đến 1.099,6 tỷ đồng. Tổng thầu là Tổng công ty xây dựng số 1 thuộc Bộ Xây dựng. Cầu Thủ Thiêm dài 1.250 m, phần cầu chính gồm 5 nhịp, 6 làn xe; phần cầu dẫn phía Bình Thạnh gồm bốn nhánh, mỗi nhánh 2 làn xe; cầu dẫn phía thành phố Thủ Đức dài 160 m, rộng tương đương 6 làn xe. Nút giao phía quận Bình Thạnh gồm một hầm chui trực thông dài 460 m trên đường Nguyễn Hữu Cảnh, rộng 4 làn xe. Đường dẫn phía thành phố Thủ Đức dài 280 m, mặt cắt ngang 47 m. Đường gom có tổng chiều dài 1.460 m, phía quận Bình Thạnh rộng 10,5 m, phía thành phố Thủ Đức rộng 9,5 m. Điểm đầu dự án là giao giữa đường Ngô Tất Tố với đường Nguyễn Hữu Cảnh, phường 22, Bình Thạnh. Điểm cuối dự án kết nối với đường Lương Định Của (thành phố Thủ Đức); tuyến chạy theo tim đường Ngô Tất Tố hiện hữu vượt sông Sài Gòn. Cầu Thủ Thiêm được hợp long vào lúc 8 giờ 15 phút sáng ngày 29 tháng 11 năm 2007. Ông Lê Hoàng Quân - Chủ tịch Ủy ban Nhân dân Thành phố Hồ Chí Minh - đã cho mẻ bê tông đầu tiên vào vị trí hợp long của cầu.',
+    objectives: [
+      "Cung cấp điện cho khu vực miền Nam",
+      "Đảm bảo nguồn năng lượng tái tạo"
+    ],
+    timeline: {
+      start: "01/01/2024",
+      end: "31/12/2026",
+      milestones: [
+        { date: "01/06/2024", description: "Hoàn thành giai đoạn 1" },
+        { date: "01/12/2025", description: "Bắt đầu giai đoạn 2" }
+      ]
+    },
+    stakeholders: [
+      "EVN",
+      "Bộ Công Thương",
+      "Nhà thầu xây dựng ABC"
+    ]
   },
   {
     image:'assets/caotocBN.png',
@@ -775,9 +792,10 @@ export const ImageProject = [
 
 export const serviceData = [
   {
-    name: 'Dịch vụ lắp đặt điện',
+    title: 'Dịch vụ lắp đặt điện',
     description: 'Cung cấp và lắp đặt các thiết bị điện cho nhà ở và công nghiệp.',
     image:'assets/suachapdien-1536x1024.png',
+    thumbnail:'assets/suachapdien-1536x1024.png',
     features: [
       'Thiết bị chất lượng cao',
       'Đội ngũ kỹ thuật chuyên nghiệp',
@@ -791,9 +809,10 @@ export const serviceData = [
     ]
   },
   {
-    name: 'Dịch vụ bảo trì hệ thống',
+    title: 'Dịch vụ bảo trì hệ thống',
     description: 'Bảo trì định kỳ và sửa chữa các thiết bị trong hệ thống điện.',
     image:'/assets/baotrihethong.jpg',
+    thumbnail:'assets/suachapdien-1536x1024.png',
     features: [
       'Hỗ trợ 24/7',
       'Kiểm tra định kỳ miễn phí',
@@ -807,9 +826,10 @@ export const serviceData = [
     ]
   },
   {
-    name: 'Dịch vụ kiểm tra an toàn điện',
+    title: 'Dịch vụ kiểm tra an toàn điện',
     description: 'Kiểm tra an toàn điện định kỳ cho các công trình dân dụng và công nghiệp.',
     image: '/assets/kiemtraantoandien.jpg',
+    thumbnail:'assets/suachapdien-1536x1024.png',
     features: [
       'Đánh giá toàn diện tình trạng hệ thống điện',
       'Tư vấn cải thiện và nâng cấp hệ thống',
@@ -823,9 +843,10 @@ export const serviceData = [
     ]
   },
   {
-    name: 'Dịch vụ sửa chữa sự cố điện',
+    title: 'Dịch vụ sửa chữa sự cố điện',
     description: 'Khắc phục các sự cố liên quan đến hệ thống điện trong thời gian ngắn nhất.',
     image: '/assets/suachuasuco.jpg',
+    thumbnail:'assets/suachapdien-1536x1024.png',
     features: [
       'Phục vụ nhanh chóng 24/7',
       'Sử dụng thiết bị và linh kiện chính hãng',

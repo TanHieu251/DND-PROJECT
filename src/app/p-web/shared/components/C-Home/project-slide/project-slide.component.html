@@ -1,7 +1,7 @@
 <div class="project">
   <div class="project-container">
     <div class="title">
-      <span class="text-white">Các Dự Án Của Chúng Tôi</span>
+      <span class="text-black">Các Dự Án Của Chúng Tôi</span>
 
 
       <div class="project-content pt-20 flex flex-row flex-nowrap justify-center gap-1">
@@ -16,12 +16,10 @@
           <div class="project-button text-center absolute bottom-7 right-0 left-0">
             <button class="text-black btn" [routerLink]="['/project', project.title]">Xem Thêm</button>
           </div>
-
-          <div class="change-route absolute bottom-9 text-white z-10 left-8 underline ">
+        </div>
+        <div class="change-route absolute top-20 text-black z-10 right-8 underline ">
             <span [routerLink]="'/projects'">Xem tất cả dự án
               <i class="fas fa-arrow-right ml-3 icon"></i>
             </span>
-
           </div>
-        </div>
       </div>

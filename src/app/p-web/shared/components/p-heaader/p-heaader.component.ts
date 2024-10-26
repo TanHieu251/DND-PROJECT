@@ -4,15 +4,18 @@ import { ServiceService } from '../../service/service.service';
 import { Subscription } from 'rxjs';
 import { NavigationEnd, Router } from '@angular/router';
 import { FormBuilder,FormGroup } from '@angular/forms';
-import { productData, projectsData } from '../../../../data/product';
+import { productData, projectsData, serviceData } from '../../../../data/product';
 import { SearchDialogComponent } from '../search-dialog/search-dialog.component';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @Component({
   selector: 'app-p-heaader',
   templateUrl: './p-heaader.component.html',
   styleUrl: './p-heaader.component.scss',
+  // standalone: true,
+  // imports: [MatPaginatorModule],
 })
 export class HeaderComponent implements OnInit {
   [x: string]: any;
@@ -21,6 +24,7 @@ export class HeaderComponent implements OnInit {
   //mock data
   productData = productData;
   projectsData = projectsData;
+  serviceData= serviceData;
   showDropdown: boolean = false;
   showMenuSearch: boolean = false;
   // menuForm: FormGroup ;
@@ -29,14 +33,26 @@ export class HeaderComponent implements OnInit {
   displayedColumns: string[] = ['name', 'price', 'description', 'image'];
   filteredProducts: any[] =this.productData;
 
+  currentPage: number = 1;
+  // totalPages: number = 0;
+  pageSize: number = 10;
+  displayedPages: number[] = [];
+  totalPages = Math.ceil(this.productData.length / this.pageSize);
+
+
+
   constructor(
     private authService: AuthServiceService,
     private cartService: ServiceService,
     private router: Router,
     private fb: FormBuilder,
     public dialogRef: MatDialogRef<HeaderComponent>,
+
     @Inject(MAT_DIALOG_DATA) public data: any
-  ) {}
+    ) {
+      // this.totalPages = Math.ceil(this.productData.length / this.itemPerPage);
+      // this.calculateDisplayedPages();
+    }
 
   cartCount: number = 0;
   private cartSubscription!: Subscription;
@@ -56,10 +72,13 @@ export class HeaderComponent implements OnInit {
     { name: 'Dự án' },
     { name: 'Tin tức' },
   ];
+
   originalProjectsData = [...projectsData];
   originalProductData = [...productData];
+  originalServiceData = [...serviceData];
   projectData = [...this.originalProjectsData];
   productsData = [...this.originalProductData];
+  servicesData = [...this.originalServiceData];
 
   ngOnInit() {
     this.cartSubscription = this.cartService
@@ -67,6 +86,8 @@ export class HeaderComponent implements OnInit {
       .subscribe((count) => {
         this.cartCount = count;
       });
+      this.updateDisplayedPages();
+
   }
   ngOnDestroy() {
     if (this.cartSubscription) {
@@ -119,6 +140,56 @@ export class HeaderComponent implements OnInit {
       product.name.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
       product.price.toString().includes(this.searchTerm)
     );
+  } else if (this.selectedMenu === 'Dịch vụ'){
+    this.serviceData = this.originalServiceData.filter(service =>
+      service.title.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+      service.description.toString().includes(this.searchTerm)
+    );
   }
   }
+
+  updateDisplayedPages(){
+    const maxPages = 5; // Maximum number of page buttons to show
+    const half = Math.floor(maxPages / 2);
+    let startPage = Math.max(1, this.currentPage - half);
+    let endPage = Math.min(this.totalPages, startPage + maxPages - 1);
+
+    if (endPage - startPage < maxPages - 1) {
+      startPage = Math.max(1, endPage - maxPages + 1);
+    }
+
+    this.displayedPages = Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i);
+  }
+  // onItemPerPageChange(event: any) {
+  //   this.pageSize = event;
+  //   this.currentPage = 1
+  //   this.totalPages = Math.ceil(this.productData.length / this.pageSize);
+  //   this.calculateDisplayedPages();
+  // }
+  setPage(page: number) {
+    if(page < 1 || page > this.totalPages) return;
+    this.currentPage = page;
+    this.updateDisplayedPages();
+  }
+  get paginatedProducts() {
+    const startIndex = (this.currentPage - 1) * this.pageSize;
+    const endIndex = startIndex + this.pageSize;
+    return this.productData.slice(startIndex, endIndex);
+  }
+
+  // calculateDisplayedPages(){
+  //   const maxDisplayedPages = 10;
+
+  //   if(this.totalPages <= maxDisplayedPages){
+  //     this.displayedPages = Array.from({length: this.totalPages}, (_,i) => i + 1);
+  //   } else {
+  //     if(this.currentPage <= 3 ) {
+  //       this.displayedPages = [1, 2, 3 , this.totalPages];
+  //     } else if (this.currentPage > this.totalPages - 3){
+  //       this.displayedPages = [1,  this.totalPages - 2, this.totalPages - 1, this.totalPages];
+  //     } else {
+  //       this.displayedPages = [1, this.currentPage - 1, this.currentPage, this.currentPage + 1,  this.totalPages];
+  //     }
+  //   }
+  // }
 }
