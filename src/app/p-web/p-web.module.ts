@@ -46,6 +46,7 @@ import { SearchDialogComponent } from './shared/components/search-dialog/search-
 import { P008ServiceComponent } from './pages/p008-service/service/p008-service.component';
 import { ServiceBannerComponent } from './shared/components/C-Services/service-banner/service-banner.component';
 import { ServiceContentComponent } from './shared/components/C-Services/service-content/service-content.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -99,6 +100,7 @@ import { ServiceContentComponent } from './shared/components/C-Services/service-
     NgxPaginationModule,
     RouterLink,
     MatTableModule,
+    MatPaginatorModule,
   ],
   providers: [AuthServiceService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

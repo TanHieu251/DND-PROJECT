@@ -12,6 +12,8 @@ import { P005ProjectComponent } from './pages/p005-project/p005-project.componen
 import { P005ProjectDetailComponent } from './pages/p005-project-detail/p005-project-detail.component';
 import { P006CartComponent } from './pages/p006-cart/p006-cart/p006-cart.component';
 import { P008ServiceComponent } from './pages/p008-service/service/p008-service.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
 
 const routes: Routes = [
 
@@ -68,7 +70,9 @@ const routes: Routes = [
   imports:
   [
     RouterModule.forChild(routes),
-    FormsModule
+    FormsModule,
+    MatPaginatorModule,
+    MatTableModule,
   ],
   exports: [RouterModule],
 })

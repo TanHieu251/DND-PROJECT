@@ -36,31 +36,35 @@
     <div class="close" (click)="closePopup()">×</div>
     <div class="popup-content">
       <div class="form-container">
-
-        <div class="menu-container" mat-fixed>
-          <div class="close" (click)="closeMenu()">×</div>
-          <div class="mat-elevation-z8 menu-row " mat-fixed>
-            <div *ngFor="let element of menuSearch" class="menu-item" (click)="selectMenu(element.name)">
-              {{ element.name }}
-            </div>
-          </div>
-        </div>
+          <h1>Tìm kiếm</h1>
         <div class="search-bar">
           <input type="text" placeholder="Tìm kiếm sản phẩm" [(ngModel)]="searchTerm">
           <button (click)="searchItem()" type="submit">
             <i class="fa fa-search"></i>
           </button>
         </div>
+        
+        <div class="menu-container" mat-fixed>
+          <div class="mat-elevation-z8 menu-row " mat-fixed>
+            <div *ngFor="let element of menuSearch" class="menu-item"
+            [class.active]="selectedMenuItem === element.name"
+             (click)="selectMenu(element.name)" routerLinkActive="active-link"
+             >
+              {{ element.name }}
+            </div>
+          </div>
+        </div>
+        <!-- [class.active]="selectedMenuItem === element.name" -->
 
         <div *ngIf="selectedMenu" class="content-container">
           <div *ngIf="selectedMenu === 'Dự án'">
-            <table mat-table [dataSource]="projectsData" class="mat-elevation-z8">
+            <table mat-table [dataSource]="paginatedProjectsData" class="mat-elevation-z8">
               <ng-container matColumnDef="info">
                 <th mat-header-cell *matHeaderCellDef> Thông tin dự án </th>
                 <td mat-cell *matCellDef="let project">
                   <div class="info-container">
                     <div class="project-name">{{ project.title }}</div>
-                    <div class="project-description">{{ project.description | slice:0:300 }}...</div>
+                    <div class="project-description">{{ project.description | slice:0:200 }}...</div>
                   </div>
                   <mat-card>
                     <img class="img-project" mat-card-image [src]="project.image" alt="Project Image">
@@ -70,6 +74,24 @@
               <tr mat-header-row *matHeaderRowDef="['info']"></tr>
               <tr mat-row *matRowDef="let row; columns: ['info']"></tr>
             </table>
+
+            <div class="pagination">
+              <div class="pagination-controls">
+                <button (click)="setPage(currentPage - 1)" [disabled]="currentPage === 1">&lt;</button>
+                <ng-container *ngIf="totalPages > 5">
+                  <button *ngIf="currentPage > 3" (click)="setPage(1)">1</button>
+                  <span *ngIf="currentPage > 3" class="ellipsis">...</span>
+                </ng-container>
+                <ng-container *ngFor="let page of displayedPages">
+                  <button (click)="setPage(page)" [class.active]="currentPage === page">{{ page }}</button>
+                </ng-container>
+                <ng-container *ngIf="totalPages > 5">
+                  <span *ngIf="currentPage < totalPages - 2" class="ellipsis">...</span>
+                  <button *ngIf="currentPage < totalPages - 2" (click)="setPage(totalPages)">{{ totalPages }}</button>
+                </ng-container>
+                <button (click)="setPage(currentPage + 1)" [disabled]="currentPage === totalPages">&gt;</button>
+              </div>
+            </div>
           </div>
 
           <div *ngIf="selectedMenu === 'Sản phẩm'">
@@ -89,25 +111,36 @@
               <tr mat-header-row *matHeaderRowDef="['info']"></tr>
               <tr mat-row *matRowDef="let row; columns: ['info']"></tr>
             </table>
-            <!-- <mat-paginator [length]="100"
-              [pageSize]="10"
-              [pageSizeOptions]="[5, 10, 25, 100]"
-              aria-label="Select page">
-            </mat-paginator> -->
+              <!-- <mat-paginator
+                [length]="totalProductsLength"
+                [pageSize]="10"
+                [pageSizeOptions]="[5, 10, 25, 100]"
+                (page)="onPageChange($event)"
+                aria-label="Select page">
+              </mat-paginator> -->
+
             <div class="pagination">
               <div class="pagination-controls">
-                <button (click)="setPage(currentPage - 1)" [disabled]="currentPage === 1">&laquo;</button>
+                <button (click)="setPage(currentPage - 1)" [disabled]="currentPage === 1">&lt;</button>
+                <ng-container *ngIf="totalPages > 5">
+                  <button *ngIf="currentPage > 3" (click)="setPage(1)">1</button>
+                  <span *ngIf="currentPage > 3" class="ellipsis">...</span>
+                </ng-container>
                 <ng-container *ngFor="let page of displayedPages">
                   <button (click)="setPage(page)" [class.active]="currentPage === page">{{ page }}</button>
                 </ng-container>
-                <button (click)="setPage(currentPage + 1)" [disabled]="currentPage === totalPages">&raquo;</button>
+                <ng-container *ngIf="totalPages > 5">
+                  <span *ngIf="currentPage < totalPages - 2" class="ellipsis">...</span>
+                  <button *ngIf="currentPage < totalPages - 2" (click)="setPage(totalPages)">{{ totalPages }}</button>
+                </ng-container>
+                <button (click)="setPage(currentPage + 1)" [disabled]="currentPage === totalPages">&gt;</button>
               </div>
             </div>
           </div>
 
 
           <div *ngIf="selectedMenu === 'Dịch vụ'">
-            <table mat-table [dataSource]="serviceData" class="mat-elevation-z8">
+            <table mat-table [dataSource]="paginatedServiceData" class="mat-elevation-z8">
               <ng-container matColumnDef="info">
                 <th mat-header-cell *matHeaderCellDef> Thông tin dịch vụ </th>
                 <td mat-cell *matCellDef="let product">
@@ -123,6 +156,24 @@
               <tr mat-header-row *matHeaderRowDef="['info']"></tr>
               <tr mat-row *matRowDef="let row; columns: ['info']"></tr>
             </table>
+
+            <div class="pagination">
+              <div class="pagination-controls">
+                <button (click)="setPage(currentPage - 1)" [disabled]="currentPage === 1">&lt;</button>
+                <ng-container *ngIf="totalPages > 5">
+                  <button *ngIf="currentPage > 3" (click)="setPage(1)">1</button>
+                  <span *ngIf="currentPage > 3" class="ellipsis">...</span>
+                </ng-container>
+                <ng-container *ngFor="let page of displayedPages">
+                  <button (click)="setPage(page)" [class.active]="currentPage === page">{{ page }}</button>
+                </ng-container>
+                <ng-container *ngIf="totalPages > 5">
+                  <span *ngIf="currentPage < totalPages - 2" class="ellipsis">...</span>
+                  <button *ngIf="currentPage < totalPages - 2" (click)="setPage(totalPages)">{{ totalPages }}</button>
+                </ng-container>
+                <button (click)="setPage(currentPage + 1)" [disabled]="currentPage === totalPages">&gt;</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

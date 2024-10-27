@@ -769,6 +769,50 @@ export const projectsData = [
     ]
   },
   {
+    title: "Công trình cầu vượt Thủ Thiêm",
+    image:'assets/cauthuthiem.png',
+    description: 'Cầu Thủ Thiêm là một cây cầu bắc qua sông Sài Gòn, nối liền quận Bình Thạnh và thành phố Thủ Đức, Thành phố Hồ Chí Minh. Cầu có 6 làn xe, nối Khu đô thị mới Thủ Thiêm và trung tâm hiện hữu của thành phố và được thông xe vào năm 2005.[a] Tổng kinh phí xây dựng cầu lên đến 1.099,6 tỷ đồng. Tổng thầu là Tổng công ty xây dựng số 1 thuộc Bộ Xây dựng. Cầu Thủ Thiêm dài 1.250 m, phần cầu chính gồm 5 nhịp, 6 làn xe; phần cầu dẫn phía Bình Thạnh gồm bốn nhánh, mỗi nhánh 2 làn xe; cầu dẫn phía thành phố Thủ Đức dài 160 m, rộng tương đương 6 làn xe. Nút giao phía quận Bình Thạnh gồm một hầm chui trực thông dài 460 m trên đường Nguyễn Hữu Cảnh, rộng 4 làn xe. Đường dẫn phía thành phố Thủ Đức dài 280 m, mặt cắt ngang 47 m. Đường gom có tổng chiều dài 1.460 m, phía quận Bình Thạnh rộng 10,5 m, phía thành phố Thủ Đức rộng 9,5 m. Điểm đầu dự án là giao giữa đường Ngô Tất Tố với đường Nguyễn Hữu Cảnh, phường 22, Bình Thạnh. Điểm cuối dự án kết nối với đường Lương Định Của (thành phố Thủ Đức); tuyến chạy theo tim đường Ngô Tất Tố hiện hữu vượt sông Sài Gòn. Cầu Thủ Thiêm được hợp long vào lúc 8 giờ 15 phút sáng ngày 29 tháng 11 năm 2007. Ông Lê Hoàng Quân - Chủ tịch Ủy ban Nhân dân Thành phố Hồ Chí Minh - đã cho mẻ bê tông đầu tiên vào vị trí hợp long của cầu.',
+    objectives: [
+      "Cung cấp điện cho khu vực miền Nam",
+      "Đảm bảo nguồn năng lượng tái tạo"
+    ],
+    timeline: {
+      start: "01/01/2024",
+      end: "31/12/2026",
+      milestones: [
+        { date: "01/06/2024", description: "Hoàn thành giai đoạn 1" },
+        { date: "01/12/2025", description: "Bắt đầu giai đoạn 2" }
+      ]
+    },
+    stakeholders: [
+      "EVN",
+      "Bộ Công Thương",
+      "Nhà thầu xây dựng ABC"
+    ]
+  },
+  {
+    title: "Công trình cầu vượt Thủ Thiêm",
+    image:'assets/cauthuthiem.png',
+    description: 'Cầu Thủ Thiêm là một cây cầu bắc qua sông Sài Gòn, nối liền quận Bình Thạnh và thành phố Thủ Đức, Thành phố Hồ Chí Minh. Cầu có 6 làn xe, nối Khu đô thị mới Thủ Thiêm và trung tâm hiện hữu của thành phố và được thông xe vào năm 2005.[a] Tổng kinh phí xây dựng cầu lên đến 1.099,6 tỷ đồng. Tổng thầu là Tổng công ty xây dựng số 1 thuộc Bộ Xây dựng. Cầu Thủ Thiêm dài 1.250 m, phần cầu chính gồm 5 nhịp, 6 làn xe; phần cầu dẫn phía Bình Thạnh gồm bốn nhánh, mỗi nhánh 2 làn xe; cầu dẫn phía thành phố Thủ Đức dài 160 m, rộng tương đương 6 làn xe. Nút giao phía quận Bình Thạnh gồm một hầm chui trực thông dài 460 m trên đường Nguyễn Hữu Cảnh, rộng 4 làn xe. Đường dẫn phía thành phố Thủ Đức dài 280 m, mặt cắt ngang 47 m. Đường gom có tổng chiều dài 1.460 m, phía quận Bình Thạnh rộng 10,5 m, phía thành phố Thủ Đức rộng 9,5 m. Điểm đầu dự án là giao giữa đường Ngô Tất Tố với đường Nguyễn Hữu Cảnh, phường 22, Bình Thạnh. Điểm cuối dự án kết nối với đường Lương Định Của (thành phố Thủ Đức); tuyến chạy theo tim đường Ngô Tất Tố hiện hữu vượt sông Sài Gòn. Cầu Thủ Thiêm được hợp long vào lúc 8 giờ 15 phút sáng ngày 29 tháng 11 năm 2007. Ông Lê Hoàng Quân - Chủ tịch Ủy ban Nhân dân Thành phố Hồ Chí Minh - đã cho mẻ bê tông đầu tiên vào vị trí hợp long của cầu.',
+    objectives: [
+      "Cung cấp điện cho khu vực miền Nam",
+      "Đảm bảo nguồn năng lượng tái tạo"
+    ],
+    timeline: {
+      start: "01/01/2024",
+      end: "31/12/2026",
+      milestones: [
+        { date: "01/06/2024", description: "Hoàn thành giai đoạn 1" },
+        { date: "01/12/2025", description: "Bắt đầu giai đoạn 2" }
+      ]
+    },
+    stakeholders: [
+      "EVN",
+      "Bộ Công Thương",
+      "Nhà thầu xây dựng ABC"
+    ]
+  },
+  {
     image:'assets/caotocBN.png',
     title:'Dự án đường cao tốc Bắc - Nam',
     description: 'Dự án đường cao tốc Bắc - Nam là công trình trọng điểm quốc gia với chiều dài hơn 2.100km, đi qua 20 tỉnh, thành phố từ Bắc vào Nam. Tổng mức đầu tư khoảng 12 tỷ USD, khi hoàn thành sẽ rút ngắn thời gian di chuyển giữa các vùng và phát triển kinh tế - xã hội.',
@@ -858,6 +902,40 @@ export const serviceData = [
       'Thực hiện sửa chữa và kiểm tra lại hệ thống',
       'Bàn giao và hướng dẫn khách hàng sử dụng an toàn'
     ]
-  }
+  },
+  {
+    title: 'Dịch vụ sửa chữa sự cố điện',
+    description: 'Khắc phục các sự cố liên quan đến hệ thống điện trong thời gian ngắn nhất.',
+    image: '/assets/suachuasuco.jpg',
+    thumbnail:'assets/suachapdien-1536x1024.png',
+    features: [
+      'Phục vụ nhanh chóng 24/7',
+      'Sử dụng thiết bị và linh kiện chính hãng',
+      'Giá cả hợp lý, minh bạch'
+    ],
+    process: [
+      'Tiếp nhận thông tin sự cố',
+      'Khảo sát và chẩn đoán nguyên nhân',
+      'Thực hiện sửa chữa và kiểm tra lại hệ thống',
+      'Bàn giao và hướng dẫn khách hàng sử dụng an toàn'
+    ]
+  },
+  {
+    title: 'Dịch vụ sửa chữa sự cố điện',
+    description: 'Khắc phục các sự cố liên quan đến hệ thống điện trong thời gian ngắn nhất.',
+    image: '/assets/suachuasuco.jpg',
+    thumbnail:'assets/suachapdien-1536x1024.png',
+    features: [
+      'Phục vụ nhanh chóng 24/7',
+      'Sử dụng thiết bị và linh kiện chính hãng',
+      'Giá cả hợp lý, minh bạch'
+    ],
+    process: [
+      'Tiếp nhận thông tin sự cố',
+      'Khảo sát và chẩn đoán nguyên nhân',
+      'Thực hiện sửa chữa và kiểm tra lại hệ thống',
+      'Bàn giao và hướng dẫn khách hàng sử dụng an toàn'
+    ]
+  },
 
 ]

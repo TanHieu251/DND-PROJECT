@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { AuthServiceService } from '../../../../auth/shared/services/auth-service.service';
 import { ServiceService } from '../../service/service.service';
 import { Subscription } from 'rxjs';
@@ -7,7 +7,8 @@ import { FormBuilder,FormGroup } from '@angular/forms';
 import { productData, projectsData, serviceData } from '../../../../data/product';
 import { SearchDialogComponent } from '../search-dialog/search-dialog.component';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatPaginator, MatPaginatorModule, PageEvent } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 
 
 @Component({
@@ -25,6 +26,7 @@ export class HeaderComponent implements OnInit {
   productData = productData;
   projectsData = projectsData;
   serviceData= serviceData;
+
   showDropdown: boolean = false;
   showMenuSearch: boolean = false;
   // menuForm: FormGroup ;
@@ -34,12 +36,18 @@ export class HeaderComponent implements OnInit {
   filteredProducts: any[] =this.productData;
 
   currentPage: number = 1;
-  // totalPages: number = 0;
-  pageSize: number = 10;
+  totalPages: number = 50;
+  // pageSize: number = 5;
   displayedPages: number[] = [];
-  totalPages = Math.ceil(this.productData.length / this.pageSize);
+  // totalPages = Math.ceil(this.productData.length / this.pageSize);
+  selectedMenuItem: string =''
 
+  paginatedProducts = new MatTableDataSource<any>();
+  paginatedProjectsData = new MatTableDataSource<any>();
+  paginatedServiceData = new MatTableDataSource<any>();
 
+  totalProductsLength: number = 0;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(
     private authService: AuthServiceService,
@@ -53,10 +61,8 @@ export class HeaderComponent implements OnInit {
       // this.totalPages = Math.ceil(this.productData.length / this.itemPerPage);
       // this.calculateDisplayedPages();
     }
-
   cartCount: number = 0;
-  private cartSubscription!: Subscription;
-
+    private cartSubscription!: Subscription;
   menu = [
     { name: 'Trang chủ', routes: '/home' },
     { name: 'Giới thiệu', routes: '/about' },
@@ -72,7 +78,6 @@ export class HeaderComponent implements OnInit {
     { name: 'Dự án' },
     { name: 'Tin tức' },
   ];
-
   originalProjectsData = [...projectsData];
   originalProductData = [...productData];
   originalServiceData = [...serviceData];
@@ -86,8 +91,16 @@ export class HeaderComponent implements OnInit {
       .subscribe((count) => {
         this.cartCount = count;
       });
+      // this.updateDisplayedPages();
+      // this.loadProducts();
       this.updateDisplayedPages();
+      this.paginateServices();
+      this.paginateProducts();
+      this.paginateProjects();
 
+  }
+  ngAfterViewInit() {
+    this.paginatedProducts.paginator = this.paginator;
   }
   ngOnDestroy() {
     if (this.cartSubscription) {
@@ -124,6 +137,7 @@ export class HeaderComponent implements OnInit {
   }
   selectMenu(menuName: string) {
     this.selectedMenu = menuName;
+    // this.selectedMenuItem = menuName;
     this.searchItem();
   }
   closePopup(){
@@ -147,35 +161,79 @@ export class HeaderComponent implements OnInit {
     );
   }
   }
-
-  updateDisplayedPages(){
-    const maxPages = 5; // Maximum number of page buttons to show
-    const half = Math.floor(maxPages / 2);
-    let startPage = Math.max(1, this.currentPage - half);
-    let endPage = Math.min(this.totalPages, startPage + maxPages - 1);
-
-    if (endPage - startPage < maxPages - 1) {
-      startPage = Math.max(1, endPage - maxPages + 1);
+  setPage(page: number){
+    if(page >= 1 && page <= this.totalPages){
+      this.currentPage = page;
+      this.paginateServices();
+      this.paginateProducts();
+      this.paginateProjects();
+      this.updateDisplayedPages();
     }
+  }
+  paginateServices(){
+    const start = (this.currentPage - 1) * 4;
+    const end = start + 4;
+    this.paginatedServiceData.data = this.serviceData.slice(start, end);
+  }
+  paginateProducts(){
+    const start = (this.currentPage - 1) * 7;
+    const end = start + 6;
+    this.paginatedProducts.data = this.productData.slice(start, end);
+  }
+  paginateProjects(){
+    const start = (this.currentPage - 1) * 4;
+    const end = start + 3;
+    this.paginatedProjectsData.data = this.projectsData.slice(start, end);
+  }
+  updateDisplayedPages(){
+    const pageShow = 5;
+    let startPage = Math.max(1, this.currentPage - Math.floor(pageShow / 2));
+    let endPage = Math.min(this.totalPages, startPage + pageShow - 1);
 
+    if(endPage - startPage < pageShow - 1){
+      startPage = Math.max(1, endPage - (pageShow + 1));
+    }
     this.displayedPages = Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i);
   }
+  loadProducts() {
+    this.paginatedProducts.data = this.productsData;
+    this.totalProductsLength = this.productsData.length;
+    this.paginatedProducts.paginator = this.paginator;
+  }
+  onPageChange(event: PageEvent) {
+    const startIndex = event.pageIndex * event.pageSize;
+    const endIndex = startIndex + event.pageSize;
+    this.paginatedProducts.data = this.productsData.slice(startIndex, endIndex);
+  }
+
+  // updateDisplayedPages(){
+  //   const maxPages = 5; // Maximum number of page buttons to show
+  //   const half = Math.floor(maxPages / 2);
+  //   let startPage = Math.max(1, this.currentPage - half);
+  //   let endPage = Math.min(this.totalPages, startPage + maxPages - 1);
+
+  //   if (endPage - startPage < maxPages - 1) {
+  //     startPage = Math.max(1, endPage - maxPages + 1);
+  //   }
+
+  //   this.displayedPages = Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i);
+  // }
   // onItemPerPageChange(event: any) {
   //   this.pageSize = event;
   //   this.currentPage = 1
   //   this.totalPages = Math.ceil(this.productData.length / this.pageSize);
   //   this.calculateDisplayedPages();
   // }
-  setPage(page: number) {
-    if(page < 1 || page > this.totalPages) return;
-    this.currentPage = page;
-    this.updateDisplayedPages();
-  }
-  get paginatedProducts() {
-    const startIndex = (this.currentPage - 1) * this.pageSize;
-    const endIndex = startIndex + this.pageSize;
-    return this.productData.slice(startIndex, endIndex);
-  }
+  // setPage(page: number) {
+  //   if(page < 1 || page > this.totalPages) return;
+  //   this.currentPage = page;
+  //   this.updateDisplayedPages();
+  // }
+  // get paginatedProducts() {
+  //   const startIndex = (this.currentPage - 1) * this.pageSize;
+  //   const endIndex = startIndex + this.pageSize;
+  //   return this.productData.slice(startIndex, endIndex);
+  // }
 
   // calculateDisplayedPages(){
   //   const maxDisplayedPages = 10;
