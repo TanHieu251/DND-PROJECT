@@ -40,8 +40,8 @@ export class HeaderComponent implements OnInit {
   // pageSize: number = 5;
   displayedPages: number[] = [];
   // totalPages = Math.ceil(this.productData.length / this.pageSize);
-  selectedMenuItem: string =''
-
+  selectedMenuItem: string ='Dịch vụ'
+  //
   paginatedProducts = new MatTableDataSource<any>();
   paginatedProjectsData = new MatTableDataSource<any>();
   paginatedServiceData = new MatTableDataSource<any>();
@@ -137,7 +137,7 @@ export class HeaderComponent implements OnInit {
   }
   selectMenu(menuName: string) {
     this.selectedMenu = menuName;
-    // this.selectedMenuItem = menuName;
+    this.selectedMenuItem = menuName;
     this.searchItem();
   }
   closePopup(){
@@ -176,7 +176,7 @@ export class HeaderComponent implements OnInit {
     this.paginatedServiceData.data = this.serviceData.slice(start, end);
   }
   paginateProducts(){
-    const start = (this.currentPage - 1) * 7;
+    const start = (this.currentPage - 1) * 6;
     const end = start + 6;
     this.paginatedProducts.data = this.productData.slice(start, end);
   }
