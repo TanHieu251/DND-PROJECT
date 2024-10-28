@@ -1,8 +1,10 @@
 ::ng-deep {
   app-project-list{
+    // position: sticky;
 
   .project-container {
-    margin-top: 20px;
+    position: sticky;
+    margin-top: 90px;
 
       h2 {
         margin-left: 70px;
@@ -17,10 +19,10 @@
     }
 
     .project-card {
-      // width: 100%;
+      width: 100%;
       justify-content: center;
       display: flex;
-      padding: 40px;
+      padding: 20px;
       border-radius: 5px;
       height: auto;
       position: relative;
@@ -30,8 +32,9 @@
     }
 
     .image img {
+      // width: 100%;
       padding-left: 30px;
-      max-width: 500px;
+      max-width: 400px;
       // text-align: center;
       // align-items: center;
       height: auto;

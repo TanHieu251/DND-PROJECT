@@ -1,13 +1,17 @@
 
 
 ::ng-deep{
+
   app-c-contact{
+    position: sticky;
+    // margin-top: 20px;
+
     .contact-page {
     position: relative;
-    // padding-top: 120px;
+
     // height: auto;
     background-color: #f8f9fa;
-    padding: 20px;
+    padding-top: 90px;
     border-radius: 8px;
     max-width: 1200px;
     // margin: auto ;

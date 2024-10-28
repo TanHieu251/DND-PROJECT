@@ -14,13 +14,13 @@ export class ProductListComponent {
   status: boolean = true;
   searchTerm: string = '';
   filteredProducts: any[] =this.products;
-  selectedCategory: string = '';
+  selectedCategory: string = 'Dịch vụ';
 
   currentPage: number = 1;
   totalPages: number = 0;
   itemPerPage: number = 12;
   displayedPages: number[] = [];
-  
+
   itemToggle: any;
   sortOrder: string = 'asc'
 

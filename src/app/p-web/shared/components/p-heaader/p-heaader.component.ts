@@ -19,7 +19,7 @@ import { MatTableDataSource } from '@angular/material/table';
   // imports: [MatPaginatorModule],
 })
 export class HeaderComponent implements OnInit {
-  [x: string]: any;
+  // [x: string]: any;
   isPopupVisible = false;
   searchTerm: string ='';
   //mock data
@@ -29,19 +29,16 @@ export class HeaderComponent implements OnInit {
 
   showDropdown: boolean = false;
   showMenuSearch: boolean = false;
-  // menuForm: FormGroup ;
-  selectedMenu: string | null = null;
+  selectedMenu: string  = '';
   isMenuVisible = false;
   displayedColumns: string[] = ['name', 'price', 'description', 'image'];
   filteredProducts: any[] =this.productData;
 
   currentPage: number = 1;
   totalPages: number = 50;
-  // pageSize: number = 5;
   displayedPages: number[] = [];
-  // totalPages = Math.ceil(this.productData.length / this.pageSize);
   selectedMenuItem: string ='Dịch vụ'
-  //
+
   paginatedProducts = new MatTableDataSource<any>();
   paginatedProjectsData = new MatTableDataSource<any>();
   paginatedServiceData = new MatTableDataSource<any>();
@@ -78,12 +75,12 @@ export class HeaderComponent implements OnInit {
     { name: 'Dự án' },
     { name: 'Tin tức' },
   ];
-  originalProjectsData = [...projectsData];
-  originalProductData = [...productData];
-  originalServiceData = [...serviceData];
-  projectData = [...this.originalProjectsData];
-  productsData = [...this.originalProductData];
-  servicesData = [...this.originalServiceData];
+    originalProjectsData = [...projectsData];
+    originalProductData = [...productData];
+    originalServiceData = [...serviceData];
+    projectData = [...this.originalProjectsData];
+    productsData = [...this.originalProductData];
+    servicesData = [...this.originalServiceData];
 
   ngOnInit() {
     this.cartSubscription = this.cartService
@@ -93,11 +90,11 @@ export class HeaderComponent implements OnInit {
       });
       // this.updateDisplayedPages();
       // this.loadProducts();
-      this.updateDisplayedPages();
       this.paginateServices();
       this.paginateProducts();
       this.paginateProjects();
-
+      this.updateDisplayedPages();
+      this.selectMenu;
   }
   ngAfterViewInit() {
     this.paginatedProducts.paginator = this.paginator;
@@ -143,24 +140,35 @@ export class HeaderComponent implements OnInit {
   closePopup(){
   this.isPopupVisible = false;
   }
-  searchItem(){
+  searchItem(): void{
   if (this.selectedMenu === 'Dự án') {
     this.projectsData = this.originalProjectsData.filter(project =>
       project.title.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
       project.description.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
+    this.paginateProjects();
+    // console.log(this.projectsData)
   } else if (this.selectedMenu === 'Sản phẩm') {
     this.productData = this.originalProductData.filter(product =>
       product.name.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
       product.price.toString().includes(this.searchTerm)
     );
+    this.paginateProducts();
   } else if (this.selectedMenu === 'Dịch vụ'){
     this.serviceData = this.originalServiceData.filter(service =>
       service.title.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
       service.description.toString().includes(this.searchTerm)
     );
+    this.paginateServices();
   }
+  else{
+    alert('Không tìm thấy nội dung cần tìm');
   }
+  this.currentPage = 1;
+  this.updateDisplayedPages();
+    // alert('Not found')
+  }
+  //paginator
   setPage(page: number){
     if(page >= 1 && page <= this.totalPages){
       this.currentPage = page;
@@ -176,7 +184,7 @@ export class HeaderComponent implements OnInit {
     this.paginatedServiceData.data = this.serviceData.slice(start, end);
   }
   paginateProducts(){
-    const start = (this.currentPage - 1) * 6;
+    const start = (this.currentPage - 1) * 7;
     const end = start + 6;
     this.paginatedProducts.data = this.productData.slice(start, end);
   }
@@ -195,16 +203,16 @@ export class HeaderComponent implements OnInit {
     }
     this.displayedPages = Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i);
   }
-  loadProducts() {
-    this.paginatedProducts.data = this.productsData;
-    this.totalProductsLength = this.productsData.length;
-    this.paginatedProducts.paginator = this.paginator;
-  }
   onPageChange(event: PageEvent) {
     const startIndex = event.pageIndex * event.pageSize;
     const endIndex = startIndex + event.pageSize;
     this.paginatedProducts.data = this.productsData.slice(startIndex, endIndex);
   }
+  // loadProducts() {
+  //   this.paginatedProducts.data = this.productsData;
+  //   this.totalProductsLength = this.productsData.length;
+  //   this.paginatedProducts.paginator = this.paginator;
+  // }
 
   // updateDisplayedPages(){
   //   const maxPages = 5; // Maximum number of page buttons to show

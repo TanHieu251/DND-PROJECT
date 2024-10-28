@@ -156,8 +156,9 @@
 
   .popup-container {
     background-color: #fff;
-    width: 80%;
+    width: 100%;
     max-width: 800px;
+    max-height: 90vh;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -356,6 +357,11 @@
     max-height: 300px;
     overflow-y: auto;
   }
+  .scroll-project, .scroll-service{
+    max-height: 300px;
+    overflow-y: auto;
+    // overflow: hidden;
+  }
 
   table {
     width: 100%;
@@ -380,7 +386,7 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
-    font-size: 20px;
+    font-size: 18px;
 
     .project-name, .product-name {
       font-weight: bold;
@@ -396,7 +402,7 @@
   }
 
   .img-product{
-    width: 280px;
+    width: 230px;
     height: 180px;
     object-fit: cover;
     border-radius: 4px;
