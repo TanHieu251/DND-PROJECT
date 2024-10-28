@@ -1,548 +1,35 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { SelectionModel } from '@angular/cdk/collections';
-import {MatPaginator} from "@angular/material/paginator";
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
-  styleUrl: './table.component.scss',
+  styleUrls: ['./table.component.scss'],
 })
 export class TableComponent implements OnInit {
-  ngOnInit(): void {
-    this.paginator._intl.itemsPerPageLabel = 'Hiển thị mỗi trang';
-
-  }
+  @Input() data: any[] = []; // Đảm bảo data là một mảng
+  @Input() displayedColumns: string[] = [];
 
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
 
-  //common
-  selectedQuestion: any;
-  selectedRows: any[] = [];
-  displayedColumns: string[] = [
-    'select',
-    'title',
-    'group',
-    'time',
-    'status',
-    'popup',
-  ];
-  // grid
-  data: any[] = [{
-    id: 1,
-    title: 'Hệ thống cửa hàng Hachi Hachi có mặt từ năm nào?',
-    group: 'Thương hiệu',
-    time: 30,
-    code: 'Q.001',
-    typeQuestion: 'Một lựa chọn',
-    scoringMethod: 'Đúng hết đáp án',
-    status: 1,
-  },
-    {
-      id: 2,
-      title: 'Bí danh của công ty Hachi Hachi là gì?',
-      group: 'Văn hoá công ty',
-      time: 25,
-      code: 'Q.002',
-      typeQuestion: 'Một lựa chọn',
-      scoringMethod: 'Trừ đáp án sai',
-      status: 1,
-    },
-    {
-      id: 3,
-      title: 'Tại sao nên chọn sản phẩm của Hachi Hachi?',
-      group: 'Quy định nội bộ',
-      time: 40,
-      code: 'Q.003',
-      typeQuestion: 'Nhiều lựa chọn',
-      scoringMethod: 'Trừ đáp án sai',
-      status: 2,
-    },
-    {
-      id: 4,
-      title: 'Có bao nhiêu chi nhánh của Hachi Hachi?',
-      group: 'Văn hoá công ty',
-      time: 30,
-      code: 'Q.004',
-      typeQuestion: 'Câu hỏi mở',
-      scoringMethod: 'Từng đáp án đúng',
-      status: 3,
-    },
-    {
-      id: 5,
-      title: 'Sản phẩm nổi bật của Hachi Hachi là gì?',
-      group: 'Quy định nội bộ',
-      time: 35,
-      code: 'Q.005',
-      typeQuestion: 'Câu hỏi yes/no',
-      scoringMethod: 'Trừ đáp án sai',
-      status: 4,
-    },
-    {
-      id: 6,
-      title: 'Có bao nhiêu loại sản phẩm trong danh mục của Hachi Hachi?',
-      group: 'Văn hoá công ty',
-      time: 45,
-      code: 'Q.006',
-      typeQuestion: 'Câu hỏi mở',
-      scoringMethod: 'Đúng hết đáp án',
-      status: 1,
-    },
-    {
-      id: 7,
-      title: 'Hachi Hachi có cung cấp dịch vụ giao hàng tận nơi không?',
-      group: 'Thương hiệu',
-      time: 30,
-      code: 'Q.007',
-      typeQuestion: 'Nhiều lựa chọn',
-      scoringMethod: 'Từng đáp án đúng',
-      status: 5,
-    },
-    {
-      id: 8,
-      title: 'Ai là người sáng lập ra Hachi Hachi?',
-      group: 'Quy định nội bộ',
-      time: 40,
-      code: 'Q.008',
-      typeQuestion: 'Câu hỏi mở',
-      scoringMethod: 'Đúng hết đáp án',
-      status: 1,
-    },
-    {
-      id: 9,
-      title: 'Hachi Hachi có đang mở rộng thị trường ra nước ngoài không?',
-      group: 'Văn hoá công ty',
-      time: 30,
-      code: 'Q.009',
-      typeQuestion: 'Một lựa chọn',
-      scoringMethod: 'Đúng hết đáp án',
-      status: 2,
-    },
-    {
-      id: 10,
-      title: 'Nguyên liệu chính của sản phẩm Hachi Hachi là gì?',
-      group: 'Thương hiệu',
-      time: 35,
-      code: 'Q.010',
-      typeQuestion: 'Một lựa chọn',
-      scoringMethod: 'Trừ đáp án sai',
-      status: 3,
-    },
-    {
-      id: 11,
-      title: 'Hachi Hachi đã nhận được những giải thưởng nào trong năm vừa qua?',
-      group: 'Văn hoá công ty',
-      time: 50,
-      code: 'Q.011',
-      typeQuestion: 'Câu hỏi mở',
-      scoringMethod: 'Đúng hết đáp án',
-      status: 4,
-    },
-    {
-      id: 12,
-      title: 'Có bao nhiêu nhân viên trong công ty Hachi Hachi?',
-      group: 'Thương hiệu',
-      time: 45,
-      code: 'Q.012',
-      typeQuestion: 'Câu hỏi yes/no',
-      scoringMethod: 'Từng đáp án đúng',
-      status: 1,
-    },
-    {
-      id: 13,
-      title: 'Hachi Hachi có tổ chức các sự kiện giao lưu văn hóa không?',
-      group: 'Văn hoá công ty',
-      time: 30,
-      code: 'Q.013',
-      typeQuestion: 'Nhiều lựa chọn',
-      scoringMethod: 'Đúng hết đáp án',
-      status: 5,
-    },
-    {
-      id: 14,
-      title: 'Cửa hàng Hachi Hachi nổi tiếng nhất ở đâu?',
-      group: 'Quy định nội bộ',
-      time: 35,
-      code: 'Q.014',
-      typeQuestion: 'Câu hỏi mở',
-      scoringMethod: 'Đúng hết đáp án',
-      status: 1,
-    },
-    {
-      id: 15,
-      title:
-        'Hachi Hachi có chính sách giảm giá cho khách hàng thân thiết không?',
-      group: 'Thương hiệu',
-      time: 40,
-      code: 'Q.015',
-      typeQuestion: 'Một lựa chọn',
-      scoringMethod: 'Trừ đáp án sai',
-      status: 2,
-    },
-    {
-      id: 16,
-      title: 'Nơi nào là cơ sở chính của Hachi Hachi?',
-      group: 'Văn hoá công ty',
-      time: 30,
-      code: 'Q.016',
-      typeQuestion: 'Một lựa chọn',
-      scoringMethod: 'Đúng hết đáp án',
-      status: 3,
-    },
-    {
-      id: 17,
-      title: 'Hachi Hachi có cung cấp dịch vụ đặt tiệc không?',
-      group: 'Thương hiệu',
-      time: 45,
-      code: 'Q.017',
-      typeQuestion: 'Nhiều lựa chọn',
-      scoringMethod: 'Trừ đáp án sai',
-      status: 4,
-    },
-    {
-      id: 18,
-      title: 'Các loại món ăn phổ biến nhất tại Hachi Hachi là gì?',
-      group: 'Quy định nội bộ',
-      time: 40,
-      code: 'Q.018',
-      typeQuestion: 'Câu hỏi yes/no',
-      scoringMethod: 'Đúng hết đáp án',
-      status: 1,
-    },
-    {
-      id: 19,
-      title: 'Hachi Hachi có chính sách đổi trả hàng không?',
-      group: 'Văn hoá công ty',
-      time: 30,
-      code: 'Q.019',
-      typeQuestion: 'Câu hỏi mở',
-      scoringMethod: 'Từng đáp án đúng',
-      status: 5,
-    },
-    {
-      id: 20,
-      title: 'Đặc sản nổi tiếng của Hachi Hachi là gì?',
-      group: 'Thương hiệu',
-      time: 35,
-      code: 'Q.020',
-      typeQuestion: 'Một lựa chọn',
-      scoringMethod: 'Đúng hết đáp án',
-      status: 1,
-    },
-    {
-      id: 21,
-      title:
-        'Hachi Hachi có các chương trình khuyến mãi đặc biệt vào dịp lễ không?',
-      group: 'Quy định nội bộ',
-      time: 40,
-      code: 'Q.021',
-      typeQuestion: 'Một lựa chọn',
-      scoringMethod: 'Trừ đáp án sai',
-      status: 2,
-    },
-    {
-      id: 22,
-      title:
-        'Có những dịch vụ gì khác ngoài việc phục vụ ăn uống tại Hachi Hachi?',
-      group: 'Thương hiệu',
-      time: 45,
-      code: 'Q.022',
-      typeQuestion: 'Nhiều lựa chọn',
-      scoringMethod: 'Đúng hết đáp án',
-      status: 3,
-    },
-    {
-      id: 23,
-      title: 'Khách hàng thường chọn loại sản phẩm nào nhất tại Hachi Hachi?',
-      group: 'Văn hoá công ty',
-      time: 30,
-      code: 'Q.023',
-      typeQuestion: 'Một lựa chọn',
-      scoringMethod: 'Từng đáp án đúng',
-      status: 4,
-    },
-    {
-      id: 24,
-      title: 'Hachi Hachi có các chương trình hỗ trợ cộng đồng không?',
-      group: 'Quy định nội bộ',
-      time: 35,
-      code: 'Q.024',
-      typeQuestion: 'Câu hỏi yes/no',
-      scoringMethod: 'Đúng hết đáp án',
-      status: 1,
-    },
-    {
-      id: 25,
-      title: 'Hachi Hachi có sử dụng công nghệ mới trong sản xuất không?',
-      group: 'Thương hiệu',
-      time: 40,
-      code: 'Q.025',
-      typeQuestion: 'Một lựa chọn',
-      scoringMethod: 'Đúng hết đáp án',
-      status: 5,
-    },
-    {
-      id: 26,
-      title:
-        'Có bí mật gì trong công thức của món ăn nổi tiếng tại Hachi Hachi không?',
-      group: 'Văn hoá công ty',
-      time: 45,
-      code: 'Q.026',
-      typeQuestion: 'Câu hỏi mở',
-      scoringMethod: 'Trừ đáp án sai',
-      status: 1,
-    },
-    {
-      id: 27,
-      title: 'Hachi Hachi có những dịch vụ hỗ trợ cho khách hàng nào?',
-      group: 'Quy định nội bộ',
-      time: 30,
-      code: 'Q.027',
-      typeQuestion: 'Một lựa chọn',
-      scoringMethod: 'Đúng hết đáp án',
-      status: 2,
-    },
-    {
-      id: 28,
-      title: 'Sản phẩm nào được khách hàng ưa chuộng nhất tại Hachi Hachi?',
-      group: 'Thương hiệu',
-      time: 30,
-      code: 'Q.028',
-      typeQuestion: 'Nhiều lựa chọn',
-      scoringMethod: 'Từng đáp án đúng',
-      status: 3,
-    },
-    {
-      id: 29,
-      title: 'Hachi Hachi có chính sách hỗ trợ nhân viên không?',
-      group: 'Văn hoá công ty',
-      time: 35,
-      code: 'Q.029',
-      typeQuestion: 'Câu hỏi yes/no',
-      scoringMethod: 'Đúng hết đáp án',
-      status: 4,
-    },
-    {
-      id: 30,
-      title: 'Ai là người quản lý cấp cao nhất của Hachi Hachi?',
-      group: 'Quy định nội bộ',
-      time: 40,
-      code: 'Q.030',
-      typeQuestion: 'Một lựa chọn',
-      scoringMethod: 'Đúng hết đáp án',
-      status: 1,
-    },
-    {
-      id: 31,
-      title: 'Hachi Hachi có các chương trình đào tạo nghề nghiệp không?',
-      group: 'Thương hiệu',
-      time: 45,
-      code: 'Q.031',
-      typeQuestion: 'Câu hỏi mở',
-      scoringMethod: 'Trừ đáp án sai',
-      status: 5,
-    },
-    {
-      id: 32,
-      title: 'Có ai từng trải nghiệm dịch vụ của Hachi Hachi chưa?',
-      group: 'Văn hoá công ty',
-      time: 30,
-      code: 'Q.032',
-      typeQuestion: 'Một lựa chọn',
-      scoringMethod: 'Đúng hết đáp án',
-      status: 1,
-    },
-    {
-      id: 33,
-      title: 'Hachi Hachi có các chính sách bảo mật thông tin không?',
-      group: 'Quy định nội bộ',
-      time: 30,
-      code: 'Q.033',
-      typeQuestion: 'Nhiều lựa chọn',
-      scoringMethod: 'Từng đáp án đúng',
-      status: 2,
-    },
-    {
-      id: 34,
-      title: 'Sản phẩm nào được nhiều người biết đến nhất từ Hachi Hachi?',
-      group: 'Thương hiệu',
-      time: 35,
-      code: 'Q.034',
-      typeQuestion: 'Câu hỏi yes/no',
-      scoringMethod: 'Đúng hết đáp án',
-      status: 3,
-    },
-    {
-      id: 35,
-      title:
-        'Hachi Hachi có chính sách phát triển sự nghiệp cho nhân viên không?',
-      group: 'Văn hoá công ty',
-      time: 40,
-      code: 'Q.035',
-      typeQuestion: 'Một lựa chọn',
-      scoringMethod: 'Đúng hết đáp án',
-      status: 4,
-    },
-    {
-      id: 36,
-      title: 'Hachi Hachi có tiêu chuẩn gì cho việc chọn nguyên liệu không?',
-      group: 'Quy định nội bộ',
-      time: 45,
-      code: 'Q.036',
-      typeQuestion: 'Câu hỏi mở',
-      scoringMethod: 'Trừ đáp án sai',
-      status: 1,
-    },
-    {
-      id: 37,
-      title: 'Hachi Hachi có những giải pháp gì cho việc bảo vệ môi trường?',
-      group: 'Thương hiệu',
-      time: 30,
-      code: 'Q.037',
-      typeQuestion: 'Một lựa chọn',
-      scoringMethod: 'Đúng hết đáp án',
-      status: 5,
-    },
-    {
-      id: 38,
-      title: 'Hachi Hachi có các chương trình tặng quà cho khách hàng không?',
-      group: 'Văn hoá công ty',
-      time: 35,
-      code: 'Q.038',
-      typeQuestion: 'Nhiều lựa chọn',
-      scoringMethod: 'Từng đáp án đúng',
-      status: 1,
-    },
-    {
-      id: 39,
-      title:
-        'Hachi Hachi có chính sách hỗ trợ đặc biệt cho người khuyết tật không?',
-      group: 'Quy định nội bộ',
-      time: 40,
-      code: 'Q.039',
-      typeQuestion: 'Câu hỏi yes/no',
-      scoringMethod: 'Đúng hết đáp án',
-      status: 2,
-    },
-    {
-      id: 40,
-      title: 'Các món ăn của Hachi Hachi có phải là sức khỏe không?',
-      group: 'Thương hiệu',
-      time: 30,
-      code: 'Q.040',
-      typeQuestion: 'Một lựa chọn',
-      scoringMethod: 'Trừ đáp án sai',
-      status: 3,
-    },
-    {
-      id: 41,
-      title:
-        'Hachi Hachi có những chính sách nào để đối phó với tình trạng thất nghiệp?',
-      group: 'Văn hoá công ty',
-      time: 45,
-      code: 'Q.041',
-      typeQuestion: 'Câu hỏi mở',
-      scoringMethod: 'Đúng hết đáp án',
-      status: 4,
-    },
-    {
-      id: 42,
-      title:
-        'Hachi Hachi có những chính sách nào để thúc đẩy sự sáng tạo của nhân viên?',
-      group: 'Quy định nội bộ',
-      time: 30,
-      code: 'Q.042',
-      typeQuestion: 'Một lựa chọn',
-      scoringMethod: 'Đúng hết đáp án',
-      status: 1,
-    },
-    {
-      id: 43,
-      title:
-        'Hachi Hachi có những chính sách bảo vệ quyền lợi của người tiêu dùng không?',
-      group: 'Thương hiệu',
-      time: 40,
-      code: 'Q.043',
-      typeQuestion: 'Nhiều lựa chọn',
-      scoringMethod: 'Trừ đáp án sai',
-      status: 5,
-    },
-    {
-      id: 44,
-      title: 'Hachi Hachi có những phương thức thanh toán nào?',
-      group: 'Văn hoá công ty',
-      time: 35,
-      code: 'Q.044',
-      typeQuestion: 'Câu hỏi yes/no',
-      scoringMethod: 'Đúng hết đáp án',
-      status: 1,
-    },
-    {
-      id: 45,
-      title: 'Hachi Hachi có những dịch vụ gì cho khách hàng doanh nghiệp?',
-      group: 'Quy định nội bộ',
-      time: 30,
-      code: 'Q.045',
-      typeQuestion: 'Một lựa chọn',
-      scoringMethod: 'Từng đáp án đúng',
-      status: 2,
-    },
-    {
-      id: 46,
-      title:
-        'Hachi Hachi có các chương trình khuyến mãi dành cho sinh viên không?',
-      group: 'Thương hiệu',
-      time: 30,
-      code: 'Q.046',
-      typeQuestion: 'Câu hỏi mở',
-      scoringMethod: 'Đúng hết đáp án',
-      status: 3,
-    },
-    {
-      id: 47,
-      title: 'Hachi Hachi có những gói dịch vụ nào dành cho người già không?',
-      group: 'Văn hoá công ty',
-      time: 45,
-      code: 'Q.047',
-      typeQuestion: 'Một lựa chọn',
-      scoringMethod: 'Trừ đáp án sai',
-      status: 4,
-    },
-    {
-      id: 48,
-      title: 'Có bao nhiêu khách hàng trung thành với Hachi Hachi?',
-      group: 'Quy định nội bộ',
-      time: 40,
-      code: 'Q.048',
-      typeQuestion: 'Nhiều lựa chọn',
-      scoringMethod: 'Đúng hết đáp án',
-      status: 1,
-    },
-    {
-      id: 49,
-      title: 'Hachi Hachi có thực hiện các chương trình từ thiện không?',
-      group: 'Thương hiệu',
-      time: 35,
-      code: 'Q.049',
-      typeQuestion: 'Câu hỏi yes/no',
-      scoringMethod: 'Từng đáp án đúng',
-      status: 5,
-    },
-    {
-      id: 50,
-      title:
-        'Hachi Hachi có những chính sách nào để thúc đẩy sự phát triển cá nhân của nhân viên?',
-      group: 'Văn hoá công ty',
-      time: 40,
-      code: 'Q.050',
-      typeQuestion: 'Một lựa chọn',
-      scoringMethod: 'Đúng hết đáp án',
-      status: 1,
-    },];
-  dataSource = new MatTableDataSource<any>(this.data);
-
+  // common
+  dataSource!: MatTableDataSource<any>;
   selection = new SelectionModel<any>(true, []);
+  pageEvent!: PageEvent;
+  page: number = 1;
+  pageSizes: number[] = [5, 10, 15];
+  pageSize: number = 5;
 
+  ngOnInit(): void {
+    this.dataSource = new MatTableDataSource<any>(this.data);
+    this.dataSource.paginator = this.paginator;
+
+    this.paginator._intl.itemsPerPageLabel = 'Hiển thị mỗi trang';
+  }
+
+  //#region CHECKBOX
   isAllSelected() {
     const numSelected = this.selection.selected.length;
     const numRows = this.dataSource.data.length;
@@ -550,21 +37,35 @@ export class TableComponent implements OnInit {
     return numSelected === numRows;
   }
 
+  onSelectionChange() {
+    const selectedIds = this.selection.selected.map((row) => row.status);
+  }
+
   masterToggle() {
     this.isAllSelected()
       ? this.selection.clear()
       : this.dataSource.data.forEach((row) => this.selection.select(row));
-    // this.updateShowBigPopup();
+  }
+  //#endregion
+
+  //#region PAGINATION
+  onPaginateChange(event: PageEvent): PageEvent {
+    this.pageEvent = event;
+    this.updatePaginatedData(event.pageIndex, event.pageSize);
+    return this.pageEvent;
+  }
+  paginatedData: number[] = [];
+
+  updatePaginatedData(pageIndex: number, pageSize: number): void {
+    const startIndex = pageIndex * pageSize;
+    this.paginatedData = this.data.slice(startIndex, startIndex + pageSize);
   }
 
-
-  onSelectionChange() {
-    this.selectedRows = this.selection.selected;
-    const selectedIds = this.selection.selected.map((row) => row.status);
-    // this.bigPopupSelectedIds = selectedIds;
-    this.selectedQuestion = null;
-
-    // this.toggleBigPopup();
+  //#region Popup
+  onPopupClick(element: any) {
+    console.log(element);
   }
+  //#endregion
 
+  //#endregion
 }
