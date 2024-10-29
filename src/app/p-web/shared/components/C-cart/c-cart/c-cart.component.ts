@@ -6,9 +6,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './c-cart.component.scss'
 })
 export class CCartComponent {
-  
+
   @Input() item: any;
   @Output() itemRemoved = new EventEmitter<any>();
+  isCustomerFormVisible = false;
+  isOrderConfirmed = false;
 
   increaseQuantity() {
     this.item.quantity += 1;
@@ -22,5 +24,14 @@ export class CCartComponent {
 
   removeItem() {
     this.itemRemoved.emit(this.item);
+  }
+
+  toggleCustomerForm(){
+    this.isCustomerFormVisible = !this.isCustomerFormVisible;
+    this.isOrderConfirmed = false;
+  }
+  confirmCustomerInfor(){
+    this.isCustomerFormVisible = false;
+    this.isOrderConfirmed = true;
   }
 }

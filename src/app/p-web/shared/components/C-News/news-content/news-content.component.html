@@ -1,0 +1,20 @@
+<div class="new-container">
+    <h2 class="news-title">Tin tức</h2>
+    <div class="news-section">
+
+
+    <div class="main-news">
+      <img src="assets/ANH-BAO-TRI-1030x561-1024x558.jpg" alt="Main News Image" class="main-news-image">
+      <p>Nhà máy nhiệt điện Nhơn Trạch 3, 4 nhận điện ngược thành công</p>
+    </div>
+
+    <div class="other-news">
+      <h3>Tin nổi bật</h3>
+      <div class="news-item" *ngFor="let news of newsData">
+        <img [src]="news.imageNews" alt="Image News" class="image-other">
+        <p>{{news.name}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+

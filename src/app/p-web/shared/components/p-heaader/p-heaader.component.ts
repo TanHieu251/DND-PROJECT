@@ -61,7 +61,7 @@ export class HeaderComponent implements OnInit {
   cartCount: number = 0;
     private cartSubscription!: Subscription;
   menu = [
-    { name: 'Trang chủ', routes: '/home' },
+    { name: 'Trang chủ', routes: '/home',  },
     { name: 'Giới thiệu', routes: '/about' },
     { name: 'Dịch vụ', routes: '/services' },
     { name: 'Sản phẩm', routes: '/products' },
@@ -69,6 +69,7 @@ export class HeaderComponent implements OnInit {
     { name: 'Tin tức', routes: '/news' },
     { name: 'Liên hệ', routes: '/contacts' },
   ];
+  
   menuSearch = [
     { name: 'Dịch vụ' },
     { name: 'Sản phẩm' },

@@ -1,33 +1,31 @@
 ::ng-deep{
   app-c-content{
+
     .vision-mission-container {
+      padding:0 124px 0 124px;
       width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      // gap: 80px;
-      margin-top: 60px;
-      margin-top: 10px;
-
+      padding-top: 10px;
       .h1class{
         display: inline-block;
         padding-left: 30px;
-        font-size: 45px;
+        font-size: 32px;
         h1{
         // border-top: 5px solid #348BD2;
           font-weight: bold;
         display: inline-block;
 
-      }
+        }
       }
 
       .section {
         margin: 10px;
         display: flex;
-        justify-content: space-between;
+        // justify-content: space-between;
         align-items: center;
-        opacity: 0;
-        transition: opacity 0.5s ease-in-out;
+        // transition: opacity 0.5s ease-in-out;
         background-color: white;
         border-radius: 5px;
 
@@ -41,21 +39,21 @@
 
         .text-content {
           position: relative;
-          width: 55%;
-          z-index: 2;
+          width: 620px;
+          height: 320px;
+          align-items: center;
+          padding: 50px;
           background-color: white;
-          // padding: 20px;
           margin: 10px;
           border-radius: 10px;
           box-shadow: 1px 0px 2px 1px rgba(0, 0, 0, 0.1);
-          // transform: translateX(100%);
 
           &.active {
             animation: slideInRight 1s forwards;
           }
 
           h2 {
-            font-size: 32px;
+            font-size: 24px;
             font-weight: bold;
             position: relative;
             padding-top: 5px;
@@ -68,13 +66,16 @@
             margin-top: 0px;
             line-height: 1.6;
             color: #000;
-            font-size: 24px;
+            font-size: 18px;
           }
         }
 
         .image-content {
-          flex: 1;
-          padding: 10px;
+          // flex: 1;
+          width: 620px;
+          height: 320px;
+
+          // padding: 10px;
           text-align: center;
           // transform: translateX(-100%);
 
@@ -83,8 +84,8 @@
           }
 
           img {
-            width: 650px;
-            height: 350px;
+            width: 620px;
+            height: 320px;
             border-radius: 10px;
           }
         }

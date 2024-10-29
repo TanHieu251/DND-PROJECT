@@ -32,7 +32,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { AuthServiceService } from '../auth/shared/services/auth-service.service';
 import { MatTableModule } from '@angular/material/table';
 
-
 import { P005ProjectDetailComponent } from './pages/p005-project-detail/p005-project-detail.component';
 import { ImageProjectComponent } from './shared/components/C-project/image-project/image-project.component';
 import { CCartComponent } from './shared/components/C-cart/c-cart/c-cart.component';
@@ -47,6 +46,13 @@ import { P008ServiceComponent } from './pages/p008-service/service/p008-service.
 import { ServiceBannerComponent } from './shared/components/C-Services/service-banner/service-banner.component';
 import { ServiceContentComponent } from './shared/components/C-Services/service-content/service-content.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+
+import { P007NewsComponent } from './pages/p007-news/p007-news/p007-news.component';
+import { NewsContentComponent } from './shared/components/C-News/news-content/news-content.component';
+import { NewBannerComponent } from './shared/components/C-News/new-benner/new-benner.component';
+import { OustandingContentComponent } from './shared/components/C-Company/oustanding-content/oustanding-content.component';
+import { NewsRealationComponent } from './shared/components/C-News/news-realation/news-realation.component';
+
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -60,6 +66,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     ProductItemComponent,
     MoreInformationComponent,
     P002CompanyComponent,
+    OustandingContentComponent,
     SlideBannerComponent,
     CContentComponent,
     CMembersComponent,
@@ -86,9 +93,11 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     SearchDialogComponent,
     P008ServiceComponent,
     ServiceBannerComponent,
-    ServiceContentComponent
-
-
+    ServiceContentComponent,
+    P007NewsComponent,
+    NewBannerComponent,
+    NewsContentComponent,
+    NewsRealationComponent
   ],
   imports: [
     CommonModule,
