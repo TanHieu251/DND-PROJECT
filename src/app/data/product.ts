@@ -12,11 +12,12 @@ export interface Product {
   features: string;
   specifications: string;
   reviews: string;
-  price: string;
+  price: number;
   status: boolean;
   availability: string;
   image: string;
   thumbnail: string;
+  quantity: number;
 }
 
 export const productData = [
@@ -28,11 +29,12 @@ export const productData = [
       features: 'Bảo vệ quá tải và ngắn mạch; thiết kế nhỏ gọn; dễ dàng lắp đặt.',
       specifications: 'Dòng định mức: 16A; Điện áp: 220V; Kích thước: 80x45x60mm.',
       reviews: 'Sản phẩm chất lượng, bảo vệ an toàn cho hệ thống điện.',
-      price: '150,000 VND',
-      status: false,
+      price: "150000",
+      status: true,
       availability: 'Còn hàng',
       image: 'assets/cau-dao-tu-dong.png',
-      thumbnail: 'assets/cau-dao-tu-dong.png'
+      thumbnail: 'assets/cau-dao-tu-dong.png',
+      quantity:'5'
     },
     {
       id: 'DND002',
@@ -42,11 +44,12 @@ export const productData = [
       features: 'Khả năng truyền tải cao; thiết kế bền bỉ.',
       specifications: 'Công suất: 500kVA; Điện áp: 10kV; Kích thước: 120x80x200cm.',
       reviews: 'Hoạt động ổn định và độ bền cao.',
-      price: '5,000,000 VND',
+      price: "5000000",
       status: true,
       availability: 'Còn hàng',
       image: 'assets/botruyentai3pha.png',
-      thumbnail: 'assets/botruyentai3pha.png'
+      thumbnail: 'assets/botruyentai3pha.png',
+      quantity: '4',
     },
     {
       id: 'DND003',
