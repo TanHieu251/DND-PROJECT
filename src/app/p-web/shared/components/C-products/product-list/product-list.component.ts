@@ -92,7 +92,8 @@ export class ProductListComponent {
         break;
       case 'Công Tắc Ổ Cắm':
         this.filteredProducts = this.products.filter(product =>
-          product.name.includes('Công Tắc')
+          product.name.includes('Công Tắc') ||
+          product.name.includes('Ổ Cắm')
         );
         break;
       case 'Thiết Bị Năng Lượng Mới':
@@ -102,7 +103,7 @@ export class ProductListComponent {
         );
         break;
       default:
-        this.filteredProducts = this.products; // Show all if no filter
+        this.filteredProducts = this.products;
     }
   }
   onItemPerPageChange(event: any) {

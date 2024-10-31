@@ -52,6 +52,8 @@ import { NewsContentComponent } from './shared/components/C-News/news-content/ne
 import { NewBannerComponent } from './shared/components/C-News/new-benner/new-benner.component';
 import { OustandingContentComponent } from './shared/components/C-Company/oustanding-content/oustanding-content.component';
 import { NewsRealationComponent } from './shared/components/C-News/news-realation/news-realation.component';
+import { P007NewDetailComponent } from './pages/p007-new-detail/p007-new-detail/p007-new-detail.component';
+import { NewDetailComponent } from './shared/components/C-News/new-detail/new-detail.component';
 
 @NgModule({
   declarations: [
@@ -97,7 +99,9 @@ import { NewsRealationComponent } from './shared/components/C-News/news-realatio
     P007NewsComponent,
     NewBannerComponent,
     NewsContentComponent,
-    NewsRealationComponent
+    NewsRealationComponent,
+    P007NewDetailComponent,
+    NewDetailComponent
   ],
   imports: [
     CommonModule,

@@ -1,7 +1,7 @@
 ::ng-deep{
   app-c-cart{
       .cart-container {
-      width: 80%;
+      width: 85%;
       margin: 0 auto;
       padding: 80px;
       // gap: 10px;
@@ -99,6 +99,7 @@
             justify-content: space-between;
             padding: 10px 0;
             font-weight: bold;
+            gap:10px;
           }
           .place-order-btn,
           .pay-btn {

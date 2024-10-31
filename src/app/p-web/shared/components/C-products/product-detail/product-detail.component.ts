@@ -50,22 +50,27 @@ export class ProductDetailComponent implements OnInit {
       description: this.product.description
     });
     // this.cartService.addToCart(this.product);
-    this.notification.success('Thành công', `${this.product.name} đã được thêm vào giỏ hàng`);
+     if(this.notification){
+      this.notification.success('Thành công', `${this.product.name} đã được thêm vào giỏ hàng`);
+     }
+     else{
+      console.log('Notification service is not defined');
+     }
+    // this.notification.success('Thành công', `${this.product.name} đã được thêm vào giỏ hàng`);
+    // this.notification.error('Sản phẩm gặp lỗi khi thêm vào giỏ hàng');
   }
 
   byNow(){
     this.addToCart();
   }
-  increaseQuantity(item: any) {
-    item.quantity = +item.quantity + 1;
-    // item.quantity = +item.quantity + 1;
-    this.cdRef.detectChanges();
+  increaseQuantity() {
+    this.quantity++;
   }
 
-  decreaseQuantity(item: any) {
-    if (+item.quantity > 1) {
-      item.quantity = +item.quantity - 1;
-      this.cdRef.detectChanges();
+  decreaseQuantity() {
+    if(this.quantity > 1){
+      this.quantity--;
     }
   }
+
 }

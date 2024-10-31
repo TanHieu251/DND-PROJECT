@@ -175,5 +175,45 @@
       }
     }
   }
+
+    .contactnow{
+      position: fixed;
+      top: 10%;
+      right: 50px;
+      width: 115px;
+      height: 115px;
+      z-index: 99;
+      cursor: pointer;
+
+      .rotate{
+        width: 115px;
+      height: 115px;
+      background-image: url(/assets/rotate_img5b7b.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 0;
+      }
+      .innercontactnow{
+        position: relative;
+      width: 115px;
+      height: 115px;
+      border-radius: 50%;
+      background-image: url(/assets/bg_rolate.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      }
+    }
   }
 }

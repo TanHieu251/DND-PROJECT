@@ -99,10 +99,7 @@
             <p class="stock">{{item.quantity > 0 ? 'Còn hàng' : 'Hết hàng'}}</p>
           </div>
           <div class="price-cart">
-            <p class="price">{{ item.totalPrice }} VND</p>
-            <!-- <p>Price: {{getTotalItem(item)}}</p> -->
-
-             <!-- <p>Price: {{ item.totalPrice }}</p> -->
+            <p class="price">{{ totalPrice }} VND</p>
           </div>
           <div class="remove-cart">
             <button class="remove-btn" (click)="removeItem(item)">
@@ -115,7 +112,7 @@
       <div class="order-cart">
         <h4>Thông tin đơn hàng</h4>
         <div class="order-summary">
-          <p>Tổng tiền: {{ totalPrice }}</p>
+          <p>Tổng tiền: {{ totalPrice }} VND</p>
           <p>Số lượng sản phẩm: {{ totalQuantity }}</p>
         </div>
         <div class="order-summary">
@@ -128,7 +125,7 @@
         </div>
         <div class="total-amount">
           <p>Cần thanh toán:</p>
-          <p class="amount" >{{getTotalPrice()}}</p>
+          <p class="amount" >{{getTotalPrice()}} VND</p>
         </div>
         <button class="place-order-btn" (click)="toggleCustomerForm()">Đặt hàng</button>
         <button class="pay-btn" *ngIf="isOrderConfirmed">Thanh toán</button>
@@ -154,7 +151,7 @@
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" placeholder="Nhập email" required>
       </div>
-      <button type="submit" class="confirm-btn">Xác nhận thông tin</button>
+      <button type="submit" class="confirm-btn" (click)="confirmCusInfor()">Xác nhận thông tin</button>
     </form>
   </div>
 </div>

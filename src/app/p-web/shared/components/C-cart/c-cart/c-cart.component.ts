@@ -73,6 +73,7 @@
 import { Component, EventEmitter, Input, OnInit, Output, ChangeDetectorRef } from '@angular/core';
 import { ServiceService } from '../../../service/service.service';
 import { productData, serviceData } from '../../../../../data/product';
+import { NotificationServiceService } from '../../../../../p-lib/services/notification-service.service';
 
 @Component({
   selector: 'app-c-cart',
@@ -93,7 +94,8 @@ export class CCartComponent implements OnInit {
 
   constructor (
     private cartService: ServiceService,
-    private cdRef: ChangeDetectorRef) {}
+    private cdRef: ChangeDetectorRef,
+    private notification: NotificationServiceService) {}
 
   ngOnInit(): void {
     this.cartService.getCartCountObservable().subscribe(count => {
@@ -103,17 +105,22 @@ export class CCartComponent implements OnInit {
 
     this.cartService.getTotalPriceObservable().subscribe(price => {
       this.totalPrice = price;
-      this.cdRef.detectChanges();  // Recalculate total price after price change
+      this.cdRef.detectChanges();
     });
 
     this.items = this.cartService.getItems();
   }
 
-  updateTotalPriceAndQuantity() {
-    this.totalQuantity = this.cartService.getTotalQuantity();
-    this.totalPrice = this.cartService.getTotalPrice(); // Call getTotalPrice() here to get the calculated total
+  confirmCusInfor(){
+    this.notification.success(`Thông tin khách hàng đã được xác nhận` );
   }
 
+  //cập nhật giá tiền và số lượng
+  updateTotalPriceAndQuantity() {
+    this.totalQuantity = this.cartService.getTotalQuantity();
+    this.totalPrice = this.cartService.getTotalPrice();
+  }
+  //tính tổng giá trị của sản phẩm với đã nhân với số lượng
   getTotalPrice(): number {
     return this.items.reduce((sum, item) => {
       const price = item.price || 0;
@@ -125,29 +132,30 @@ export class CCartComponent implements OnInit {
   getTotalItem(item: any): number{
     return (item.price ?? 0) * (item.quantity ?? 0);
   }
+  //xóa một sản phẩm
   removeItem(item: any) {
     this.itemRemoved.emit(this.item);
     this.cartService.removeItem(item);
-    this.items = this.cartService.getItems();  // Update items array after removal
-    // this.updateTotalPriceAndQuantity();  // Recalculate total after removal
+    this.items = this.cartService.getItems();
   }
 
   toggleCustomerForm() {
     this.isCustomerFormVisible = !this.isCustomerFormVisible;
     this.isOrderConfirmed = false;
   }
-
+  // hiển thị nội dung thông tin khách hàng
   confirmCustomerInfor() {
     this.isCustomerFormVisible = false;
     this.isOrderConfirmed = true;
   }
 
+  // tăng thêm sản phẩm
   increaseQuantity(item: any) {
     item.quantity = (item.quantity || 0) + 1;
-    this.updateTotalPriceAndQuantity();  // Recalculate total after quantity increase
+    this.updateTotalPriceAndQuantity();
     this.cdRef.detectChanges();
   }
-
+  //giảm sản phẩm
   decreaseQuantity(item: any) {
     if ((item.quantity || 0) > 1) {
       item.quantity -= 1;

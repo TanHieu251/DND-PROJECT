@@ -33,12 +33,12 @@ export class CContentComponent {
       {
         title: 'Cam kết chất lượng',
         description: 'Công ty TNHH DND cam kết mang lại những sản phẩm và dịch vụ với tiêu chuẩn chất lượng cao nhất. Chúng tôi luôn đề cao sự an toàn, hiệu quả, và tối ưu chi phí trong mọi giải pháp mà mình cung cấp.',
-        imageSrc: 'assets/camketchatluong.png'
+        imageSrc: 'assets/camketchatluong2.png'
       },
       {
         title: 'Mục tiêu phát triển',
         description: 'Trong những năm tới, DND sẽ tiếp tục đầu tư vào công nghệ và nhân lực nhằm mở rộng thị trường, trở thành đối tác tin cậy cho các doanh nghiệp trong và ngoài nước trong lĩnh vực điện công nghiệp và tự động hóa.',
-        imageSrc: 'assets/camketchatluong.png'
+        imageSrc: 'assets/muctieuphattrien.png'
       },
     ]
   textActive: boolean = false;
@@ -57,7 +57,7 @@ export class CContentComponent {
       if (sectionPosition <= screenPosition) {
         section.classList.add('active');
       } else {
-        section.classList.remove('active'); // Remove active class when out of view
+        section.classList.remove('active');
       }
     });
   }
