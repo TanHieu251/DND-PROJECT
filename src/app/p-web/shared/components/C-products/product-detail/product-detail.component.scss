@@ -18,7 +18,8 @@
 
     .product-image img {
       width: 400px;
-      height: 350px;
+      height: auto;
+      // height: 350px;
       max-width: 450px;
       border-radius: 8px;
     }
@@ -29,7 +30,8 @@
 
     .product-thumbnail img {
       width: 120px;
-      height: 120px;
+      // height: 120px;
+      height: auto;
       border: 1px solid #ddd;
       border-radius: 8px;
       // padding-left: 10px;

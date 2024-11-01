@@ -99,7 +99,7 @@
             <p class="stock">{{item.quantity > 0 ? 'Còn hàng' : 'Hết hàng'}}</p>
           </div>
           <div class="price-cart">
-            <p class="price">{{ totalPrice }} VND</p>
+            <p class="price">{{ item.totalPrice }} VND</p>
           </div>
           <div class="remove-cart">
             <button class="remove-btn" (click)="removeItem(item)">
