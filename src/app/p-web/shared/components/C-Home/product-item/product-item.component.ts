@@ -17,6 +17,7 @@ export class ProductItemComponent implements OnInit {
   @Input() productTitle: string = 'Sản phẩm';
   @Input() buttonText: string = 'Xem tất cả';
   @Input() products: any[] = [];
+  status: boolean = true;
 
   viewDetailProduct(productName: string){
     this.router.navigate(['/product', productName])

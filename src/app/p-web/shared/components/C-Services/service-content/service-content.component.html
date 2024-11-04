@@ -1,0 +1,23 @@
+<div class="service-container">
+  <div class="service-item" *ngFor="let service of serviceData">
+    <div class="service-content">
+      <h2 class="service-title">{{ service.title }}</h2>
+      <p class="service-description">{{ service.description }}</p>
+      <div class="service-features">
+        <h3>Đặc điểm</h3>
+        <ul>
+          <li *ngFor="let feature of service.features">{{ feature }}</li>
+        </ul>
+      </div>
+      <div class="service-process">
+        <h3>Quy trình thực hiện</h3>
+        <ol>
+          <li *ngFor="let step of service.process">{{ step }}</li>
+        </ol>
+      </div>
+    </div>
+    <div class="service-image">
+      <img [src]="service.image" alt="Service Image">
+    </div>
+  </div>
+</div>

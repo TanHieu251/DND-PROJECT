@@ -32,7 +32,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { AuthServiceService } from '../auth/shared/services/auth-service.service';
 import { MatTableModule } from '@angular/material/table';
 
-
 import { P005ProjectDetailComponent } from './pages/p005-project-detail/p005-project-detail.component';
 import { ImageProjectComponent } from './shared/components/C-project/image-project/image-project.component';
 import { CCartComponent } from './shared/components/C-cart/c-cart/c-cart.component';
@@ -43,6 +42,19 @@ import { HomeServicesComponent } from './shared/components/C-Home/home-services/
 import { HomeNewsComponent } from './shared/components/C-Home/home-news/home-news.component';
 import { HeaderComponent } from './shared/components/p-heaader/p-heaader.component';
 import { SearchDialogComponent } from './shared/components/search-dialog/search-dialog.component';
+import { P008ServiceComponent } from './pages/p008-service/service/p008-service.component';
+import { ServiceBannerComponent } from './shared/components/C-Services/service-banner/service-banner.component';
+import { ServiceContentComponent } from './shared/components/C-Services/service-content/service-content.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
+import { P007NewsComponent } from './pages/p007-news/p007-news/p007-news.component';
+import { NewsContentComponent } from './shared/components/C-News/news-content/news-content.component';
+import { NewBannerComponent } from './shared/components/C-News/new-benner/new-benner.component';
+import { OustandingContentComponent } from './shared/components/C-Company/oustanding-content/oustanding-content.component';
+import { NewsRealationComponent } from './shared/components/C-News/news-realation/news-realation.component';
+import { P007NewDetailComponent } from './pages/p007-new-detail/p007-new-detail/p007-new-detail.component';
+import { NewDetailComponent } from './shared/components/C-News/new-detail/new-detail.component';
+
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -56,6 +68,7 @@ import { SearchDialogComponent } from './shared/components/search-dialog/search-
     ProductItemComponent,
     MoreInformationComponent,
     P002CompanyComponent,
+    OustandingContentComponent,
     SlideBannerComponent,
     CContentComponent,
     CMembersComponent,
@@ -79,8 +92,16 @@ import { SearchDialogComponent } from './shared/components/search-dialog/search-
     ProductListHomeComponent,
     HomeServicesComponent,
     HomeNewsComponent,
-    SearchDialogComponent
-
+    SearchDialogComponent,
+    P008ServiceComponent,
+    ServiceBannerComponent,
+    ServiceContentComponent,
+    P007NewsComponent,
+    NewBannerComponent,
+    NewsContentComponent,
+    NewsRealationComponent,
+    P007NewDetailComponent,
+    NewDetailComponent
   ],
   imports: [
     CommonModule,
@@ -92,6 +113,7 @@ import { SearchDialogComponent } from './shared/components/search-dialog/search-
     NgxPaginationModule,
     RouterLink,
     MatTableModule,
+    MatPaginatorModule,
   ],
   providers: [AuthServiceService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

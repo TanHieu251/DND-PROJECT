@@ -12,11 +12,12 @@ export interface Product {
   features: string;
   specifications: string;
   reviews: string;
-  price: string;
+  price: number;
   status: boolean;
   availability: string;
   image: string;
   thumbnail: string;
+  quantity: number;
 }
 
 export const productData = [
@@ -28,11 +29,12 @@ export const productData = [
       features: 'Bảo vệ quá tải và ngắn mạch; thiết kế nhỏ gọn; dễ dàng lắp đặt.',
       specifications: 'Dòng định mức: 16A; Điện áp: 220V; Kích thước: 80x45x60mm.',
       reviews: 'Sản phẩm chất lượng, bảo vệ an toàn cho hệ thống điện.',
-      price: '150,000 VND',
+      price: "150000",
       status: true,
       availability: 'Còn hàng',
       image: 'assets/cau-dao-tu-dong.png',
-      thumbnail: 'assets/cau-dao-tu-dong.png'
+      thumbnail: 'assets/cau-dao-tu-dong.png',
+      quantity:'5'
     },
     {
       id: 'DND002',
@@ -42,11 +44,12 @@ export const productData = [
       features: 'Khả năng truyền tải cao; thiết kế bền bỉ.',
       specifications: 'Công suất: 500kVA; Điện áp: 10kV; Kích thước: 120x80x200cm.',
       reviews: 'Hoạt động ổn định và độ bền cao.',
-      price: '5,000,000 VND',
+      price: "5000000",
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/bo-truyen-tai-dien.jpg',
-      thumbnail: 'https://example.com/images/thumb/bo-truyen-tai-dien.jpg'
+      image: 'assets/botruyentai3pha.png',
+      thumbnail: 'assets/botruyentai3pha.png',
+      quantity: '4',
     },
     {
       id: 'DND003',
@@ -56,11 +59,12 @@ export const productData = [
       features: 'Phạm vi cảm biến rộng; tiết kiệm năng lượng.',
       specifications: 'Góc cảm biến: 120°; Khoảng cách: 8m; Điện áp: 220V.',
       reviews: 'Cảm ứng nhạy, tiết kiệm điện.',
-      price: '350,000 VND',
+      price: "350000",
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/cong-tac-cam-ung.jpg',
-      thumbnail: 'https://example.com/images/thumb/cong-tac-cam-ung.jpg'
+      image: 'assets/cong-tac-wifi-thong-minh-sw702-wifi (6).jpg',
+      thumbnail: 'assets/cong-tac-wifi-thong-minh-sw702-wifi (6).jpg',
+      quantity:'10'
     },
     {
       id: 'DND004',
@@ -70,11 +74,12 @@ export const productData = [
       features: 'Hiển thị chính xác; thiết kế nhỏ gọn.',
       specifications: 'Dải đo: 0-9999W; Độ chính xác: ±1%.',
       reviews: 'Đo lường chính xác, dễ sử dụng.',
-      price: '900,000 VND',
+      price: "900000",
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/dong-ho-do-cong-suat.jpg',
-      thumbnail: 'https://example.com/images/thumb/dong-ho-do-cong-suat.jpg'
+      image: 'assets/donghocongsuatdientu.png',
+      thumbnail: 'assets/donghocongsuatdientu.png',
+      quantity:'10'
     },
     {
       id: 'DND005',
@@ -84,11 +89,13 @@ export const productData = [
       features: 'Hiệu suất cao; chống nước và bụi.',
       specifications: 'Công suất: 200W; Kích thước: 1640x992x35mm.',
       reviews: 'Tạo ra nhiều điện năng ngay cả khi ánh sáng yếu.',
-      price: '4,500,000 VND',
+      price: "4500000" ,
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/tam-pin-nang-luong.jpg',
-      thumbnail: 'https://example.com/images/thumb/tam-pin-nang-luong.jpg'
+      image: 'assets/pinnlmt.jpg',
+      thumbnail: 'assets/pinnlmt.jpg',
+      quantity:'10'
+
     },
     {
       id: 'DND006',
@@ -98,11 +105,13 @@ export const productData = [
       features: 'Chống sét hiệu quả; thiết kế dễ lắp đặt.',
       specifications: 'Điện áp làm việc: 275V; Công suất chịu tải: 40kA.',
       reviews: 'Thiết bị an toàn và hiệu quả cao.',
-      price: '1,200,000 VND',
+      price: "1200000",
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/thiet-bi-chong-set.jpg',
-      thumbnail: 'https://example.com/images/thumb/thiet-bi-chong-set.jpg'
+      image: 'assets/chong-set-van-2-min.jpg',
+      thumbnail: 'assets/chong-set-van-2-min.jpg',
+      quantity:'10'
+
     },
     {
       id: 'DND007',
@@ -112,11 +121,13 @@ export const productData = [
       features: 'Hiệu suất cao; bền bỉ trong điều kiện khắc nghiệt.',
       specifications: 'Công suất: 100kVA; Điện áp: 22kV.',
       reviews: 'Sản phẩm đáng tin cậy, hiệu suất cao.',
-      price: '15,000,000 VND',
+      price: "15000000",
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/bien-ap-truyen-tai.jpg',
-      thumbnail: 'https://example.com/images/thumb/bien-ap-truyen-tai.jpg'
+      image: 'assets/trambienapdl.jpg',
+      thumbnail: 'assets/trambienapdl.jpg',
+      quantity:'10'
+
     },
     {
       id: 'DND008',
@@ -126,11 +137,13 @@ export const productData = [
       features: 'Điều khiển từ xa; tích hợp với các trợ lý ảo.',
       specifications: 'Điện áp: 220V; Công suất tối đa: 10A.',
       reviews: 'Tiện lợi, dễ sử dụng và an toàn.',
-      price: '600,000 VND',
+      price: "600000",
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/cong-tac-dieu-khien.jpg',
-      thumbnail: 'https://example.com/images/thumb/cong-tac-dieu-khien.jpg'
+      image: 'src/assets/congtacdktx.png',
+      thumbnail: 'src/assets/congtacdktx.png',
+      quantity:'10'
+
     },
     {
       id: 'DND009',
@@ -140,11 +153,13 @@ export const productData = [
       features: 'Bảo vệ quá tải; hiển thị thông số sạc.',
       specifications: 'Dòng sạc: 30A; Điện áp: 12/24V tự động.',
       reviews: 'Sản phẩm hoạt động ổn định, dễ lắp đặt.',
-      price: '1,000,000 VND',
+      price: "1000000 ",
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/bo-dieu-khien-sac.jpg',
-      thumbnail: 'https://example.com/images/thumb/bo-dieu-khien-sac.jpg'
+      image: 'assets/bodieukhientampinmattroi.png',
+      thumbnail: 'assets/bodieukhientampinmattroi.png',
+      quantity:'10'
+
     },
     {
       id: 'DND010',
@@ -154,11 +169,13 @@ export const productData = [
       features: 'Hoạt động êm ái; tiêu hao nhiên liệu thấp.',
       specifications: 'Công suất: 5kW; Nhiên liệu: Xăng; Kích thước: 80x60x70cm.',
       reviews: 'Máy vận hành êm và tiết kiệm nhiên liệu.',
-      price: '12,000,000 VND',
+      price: "12000000 ",
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/may-phat-dien.jpg',
-      thumbnail: 'https://example.com/images/thumb/may-phat-dien.jpg'
+      image: 'assets/mayphatdien.jpg',
+      thumbnail: 'assets/mayphatdien.jpg',
+      quantity:'10'
+
     },
     {
       id: 'DND011',
@@ -168,11 +185,13 @@ export const productData = [
       features: 'Tích hợp công tắc; chất liệu chống cháy.',
       specifications: 'Điện áp: 220V; Dòng tải tối đa: 10A; Kích thước: 150x80mm.',
       reviews: 'Sản phẩm an toàn, tiện lợi và chắc chắn.',
-      price: '100,000 VND',
+      price: "100000" ,
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/o-cam-da-nang.jpg',
-      thumbnail: 'https://example.com/images/thumb/o-cam-da-nang.jpg'
+      image: 'assets/ocamdiendanang.jpg',
+      thumbnail: 'assets/ocamdiendanang.jpg',
+      quantity:'10'
+
     },
     {
       id: 'DND012',
@@ -182,11 +201,12 @@ export const productData = [
       features: 'Độ chính xác cao; màn hình hiển thị số rõ ràng.',
       specifications: 'Dải đo: 0-1000 psi; Độ chính xác: ±0.5%.',
       reviews: 'Hoạt động chính xác, dễ dàng sử dụng.',
-      price: '1,200,000 VND',
+      price: "1200000 ",
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/thiet-bi-do-ap-suat.jpg',
-      thumbnail: 'https://example.com/images/thumb/thiet-bi-do-ap-suat.jpg'
+      image: 'assets/thietbidoapsuat.jpg',
+      thumbnail: 'assets/thietbidoapsuat.jpg',
+      quantity:'10'
     },
     {
       id: 'DND013',
@@ -196,11 +216,12 @@ export const productData = [
       features: 'Khả năng điều chỉnh tần số linh hoạt; bảo vệ quá tải.',
       specifications: 'Điện áp: 380V; Công suất: 10kW; Tần số: 50/60Hz.',
       reviews: 'Sản phẩm hiệu quả, giúp tiết kiệm điện năng.',
-      price: '6,000,000 VND',
+      price: "6000000 ",
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/bo-chuyen-doi-tan-so.jpg',
-      thumbnail: 'https://example.com/images/thumb/bo-chuyen-doi-tan-so.jpg'
+      image: 'assets/bochuyendoitanso.png',
+      thumbnail: 'assets/bochuyendoitanso.png',
+      quantity:'10'
     },
     {
       id: 'DND014',
@@ -210,11 +231,12 @@ export const productData = [
       features: 'Có đèn báo; thiết kế hiện đại.',
       specifications: 'Điện áp: 220V; Công suất tối đa: 16A.',
       reviews: 'Thiết kế đẹp, tiện lợi và dễ sử dụng.',
-      price: '180,000 VND',
+      price: "180000",
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/cong-tac-doi.jpg',
-      thumbnail: 'https://example.com/images/thumb/cong-tac-doi.jpg'
+      image: 'assets/contacdoi.png',
+      thumbnail: 'assets/contacdoi.png',
+      quantity:'10'
     },
     {
       id: 'DND015',
@@ -224,11 +246,12 @@ export const productData = [
       features: 'Dung lượng lớn; tuổi thọ cao.',
       specifications: 'Điện áp: 12V; Dung lượng: 100Ah; Kích thước: 330x170x215mm.',
       reviews: 'Sản phẩm đáng tin cậy, hiệu suất tốt.',
-      price: '4,000,000 VND',
+      price: "4000000" ,
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/pin-luu-tru-nang-luong.jpg',
-      thumbnail: 'https://example.com/images/thumb/pin-luu-tru-nang-luong.jpg'
+      image: 'assets/hoppinnlmt.png',
+      thumbnail: 'assets/hoppinnlmt.png',
+      quantity:'10'
     },
     {
       id: 'DND016',
@@ -238,11 +261,12 @@ export const productData = [
       features: 'Hiệu suất cao; thiết kế nhỏ gọn.',
       specifications: 'Công suất: 3kVA; Điện áp: 220V/110V.',
       reviews: 'Hoạt động ổn định, chất lượng tốt.',
-      price: '2,500,000 VND',
+      price: "2500000",
+      quantity: 10,
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/bien-ap-1-pha.jpg',
-      thumbnail: 'https://example.com/images/thumb/bien-ap-1-pha.jpg'
+      image: 'assets/bien-ap-1-pha-vao-220v-ra-12v-11kva100a-fushin_1342.png',
+      thumbnail: 'assets/bien-ap-1-pha-vao-220v-ra-12v-11kva100a-fushin_1342.png'
     },
     {
       id: 'DND017',
@@ -252,11 +276,12 @@ export const productData = [
       features: 'Hiển thị thông tin chi tiết; cảnh báo khi vượt ngưỡng.',
       specifications: 'Điện áp: 220V; Dòng tải tối đa: 30A.',
       reviews: 'Dễ sử dụng, giúp quản lý năng lượng hiệu quả.',
-      price: '850,000 VND',
+      price: "850000",
+      quantity: 10,
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/thiet-bi-theo-doi-nang-luong.jpg',
-      thumbnail: 'https://example.com/images/thumb/thiet-bi-theo-doi-nang-luong.jpg'
+      image: 'assets/giam-sat-dien-nang-h1.png',
+      thumbnail: 'assets/giam-sat-dien-nang-h1.png'
     },
     {
       id: 'DND018',
@@ -266,11 +291,12 @@ export const productData = [
       features: 'Thiết kế nhỏ gọn; hiệu suất cao.',
       specifications: 'Công suất: 500VA; Điện áp: 220V/110V.',
       reviews: 'Hoạt động ổn định, phù hợp cho các thiết bị gia đình.',
-      price: '1,800,000 VND',
+      price: "1800000",
+      quantity: 10,
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/may-bien-ap-dien-tu.jpg',
-      thumbnail: 'https://example.com/images/thumb/may-bien-ap-dien-tu.jpg'
+      image: 'assets/maybienapdientu.jpg',
+      thumbnail: 'assets/maybienapdientu.jpg'
     },
     {
       id: 'DND019',
@@ -280,11 +306,12 @@ export const productData = [
       features: 'Độ chính xác cao; màn hình LCD hiển thị số.',
       specifications: 'Dải đo: 0-20 MΩ; Độ chính xác: ±2%.',
       reviews: 'Chất lượng tốt, hoạt động đáng tin cậy.',
-      price: '1,000,000 VND',
+      price: "1000000",
+      quantity: 10,
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/dong-ho-do-dien-tro.jpg',
-      thumbnail: 'https://example.com/images/thumb/dong-ho-do-dien-tro.jpg'
+      image: 'assets/donghododientro.png',
+      thumbnail: 'assets/donghododientro.png'
     },
     {
       id: 'DND020',
@@ -294,11 +321,12 @@ export const productData = [
       features: 'Khả năng phân phối lớn; bảo vệ chống quá tải.',
       specifications: 'Điện áp: 24kV; Công suất: 630kVA.',
       reviews: 'Thiết kế chắc chắn, hoạt động ổn định.',
-      price: '30,000,000 VND',
+      price: "30000000",
+      quantity: 10,
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/tu-phan-phoi-dien.jpg',
-      thumbnail: 'https://example.com/images/thumb/tu-phan-phoi-dien.jpg'
+      image: 'assets/tuphanphoidien.jpg',
+      thumbnail: 'assets/tuphanphoidien.jpg'
     },
     {
       id: 'DND021',
@@ -308,7 +336,8 @@ export const productData = [
       features: 'Khả năng cắt dòng cao; bảo vệ quá tải và ngắn mạch.',
       specifications: 'Điện áp: 24kV; Dòng cắt: 50kA.',
       reviews: 'Hoạt động an toàn, hiệu quả cao.',
-      price: '20,000,000 VND',
+      price: "20000000",
+      quantity: 10,
       status: true,
       availability: 'Còn hàng',
       image: 'https://example.com/images/may-cat-khong-khi.jpg',
@@ -322,7 +351,8 @@ export const productData = [
       features: 'Độ chính xác cao; hiển thị kỹ thuật số.',
       specifications: 'Điện áp: 220V; Dòng tải tối đa: 30A.',
       reviews: 'Hoạt động ổn định, đo chính xác.',
-      price: '500,000 VND',
+      price: "500000",
+      quantity: 10,
       status: true,
       availability: 'Còn hàng',
       image: 'https://example.com/images/cong-to-dien-tu.jpg',
@@ -336,7 +366,8 @@ export const productData = [
       features: 'Tích hợp pin năng lượng mặt trời; chống thấm nước.',
       specifications: 'Công suất: 30W; Thời gian chiếu sáng: 8-10 giờ.',
       reviews: 'Tiện dụng, không cần nguồn điện.',
-      price: '1,200,000 VND',
+      price: "1200000",
+      quantity: 10,
       status: true,
       availability: 'Còn hàng',
       image: 'https://example.com/images/den-led-nang-luong.jpg',
@@ -350,7 +381,8 @@ export const productData = [
       features: 'Tự động bù; bảo vệ quá tải.',
       specifications: 'Điện áp: 220V; Công suất bù: 50kVAR.',
       reviews: 'Hiệu quả trong việc tiết kiệm năng lượng.',
-      price: '4,000,000 VND',
+      price: "4000000",
+      quantity: 10,
       status: true,
       availability: 'Còn hàng',
       image: 'https://example.com/images/dieu-khien-tu-bu.jpg',
@@ -364,7 +396,8 @@ export const productData = [
       features: 'Chống sét hiệu quả; độ bền cao.',
       specifications: 'Điện áp: 220V/380V; Dòng cắt: 60kA.',
       reviews: 'Bảo vệ an toàn cho hệ thống điện.',
-      price: '2,500,000 VND',
+      price: "2500000",
+      quantity: 10,
       status: true,
       availability: 'Còn hàng',
       image: 'https://example.com/images/cat-loc-set.jpg',
@@ -378,7 +411,7 @@ export const productData = [
       features: 'Lập trình thời gian linh hoạt; tiết kiệm điện.',
       specifications: 'Điện áp: 220V; Dòng tải tối đa: 16A.',
       reviews: 'Tiện lợi, dễ cài đặt.',
-      price: '600,000 VND',
+      price:"600000" ,
       status: true,
       availability: 'Còn hàng',
       image: 'https://example.com/images/cong-tac-hen-gio.jpg',
@@ -392,7 +425,7 @@ export const productData = [
       features: 'Khả năng lọc nhiễu tốt; giảm sóng hài.',
       specifications: 'Công suất: 50kW; Điện áp: 380V.',
       reviews: 'Hiệu quả, nâng cao độ ổn định của hệ thống điện.',
-      price: '7,000,000 VND',
+      price: "7000000",
       status: true,
       availability: 'Còn hàng',
       image: 'https://example.com/images/bo-loc-song-hai.jpg',
@@ -406,7 +439,7 @@ export const productData = [
       features: 'Khả năng điều chỉnh điện áp linh hoạt; bảo vệ chống quá tải.',
       specifications: 'Công suất: 10kVA; Điện áp: 220V/380V.',
       reviews: 'Hoạt động ổn định, độ tin cậy cao.',
-      price: '5,000,000 VND',
+      price: "5000000" ,
       status: true,
       availability: 'Còn hàng',
       image: 'https://example.com/images/may-nang-ha-the.jpg',
@@ -420,7 +453,7 @@ export const productData = [
       features: 'Độ chính xác cao; hiển thị thông tin chi tiết.',
       specifications: 'Điện áp: 380V; Dòng tải tối đa: 100A.',
       reviews: 'Bền bỉ, đáng tin cậy.',
-      price: '1,500,000 VND',
+      price: "1500000",
       status: true,
       availability: 'Còn hàng',
       image: 'https://example.com/images/cong-to-3-pha.jpg',
@@ -434,7 +467,7 @@ export const productData = [
       features: 'Hiệu suất cao; dễ dàng lắp đặt.',
       specifications: 'Công suất: 50W; Điện áp: 18V.',
       reviews: 'Hiệu quả cao, tiết kiệm năng lượng.',
-      price: '2,000,000 VND',
+      price: "2000000",
       status: true,
       availability: 'Còn hàng',
       image: 'https://example.com/images/pin-nang-luong-50w.jpg',
@@ -449,7 +482,7 @@ export const productData = [
       features: 'Hiệu suất chuyển đổi cao; an toàn và ổn định.',
       specifications: 'Công suất: 1000W; Điện áp đầu vào: 12V-24V.',
       reviews: 'Giải pháp năng lượng hiệu quả.',
-      price: '4,500,000 VND',
+      price: "4500000",
       status: true,
       availability: 'Còn hàng',
       image: 'https://example.com/images/bo-chuyen-doi-nang-luong.jpg',
@@ -463,7 +496,7 @@ export const productData = [
       features: 'Độ ồn thấp; lưu lượng gió lớn.',
       specifications: 'Công suất: 300W; Kích thước: 1.2m.',
       reviews: 'Hoạt động hiệu quả, bền bỉ.',
-      price: '3,000,000 VND',
+      price: "3000000",
       status: true,
       availability: 'Còn hàng',
       image: 'https://example.com/images/quat-thong-gio.jpg',
@@ -477,7 +510,7 @@ export const productData = [
       features: 'Tiết kiệm điện lên đến 80%; tuổi thọ cao.',
       specifications: 'Công suất: 12W; Điện áp: 220V.',
       reviews: 'Ánh sáng dễ chịu, không gây chói.',
-      price: '100,000 VND',
+      price: "100000",
       status: true,
       availability: 'Còn hàng',
       image: 'https://example.com/images/bong-den-compact.jpg',
@@ -491,7 +524,7 @@ export const productData = [
       features: 'Bảo vệ quá tải, ngắn mạch; dễ dàng lắp đặt.',
       specifications: 'Điện áp: 220V; Số kênh: 8 kênh.',
       reviews: 'An toàn, dễ sử dụng.',
-      price: '1,200,000 VND',
+      price: "1200000",
       status: true,
       availability: 'Còn hàng',
       image: 'https://example.com/images/bang-dien-da-nang.jpg',
@@ -505,7 +538,7 @@ export const productData = [
       features: 'Chất liệu thép không gỉ; thiết kế an toàn.',
       specifications: 'Điện áp: 400V; Kích thước: 1200x800x300mm.',
       reviews: 'Bền bỉ, dễ bảo trì.',
-      price: '6,000,000 VND',
+      price: "6000000 ",
       status: true,
       availability: 'Còn hàng',
       image: 'https://example.com/images/tu-dien-phan-phoi.jpg',
@@ -519,7 +552,7 @@ export const productData = [
       features: 'Tiết kiệm nhiên liệu; dễ dàng khởi động.',
       specifications: 'Công suất: 5kVA; Nhiên liệu: Diesel.',
       reviews: 'Hoạt động ổn định, dễ dàng bảo trì.',
-      price: '15,000,000 VND',
+      price: "15000000",
       status: true,
       availability: 'Còn hàng',
       image: 'https://example.com/images/may-phat-dien-diesel.jpg',
@@ -533,7 +566,7 @@ export const productData = [
       features: 'Điều khiển từ xa; lập trình linh hoạt.',
       specifications: 'Điện áp: 220V; Kích thước: 600x400mm.',
       reviews: 'Hiệu quả cao, dễ sử dụng.',
-      price: '8,000,000 VND',
+      price: "8000000",
       status: true,
       availability: 'Còn hàng',
       image: 'https://example.com/images/bang-dieu-khien-tu-dong.jpg',
@@ -547,7 +580,7 @@ export const productData = [
       features: 'Tiết kiệm điện; ánh sáng mềm mại.',
       specifications: 'Công suất: 10W; Điện áp: 220V.',
       reviews: 'Đẹp, dễ lắp đặt.',
-      price: '300,000 VND',
+      price: "300000" ,
       status: true,
       availability: 'Còn hàng',
       image: 'https://example.com/images/den-neon-led.jpg',
@@ -561,7 +594,7 @@ export const productData = [
       features: 'Đo chính xác; dễ sử dụng.',
       specifications: 'Phạm vi: 0-100% RH; Độ chính xác: ±3%.',
       reviews: 'Thực hiện tốt công việc, đáng tin cậy.',
-      price: '450,000 VND',
+      price: "450000" ,
       status: true,
       availability: 'Còn hàng',
       image: 'https://example.com/images/may-do-dien-do-do-am.jpg',
@@ -575,7 +608,8 @@ export const productData = [
       features: 'Đo nhiệt độ nhanh chóng; dễ dàng lắp đặt.',
       specifications: 'Phạm vi: -50°C đến 100°C; Độ chính xác: ±1°C.',
       reviews: 'Hiệu quả và bền bỉ.',
-      price: '200,000 VND',
+      price: "200000" ,
+      quantity : 10,
       status: true,
       availability: 'Còn hàng',
       image: 'https://example.com/images/cam-bien-nhiet-do.jpg',
@@ -589,7 +623,8 @@ export const productData = [
       features: 'Điều chỉnh điện áp; nhỏ gọn và di động.',
       specifications: 'Điện áp đầu ra: 5V-12V; Dòng tối đa: 2A.',
       reviews: 'Đáp ứng tốt nhu cầu sử dụng.',
-      price: '350,000 VND',
+      price: "350000" ,
+      quantity : 5 ,
       status: true,
       availability: 'Còn hàng',
       image: 'https://example.com/images/bo-nguon-dc.jpg',
@@ -603,7 +638,8 @@ export const productData = [
       features: 'Chịu nhiệt tốt; bền bỉ với thời gian.',
       specifications: 'Đường kính: 2.5mm; Chiều dài: 100m.',
       reviews: 'Đảm bảo an toàn cho hệ thống điện.',
-      price: '250,000 VND',
+      price: "250000",
+      quantity : 20 ,
       status: true,
       availability: 'Còn hàng',
       image: 'https://example.com/images/cap-dien-pvc.jpg',
@@ -617,7 +653,8 @@ export const productData = [
       features: 'Chuyển đổi năng lượng hiệu quả; bền bỉ với thời gian.',
       specifications: 'Công suất: 300W; Kích thước: 1.65m x 1m.',
       reviews: 'Giải pháp năng lượng xanh và tiết kiệm.',
-      price: '8,000,000 VND',
+      price: "8000000" ,
+      quantity : 10 ,
       status: true,
       availability: 'Còn hàng',
       image: 'https://example.com/images/tam-pin-nang-luong.jpg',
@@ -631,7 +668,8 @@ export const productData = [
       features: 'Chịu tải cao; an toàn và ổn định.',
       specifications: 'Điện áp: 220V; Công suất tối đa: 15kW.',
       reviews: 'Giải pháp khởi động hiệu quả cho động cơ.',
-      price: '1,500,000 VND',
+      price: "1500000" ,
+      quantity : 5 ,
       status: true,
       availability: 'Còn hàng',
       image: 'https://example.com/images/khoi-dong-tu.jpg',
@@ -645,7 +683,8 @@ export const productData = [
       features: 'Tiết kiệm điện; độ nhạy cao.',
       specifications: 'Phạm vi: 0-10000 lux; Điện áp: 220V.',
       reviews: 'Giải pháp thông minh cho việc chiếu sáng.',
-      price: '300,000 VND',
+      price: "300000" ,
+      quantity : 15 ,
       status: true,
       availability: 'Còn hàng',
       image: 'https://example.com/images/cam-bien-anh-sang.jpg',
@@ -659,11 +698,12 @@ export const productData = [
       features: 'Kết nối dễ dàng; tiết kiệm năng lượng.',
       specifications: 'Điện áp: 5V; Dòng tối đa: 2A.',
       reviews: 'Thực hiện tốt công việc điều khiển.',
-      price: '400,000 VND',
+      price: "400000" ,
+      quantity : 8 ,
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/bang-mach-dieu-khien.jpg',
-      thumbnail: 'https://example.com/images/thumb/bang-mach-dieu-khien.jpg'
+      image: 'assets/trambienapdl.jpg',
+      thumbnail: 'assets/trambienapdl.jpg'
   },
   {
       id: 'DND047',
@@ -673,11 +713,12 @@ export const productData = [
       features: 'Chống nước; tiết kiệm điện.',
       specifications: 'Công suất: 20W; Điện áp: 220V.',
       reviews: 'Chiếu sáng đẹp và an toàn.',
-      price: '600,000 VND',
+      price: "600000",
+      quantity : 12 ,
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/den-led-ngoai-troi.jpg',
-      thumbnail: 'https://example.com/images/thumb/den-led-ngoai-troi.jpg'
+      image: 'assets/trambienapdl.jpg',
+      thumbnail: 'assets/trambienapdl.jpg'
   },
   {
       id: 'DND048',
@@ -687,11 +728,12 @@ export const productData = [
       features: 'Bảo vệ quá tải; thiết kế nhỏ gọn.',
       specifications: 'Số cổng: 4; Điện áp: 220V.',
       reviews: 'Dễ sử dụng và tiện lợi.',
-      price: '150,000 VND',
+      price: "150000" ,
+      quantity: 12,
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/o-cam-dien.jpg',
-      thumbnail: 'https://example.com/images/thumb/o-cam-dien.jpg'
+      image: 'assets/ocamdiendanang.jpg',
+      thumbnail: 'assets/ocamdiendanang.jpg'
   },
   {
       id: 'DND049',
@@ -701,7 +743,8 @@ export const productData = [
       features: 'Tiết kiệm điện; nhiều chế độ gió.',
       specifications: 'Công suất: 55W; Kích thước: 1.5m.',
       reviews: 'Hoạt động êm ái, tiện lợi.',
-      price: '1,200,000 VND',
+      price: "1200000",
+      quantity: 8,
       status: true,
       availability: 'Còn hàng',
       image: 'https://example.com/images/quat-cay-thong-minh.jpg',
@@ -715,18 +758,19 @@ export const productData = [
       features: 'Công suất mạnh; bộ lọc HEPA.',
       specifications: 'Công suất: 2000W; Thể tích bình chứa: 30L.',
       reviews: 'Giải pháp hút bụi hiệu quả.',
-      price: '8,500,000 VND',
-      status: true,
+      price: "8500000" ,
+      quantity: 5,
+      status: false,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/may-hut-bui-cong-nghiep.jpg',
-      thumbnail: 'https://example.com/images/thumb/may-hut-bui-cong-nghiep.jpg'
+      image: 'assets/mayhutbuicongnghiep.jpg',
+      thumbnail: 'assets/mayhutbuicongnghiep.jpg'
   }
-];
+]
 
 export const projectsData = [
   {
     title: "Dự án Nhà máy điện Nhơn Trạch 3 và 4",
-    image: "assets/projectimage.png",
+    image: "assets/nhamaynhontrach.png",
     description: "Dự án nhà máy điện Nhơn Trạch 3 và 4 (Nhơn Trạch 3,4) là dự án trọng điểm quốc gia, thuộc Quy hoạch điện 7 điều chỉnh, được Chính phủ giao cho Tổng công ty Điện lực Dầu khí Việt Nam - CTCP (PV Power) làm chủ đầu tư. Với tổng mức đầu tư 1,4 tỷ USD, Liên danh nhà thầu EPC là Tổng công ty Lắp máy Việt Nam (Lilama) và Samsung C&T, dự án được sử dụng các thiết bị chính do GE (Hoa Kỳ) thiết kế và chế tạo. Đây là dự án nhiệt điện sở sử dụng nhiên liệu khí LNG đầu tiên tại Việt Nam. Là một trong số ít tổ máy tua-bin khí có công suất (trên 500MW) cũng như hiệu suất khí (trên 60%) lớn nhất trên thế giới. Khi đi vào hoạt động, dự án sẽ góp phần thực hiện cam kết phát thải ròng về 0 vào năm 2050 của Chính phủ tại COP26 và bổ sung 9 tỷ kWh điện/năm cho hệ thống điện Quốc gia.",
     objectives: [
       "Cung cấp điện cho khu vực miền Nam",
@@ -747,19 +791,70 @@ export const projectsData = [
     ]
   },
   {
-    image:'assets/cauthuthiem.png',
-    title:'Công trình cầu vượt Thủ Thiêm',
+    title: "Công trình cầu vượt Thủ Thiêm",
+    image: "assets/causaigon.jpg",
     description: 'Cầu Thủ Thiêm là một cây cầu bắc qua sông Sài Gòn, nối liền quận Bình Thạnh và thành phố Thủ Đức, Thành phố Hồ Chí Minh. Cầu có 6 làn xe, nối Khu đô thị mới Thủ Thiêm và trung tâm hiện hữu của thành phố và được thông xe vào năm 2005.[a] Tổng kinh phí xây dựng cầu lên đến 1.099,6 tỷ đồng. Tổng thầu là Tổng công ty xây dựng số 1 thuộc Bộ Xây dựng. Cầu Thủ Thiêm dài 1.250 m, phần cầu chính gồm 5 nhịp, 6 làn xe; phần cầu dẫn phía Bình Thạnh gồm bốn nhánh, mỗi nhánh 2 làn xe; cầu dẫn phía thành phố Thủ Đức dài 160 m, rộng tương đương 6 làn xe. Nút giao phía quận Bình Thạnh gồm một hầm chui trực thông dài 460 m trên đường Nguyễn Hữu Cảnh, rộng 4 làn xe. Đường dẫn phía thành phố Thủ Đức dài 280 m, mặt cắt ngang 47 m. Đường gom có tổng chiều dài 1.460 m, phía quận Bình Thạnh rộng 10,5 m, phía thành phố Thủ Đức rộng 9,5 m. Điểm đầu dự án là giao giữa đường Ngô Tất Tố với đường Nguyễn Hữu Cảnh, phường 22, Bình Thạnh. Điểm cuối dự án kết nối với đường Lương Định Của (thành phố Thủ Đức); tuyến chạy theo tim đường Ngô Tất Tố hiện hữu vượt sông Sài Gòn. Cầu Thủ Thiêm được hợp long vào lúc 8 giờ 15 phút sáng ngày 29 tháng 11 năm 2007. Ông Lê Hoàng Quân - Chủ tịch Ủy ban Nhân dân Thành phố Hồ Chí Minh - đã cho mẻ bê tông đầu tiên vào vị trí hợp long của cầu.',
+    objectives: [
+      "Cung cấp điện cho khu vực miền Nam",
+      "Đảm bảo nguồn năng lượng tái tạo"
+    ],
+    timeline: {
+      start: "01/01/2024",
+      end: "31/12/2026",
+      milestones: [
+        { date: "01/06/2024", description: "Hoàn thành giai đoạn 1" },
+        { date: "01/12/2025", description: "Bắt đầu giai đoạn 2" }
+      ]
+    },
+    stakeholders: [
+      "EVN",
+      "Bộ Công Thương",
+      "Nhà thầu xây dựng ABC"
+    ]
   },
   {
-    image:'assets/caotocBN.png',
-    title:'Dự án đường cao tốc Bắc - Nam',
+    title: "Dự án đường cao tốc Bắc - Nam",
+    image: "assets/caotocBN.png",
     description: 'Dự án đường cao tốc Bắc - Nam là công trình trọng điểm quốc gia với chiều dài hơn 2.100km, đi qua 20 tỉnh, thành phố từ Bắc vào Nam. Tổng mức đầu tư khoảng 12 tỷ USD, khi hoàn thành sẽ rút ngắn thời gian di chuyển giữa các vùng và phát triển kinh tế - xã hội.',
+    objectives: [
+      "Cung cấp điện cho khu vực miền Nam",
+      "Đảm bảo nguồn năng lượng tái tạo"
+    ],
+    timeline: {
+      start: "01/01/2024",
+      end: "31/12/2026",
+      milestones: [
+        { date: "01/06/2024", description: "Hoàn thành giai đoạn 1" },
+        { date: "01/12/2025", description: "Bắt đầu giai đoạn 2" }
+      ]
+    },
+    stakeholders: [
+      "EVN",
+      "Bộ Công Thương",
+      "Nhà thầu xây dựng ABC"
+    ]
   },
   {
-    image:'assets/nhamaynuoc.png',
-    title:'Nhà máy nước Củ Chi',
-    description: 'Nhà máy nước Củ Chi là dự án quan trọng nhằm cung cấp nước sạch cho khu vực phía Tây TP.HCM. Với tổng công suất 500.000m³/ngày, dự án sẽ góp phần cải thiện chất lượng nước sinh hoạt cho người dân. Tổng mức đầu tư của dự án là 500 triệu USD.',
+    title: "Nhà máy nước Củ Chi",
+    image: "assets/nhamaybiacuchi.png",
+    description: 'Dự án đường cao tốc Bắc - Nam là công trình trọng điểm quốc gia với chiều dài hơn 2.100km, đi qua 20 tỉnh, thành phố từ Bắc vào Nam. Tổng mức đầu tư khoảng 12 tỷ USD, khi hoàn thành sẽ rút ngắn thời gian di chuyển giữa các vùng và phát triển kinh tế - xã hội.',
+    objectives: [
+      "Cung cấp điện cho khu vực miền Nam",
+      "Đảm bảo nguồn năng lượng tái tạo"
+    ],
+    timeline: {
+      start: "01/01/2024",
+      end: "31/12/2026",
+      milestones: [
+        { date: "01/06/2024", description: "Hoàn thành giai đoạn 1" },
+        { date: "01/12/2025", description: "Bắt đầu giai đoạn 2" }
+      ]
+    },
+    stakeholders: [
+      "EVN",
+      "Bộ Công Thương",
+      "Nhà thầu xây dựng ABC"
+    ]
   },
 
 ]
@@ -771,4 +866,110 @@ export const ImageProject = [
   { id: 4, url: 'assets/projectimage.png' },
   { id: 5, url: 'assets/projectimage.png' },
   { id: 6, url: 'assets/projectimage.png' }
+]
+
+export const serviceData = [
+  {
+    title: 'Dịch vụ lắp đặt điện',
+    description: 'Cung cấp và lắp đặt các thiết bị điện cho nhà ở và công nghiệp.',
+    image:'assets/suachapdien-1536x1024.png',
+    thumbnail:'assets/suachapdien-1536x1024.png',
+    features: [
+      'Thiết bị chất lượng cao',
+      'Đội ngũ kỹ thuật chuyên nghiệp',
+      'Đáp ứng nhanh chóng yêu cầu của khách hàng'
+    ],
+    process: [
+      'Tiếp nhận yêu cầu của khách hàng',
+      'Khảo sát thực tế và lên phương án',
+      'Thực hiện lắp đặt',
+      'Bàn giao và hướng dẫn sử dụng'
+    ]
+  },
+  {
+    title: 'Dịch vụ bảo trì hệ thống',
+    description: 'Bảo trì định kỳ và sửa chữa các thiết bị trong hệ thống điện.',
+    image:'/assets/baotrihethong.jpg',
+    thumbnail:'assets/suachapdien-1536x1024.png',
+    features: [
+      'Hỗ trợ 24/7',
+      'Kiểm tra định kỳ miễn phí',
+      'Sửa chữa nhanh chóng'
+    ],
+    process: [
+      'Tiếp nhận thông tin yêu cầu bảo trì',
+      'Kiểm tra và chẩn đoán tình trạng',
+      'Thực hiện sửa chữa hoặc thay thế',
+      'Kiểm tra lại và bàn giao hệ thống'
+    ]
+  },
+  {
+    title: 'Dịch vụ kiểm tra an toàn điện',
+    description: 'Kiểm tra an toàn điện định kỳ cho các công trình dân dụng và công nghiệp.',
+    image: '/assets/kiemtraantoandien.jpg',
+    thumbnail:'assets/suachapdien-1536x1024.png',
+    features: [
+      'Đánh giá toàn diện tình trạng hệ thống điện',
+      'Tư vấn cải thiện và nâng cấp hệ thống',
+      'Đội ngũ chuyên gia nhiều kinh nghiệm'
+    ],
+    process: [
+      'Tiếp nhận yêu cầu kiểm tra từ khách hàng',
+      'Tiến hành kiểm tra thực tế hệ thống',
+      'Báo cáo kết quả kiểm tra và đề xuất giải pháp',
+      'Thực hiện các biện pháp khắc phục (nếu cần)'
+    ]
+  },
+  {
+    title: 'Dịch vụ sửa chữa sự cố điện',
+    description: 'Khắc phục các sự cố liên quan đến hệ thống điện trong thời gian ngắn nhất.',
+    image: '/assets/suachuasuco.jpg',
+    thumbnail:'assets/suachapdien-1536x1024.png',
+    features: [
+      'Phục vụ nhanh chóng 24/7',
+      'Sử dụng thiết bị và linh kiện chính hãng',
+      'Giá cả hợp lý, minh bạch'
+    ],
+    process: [
+      'Tiếp nhận thông tin sự cố',
+      'Khảo sát và chẩn đoán nguyên nhân',
+      'Thực hiện sửa chữa và kiểm tra lại hệ thống',
+      'Bàn giao và hướng dẫn khách hàng sử dụng an toàn'
+    ]
+  },
+  {
+    title: 'Dịch vụ sửa chữa sự cố điện',
+    description: 'Khắc phục các sự cố liên quan đến hệ thống điện trong thời gian ngắn nhất.',
+    image: '/assets/suachuasuco.jpg',
+    thumbnail:'assets/suachapdien-1536x1024.png',
+    features: [
+      'Phục vụ nhanh chóng 24/7',
+      'Sử dụng thiết bị và linh kiện chính hãng',
+      'Giá cả hợp lý, minh bạch'
+    ],
+    process: [
+      'Tiếp nhận thông tin sự cố',
+      'Khảo sát và chẩn đoán nguyên nhân',
+      'Thực hiện sửa chữa và kiểm tra lại hệ thống',
+      'Bàn giao và hướng dẫn khách hàng sử dụng an toàn'
+    ]
+  },
+  {
+    title: 'Dịch vụ sửa chữa sự cố điện',
+    description: 'Khắc phục các sự cố liên quan đến hệ thống điện trong thời gian ngắn nhất.',
+    image: '/assets/suachuasuco.jpg',
+    thumbnail:'assets/suachapdien-1536x1024.png',
+    features: [
+      'Phục vụ nhanh chóng 24/7',
+      'Sử dụng thiết bị và linh kiện chính hãng',
+      'Giá cả hợp lý, minh bạch'
+    ],
+    process: [
+      'Tiếp nhận thông tin sự cố',
+      'Khảo sát và chẩn đoán nguyên nhân',
+      'Thực hiện sửa chữa và kiểm tra lại hệ thống',
+      'Bàn giao và hướng dẫn khách hàng sử dụng an toàn'
+    ]
+  },
+
 ]
