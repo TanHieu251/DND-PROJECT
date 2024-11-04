@@ -1,0 +1,11 @@
+<div class="news-relation">
+  <h3>Thông tin liên quan</h3>
+  <div class="news-relation-content" *ngFor="let news of dataNews">
+    <div class="image-news-relation">
+      <img [src]="news.imageRelation" alt="Product Image" >
+    </div>
+    <div class="title-news-relation">
+      {{news.titleRelation}}
+    </div>
+  </div>
+</div>

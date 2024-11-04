@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 export class ProductListHomeComponent {
   constructor(private router: Router){}
   // products = productData
+  // status: boolean = true;
+
   products = [
     {
       id: 'DND001',
@@ -20,10 +22,10 @@ export class ProductListHomeComponent {
       specifications: 'Dòng định mức: 16A; Điện áp: 220V; Kích thước: 80x45x60mm.',
       reviews: 'Sản phẩm chất lượng, bảo vệ an toàn cho hệ thống điện.',
       price: '150,000 VND',
-      status: true,
+      status: false,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/cau-dao-tu-dong.jpg',
-      thumbnail: 'https://example.com/images/thumb/cau-dao-tu-dong.jpg'
+      image: 'assets/cau-dao-tu-dong.png',
+      thumbnail: 'assets/cau-dao-tu-dong.png'
     },
     {
       id: 'DND002',
@@ -36,8 +38,8 @@ export class ProductListHomeComponent {
       price: '5,000,000 VND',
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/bo-truyen-tai-dien.jpg',
-      thumbnail: 'https://example.com/images/thumb/bo-truyen-tai-dien.jpg'
+      image: 'assets/botruyentai3pha.png',
+      thumbnail: 'assets/botruyentai3pha.png'
     },
     {
       id: 'DND003',
@@ -50,8 +52,8 @@ export class ProductListHomeComponent {
       price: '350,000 VND',
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/cong-tac-cam-ung.jpg',
-      thumbnail: 'https://example.com/images/thumb/cong-tac-cam-ung.jpg'
+      image: 'assets/cong-tac-wifi-thong-minh-sw702-wifi (6).jpg',
+      thumbnail: 'assets/cong-tac-wifi-thong-minh-sw702-wifi (6).jpg'
     },
     {
       id: 'DND004',
@@ -64,8 +66,8 @@ export class ProductListHomeComponent {
       price: '900,000 VND',
       status: true,
       availability: 'Còn hàng',
-      image: 'https://example.com/images/dong-ho-do-cong-suat.jpg',
-      thumbnail: 'https://example.com/images/thumb/dong-ho-do-cong-suat.jpg'
+      image: 'assets/donghocongsuatdientu.png',
+      thumbnail: 'assets/donghocongsuatdientu.png'
     },
   ];
 

@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Route } from '@angular/router';
 import { productData } from '../../../../../data/product';
 import { ServiceService } from '../../../service/service.service';
-
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
@@ -12,9 +12,16 @@ import { ServiceService } from '../../../service/service.service';
 export class ProductDetailComponent implements OnInit {
 
   product:any;
-  successMessage: string = '';
+  quantity: number = 1;
 
-  constructor(private activatedRoute: ActivatedRoute, private cartService: ServiceService){}
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private cartService: ServiceService,
+    private notification: NzNotificationService,
+    private cdRef: ChangeDetectorRef
+  ) { }
+
+  //them san pham vao gio hang
 
   ngOnInit() {
     let productName = this.activatedRoute.snapshot.paramMap.get('name');
@@ -33,13 +40,37 @@ export class ProductDetailComponent implements OnInit {
     code: dtp.name.split(' ').join('').toUpperCase() + Math.floor(Math.random() * 1000) + 1
   }))
 
-  addToCart() {
-    if(this.product) {
-      this.cartService.addToCart(this.product);
-      this.successMessage = 'san pham da duoc them vao gio hang';
-      setTimeout(() => {
-        this.successMessage = '';
-      }, 2000);
+  addToCart(){
+    this.cartService.addToCart({
+      id: this.product.id,
+      name: this.product.name,
+      price: this.product.price,
+      quantity: this.quantity,
+      image: this.product.image,
+      description: this.product.description
+    });
+    // this.cartService.addToCart(this.product);
+     if(this.notification){
+      this.notification.success('Thành công', `${this.product.name} đã được thêm vào giỏ hàng`);
+     }
+     else{
+      console.log('Notification service is not defined');
+     }
+    // this.notification.success('Thành công', `${this.product.name} đã được thêm vào giỏ hàng`);
+    // this.notification.error('Sản phẩm gặp lỗi khi thêm vào giỏ hàng');
+  }
+
+  byNow(){
+    this.addToCart();
+  }
+  increaseQuantity() {
+    this.quantity++;
+  }
+
+  decreaseQuantity() {
+    if(this.quantity > 1){
+      this.quantity--;
     }
   }
+
 }

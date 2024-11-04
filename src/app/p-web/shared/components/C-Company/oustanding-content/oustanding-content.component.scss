@@ -1,0 +1,80 @@
+::ng-deep{
+  app-oustanding-content{
+    .slide-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      overflow: hidden;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+      .slide {
+        display: none;
+        align-items: center;
+        padding: 20px;
+        text-align: left;
+
+        &.active {
+          display: flex;
+        }
+
+        img {
+          width: 300px;
+          height: auto;
+          margin-right: 20px;
+          border-radius: 8px;
+        }
+
+        .slide-content {
+          h3 {
+            font-size: 1.5rem;
+            color: #0056b3;
+          }
+
+          p {
+            font-size: 1rem;
+            margin: 10px 0;
+          }
+
+          ul {
+            list-style-type: disc;
+            padding-left: 20px;
+
+            li {
+              margin: 5px 0;
+              font-size: 0.9rem;
+              color: #333;
+            }
+          }
+        }
+      }
+
+      .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        border: none;
+        padding: 10px;
+        font-size: 24px;
+        cursor: pointer;
+        border-radius: 50%;
+
+        &.prev {
+          left: 10px;
+        }
+
+        &.next {
+          right: 10px;
+        }
+
+        &:hover {
+          background-color: #333;
+        }
+      }
+    }
+  }
+}

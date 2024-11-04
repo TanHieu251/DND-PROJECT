@@ -1,8 +1,8 @@
 <div class="product-detail" *ngIf="product; else noProduct">
     <div class="product-image">
-      <img [src]="product.image" alt="{{ product.name }}">
+      <img [src]="product.image" alt="{{ product.name }}" class="img-main">
       <div class="product-thumbnail">
-        <img [src]="product.thumbnail" alt="{{ product.name }} Thumbnail">
+        <img [src]="product.thumbnail" alt="{{ product.name }} " Thumbnail class="img-thumbnail">
       </div>
     </div>
 
@@ -19,25 +19,21 @@
     </div>
 
     <div class="product-quantity">
-      <button class="quantity-btn">-</button>
-      <input type="number" value="1" min="1" />
-      <button class="quantity-btn">+</button>
+      <button class="quantity-btn" (click)="decreaseQuantity()">-</button>
+      <input type="number" [(ngModel)]="quantity" [value]="quantity" min="1" />
+      <button class="quantity-btn" (click)="increaseQuantity()">+</button>
     </div>
 
     <div class="product-actions">
       <button class="add-cart-btn" (click)="addToCart()">Thêm vào giỏ hàng</button>
       <div class="action-buttons">
-        <button class="buy-now-btn">Mua ngay</button>
-        <button class="contact-btn">Liên hệ tư vấn</button>
+        <button class="buy-now-btn" [routerLink]="['/cart']" (click)="byNow()">Mua ngay</button>
+        <button class="contact-btn" [routerLink]="['/contacts']">Liên hệ tư vấn</button>
       </div>
     </div>
   </div>
-
 </div>
 
-  <div class="notification" *ngIf="successMessage">
-    {{ successMessage }}
-  </div>
   <ng-template #noProduct>
     <p class="noProduct">Sản phẩm không tồn tại</p>
   </ng-template>

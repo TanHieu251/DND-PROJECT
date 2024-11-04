@@ -12,10 +12,6 @@ export class ContactComponent {
   @Input() imageSrc: string = 'assets/image3.png';
   @Input() buttonText: string = 'Xem Công Ty';
 
-  // reloadPage(){
-  //   window.scrollTo({top: 0, behavior:'smooth'});
-  // }
-
 
   textActive: boolean = false;
   imgActive: boolean = false;
