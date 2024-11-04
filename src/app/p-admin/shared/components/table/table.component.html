@@ -32,8 +32,8 @@
       </ng-container>
 
       <!-- Regular Columns -->
-      <ng-container *ngIf="column !== 'select' && column !== 'popup'">
-        <th mat-header-cell *matHeaderCellDef> {{ column }} </th>
+      <ng-container *ngIf="column !== 'select' && column !== 'popup'"  >
+        <th  mat-header-cell *matHeaderCellDef> {{ column }} </th>
         <td mat-cell *matCellDef="let row"> {{ row[column] }} </td>
       </ng-container>
 
