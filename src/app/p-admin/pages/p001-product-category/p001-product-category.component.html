@@ -1,2 +1,20 @@
-<app-table [data]="data" [displayedColumns]="displayedColumns">
-</app-table>
+<div class="app-category">
+    <mat-drawer-container [hasBackdrop]="true" >
+        <mat-drawer #drawer [mode]="'over'" position="end" [opened]="isDrawerOpen" aria-label="Side drawer">
+            <div class="drawer">
+                <div class="drawer-container">
+                    asdasdas
+                    <div class="drawer-footer">
+                        <button>a</button>
+                        <button class="btn close" (click)="toggleDrawer()">ĐÓNG</button>
+                    </div>
+                </div>
+            </div>
+        </mat-drawer>
+        <mat-drawer-content>
+            <app-table class="app-table" [data]="data" (onClickAction)="onClickAction($event)"
+                [displayedColumns]="displayedColumns">
+            </app-table>
+        </mat-drawer-content>
+    </mat-drawer-container>
+</div>

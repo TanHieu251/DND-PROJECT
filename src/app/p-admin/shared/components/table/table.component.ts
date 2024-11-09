@@ -1,4 +1,13 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  HostListener,
+  Input,
+  OnInit,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
@@ -9,8 +18,9 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
   styleUrls: ['./table.component.scss'],
 })
 export class TableComponent implements OnInit {
-  @Input() data: any[] = []; // Đảm bảo data là một mảng
+  @Input() data: any[] = [];
   @Input() displayedColumns: string[] = [];
+  @Output() public onClickAction = new EventEmitter();
 
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
 
@@ -21,6 +31,8 @@ export class TableComponent implements OnInit {
   page: number = 1;
   pageSizes: number[] = [5, 10, 15];
   pageSize: number = 5;
+
+  constructor() {}
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource<any>(this.data);
@@ -61,10 +73,10 @@ export class TableComponent implements OnInit {
     this.paginatedData = this.data.slice(startIndex, startIndex + pageSize);
   }
 
-  //#region Popup
-  onPopupClick(element: any) {
-    console.log(element);
+  onOpenDrawer(item: any): void {
+    this.onClickAction.emit(item);
   }
+
   //#endregion
 
   //#endregion
