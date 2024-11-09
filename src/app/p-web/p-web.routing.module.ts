@@ -70,7 +70,7 @@ const routes: Routes = [
         component: P007NewsComponent,
       },
       {
-        path: 'new/:title',
+        path: 'newDetail/:title',
         component: P007NewDetailComponent,
       },
     ],

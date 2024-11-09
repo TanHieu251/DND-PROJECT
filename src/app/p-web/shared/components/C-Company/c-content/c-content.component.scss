@@ -1,22 +1,21 @@
-::ng-deep{
-  app-c-content{
-
-    .vision-mission-container{
+::ng-deep {
+  app-c-content {
+    .vision-mission-container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 20px;
 
-      .h1class{
+      .h1class {
         font-size: 32px;
         margin: 30px;
         text-align: center;
         font-weight: 500;
       }
 
-      .section-wrapper{
+      .section-wrapper {
         counter-reset: section;
 
-        .section{
+        .section {
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -24,13 +23,17 @@
           position: relative;
           counter-increment: section;
           transition: transform 0.5s ease;
+          background-color: #f9f9f9;  // Add background color for sections
+          padding: 20px;
+          border-radius: 8px;
+          // border-bottom: 3px solid #f9f9f9;;
+          // border-bottom: none;
 
-          &:hover
-          {
+          &:hover {
             transform: scale(1.05);
           }
 
-          &::before{
+          &::before {
             content: "";
             position: absolute;
             left: 50%;
@@ -39,11 +42,12 @@
             width: 3px;
             background-color: #ccc;
             transform: translateX(-50%);
+            display: block;
           }
 
-          &::after{
+          &::after {
             position: absolute;
-            content:  counter(section);
+            content: counter(section);
             left: 50%;
             transform: translate(-50%, -50%);
             top: 50%;
@@ -52,75 +56,81 @@
             background-color: #fff;
             outline: 1px solid #000;
             border-radius: 50%;
-            // text-align: center;e3wew’ñç¿
+            display: flex;
             align-items: center;
             justify-content: center;
-            display: flex;
             font-weight: bold;
             font-size: 18px;
             color: #000;
             z-index: 1;
           }
+
           .text-content {
-            // flex: 1;
             width: 530px;
-            padding: 40px 40px;
+            padding: 40px;
             text-align: left;
-            // margin: 30px;
             margin: 0px 30px;
 
-            &:hover{
-              transition: 1s ease-in-out;
-              // background-color: #86c1d4;
+            h2 {
+              font-size: 24px;
+              font-weight: 700;
+              color: #0056b3;
+              margin-bottom: 10px;
+              border-left: 3px solid #0056b3;
+              padding-left: 10px;
+            }
+
+            p {
+              font-size: 18px;
+              color: #333;
+              line-height: 1.5;
             }
           }
-          h2{
-            font-size: 24px;
-            font-weight: 700;
-            color: #0056b3;
-            margin-bottom: 10px;
-            // line-height: 1.5;
-            border-left: 3px solid #0056b3;
-            padding-left: 10px;
-          }
-          p{
-            font-size: 18px;
-            color: #333;
-            line-height: 1.5;
-          }
-        }
 
-        .image-content{
-          flex: 1;
-          padding: 0px 40px;
-          display: flex;
-          justify-content: center;
+          .image-content {
+            flex: 1;
+            padding: 0px 40px;
+            display: flex;
+            justify-content: center;
 
-          img{
-            width: 530px;
-            height: 300px;
-            border-radius: 8px;
-            object-fit: cover;
-          }
-        }
-      }
-      .section:nth-child(odd){
-        flex-direction: row-reverse;
-      }
-      @media (max-width: 768px) {
-        .section {
-          flex-direction: column;
-          text-align: center;
-
-          .text-content, .image-content {
-            padding: 0 20px;
-            max-width: 100%;
+            img {
+              width: 530px;
+              height: 300px;
+              border-radius: 8px;
+              object-fit: cover;
+            }
           }
         }
 
-        .section::before,
-        .section::after {
-          left: 10%;
+        .section:nth-child(odd) {
+          flex-direction: row-reverse;
+        }
+
+        @media (max-width: 768px) {
+          .section {
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+            background-color: transparent;  // Remove background on smaller screens
+            border-bottom: 3px solid #0056b3;
+            // .section-wrapper{
+            //   border-top: 2px solid darkblue;
+            // }
+
+            .text-content,
+            .image-content {
+              padding: 0 20px;
+              max-width: 100%;
+            }
+            .image-content{
+              display: none;
+            }
+
+            &::before,
+            &::after {
+              display: none;  // Hide vertical line and section number on smaller screens
+            }
+          }
         }
       }
     }

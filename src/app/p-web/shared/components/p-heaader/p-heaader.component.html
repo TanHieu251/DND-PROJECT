@@ -2,7 +2,13 @@
   <div [routerLink]="'/home'" class="header-logo px-5">
     <img src="assets/DNDLogo.png" alt="Logo" />
   </div>
-  <div class="more-information fs">
+  <div class="menu-toggle" (click)="toggleMenu()">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+  <div class="more-information fs" [class.active]="menuOpen">
+    <div class="close-menu" (click)="menuOpen = false">
+      <span>X</span>
+    </div>
     <ul class="menu-infor">
       <li *ngFor="let item of menu" class="h-[46px] " routerLinkActive="active-link">
         <a [routerLink]="item.routes">{{ item.name }}</a>
