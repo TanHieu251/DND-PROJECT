@@ -973,3 +973,10 @@ export const serviceData = [
   },
 
 ]
+
+export const newsData = [
+  {
+    imageNews: 'assets/botruyentai3pha.png',
+    title: 'Bàn luận về các vấn đề liên quan đến điện nước',
+  }
+]

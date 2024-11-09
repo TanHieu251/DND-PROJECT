@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit, ViewChild } from '@angular/core';
+import { Component, HostListener, Inject, OnInit, ViewChild } from '@angular/core';
 import { AuthServiceService } from '../../../../auth/shared/services/auth-service.service';
 import { ServiceService } from '../../service/service.service';
 import { Subscription } from 'rxjs';
@@ -39,6 +39,9 @@ export class HeaderComponent implements OnInit {
   displayedPages: number[] = [];
   selectedMenuItem: string ='Dịch vụ'
 
+  menuOpen = false
+
+
   paginatedProducts = new MatTableDataSource<any>();
   paginatedProjectsData = new MatTableDataSource<any>();
   paginatedServiceData = new MatTableDataSource<any>();
@@ -69,7 +72,7 @@ export class HeaderComponent implements OnInit {
     { name: 'Tin tức', routes: '/news' },
     { name: 'Liên hệ', routes: '/contacts' },
   ];
-  
+
   menuSearch = [
     { name: 'Dịch vụ' },
     { name: 'Sản phẩm' },
@@ -104,6 +107,8 @@ export class HeaderComponent implements OnInit {
     if (this.cartSubscription) {
       this.cartSubscription.unsubscribe();
     }
+
+    // document.removeEventListener('click', this.onDocumentClick.bind(this));
   }
   isLoggedIn() {
     return this.authService.isLoggedIn();
@@ -209,54 +214,20 @@ export class HeaderComponent implements OnInit {
     const endIndex = startIndex + event.pageSize;
     this.paginatedProducts.data = this.productsData.slice(startIndex, endIndex);
   }
-  // loadProducts() {
-  //   this.paginatedProducts.data = this.productsData;
-  //   this.totalProductsLength = this.productsData.length;
-  //   this.paginatedProducts.paginator = this.paginator;
-  // }
+  toggleMenu(){
+    this.menuOpen = !this.menuOpen;
+  }
 
-  // updateDisplayedPages(){
-  //   const maxPages = 5; // Maximum number of page buttons to show
-  //   const half = Math.floor(maxPages / 2);
-  //   let startPage = Math.max(1, this.currentPage - half);
-  //   let endPage = Math.min(this.totalPages, startPage + maxPages - 1);
+  //dong toggle
+  @HostListener('document:click',['$event'])
+  onDocumentClick(event:Event){
+    const target = event.target as HTMLElement;
 
-  //   if (endPage - startPage < maxPages - 1) {
-  //     startPage = Math.max(1, endPage - maxPages + 1);
-  //   }
-
-  //   this.displayedPages = Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i);
-  // }
-  // onItemPerPageChange(event: any) {
-  //   this.pageSize = event;
-  //   this.currentPage = 1
-  //   this.totalPages = Math.ceil(this.productData.length / this.pageSize);
-  //   this.calculateDisplayedPages();
-  // }
-  // setPage(page: number) {
-  //   if(page < 1 || page > this.totalPages) return;
-  //   this.currentPage = page;
-  //   this.updateDisplayedPages();
-  // }
-  // get paginatedProducts() {
-  //   const startIndex = (this.currentPage - 1) * this.pageSize;
-  //   const endIndex = startIndex + this.pageSize;
-  //   return this.productData.slice(startIndex, endIndex);
-  // }
-
-  // calculateDisplayedPages(){
-  //   const maxDisplayedPages = 10;
-
-  //   if(this.totalPages <= maxDisplayedPages){
-  //     this.displayedPages = Array.from({length: this.totalPages}, (_,i) => i + 1);
-  //   } else {
-  //     if(this.currentPage <= 3 ) {
-  //       this.displayedPages = [1, 2, 3 , this.totalPages];
-  //     } else if (this.currentPage > this.totalPages - 3){
-  //       this.displayedPages = [1,  this.totalPages - 2, this.totalPages - 1, this.totalPages];
-  //     } else {
-  //       this.displayedPages = [1, this.currentPage - 1, this.currentPage, this.currentPage + 1,  this.totalPages];
-  //     }
-  //   }
+    if(!target.closest('.more-information') && !target.closest('.menu-toggle')){
+      this.menuOpen = false;
+    }
+  }
+  // ngOnDestroy(){
+  //   document.removeEventListener('click', this.onDocumentClick.bind(this));
   // }
 }

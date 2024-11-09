@@ -1,11 +1,16 @@
 <div class="news-relation">
-  <h3>Thông tin liên quan</h3>
-  <div class="news-relation-content" *ngFor="let news of dataNews">
-    <div class="image-news-relation">
-      <img [src]="news.imageRelation" alt="Product Image" >
-    </div>
-    <div class="title-news-relation">
-      {{news.titleRelation}}
+  <div class="new-container">
+    <h3>Bài viết liên quan</h3>
+    <div class="new-card" *ngFor="let newRelation of dataNewsRelation">
+        <div class="image">
+          <img [src]="newRelation.imageRelation" alt="{{newRelation.imageRelation}}">
+        </div>
+        <div class="new-details">
+          <a (click)="goTonewDetail(newRelation.titleRelation)" class="new-title" text-black>{{newRelation.titleRelation}}</a>
+          <!-- <p class="new-description">{{ newRelation.description | slice:0:500 }}...</p> -->
+          <a class="new-link" (click)="goTonewDetail(newRelation.titleRelation)">Xem chi tiết</a>
+          <!-- <a [routerLink]="'/new-detail'" class="new-link">Xem chi tiết</a> -->
+        </div>
     </div>
   </div>
 </div>

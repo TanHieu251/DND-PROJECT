@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import { Route, Router } from '@angular/router';
 
 // import { RouterLink } from '@angular/router';
@@ -15,17 +15,19 @@ export class ProjectSlideComponent {
   @Input() buttonText: string='Xem thêm dự án';
 
   constructor(private router: Router){}
-
+  currentProjectIndex = 0;
+  isResponsive = window.innerWidth <=780;
   goToProject(){
     this.router.navigate(['/project']).then(() =>{
       window.scrollTo({top: 0, behavior:'smooth'});
     })
   }
+
   projects = [
     {
       title: 'Nhà máy điện Trạch Nhơn 3 và 4',
       description: 'Dự án nhà máy điện Nhơn Trạch 3, 4 là công trình trọng điểm quốc gia, được xây dựng tại khu công nghiệp Ông Kèo, xã Phước Khánh, huyện Nhơn Trạch, tỉnh Đồng Nai. Dự án có quy mô công suất 1.500MW, tổng mức đầu tư 1,4 tỷ USD. Khi đi vào hoạt động, dự án sẽ bổ sung khoảng 9 tỷ kWh điện/năm cho hệ thống điện quốc gia.',
-      imageSrc: 'https://lilama.com.vn/sites/default/files/2_14.jpg',
+      imageSrc: 'assets/nhamaydien.png',
       link: ''
     },
     {
@@ -48,16 +50,28 @@ export class ProjectSlideComponent {
     }
   ]
 
-  currentProjectIndex = 0;
+  @HostListener('window:resize',['$event'])
+  onResize(event: any){
+    this.isResponsive = event.target.innerWidth <=780;
+  }
+  prevSlide(){
+    this.currentProjectIndex = (this.currentProjectIndex + 1 - this.projects.length)
+       % this.projects.length;
+  }
+  nextSlide(){
+    this.currentProjectIndex = (this.currentProjectIndex + 1) % this.projects.length;
+  }
 
 
-  // nextProject(){
-  //   this.currentProjectIndex = (this.currentProjectIndex + 1) % this.projects.length
-  // }
-  // prevProject(){
-  //   // this.currentProjectIndex =
-  //   // (this.currentProjectIndex - 1 + this.projects.length) % this.projects.length;
-  //   this.currentProjectIndex = (this.currentProjectIndex - 1 + this.projects.length) % this.projects.length;
+  get visibleProjects(){
+    if(this.isResponsive){
+      return [
+      this.projects[this.currentProjectIndex],
+      this.projects[(this.currentProjectIndex + 1) % this.projects.length]
+        //  ...this.projects.slice(0, this.currentProjectIndex).reverse()
+        ];
+      }
+      return this.projects;
+    }
 
-  // }
 }
