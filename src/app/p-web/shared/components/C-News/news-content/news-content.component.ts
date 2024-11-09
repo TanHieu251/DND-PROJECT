@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { newsData } from '../../../../../data/product';
 
 @Component({
   selector: 'app-news-content',
@@ -7,18 +8,17 @@ import { Router } from '@angular/router';
   styleUrl: './news-content.component.scss'
 })
 export class NewsContentComponent {
-  newsData = [
+  dataNews = newsData;
+
+  constructor(private router: Router){}
+  dataMain =[
     {
-      imageNews: 'assets/botruyentai3pha.png',
-      name:'Ổ cắm điện đa năng'
-    },
-    {
-      imageNews: 'assets/botruyentai3pha.png',
-      name:'Ổ cắm điện đa năng'
-    },
-    {
-      imageNews: 'assets/botruyentai3pha.png',
-      name:'Ổ cắm điện đa năng'
-    },
+        imgSrcNewsMain:'assets/tintuc.png',
+        titleNewsMain:'Tin tuc chinh thuc trang chu',
+    }
   ]
+  goToProjectDetail(newDetail: string){
+    this.router.navigate(['/newDetail', newDetail]);
+
+  }
 }

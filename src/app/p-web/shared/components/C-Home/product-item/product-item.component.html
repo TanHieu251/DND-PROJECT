@@ -1,37 +1,30 @@
-<!-- <div class="products-grid">
-    <div class="product-card" *ngFor="let product of products" >
-      <img [src]="product.image" alt="{{product.name}}">
-      <h3 [routerLink]="['/product',product.name]" (click)="viewDetialProduct(product.name)">{{product.name}}</h3>
-      <p>{{product.description}}</p>
-      <div class="price">{{product.price}}</div>
-      <p class="status">
-        <span class="availability" [ngClass]="{'available': product.status,
-        'out-of-stock': !product.status}">
-        {{ product.status ? 'Còn hàng' : 'Hết hàng' }}</span>
-     </p>
-    </div>
-  </div>
- -->
+<div class="product-home">
+  <button class="navigation-button left" (click)="prevSlide()"><i class="fa-solid fa-arrow-left"></i></button>
 
-
-<div *ngFor="let item of products" class="product-container">
-  <div class="product-content relative" (click)="viewDetailProduct(item.name)">
-    <div class="product-img">
-      <img class="img" [src]="item.thumbnail" alt="">
-    </div>
-    <div class="product-info text-black">
-      <div class="name underline italic">
-        <span [routerLink]="['product/{{item.name}}']">{{item.name}}</span>
-      </div>
-      <div class="description"><span>{{item.description}}</span></div>
-
-    </div>
-    <div class="product-footer absolute bottom-3 right-0 left-0 flex justify-between px-[10px] items-center ">
-      <div class="price"><span>{{item.price}}</span></div>
-      <div class="stock">
-        <span *ngIf="item.stockQuantity" class="text-[#17ED45]">Còn hàng</span>
-        <span *ngIf="!item.stockQuantity" class="text-[#ED3717]"> Hết hàng</span>
+  <div class="products-wrapper">
+    <div *ngFor="let item of visibleProducts" class="product-container" (click)="viewDetailProduct(item.name)">
+      <div class="product-content relative">
+        <div class="product-img">
+          <img class="img" [src]="item.thumbnail" alt="">
+        </div>
+        <div class="product-info text-black">
+          <div class="name underline italic">
+            <span [routerLink]="['/product', item.name]">{{ item.name }}</span>
+          </div>
+          <div class="description">
+            <span>{{ item.description }}</span>
+          </div>
+        </div>
+        <div class="product-footer absolute">
+          <div class="price"><span>{{ item.price }}</span></div>
+          <div class="stock">
+            <span *ngIf="item.stockQuantity" class="text-[#17ED45]">Còn hàng</span>
+            <span *ngIf="!item.stockQuantity" class="text-[#ED3717]">Hết hàng</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
+  <button class="navigation-button right" (click)="nextSlide()"><i class="fa-solid fa-arrow-right"></i></button>
 </div>

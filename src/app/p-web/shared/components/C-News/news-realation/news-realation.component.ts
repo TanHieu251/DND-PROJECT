@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-news-realation',
@@ -6,10 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './news-realation.component.scss'
 })
 export class NewsRealationComponent {
-  dataNews =[
+  constructor(private router: Router) {}
+  dataNewsRelation =[
     {
       imageRelation: 'assets/bien-ap-1-pha-vao-220v-ra-12v-11kva100a-fushin_1342.png',
-      titleRelation: 'Năng lượng tái tạo và điện'
+      titleRelation: 'Nhà máy nhiệt điện Nhơn Trạch 3, 4 nhận điện ngược thành công'
     },
     {
       imageRelation: 'assets/bien-ap-1-pha-vao-220v-ra-12v-11kva100a-fushin_1342.png',
@@ -24,4 +26,8 @@ export class NewsRealationComponent {
       titleRelation: 'Thiết bị và linh kiện điện'
     },
   ]
+  goTonewDetail(dataNew: string) {
+    this.router.navigate(['/newDetail', dataNew])
+    window.scrollTo({top: 0, behavior:'smooth'});
+  }
 }
