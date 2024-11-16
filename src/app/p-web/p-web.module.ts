@@ -54,6 +54,7 @@ import { OustandingContentComponent } from './shared/components/C-Company/oustan
 import { NewsRealationComponent } from './shared/components/C-News/news-realation/news-realation.component';
 import { P007NewDetailComponent } from './pages/p007-new-detail/p007-new-detail/p007-new-detail.component';
 import { NewDetailComponent } from './shared/components/C-News/new-detail/new-detail.component';
+import { CustomerDialogComponent } from './shared/components/C-cart/customer-dialog/customer-dialog.component';
 
 @NgModule({
   declarations: [
@@ -101,7 +102,9 @@ import { NewDetailComponent } from './shared/components/C-News/new-detail/new-de
     NewsContentComponent,
     NewsRealationComponent,
     P007NewDetailComponent,
-    NewDetailComponent
+    NewDetailComponent,
+    CustomerDialogComponent
+    // NewBennerComponent,
   ],
   imports: [
     CommonModule,

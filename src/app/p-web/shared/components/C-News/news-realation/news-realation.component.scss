@@ -1,44 +1,41 @@
 ::ng-deep{
   app-news-realation{
-    .new-container {
-      position: sticky;
-      margin-top: 90px;
-
-        h3 {
-          margin-left: 70px;
-          text-align: center;
-          font-size: 24px;
-          font-style: italic;
-          font-weight: bold;
-          margin-bottom: 20px;
-          border-left: 5px solid #007bff;
-          display: inline-flex;
-          padding-left: 8px;
-          line-height: 1.6;
-        }
+    .news-relation{
+      h3 {
+        margin-left: 70px;
+        text-align: center;
+        font-size: 24px;
+        font-style: italic;
+        font-weight: bold;
+        margin-bottom: 20px;
+        border-left: 5px solid #007bff;
+        display: inline-flex;
+        padding-left: 8px;
+        line-height: 1.6;
+      }
+      .new-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        padding-left: 70px;
+        padding-right: 70px;
       }
 
       .new-card {
-        // width: 80%;
-        max-width: 1300px;
         justify-content: center;
-        display: flex;
+        align-items: center;
         padding: 20px;
-        margin-left: 70px;
         border-radius: 5px;
         height: auto;
         position: relative;
         margin-bottom: 30px;
-        // background-color: #f9f9f9;
+        background-color: #f9f9f9;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
 
       .image img {
-        // width: 100%;
-        padding-left: 30px;
-        max-width: 200px;
-        // text-align: center;
-        // align-items: center;
+        justify-content: center;
+        align-items: center;
         height: auto;
         border-radius: 5px;
         gap: 5px;
@@ -85,19 +82,23 @@
         text-align: right;
       }
     }
-
-      @media screen and (max-width: 780px) {
-       .new-container {
-        // display: flex;
-        // margin-left: 0;
-
-          .new-card{
-            margin-left: 0;
-          }
-          .new-title{
-            font-size: 18px;
-          }
+      @media(max-width: 1034px){
+        .new-container {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 10px;
+      }
+    }
+      @media(max-width: 780px) {
+      .new-container {
+        .new-card{
+          grid-template-columns: repeat(2, 1fr);
+          margin-left: 0;
         }
-
+        .new-title{
+          font-size: 18px;
+        }
+      }
+    }
   }
 }

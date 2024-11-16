@@ -1,9 +1,6 @@
 ::ng-deep {
   app-news-content {
-    .new-container {
-      padding-top: 80px;
-      // margin: 20px;
-    }
+    .new-container {}
 
     .news-section {
       display: flex;
@@ -65,7 +62,7 @@
       .news-item {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        // align-items: center;
         gap: 10px;
       }
 
@@ -85,6 +82,24 @@
         height: auto;
         object-fit: cover;
         border-radius: 8px;
+      }
+    }
+    @media (max-width: 780px) {
+      .news-section {
+        display: inline-block;
+        width: 100%;
+
+        .other-news {
+          // display: ;
+
+          .news-item {
+            display: inline-flex;
+            flex-direction: column;
+            // align-items: center;
+            grid-template-columns: repeat(2, 1fr);
+
+          }
+        }
       }
     }
   }

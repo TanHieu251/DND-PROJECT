@@ -4,6 +4,8 @@ import { Component, EventEmitter, Input, OnInit, Output, ChangeDetectorRef } fro
 import { ServiceService } from '../../../service/service.service';
 import { productData, serviceData } from '../../../../../data/product';
 import { NotificationServiceService } from '../../../../../p-lib/services/notification-service.service';
+import { MatDialog } from '@angular/material/dialog';
+import { CustomerDialogComponent } from '../customer-dialog/customer-dialog.component';
 
 @Component({
   selector: 'app-c-cart',
@@ -25,7 +27,9 @@ export class CCartComponent implements OnInit {
   constructor (
     private cartService: ServiceService,
     private cdRef: ChangeDetectorRef,
-    private notification: NotificationServiceService) {}
+    private notification: NotificationServiceService,
+    private dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.cartService.getCartCountObservable().subscribe(count => {
@@ -39,12 +43,12 @@ export class CCartComponent implements OnInit {
     });
 
     this.items = this.cartService.getItems();
+    this.saveCard();
   }
 
   confirmCusInfor(){
     this.notification.success(`Thông tin khách hàng đã được xác nhận` );
   }
-
   //cập nhật giá tiền và số lượng
   updateTotalPriceAndQuantity() {
     this.totalQuantity = this.cartService.getTotalQuantity();
@@ -67,11 +71,18 @@ export class CCartComponent implements OnInit {
     this.itemRemoved.emit(this.item);
     this.cartService.removeItem(item);
     this.items = this.cartService.getItems();
+    this.saveCard();
   }
-
   toggleCustomerForm() {
-    this.isCustomerFormVisible = !this.isCustomerFormVisible;
-    this.isOrderConfirmed = false;
+    const dialogRef = this.dialog.open(CustomerDialogComponent, {
+      width: '450px',
+      disableClose: true,
+    });
+    dialogRef.afterClosed().subscribe((customerInfo) =>{
+      if(customerInfo){
+        console.log(customerInfo)
+      }
+    })
   }
   // hiển thị nội dung thông tin khách hàng
   confirmCustomerInfor() {
@@ -84,6 +95,7 @@ export class CCartComponent implements OnInit {
     item.quantity = (item.quantity || 0) + 1;
     this.updateTotalPriceAndQuantity();
     this.cdRef.detectChanges();
+    this.saveCard();
   }
   //giảm sản phẩm
   decreaseQuantity(item: any) {
@@ -91,6 +103,18 @@ export class CCartComponent implements OnInit {
       item.quantity -= 1;
       this.updateTotalPriceAndQuantity();  // Recalculate total after quantity decrease
       this.cdRef.detectChanges();
+      this.saveCard();
+    }
+  }
+  submitCustomerInfo(){}
+  //save localstorge
+  saveCard(): void{
+    localStorage.setItem('cart', JSON.stringify(this.items));
+  }
+  loadCard(): void{
+    const storedCart = localStorage.getItem('cart');
+    if (storedCart) {
+      this.items = JSON.parse(storedCart);
     }
   }
 }

@@ -9,21 +9,21 @@ export class CMembersComponent {
 
   members=[
     {
-      image:'assets/logo.png',
+      image:'assets/BuitanHieu.jpg',
       name:'Bùi Tấn Hiếu'
     },
     {
-      image:'assets/logo.png',
-      name:'Bùi Tấn Hiếu'
+      image:'assets/haonguyen.png',
+      name:'LilhanxinVn'
     },
-    {
-      image:'assets/logo.png',
-      name:'Bùi Tấn Hiếu'
-    },
-    {
-      image:'assets/logo.png',
-      name:'Bùi Tấn Hiếu'
-    },
+    // {
+    //   image:'assets/logo.png',
+    //   name:'Bùi Tấn Hiếu'
+    // },
+    // {
+    //   image:'assets/logo.png',
+    //   name:'Bùi Tấn Hiếu'
+    // },
   ]
 
 }

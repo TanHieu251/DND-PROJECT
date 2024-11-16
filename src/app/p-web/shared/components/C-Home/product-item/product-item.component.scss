@@ -9,15 +9,18 @@
 
       .navigation-button {
         position: absolute;
-        top: 50%;
+        top: 40%;
+        border-radius: 50%;
         transform: translateY(-50%);
-        background-color: #333;
+        background-color: #348bd2;
         color: #fff;
         border: none;
-        margin: 10px;
-        padding: 10px;
+        // margin: 10px;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 8px;
         cursor: pointer;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         z-index: 1;
 
         &.left {
@@ -37,14 +40,11 @@
           padding: 10px;
           display: grid;
           grid-template-columns: repeat(4, 1fr);
+          // grid-template-columns: 4;
           gap: 20px;
 
           @media (max-width: 1024px) {
             grid-template-columns: repeat(2, 1fr);
-          }
-
-          @media (max-width: 780px) {
-            grid-template-columns: 1fr;
           }
 
         .product-container {
@@ -53,6 +53,8 @@
           border-radius: 8px;
           cursor: pointer;
           transition: transform 0.3s;
+          width: 100%;
+          // margin: 30px;
 
           .product-content {
             padding: 15px;
@@ -60,11 +62,14 @@
             flex-direction: column;
             align-items: center;
             height: 450px;
+            width: 100%;
 
             .product-img {
-              text-align: center;
+              // text-align: center;
               margin-bottom: 10px;
-              height: 300px;
+              height: auto;
+              width: 100%;
+              justify-content: center;
 
               .img {
                 width: 100%;
@@ -109,15 +114,19 @@
 
     @media (max-width: 780px) {
       .products-wrapper {
-        grid-template-columns: repeat(2, 1fr); // Show 2 products in a row for smaller screens
+        grid-template-columns:  repeat(2, 1fr); // Show 2 products in a row for smaller screens
         overflow: hidden; // Hide overflow for a clean look with limited products
         // max-height: 450px; // Adjust height to fit two products visually
-        height: 500px;
+        // height: 500px;
 
         .product-content{
 
           .product-img{
-
+            width: 100%;
+            height: auto;
+            img{
+              max-height: 180px;
+            }
           }
           .product-info{
 

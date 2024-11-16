@@ -4,16 +4,67 @@
     <h1>Mục tiêu của chúng Tôi</h1>
     <i class="fa fa-chevron-down" style="color: #0056b3;"></i>
   </div>
-  <div class="section-wrapper" >
-    <div *ngFor="let section of contentCompany" class="section" >
+  <div class="section-wrapper">
+
+    <div  class="section">
       <div class="text-content">
-        <!-- <i class="fa fa-chevron-left"></i> -->
-        <h2>{{ section.title }}</h2>
-        <p [innerHTML]="section.description"></p>
+        <h2>Sản phẩm và dịch vụ</h2>
+        <p >{{contentCompany.field}}</p>
       </div>
-      <div class="image-content" >
-        <img [src]="section.imageSrc" [alt]="section.title">
+      <div class="image-content">
+        <img src="assets/sanphamdichvu.png" >
       </div>
     </div>
+
+    <div  class="section">
+      <div class="text-content">
+        <h2>Mục tiêu và sứ mệnh</h2>
+        <p >{{contentCompany.visionMission}}</p>
+      </div>
+      <div class="image-content">
+        <img src="assets/tamnhinsumenh.png">
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="text-content">
+        <h2>Giá trị và cốt lỗi</h2>
+        <p >{{contentCompany.visionMission}}</p>
+      </div>
+      <div class="image-content">
+        <img src="assets/giatricotloi.png" >
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="text-content">
+        <h2>Khách hàng và đối tác</h2>
+        <p >{{contentCompany.customer}}</p>
+      </div>
+      <div class="image-content">
+        <img src="assets/khachhangdoitac.png">
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="text-content">
+        <h2>Mục tiêu phát triển</h2>
+        <p >{{contentCompany.target}}</p>
+      </div>
+      <div class="image-content">
+        <img src="assets/muctieuphattrien.png">
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="text-content">
+        <h2>Cam kết chất lượng</h2>
+        <p >{{contentCompany.target}}</p>
+      </div>
+      <div class="image-content">
+        <img src="assets/camketchatluong2.png">
+      </div>
+    </div>
+
   </div>
 </div>

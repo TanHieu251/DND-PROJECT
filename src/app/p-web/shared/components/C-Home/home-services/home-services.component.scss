@@ -1,36 +1,38 @@
-.home-service {
-    width: auto;
-    height: auto;
-    border-top: 1px solid blue;
+::ng-deep{
+  app-home-services{
+        .home-service {
+        width: auto;
+        height: auto;
+        border-top: 1px solid blue;
 
-    .service-container {
-        width: 100%;
-        height: 80vh;
-        position: relative;
+        .service-container {
+            width: 100%;
+            height: 80vh;
+            position: relative;
 
-        .banner-service {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            .banner-service {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
 
-            .banner {
+                .banner {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    filter: brightness(0.8);
+                }
+            }
+
+            .service-group {
                 width: 100%;
                 height: 100%;
-                object-fit: cover;
-                filter: brightness(0.8);
-            }
-        }
 
-        .service-group {
-            width: 100%;
-            height: 100%;
+                .service-group-content {
+                    position: relative;
 
-            .service-group-content {
-                position: relative;
-
-                .service-item {
+                  .service-item {
                     width: 500px;
                     height: 90%;
                     transition: left 0.3s ease, z-index 0.3s ease, transform 0.3s ease;
@@ -45,100 +47,125 @@
 
                     .service-thumbnail,
                     .thumbnail {
-                        width: 100%;
-                        height: 100%;
-                        border-radius: 6px;
+                      width: 100%;
+                      height: 100%;
+                      border-radius: 6px;
 
-                        &::after {
-                            content: '';
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                            background-color: rgba(0, 0, 0, 0.5);
-                            opacity: 0.5;
-                            transition: opacity 0.3s ease;
+                      &::after {
+                          content: '';
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          width: 100%;
+                          height: 100%;
+                          background-color: rgba(0, 0, 0, 0.5);
+                          opacity: 0.5;
+                          transition: opacity 0.3s ease;
                         }
                     }
 
                     .service-infor {
-                        position: absolute;
-                        bottom: 100px;
-                        right: 0;
-                        display: flex;
-                        flex-direction: column;
-                        justify-items: center;
-                        align-items: end;
+                      position: absolute;
+                      bottom: 100px;
+                      right: 0;
+                      display: flex;
+                      flex-direction: column;
+                      justify-items: center;
+                      align-items: end;
 
-                        .service-title {
-                            display: block;
+                      .service-title {
+                        display: block;
 
-                            .title {
-                                font-size: 1.2em;
-                                font-weight: bold;
-                                color: white;
-                                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-                            }
+                        .title {
+                            font-size: 1.2em;
+                            font-weight: bold;
+                            color: white;
+                            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
                         }
+                      }
 
-                        .service-description {
-                            display: block;
+                      .service-description {
+                        display: block;
 
-                            .description {
-                                font-size: 1.2em;
-                                color: white;
-                                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-                            }
+                        .description {
+                            font-size: 1.2em;
+                            color: white;
+                            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
                         }
-
-
+                      }
                     }
 
                     &:hover {
-                        z-index: 5 !important;
-                        transform: translateX(20px) scale(0.9); // Move slightly to the right and scale up
-                        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+                      z-index: 5 !important;
+                      transform: translateX(20px) scale(0.9); // Move slightly to the right and scale up
+                      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 
-                        &:first-child {
-                            left: 0 !important;
+                      &:first-child {
+                          left: 0 !important;
+                      }
+
+
+
+
+                      .service-infor {
+                        right: 0;
+                        left: 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        // background-color: rgba(255, 255, 255, 0.993);
+                        opacity: 0.8;
+                        transition: opacity 0.3s ease;
+                        font-size: 25px;
+
+                        .service-title {
+
+                          .title {
+                              color: white;
+                              box-shadow: none;
+                          }
                         }
 
+                        .service-description {
 
+                          .description {
+                              color: white;
+                              box-shadow: none;
 
-
-                        .service-infor {
-                            right: 0;
-                            left: 0;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            // background-color: rgba(255, 255, 255, 0.993);
-                            opacity: 0.8;
-                            transition: opacity 0.3s ease;
-                            font-size: 25px;
-
-                            .service-title {
-
-                                .title {
-                                    color: white;
-                                    box-shadow: none;
-                                }
-                            }
-
-                            .service-description {
-
-                                .description {
-                                    color: white;
-                                    box-shadow: none;
-
-                                }
-                            }
-
+                          }
                         }
+
+                      }
                     }
+                  }
                 }
             }
         }
     }
+    @media(max-width:1024px){
+      .home-service{
+        .service-container{
+          .banner-service{
+            img .banner{}
+          }
+          .title-service{
+
+          }
+          .service-group{
+            .service-group-content{
+              .service-item{
+                // display: none;
+                .service-thumbnail{}
+                .service-infor{
+                  display: block !important;;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
+
+

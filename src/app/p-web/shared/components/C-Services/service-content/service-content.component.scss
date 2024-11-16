@@ -126,5 +126,30 @@
         }
       }
     }
+
+    @media(max-width:780px){
+      .service-container{
+        .service-item{
+          .service-content{
+            .service-title{
+
+            }
+            .service-description{
+
+            }
+            .service-features{
+
+            }
+            .service-process{
+
+            }
+          }
+          .service-image{
+            display: none;
+            img{}
+          }
+        }
+      }
+    }
   }
 }

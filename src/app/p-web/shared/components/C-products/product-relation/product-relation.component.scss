@@ -5,7 +5,7 @@
     margin-top: 90px;
     .products-container {
       width: 100%;
-      max-width: 1400px;
+      // max-width: 1400px;
       margin: 0 auto;
       padding: 20px;
       // background-color: #348BD2;
@@ -97,6 +97,24 @@
             &.out-of-stock {
               color: red;
             }
+          }
+        }
+      }
+    }
+    @media(max-width:1034px){
+      .products-container{
+        .header{}
+        .products-grid{
+          // grid-template-columns: repeat(2, 1fr);
+          grid-template-columns: 2fr;
+          .product-card{
+            // grid-column: span 1;
+            // grid-template-columns: 2fr;
+            img{}
+            h3{}
+            p{}
+            .price{}
+            .availability{}
           }
         }
       }

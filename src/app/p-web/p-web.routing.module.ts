@@ -16,7 +16,7 @@ import { P007NewDetailComponent } from './pages/p007-new-detail/p007-new-detail/
 import { P008ServiceComponent } from './pages/p008-service/service/p008-service.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
-import { NewDetailComponent } from './shared/components/C-News/new-detail/new-detail.component';
+import { CustomerDialogComponent } from './shared/components/C-cart/customer-dialog/customer-dialog.component';
 
 const routes: Routes = [
 
@@ -72,6 +72,11 @@ const routes: Routes = [
       {
         path: 'newDetail/:title',
         component: P007NewDetailComponent,
+      },
+      {
+        path: '',
+        redirectTo: '/news',
+        pathMatch: 'full'
       },
     ],
   },

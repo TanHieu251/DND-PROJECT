@@ -63,10 +63,8 @@ export class ProductListComponent {
     this.calculateDisplayedPages();
   }
   viewDetailProduct(productName: string ){
-    // event.stopPropagation();
     this.router.navigate(['/product', productName])
     window.scrollTo({top: 0, behavior:'smooth'});
-    // console.log('products.name')
   }
 
   filterProductsByCategory(category: string){
@@ -175,8 +173,6 @@ export class ProductListComponent {
 
     if (this.filteredProducts.length > 0) {
       console.log('Filtered Products:', this.filteredProducts);
-
-      // this.router.navigate(['/products', this.filteredProducts[0].name]);
       } else {
       alert('Không tìm thấy sản phẩm nào phù hợp với từ khóa bạn tìm.');
     }

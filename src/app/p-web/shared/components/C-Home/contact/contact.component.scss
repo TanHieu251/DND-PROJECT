@@ -8,7 +8,8 @@
 
       .contact-content {
         top: 150px;
-        right: 130px;
+        // right: 130px;
+        margin-left: 40px;
 
         .text-container {
           width: 900px;
@@ -43,6 +44,7 @@
             bottom: 30px;
             left: 0;
             right: 0;
+            margin-left: 570px;
 
             .company-btn {
               display: block;
@@ -80,6 +82,71 @@
           height: 100%;
           object-fit: cover;
           opacity: 80%;
+        }
+      }
+
+    }
+    @media(max-width:1084px){
+      .contact-container{
+
+        .image-box{
+          display: none;
+          // width: 80%;
+          img{
+            width: 100%;
+            // margin-left: 30px;
+          }
+        }
+
+        .contact-content{
+          width: 100%;
+          height: auto;
+          padding: 10px;
+
+          .text-container{
+            // background-color: #348bd2;
+            width: 80%;
+            height: auto;
+            .button{
+              width: 40%;
+              margin-left: auto;
+              margin-bottom: -22px;
+              .company-btn{
+                padding: 10px 30px;
+              }
+            }
+          }
+        }
+      }
+
+    }
+    @media(max-width:768px){
+      .contact-container{
+
+        .image-box{
+          display: none;
+          img{
+            width: 100%;
+          }
+        }
+        .contact-content{
+          width: 100%;
+          height: auto;
+          padding: 10px;
+
+          .text-container{
+            // background-color: #348bd2;
+            width: 80%;
+            height: auto;
+            .button{
+              width: 40%;
+              margin-left: auto;
+              margin-bottom: -22px;
+              .company-btn{
+                padding: 10px 30px;
+              }
+            }
+          }
         }
       }
 

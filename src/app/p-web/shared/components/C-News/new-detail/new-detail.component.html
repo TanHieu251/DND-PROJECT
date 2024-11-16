@@ -1,25 +1,24 @@
-
-
-<div class="news-section">
+<div class="news-section" *ngIf="newsDetail">
   <div class="new-container">
-    <h1>Nhà máy nhiệt điện Nhơn Trạch 3, 4 nhận điện ngược thành công</h1>
+    <h1>{{newsDetail.title}}</h1>
 
-    <p>
-      Ngày 16/5, Ban Quản lý dự án điện thuộc Tổng công ty điện lực Dầu khí Việt Nam (PV Power), đơn vị chủ đầu tư dự án nhà máy nhiệt điện Nhơn Trạch 3, 4, phát đi thông báo vào lúc 16 giờ 37 phút ngày 15/5, đơn vị và Tổng thầu EPC đã phối hợp với các cơ quan của Tập đoàn điện lực Việt Nam tiến hành nhận điện ngược thành công sản phẩm phân phối 220KV.
+    <p class="content">
+      {{newsDetail.content}}
     </p>
 
-    <div class="image-container">
-      <img src="path/to/image1.jpg" alt="Nhà máy nhiệt điện Nhơn Trạch" />
-      <p class="image-caption">Hình ảnh nhà máy điện Nhơn Trạch được thi công.</p>
+    <div class="image-container" >
+      <!-- <img *ngFor="let img of newsDetail.mainImage" [src]="img.mainImage" alt="Nhà máy nhiệt điện Nhơn Trạch" /> -->
+       <img [src]="newsDetail.imgSrc" alt="">
+      <p class="image-caption">{{newsDetail.caption}}</p>
     </div>
 
-    <p>
-      Theo Ban Quản lý dự án điện PV Power, trước đó, Hội đồng nghiệm thu của dự án đã nghiệm thu tất cả các hạng mục cho công việc này. Đây là mốc tiến độ quan trọng để chuẩn bị cho công tác chạy thử từng khu vực và toàn nhà máy.
-    </p>
-
-    <div class="image-container">
-      <img src="path/to/image2.jpg" alt="Nhà máy nhiệt điện Nhơn Trạch" />
-      <p class="image-caption">Hình ảnh nhà máy điện Nhơn Trạch được thi công.</p>
+    <div class="content-second">
+      <p class="content2">
+        {{newsDetail.secondaryContents}}
+      </p>
+      <!-- <img *ngFor="let secondImg of newsDetail.secondaryImages" [src]="secondImg" alt="Nhà máy nhiệt điện Nhơn Trạch"> -->
     </div>
+
+      <!--  -->
   </div>
 </div>
