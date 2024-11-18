@@ -4,21 +4,25 @@
             <div class="news-title flex justify-between items-center cursor-pointer">
                 <span class="title-text text-[#348bd2] font-bold text-5xl">Tin Tức</span>
                 <div class="change-route   text-black z-10 font-semibold text-lg  underline ">
-                    <span>Xem tất cả tin tức -></span>
+                    <span (click)="gotoAllNews()">Xem tất cả tin tức -></span>
                 </div>
             </div>
             <div class="news-content pt-8   mx-auto ">
-                <div class="news-item relative shadow-sm cursor-pointer" *ngFor="let item of news">
+                <div class="news-item relative shadow-sm cursor-pointer" *ngFor="let item of visibleProducts">
                     <div class="item-thumbnail">
-                        <img class="thumbnail" [src]="item.Thumbnail" alt="">
+                        <img class="thumbnail" [src]="item.mainImage" alt="">
                     </div>
                     <div class="news-inf py-2">
-                        <div class="postDate text-xs">{{item.PostDate}}</div>
-                        <div class="title text-sm mt-1 font-semibold">{{item.Title}}</div>
+                        <div class="postDate text-xs">{{item.date}}</div>
+                        <div class="title text-sm mt-1 font-semibold" (click)="goToProjectDetail(item.title)" [routerLink]="['/newDetail', item.title]">{{item.title}}</div>
                     </div>
                 </div>
             </div>
+            <div class="button" *ngIf="isResponsive">
+              <button class="slide-button prev" (click)="prevSlide()">‹</button>
+              <button class="slide-button next" (click)="nextSlide()">›</button>
+            </div>
         </div>
-        
+
     </div>
 </div>

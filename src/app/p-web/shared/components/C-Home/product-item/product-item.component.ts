@@ -21,11 +21,13 @@ export class ProductItemComponent implements OnInit {
   product = productData
   isResponsive = window.innerWidth <=780;
 
+  ngOInit():void{
+    // window.addEventListener('resize', this.onResize.binf(h))
+  }
   viewDetailProduct(productName: string){
     this.router.navigate(['/product', productName])
     window.scrollTo({top: 0, behavior:'smooth'});
   }
-
 
   prevSlide(){
     this.currentProjectIndex = (this.currentProjectIndex + 1 - this.products.length)

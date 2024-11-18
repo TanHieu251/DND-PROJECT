@@ -54,9 +54,9 @@
             border-radius: 50%;
             padding: 4px 8px;
             position: absolute;
-            top: -10px;
-            right: -10px;
-            font-size: 12px;
+            top: -13px;
+            right: -6px;
+            font-size: 10px;
           }
         }
 
@@ -92,7 +92,7 @@
             }
           }
         }
-        @media(max-width: 780px){
+        @media(max-width: 1084px){
           position: fixed;
           top: 0;
           right: -100%;
@@ -134,7 +134,7 @@
         margin-right: 10px;
       }
 
-      @media(max-width: 780px){
+      @media(max-width: 1084px){
         .header {
           justify-content: center;
         }
@@ -420,7 +420,6 @@
     .scroll-project, .scroll-service{
       max-height: 300px;
       overflow-y: auto;
-      // overflow: hidden;
     }
 
     table {
@@ -442,7 +441,9 @@
 
     }
 
-    .info-container, .product-info-container, .product-info-container {
+    .info-container,
+    .product-info-container,
+    .product-info-container {
       display: flex;
       flex-direction: column;
       gap: 15px;
@@ -470,6 +471,7 @@
     .img-project{
       width: 1000px;
     }
+
   }
 
 }

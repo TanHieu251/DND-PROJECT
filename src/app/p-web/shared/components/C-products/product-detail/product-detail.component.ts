@@ -10,7 +10,7 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
   styleUrls: ['./product-detail.component.scss']
 })
 export class ProductDetailComponent implements OnInit {
-
+  items : any [] =[];
   product:any;
   quantity: number = 1;
 
@@ -37,7 +37,7 @@ export class ProductDetailComponent implements OnInit {
     status: dtp.status ,
     image: dtp.image,
     thumbnail: dtp.image,
-    code: dtp.name.split(' ').join('').toUpperCase() + Math.floor(Math.random() * 1000) + 1
+    code: dtp.id.split(' ').join('').toUpperCase() + Math.floor(Math.random() * 1000) + 1
   }))
 
   addToCart(){
@@ -49,28 +49,36 @@ export class ProductDetailComponent implements OnInit {
       image: this.product.image,
       description: this.product.description
     });
-    // this.cartService.addToCart(this.product);
      if(this.notification){
       this.notification.success('Thành công', `${this.product.name} đã được thêm vào giỏ hàng`);
      }
      else{
       console.log('Notification service is not defined');
      }
-    // this.notification.success('Thành công', `${this.product.name} đã được thêm vào giỏ hàng`);
-    // this.notification.error('Sản phẩm gặp lỗi khi thêm vào giỏ hàng');
+     this.saveCard();
   }
-
   byNow(){
     this.addToCart();
   }
   increaseQuantity() {
     this.quantity++;
+    this.saveCard();
   }
 
   decreaseQuantity() {
     if(this.quantity > 1){
       this.quantity--;
+      this.saveCard();
     }
   }
 
+  saveCard(): void{
+    const storedCard = localStorage.getItem('card');
+    if(storedCard){
+      this.items = JSON.parse(storedCard);
+    }
+  }
+  loadCard(): void{
+    localStorage.setItem('card', JSON.stringify(this.items));
+  }
 }

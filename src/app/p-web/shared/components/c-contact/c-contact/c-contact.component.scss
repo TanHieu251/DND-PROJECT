@@ -4,19 +4,13 @@
 
   app-c-contact{
     position: sticky;
-    // margin-top: 20px;
 
     .contact-page {
     position: relative;
 
-    // height: auto;
     background-color: #f8f9fa;
     padding-top: 90px;
     border-radius: 8px;
-    max-width: 1200px;
-    // margin: auto ;
-    margin: 0px 0px 0px 100px ;
-    // margin-bottom: 100px;
 
     .contact-title {
       text-align: center;
@@ -29,11 +23,9 @@
     .contact-container {
       display: flex;
       justify-content: space-between;
-      // margin-top: 20px;
 
-      // Form Section
       .contact-form {
-        flex: 1;
+        flex: 1;  
         margin-right: 20px;
         background-color: #ffffff;
         padding: 20px;
@@ -59,7 +51,7 @@
 
           input,
           select {
-            flex: 1;
+            // flex: 1;
             margin-right: 10px;
             padding: 10px;
             border: 1px solid #ced4da;
@@ -111,7 +103,6 @@
         }
       }
 
-      // Contact Info Section
       .contact-info {
         flex: 1;
         margin-left: 20px;
@@ -141,7 +132,6 @@
           }
         }
 
-        // Social media icons section
         .social-icons {
           display: flex;
           justify-content: flex-start;
@@ -159,7 +149,6 @@
       }
     }
 
-    // Responsive design for smaller screens
     @media (max-width: 768px) {
       .contact-container {
         flex-direction: column;
@@ -187,32 +176,32 @@
 
       .rotate{
         width: 115px;
-      height: 115px;
-      background-image: url(/assets/rotate_img5b7b.png);
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center center;
-      position: absolute;
-      left: 0;
-      top: 0;
-      z-index: 0;
+        height: 115px;
+        background-image: url(/assets/rotate_img5b7b.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 0;
       }
       .innercontactnow{
         position: relative;
-      width: 115px;
-      height: 115px;
-      border-radius: 50%;
-      background-image: url(/assets/bg_rolate.png);
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: center center;
-      display: flex;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
+        width: 115px;
+        height: 115px;
+        border-radius: 50%;
+        background-image: url(/assets/bg_rolate.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
       }
     }
   }

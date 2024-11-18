@@ -1,16 +1,15 @@
 <div class="new-container">
   <div class="news-section">
-    <!-- <h2 class="news-title">Tin tức</h2> -->
-    <div class="main-news" *ngFor="let mainNew of dataMain">
-      <img [src]="mainNew.imgSrcNewsMain" alt="Main News Image" class="main-news-image">
-      <p (click)="goToProjectDetail(mainNew.titleNewsMain)" class="project-title">{{ mainNew.titleNewsMain }}</p>
+    <div class="main-news" *ngFor="let newsItem of mainData">
+      <img [src]="newsItem.imgSrc" alt="Main News Image" class="main-news-image">
+      <p (click)="goToProjectDetail(newsItem.title)" class="new-title">{{ newsItem.title }}</p>
     </div>
 
     <div class="other-news">
       <h3>Tin nổi bật</h3>
-      <div class="news-item" *ngFor="let news of dataNews">
-        <img [src]="news.imageNews" alt="Image News" class="image-other">
-        <p (click)="goToProjectDetail(news.title)" class="project-title">{{ news.title }}</p>
+      <div class="news-item" *ngFor="let newsItem of featureData">
+        <img [src]="newsItem.imgSrc" alt="Image News" class="image-other">
+        <p (click)="goToProjectDetail(newsItem.title)" class="new-title">{{ newsItem.title }}</p>
       </div>
     </div>
   </div>

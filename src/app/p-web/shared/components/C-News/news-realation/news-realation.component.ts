@@ -1,33 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { newsData } from '../../../../../data/product';
 
 @Component({
   selector: 'app-news-realation',
   templateUrl: './news-realation.component.html',
   styleUrl: './news-realation.component.scss'
 })
-export class NewsRealationComponent {
+export class NewsRealationComponent implements OnInit {
+
+  dataNewsRelation = newsData;
   constructor(private router: Router) {}
-  dataNewsRelation =[
-    {
-      imageRelation: 'assets/bien-ap-1-pha-vao-220v-ra-12v-11kva100a-fushin_1342.png',
-      titleRelation: 'Nhà máy nhiệt điện Nhơn Trạch 3, 4 nhận điện ngược thành công'
-    },
-    {
-      imageRelation: 'assets/bien-ap-1-pha-vao-220v-ra-12v-11kva100a-fushin_1342.png',
-      titleRelation: 'An toàn điện'
-    },
-    {
-      imageRelation: 'assets/bien-ap-1-pha-vao-220v-ra-12v-11kva100a-fushin_1342.png',
-      titleRelation: 'Ứng dụng của điện'
-    },
-    {
-      imageRelation: 'assets/bien-ap-1-pha-vao-220v-ra-12v-11kva100a-fushin_1342.png',
-      titleRelation: 'Thiết bị và linh kiện điện'
-    },
-  ]
-  goTonewDetail(dataNew: string) {
-    this.router.navigate(['/newDetail', dataNew])
+  ngOnInit(): void {
+    this.loadNewsData();
+  }
+
+  goToNewDetail(title: string) {
+    this.router.navigate(['/newDetail', title])
     window.scrollTo({top: 0, behavior:'smooth'});
   }
+  private loadNewsData(): void {
+    this.dataNewsRelation = this.filterNewsType("relation");
+  }
+  private filterNewsType(type: "relation" ): any[]{
+    return newsData.filter(newType => newType.type === type);
+}
 }

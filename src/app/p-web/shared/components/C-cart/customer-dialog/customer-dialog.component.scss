@@ -1,0 +1,115 @@
+::ng-deep {
+  app-customer-dialog{
+    h2{
+      font-size: 24px;
+      font-weight: bold;
+      color: #000;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .customer-dialog-form {
+      // max-width: 1200px;
+      // margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+
+      h2 {
+        text-align: center;
+        color: #007bff;
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .form-group {
+        position: relative;
+        margin-bottom: 20px;
+
+        label {
+          display: none; // Ẩn label
+        }
+
+        input {
+          width: 100%;
+          padding: 10px 20px;
+          font-size: 16px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          outline: none;
+          transition: border-color 0.3s;
+
+          &:focus {
+            border-color: #007bff;
+          }
+        }
+
+        // Icon trong input
+        &::before {
+          content: '';
+          position: absolute;
+          left: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 20px;
+          height: 20px;
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+
+        // &:nth-child(1)::before {
+        //   background-image: url('path/to/icon-name.svg'); // Icon Họ và tên
+        // }
+
+        // &:nth-child(2)::before {
+        //   background-image: url('path/to/icon-phone.svg'); // Icon Số điện thoại
+        // }
+
+        // &:nth-child(3)::before {
+        //   background-image: url('path/to/icon-address.svg'); // Icon Địa chỉ
+        // }
+
+        // &:nth-child(4)::before {
+        //   background-image: url('path/to/icon-email.svg'); // Icon Email
+        // }
+      }
+
+      .dialog-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+
+        button {
+          flex: 1;
+          padding: 10px;
+          font-size: 16px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+
+          &:first-child {
+            margin-right: 10px;
+            background-color: #f5f5f5;
+            color: #333;
+
+            &:hover {
+              background-color: #e0e0e0;
+            }
+          }
+
+          &:last-child {
+            background-color: #007bff;
+            color: #fff;
+
+            &:hover {
+              background-color: #0056b3;
+            }
+          }
+        }
+      }
+    }
+  }
+}

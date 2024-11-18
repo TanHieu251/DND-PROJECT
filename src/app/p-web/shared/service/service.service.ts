@@ -37,6 +37,7 @@ export class ServiceService {
     this.updateCartCount();
     this.updateTotalPrice();
     console.log('Product being added to cart', product);
+    this.saveCard();
   }
 
   getTotalQuantity(): number {
@@ -87,11 +88,21 @@ export class ServiceService {
     this.items = this.items.filter(i => i.id !== item.id);
     this.updateCartCount();
     this.updateTotalPrice();
+    this.saveCard();
   }
 
   clear() {
     this.items = [];
     this.updateCartCount();
     this.updateTotalPrice();
+  }
+  saveCard(): void{
+    localStorage.setItem('cart', JSON.stringify(this.items));
+  }
+  loadCard(): void{
+    const storedCart = localStorage.getItem('cart');
+    if (storedCart) {
+      this.items = JSON.parse(storedCart);
+    }
   }
 }

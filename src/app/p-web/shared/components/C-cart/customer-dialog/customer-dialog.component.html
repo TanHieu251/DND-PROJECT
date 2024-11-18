@@ -1,0 +1,25 @@
+  <h2>Thông tin khách hàng
+    <i class="fa-solid fa-circle-info"></i>
+  </h2>
+  <form class="customer-dialog-form" (ngSubmit)="confirmCustomerInfo()">
+    <div class="form-group">
+      <label for="name">Họ và tên:</label>
+      <input type="text" id="name" [(ngModel)]="customer.name" name="name" placeholder="Họ và tên" required>
+    </div>
+    <div class="form-group">
+      <label for="phone">Số điện thoại:</label>
+      <input type="tel" id="phone" [(ngModel)]="customer.phone" name="phone" placeholder="Số điện thoại" required>
+    </div>
+    <div class="form-group">
+      <label for="address">Địa chỉ:</label>
+      <input type="text" id="address" [(ngModel)]="customer.address" name="address" placeholder="Địa chỉ" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" [(ngModel)]="customer.email" name="email" placeholder="Email" required>
+    </div>
+    <div class="dialog-actions">
+      <button type="button" mat-button (click)="onCancel()">Hủy</button>
+      <button type="submit" mat-button color="primary" (click)="confirmCusInfor()">Xác nhận</button>
+    </div>
+  </form>

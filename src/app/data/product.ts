@@ -20,6 +20,21 @@ export interface Product {
   quantity: number;
 }
 
+export interface News {
+  id: number;
+  title: string;
+  imgSrc: string;
+  date: string;
+  content: string;
+  mainImage: string;
+  caption: string,
+  secondaryImages: string[];
+  relationImg: string[];
+  type: NewsData;
+}
+type NewsData = "main" | "feature" | "relation"
+
+
 export const productData = [
     {
       id: 'DND001',
@@ -974,9 +989,123 @@ export const serviceData = [
 
 ]
 
-export const newsData = [
+export const newsMainData = [
   {
-    imageNews: 'assets/botruyentai3pha.png',
-    title: 'Bàn luận về các vấn đề liên quan đến điện nước',
+    titleMain : 'Tin tuc chinh thuc trang chu',
+    imgSrcMain : 'assets/tintuc.png',
+
+    otherNews:
+      {
+        titleOther:'',
+      }
   }
+]
+
+export const newsDetailData = [
+  {
+    titleOther: '',
+    imgSrcOther: '',
+    descriptionOther: ''
+  }
+]
+
+export const newsData =[
+  {
+    id: 1,
+    title: "Giá xăng dầu tăng cao, ảnh hưởng đến đời sống người dân",
+    imgSrc: "assets/xangdau.jpg",
+    date: "2024-11-14",
+    content: "(HBĐT) - Từ 15h ngày 10/11, giá xăng dầu trong nước được điều chỉnh tăng, dao động từ 550 - 660 đồng/lít so với kỳ tăng trước. Đây là mức tăng cao, cụ thể như: Xăng RON 95 tăng 660 đồng/lít, xăng E5 RON 92 tăng 550 đồng/lít. Tính từ đầu năm đến nay, giá xăng trong nước đã tăng 5 lần liên tiếp. Giá xăng dầu tăng trong bối cảnh ảnh hưởng dịch Covid-19 tác động mạnh, trực tiếp đến thu nhập, đời sống người dân và hoạt động của doanh nghiệp, đặc biệt là doanh nghiệp vận tải.",
+    mainImage: "assets/xangdau.jpg",
+    secondaryContents:'Từ 21/4 đến nay, giá xăng đã tăng lần thứ 7 liên tiếp. Nếu tính từ đầu năm đến nay, thì giá xăng đã có 16 kỳ điều chỉnh với 13 lần tăng giá, 3 lần giảm. Cư dân mạng ví von, giá xăng khi tăng thì như cầu thang máy, còn khi giảm thì như đi thang bộ. Phải nói rằng, sau những pha thiết lập đỉnh giá xăng dầu, đời sống của người dân cũng bị ảnh hưởng rất nhiều. Xăng dầu vốn là chi phí đầu vào của hầu hết ngành sản xuất hàng hoá và dịch vụ, nên khi xăng tăng có tác động rất lớn đến mặt bằng giá cả thị trường. Giá cả các loại thực phẩm đã leo thang, tăng từ 5-10% do giá nhập, chi phí vận chuyển, đánh bắt thuỷ hải sản tăng cao.',
+    secondaryImages: [
+      "assets/xangdau.jpg",
+      "https://example.com/images/secondary-image2.jpg"
+    ],
+    relationImg:'https://example.com/images/main-image.jpg',
+    type: "main",
+    caption : 'Hình ảnh đổ xăng tại cây xăng.'
+  },
+  {
+    id: 2,
+    title: "Thị trường bất động sản có dấu hiệu hồi phục",
+    imgSrc: "assets/bds.png",
+    date: "2024-11-12",
+    content: "Đó là nhận định của Ngân hàng Thế giới về thị trường bất động sản Việt Nam trong báo cáo cập nhật tình hình kinh tế Việt Nam công bố ngày 26-8.",
+    secondaryContents:'Ngân hàng Thế giới (WB) nhận định nền kinh tế Việt Nam được dự báo tăng trưởng 6,1% trong năm 2024 và tăng tốc lên đến 6,5% trong các năm 2025 - 2026. Theo WB, diễn biến thị trường bất động sản cho thấy dấu hiệu phục hồi và dự báo sẽ xoay chiều vào cuối 2024 và đầu 2025 sau khi giải quyết được tình trạng đóng băng thị trường trái phiếu doanh nghiệp và Luật Đất đai có hiệu lực. Tuy nhận định thị trường bất động sản cho thấy dấu hiệu phục hồi, nhưng WB đánh giá "các nhà đầu tư vẫn thận trọng". WB đánh giá nguồn cung các dự án được cấp phép và số lượng căn hộ mới vẫn gần như đi ngang trong quý 1-2024 so với quý 4-2023 do các vấn đề trong quy trình giải phóng mặt bằng và đền bù đất đai vẫn chưa có chuyển biến.',
+    mainImage: "https://example.com/images/main-real-estate.jpg",
+    secondaryImages: [
+      // "https://example.com/images/secondary-real-estate1.jpg",
+      // "https://example.com/images/secondary-real-estate2.jpg"
+    ],
+    relationImg:'assets/bieudotil.png',
+    type: "feature",
+    caption: 'Hình ảnh tham quan mô hình bất động sản.'
+  },
+  {
+    id: 3,
+    title: "Công nghệ AI phát triển mạnh mẽ và ứng dụng vào đời sống",
+    imgSrc: "assets/ai4.png",
+    date: "2024-11-10",
+    content: "Mặc dù mức độ ứng dụng trí tuệ nhân tạo (AI) tại Việt Nam còn chưa sánh ngang với các quốc gia hàng đầu trong khu vực châu Á, nhưng nước ta đang dần nắm bắt tiềm năng và cố gắng phát triển ngành công nghiệp AI để đóng góp vào sự phát triển kinh tế và xã hội của đất nước.",
+    mainImage: "https://example.com/images/main-ai.jpg",
+    secondaryContents:'Nổi bật nhất là lĩnh vực ngân hàng, với việc ứng dụng AI, các ngân hàng đang ngày càng đổi mới mô hình kinh doanh và nâng cao trải nghiệm khách hàng.  “Các ngân hàng đang sử dụng trợ lý AI như chatbot để đưa ra lời khuyên tài chính được cá nhân hóa và xử lý ngôn ngữ tự nhiên nhằm cung cấp dịch vụ khách hàng tự phục vụ. Ngoài ra, ngân hàng cũng sử dụng định danh điện tử (eKYC) để xác thực, hay sử dụng máy học (machine learning) để xây dựng các mô hình dự báo chính xác hơn, nhanh chóng hơn”, ông Vũ Anh Tú nói.Không chỉ trong lĩnh vực ngân hàng, ở lĩnh vực y tế, giai đoạn Covid-19 vừa qua, các trợ lý AI (voice bot) đã thực hiện hàng triệu cuộc gọi, hỗ trợ ngành y kiểm soát, sàng lọc và truy vết các ca nhiễm. Trong giáo dục, thương mại, AI được ứng dụng để đa dạng hóa cách truyền tải nội dung, cá nhân hóa trải nghiệm mua sắm...',
+    secondaryImages: [
+      // "https://example.com/images/secondary-ai1.jpg",
+      // "https://example.com/images/secondary-ai2.jpg"
+    ],
+    relationImg:'assets/ai_relationimg.png',
+    type: "feature",
+    caption: 'Hình ảnh giới thiệu về AI. '
+
+  },
+  {
+    id: 4,
+    title: "Giá vàng tăng mạnh do biến động kinh tế toàn cầu",
+    imgSrc: "assets/giavang_imgSRC.png",
+    date: "2024-11-08",
+    content: "Giá vàng giao ngay bắt đầu tuần giao dịch ở 2.570 USD/ounce, không thay đổi nhiều so với giá đóng cửa tuần trước. Sau đó, mặt hàng này chủ yếu đi ngang, 'nín thở' chờ đợi quyết định cuối cùng của Cục Dự trữ Liên bang Mỹ (Fed), rằng sẽ cắt giảm 0,25% hay là mức cắt giảm mạnh 0,5%.",
+    mainImage: "https://example.com/images/main-gold.jpg",
+    secondaryContents:'Báo cáo xu hướng nhu cầu vàng quý II/2024 của Hội đồng Vàng thế giới cho thấy nhu cầu đối với vàng tăng kỷ lục mặc dù giá rất cao. Các chuyên gia cho rằng, giá vàng bất ngờ quay đầu tăng, do nhà đầu tư lạc quan hơn vào chính sách tiền tệ của Fed trong thời gian tới. Quyết định cắt giảm lãi suất của Fed là khởi đầu của một chu kỳ nới lỏng chính sách tiền tệ rộng hơn của Ngân hàng Trung ương Mỹ. Động thái của Fed mở ra kỳ vọng sẽ có thêm 1-2 lần cắt giảm lãi suất nữa trong năm nay. Ông Robert Minter, Giám đốc Chiến lược đầu tư của Công ty Đầu tư Abrdn, cho hay, từ trước đến nay, các chu kỳ cắt giảm lãi suất thường thúc đẩy nhu cầu cao hơn của các nhà đầu tư vào vàng.',
+    secondaryImages: [
+      // "https://example.com/images/secondary-gold1.jpg",
+      // "https://example.com/images/secondary-gold2.jpg"
+    ],
+    relationImg: "assets/vang_relation.png",
+    type: "feature",
+    caption: ''
+  },
+  {
+    id: 5,
+    title: "Công nghệ 5G và những ứng dụng đột phá trong đời sống",
+    imgSrc: "assets/5g.png",
+    date: "2024-11-06",
+    content: "Với 30 năm kinh nghiệm trong ngành viễn thông, tôi đã chứng kiến sự chuyển đổi mạnh mẽ của ngành công nghệ di động qua từng thế hệ. Từ khi mạng 2G xuất hiện, mở ra kỷ nguyên truyền tải âm thanh cơ bản, đến thế hệ 3G và 4G, giúp truyền tải dữ liệu nhanh chóng, ngành viễn thông đã góp phần thay đổi cách chúng ta sống và làm việc. Tuy nhiên, 5G không chỉ đơn thuần là sự tiếp nối mà là một bước nhảy vọt về công nghệ, mở ra vô vàn cơ hội cho mọi lĩnh vực.",
+    mainImage: "https://example.com/images/main-5g.jpg",
+    secondaryContents:'5G đang mở ra vô số cơ hội ứng dụng trong đời sống, và một trong những lĩnh vực hưởng lợi trực tiếp chính là công nghiệp 4.0 và tự động hóa. Với khả năng kết nối và truyền tải dữ liệu cực nhanh, các nhà máy thông minh có thể quản lý toàn bộ dây chuyền sản xuất mà không cần đến sự can thiệp của con người. Các robot và hệ thống cảm biến được kết nối với nhau qua mạng 5G có thể thu thập và phân tích dữ liệu trong thời gian thực, từ đó tối ưu hóa quá trình sản xuất, giảm thiểu lãng phí và gia tăng hiệu suất. Điều này giúp doanh nghiệp tiết kiệm chi phí, đồng thời cải thiện chất lượng sản phẩm.',
+
+    secondaryImages: [
+      // "https://example.com/images/secondary-5g1.jpg",
+      // "https://example.com/images/secondary-5g2.jpg"
+    ],
+    relationImg: "assets/5g_relation.png",
+    type: "relation"
+
+  },
+  {
+    id: 6,
+    title: "Ngành nông nghiệp chuyển mình với các công nghệ mới",
+    imgSrc: "assets/nganhnongnghiep.ppng.jpeg",
+    date: "2024-11-04",
+    content: "    Nền Nông nghiệp từ xưa đến nay vẫn luôn giữ vai trò quan trọng trong nền kinh tế Việt Nam. Cùng với sự bùng nổ của cuộc cách mạng công nghiệp 4.0, ngành Nông nghiệp nước nhà đang chuyển mình mạnh mẽ, được quan tâm, đầu tư, gắn với các bước tiến đột phá của khoa học và công nghệ. Điều này đã tạo ra nhu cầu lớn về nguồn nhân lực chất lượng cao trong lĩnh vực Công nghệ Nông nghiệp. Nếu bạn yêu thích công nghệ, muốn vận dụng nó để chung tay phát triển nền nông nghiệp của đất nước vươn lên tầm cao mới, vậy còn chần chờ gì mà không tìm hiểu ngay ngành học Công nghệ nông nghiệp để rộng mở cánh cửa tương lai?",
+    mainImage: "https://example.com/images/main-agriculture.jpg",
+    secondaryContents:'  Ưu điểm vượt trội của chương trình đào tạo kỹ sư ngành Công nghệ Nông nghiệp tại Trường Đại học Công nghệ Dựa trên thế mạnh về nền tảng công nghệ của trường, sinh viên chương trình đào tạo kỹ sư Công nghệ Nông nghiệp được trang bị các kiến thức lý thuyết và kỹ năng thực hành liên ngành về công nghệ như công nghệ thông tin, điều khiển tự động, công nghệ sinh học, công nghệ nano bên cạnh các kiến thức về nông nghiệp. Ngoài ra, trong chương trình còn có khối kiến thức về quản trị sản xuất, logistics, marketing và khởi nghiệp đáp ứng nhu cầu xã hội của các kỹ sư công nghệ nông nghiệp thời đại mới.Chương trình đào tạo có 2 định hướng chuyên sâu: Nông nghiệp kỹ thuật số và Công nghệ sinh học nông nghiệp. Sinh viên được đào tạo theo nguyên tắc “học bằng làm” và “đổi mới sáng tạo” với các phương pháp học tập chủ động, ứng dụng công nghệ thông tin dưới sự hướng dẫn đội ngũ giảng viên giỏi về công nghệ, năng động, giàu nhiệt huyết. Sinh viên được thực hành tại các phòng thí nghiệm công nghệ tiên tiến, trung tâm thực nghiệm Công nghệ nông nghiệp và các Viện nghiên cứu đối tác để tận dụng thế mạnh của các bên liên quan.',
+    secondaryImages: [
+      // "https://example.com/images/secondary-agriculture1.jpg",
+      // "https://example.com/images/secondary-agriculture2.jpg"
+    ],
+    relationImg: "assets/Biểu-đồ-ngành-CNNN.jpg",
+    type: "relation"
+
+  },
 ]

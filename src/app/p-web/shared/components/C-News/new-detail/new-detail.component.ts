@@ -1,16 +1,24 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { newsData } from '../../../../../data/product';
 
 @Component({
   selector: 'app-new-detail',
   templateUrl: './new-detail.component.html',
-  styleUrl: './new-detail.component.scss'
+  styleUrls: ['./new-detail.component.scss']
 })
-export class NewDetailComponent {
+export class NewDetailComponent implements OnInit {
+  newsDetail: any;
 
-  constructor(private router: Router){}
-  dataNewDetail=[
-    
+  constructor(private activatedRoute: ActivatedRoute,
+    router: Router
+  ) {}
 
-  ]
+  ngOnInit(): void {
+    let newTitle = this.activatedRoute.snapshot.paramMap.get('title');
+    if(newTitle){
+      this.newsDetail = newsData.find(n => n.title === newTitle)
+      console.log(this.newsDetail);
+    }
+  }
 }

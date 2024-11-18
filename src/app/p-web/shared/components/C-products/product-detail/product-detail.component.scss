@@ -136,19 +136,34 @@
     .contact-btn {
       background-color: #00bfff;
     }
-  }
-  .noProduct{
-    margin-top: 100px;
-    color: red;
-    padding-left: 60px;
+    .noProduct{
+      margin-top: 100px;
+      color: red;
+      padding-left: 60px;
+    }
+    .notification {
+      background-color: #28a745;
+      color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+      margin-top: 10px;
+    }
+    @media(max-width:1048px){
+      .product-detail{
+        display: inline;
+        // padding: 20px;
+        .product-image{
+          padding: 10px;
+        }
+        .product-info{
+          padding: 10px;
+        }
+        .product-price{}
+        .product-quantity{}
+        .product-actions{}
+      }
+    }
   }
 }
 
-.notification {
-  background-color: #28a745;
-  color: #fff;
-  padding: 10px;
-  border-radius: 5px;
-  text-align: center;
-  margin-top: 10px;
-}
