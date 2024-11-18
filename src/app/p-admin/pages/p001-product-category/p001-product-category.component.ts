@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { ProductServicesService } from '../../shared/services/product-services.service';
+import { Until_check } from '../../../p-lib/until/until';
+import { NotificationServiceService } from '../../../p-lib/services/notification-service.service';
 
 @Component({
   selector: 'app-p001-product-category',
@@ -8,175 +11,114 @@ import { Component } from '@angular/core';
 export class P001ProductCategoryComponent {
   data = [
     {
-      title: 'Câu hỏi 1',
-      code: 'Q1',
-      typeQuestion: 'Trắc nghiệm',
-      group: 'Nhóm A',
-      time: 120,
-      Status: 2,
-    },
-    {
-      title: 'Câu hỏi 2',
-      code: 'Q2',
-      typeQuestion: 'Tự luận',
-      group: 'Nhóm B',
-      time: 180,
+      Name: 'Công tắc',
       Status: 0,
+      StatusName: 'Đang soạn thảo',
     },
+
     {
-      title: 'Câu hỏi 2',
-      code: 'Q2',
-      typeQuestion: 'Tự luận',
-      group: 'Nhóm B',
-      time: 180,
+      Name: 'Tủ',
       Status: 1,
+      StatusName: 'Đang soạn thảo',
     },
     {
-      title: 'Câu hỏi 2',
-      code: 'Q2',
-      typeQuestion: 'Tự luận',
-      group: 'Nhóm B',
-      time: 180,
-      Status: 1,
-    },
-    {
-      title: 'Câu hỏi 2',
-      code: 'Q2',
-      typeQuestion: 'Tự luận',
-      group: 'Nhóm B',
-      time: 180,
-      Status: 0,
-    },
-    {
-      title: 'Câu hỏi 2',
-      code: 'Q2',
-      typeQuestion: 'Tự luận',
-      group: 'Nhóm B',
-      time: 180,
-      Status: 1,
-    },
-    {
-      title: 'Câu hỏi 2',
-      code: 'Q2',
-      typeQuestion: 'Tự luận',
-      group: 'Nhóm B',
-      time: 180,
-      Status: 1,
-    },
-    {
-      title: 'Câu hỏi 2',
-      code: 'Q2',
-      typeQuestion: 'Tự luận',
-      group: 'Nhóm B',
-      time: 180,
-      Status: 1,
-    },
-    {
-      title: 'Câu hỏi 2',
-      code: 'Q2',
-      typeQuestion: 'Tự luận',
-      group: 'Nhóm B',
-      time: 180,
-      Status: 1,
-    },
-    {
-      title: 'Câu hỏi 2',
-      code: 'Q2',
-      typeQuestion: 'Tự luận',
-      group: 'Nhóm B',
-      time: 180,
-      Status: 1,
-    },
-    {
-      title: 'Câu hỏi 2',
-      code: 'Q2',
-      typeQuestion: 'Tự luận',
-      group: 'Nhóm B',
-      time: 180,
-      Status: 0,
-    },
-    {
-      title: 'Câu hỏi 2',
-      code: 'Q2',
-      typeQuestion: 'Tự luận',
-      group: 'Nhóm B',
-      time: 180,
-      Status: 1,
-    },
-    {
-      title: 'Câu hỏi 2',
-      code: 'Q2',
-      typeQuestion: 'Tự luận',
-      group: 'Nhóm B',
-      time: 180,
-      Status: 1,
-    },
-    {
-      title: 'Câu hỏi 2',
-      code: 'Q2',
-      typeQuestion: 'Tự luận',
-      group: 'Nhóm B',
-      time: 180,
-      Status: 3,
-    },
-    {
-      title: 'Câu hỏi 2',
-      code: 'Q2',
-      typeQuestion: 'Tự luận',
-      group: 'Nhóm B',
-      time: 180,
+      Name: 'Áp suất',
       Status: 2,
-    },
-    {
-      title: 'Câu hỏi 2',
-      code: 'Q2',
-      typeQuestion: 'Tự luận',
-      group: 'Nhóm B',
-      time: 180,
-      Status: 1,
-    },
-    {
-      title: 'Câu hỏi 2',
-      code: 'Q2',
-      typeQuestion: 'Tự luận',
-      group: 'Nhóm B',
-      time: 180,
-      Status: 1,
-    },
-    {
-      title: 'Câu hỏi 2',
-      code: 'Q2',
-      typeQuestion: 'Tự luận',
-      group: 'Nhóm B',
-      time: 180,
-      Status: 2,
-    },
-    {
-      title: 'Câu hỏi 2',
-      code: 'Q2',
-      typeQuestion: 'Tự luận',
-      group: 'Nhóm B',
-      time: 180,
-      Status: 3,
+      StatusName: 'Đang soạn thảo',
     },
   ];
-  //common
-  isDrawerOpen: boolean = false;
 
+  //common
+  ListTypeProduct: any[] = [];
+  dataItem: any = {};
+  ListStatusOption: any[] = [];
+  isDrawerOpen: boolean = false;
+  isAddNew: boolean = false;
+
+  //table
+  displayedColumns: string[] = ['Name', 'Status', 'StatusName', 'popup'];
+
+  constructor(
+    private apiService: ProductServicesService,
+    private notifiService: NotificationServiceService
+  ) {}
+
+  //#region Table
   onClickAction(e: any) {
+    this.dataItem = JSON.parse(JSON.stringify(e));
     this.toggleDrawer();
   }
+  //#endregion
 
-
-  toggleDrawer() {
-    this.isDrawerOpen = !this.isDrawerOpen;
+  //#region HANDLE
+  onAddNew() {
+    this.isAddNew = true;
+    this.dataItem = {};
+    this.isDrawerOpen = true;
   }
-  displayedColumns: string[] = [
-    'title',
-    'code',
-    'typeQuestion',
-    'group',
-    'Status',
-    'popup',
-  ];
+  onUpdate() {
+    console.log(this.dataItem);
+    this.isAddNew = false;
+  }
+  onDelete() {
+    console.log(this.dataItem);
+  }
+  onChangeStatus() {
+    this.dataItem.Status = 1;
+    this.dataItem.StatusName = 'Duyệt';
+
+    console.log(this.dataItem);
+  }
+
+  onGetStatusOption() {
+    let Status = this.dataItem.Status;
+    if ((Status = 0)) {
+      this.ListStatusOption.push({
+        Status: 1,
+        StatusName: 'Duyệt',
+      });
+    }
+    if ((Status = 1)) {
+      this.ListStatusOption.push({
+        Status: 1,
+        StatusName: 'Ngưng',
+      });
+    }
+    console.log(this.ListStatusOption);
+    return this.ListStatusOption;
+  }
+
+  //#endregion
+
+  //#region DRAWER
+  toggleDrawer() {
+    this.onGetStatusOption();
+    this.isDrawerOpen = !this.isDrawerOpen;
+    this.isAddNew = false;
+  }
+
+  //#region API
+
+  /**
+   *
+   * @param data
+   */
+  APIGetListTypeProduct() {
+    this.apiService.GetListTypeProduct().subscribe(
+      (res: any) => {
+        if (Until_check.hasListValue(res)) {
+          this.notifiService.success('Đăng hập thành công');
+          this.ListTypeProduct = res.data;
+        } else {
+          this.notifiService.error('Lấy danh sách không thành công');
+        }
+      },
+      (error) => {
+        this.notifiService.error('Đã xảy ra lỗi khi lấy danh sách', error);
+      }
+    );
+  }
+  //#endregion
+
+  //#endregion
 }

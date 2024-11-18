@@ -12,6 +12,11 @@ import { LayoutComponent } from './shared/components/layout/layout.component';
 import { MatListModule } from '@angular/material/list';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { FormsModule } from '@angular/forms';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +35,10 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatListModule,
     MatDialogModule,
     MatSidenavModule,
+    FormsModule,
+    NzDropDownModule,
+    NzIconModule,
+    NzButtonModule
   ],
 })
 export class PAdminModule {}
