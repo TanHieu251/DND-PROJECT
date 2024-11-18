@@ -1,0 +1,12 @@
+.layout{
+    display: flex;
+    .layout-sidebar{
+        width: 200px;
+        background-color: red;
+        height: 100vh;
+    }
+    .layout-body{
+        width: calc(100% - 200px);
+        // padding: 10px;
+    }
+}
