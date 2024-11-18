@@ -57,8 +57,8 @@ export class P001ProductCategoryComponent {
     this.isDrawerOpen = true;
   }
   onUpdate() {
-    console.log(this.dataItem);
     this.isAddNew = false;
+    this.isDrawerOpen = false;
   }
   onDelete() {
     console.log(this.dataItem);
@@ -71,20 +71,27 @@ export class P001ProductCategoryComponent {
   }
 
   onGetStatusOption() {
+    this.ListStatusOption = [];
     let Status = this.dataItem.Status;
-    if ((Status = 0)) {
+
+    if (Status == 0) {
       this.ListStatusOption.push({
         Status: 1,
         StatusName: 'Duyệt',
       });
     }
-    if ((Status = 1)) {
+    if (Status == 1) {
       this.ListStatusOption.push({
         Status: 1,
         StatusName: 'Ngưng',
       });
     }
-    console.log(this.ListStatusOption);
+    if (Status == 2) {
+      this.ListStatusOption.push({
+        Status: 0,
+        StatusName: 'Đang soạn',
+      });
+    }
     return this.ListStatusOption;
   }
 
