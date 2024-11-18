@@ -16,6 +16,14 @@ import { FormsModule } from '@angular/forms';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { ManageComponent } from './shared/components/admin-manage/sidebar_manage/manage.component';
+import { ProductManageComponent } from './shared/components/admin-manage/product-manage/product-manage.component';
+import { LayoutAdminComponent } from './shared/components/admin-manage/layout-admin/layout-admin.component';
+import { CustomerManageComponent } from './shared/components/admin-manage/customer-manage/customer-manage.component';
+import { ProjectManageComponent } from './shared/components/admin-manage/project-manage/project-manage.component';
+import { NewsManageComponent } from './shared/components/admin-manage/news-manage/news-manage.component';
+import { OrderManageComponent } from './shared/components/admin-manage/order-manage/order-manage.component';
+import { ServiceManageComponent } from './shared/components/admin-manage/service-manage/service-manage.component';
 
 
 @NgModule({
@@ -24,7 +32,15 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     StatusPipe,
     AddSPipe,
     P001ProductCategoryComponent,
-    LayoutComponent,
+    // LayoutAdminComponent,
+    ManageComponent,
+    ProductManageComponent,
+    CustomerManageComponent,
+    ProjectManageComponent,
+    NewsManageComponent,
+    OrderManageComponent,
+    ServiceManageComponent,
+    LayoutComponent
   ],
   imports: [
     CommonModule,

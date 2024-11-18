@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,17 +6,11 @@ import { Router } from '@angular/router';
   templateUrl: './manage.component.html',
   styleUrl: './manage.component.scss'
 })
-export class ManageComponent {
-
-  // menuItems = [
-  //   { title: 'Sản phẩm', route: 'productManage' },
-  //   { title: 'Dự án', icon: '', route: 'projectManage' },
-  //   { title: 'Tin tức', icon: '', route: 'newsManage' },
-  //   { title: 'Dich vu', icon: '', route: 'servicesManage' },
-  //   { title: 'khach hang', icon: '', route: 'customerManage'},
-  //   { title: 'Gio hang', icon: '', route: 'orderManage' }
-  // ];
+export class ManageComponent implements OnInit {
   constructor(private router: Router) { }
+  ngOnInit(): void {
+    // throw new Error('Method not implemented.');
+  }
 
   headerTitle: string = 'Trang quản lý'; // Tiêu đề mặc định
 

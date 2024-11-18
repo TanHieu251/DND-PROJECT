@@ -153,7 +153,6 @@ export class HeaderComponent implements OnInit {
       project.description.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
     this.paginateProjects();
-    // console.log(this.projectsData)
   } else if (this.selectedMenu === 'Sản phẩm') {
     this.productData = this.originalProductData.filter(product =>
       product.name.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
@@ -227,7 +226,4 @@ export class HeaderComponent implements OnInit {
       this.menuOpen = false;
     }
   }
-  // ngOnDestroy(){
-  //   document.removeEventListener('click', this.onDocumentClick.bind(this));
-  // }
 }
