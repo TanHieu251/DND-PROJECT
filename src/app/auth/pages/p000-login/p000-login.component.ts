@@ -42,7 +42,7 @@ export class P000LoginComponent {
     if (this.loginForm.valid) {
       this.APILogin(this.loginForm.value);
       if (this.tokenStorage != '') {
-        this.router.navigate(['/home']);
+        this.router.navigate(['/sidebarManage']);
       }
     } else {
       console.log('error');

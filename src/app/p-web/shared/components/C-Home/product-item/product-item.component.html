@@ -1,5 +1,5 @@
 <div class="product-home">
-  <button class="navigation-button left" (click)="prevSlide()"><i class="fa-solid fa-arrow-left"></i></button>
+  <!-- <button class="navigation-button left" (click)="prevSlide()"><i class="fa-solid fa-arrow-left"></i></button> -->
 
   <div class="products-wrapper">
     <div *ngFor="let item of visibleProducts" class="product-container" (click)="viewDetailProduct(item.name)">
@@ -25,8 +25,10 @@
       </div>
     </div>
   </div>
-  <!-- <div class="button-responsiive" *ngIf="isResponsive"> -->
+  <div class="button-responsiive" *ngIf="isResponsive">
+    <button class="navigation-button left" (click)="prevSlide()"><i class="fa-solid fa-arrow-left"></i></button>
+
     <button class="navigation-button right" (click)="nextSlide()"><i class="fa-solid fa-arrow-right"></i></button>
-  <!-- </div> -->
+  </div>
 
 </div>

@@ -19,7 +19,7 @@ export class ProductItemComponent implements OnInit {
   status: boolean = true;
   currentProjectIndex = 0;
   product = productData
-  isResponsive = window.innerWidth <=780;
+  isResponsive = window.innerWidth <= 780;
 
   ngOInit():void{
     // window.addEventListener('resize', this.onResize.binf(h))
