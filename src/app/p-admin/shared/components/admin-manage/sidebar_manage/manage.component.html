@@ -1,0 +1,53 @@
+<div class="layout">
+  <div class="side-bar">
+    <div [routerLink]="'/home'" class="header-logo px-5">
+      <img src="assets/DNDLogo.png" alt="Logo" />
+    </div>
+    <ul>
+      <li>
+        <a routerLink="productManage" routerLinkActive="active" (click)="updateHeader('Quản lý sản phẩm')">
+          Sản phẩm
+        </a>
+      </li>
+      <li>
+        <a routerLink="customerManage" routerLinkActive="active" (click)="updateHeader('Quản lý khách hàng')">
+          Khách hàng
+        </a>
+      </li>
+      <li>
+        <a routerLink="orderManage" routerLinkActive="active" (click)="updateHeader('Quản lý giỏ hàng')">
+          Giỏ hàng
+        </a>
+      </li>
+      <li>
+        <a routerLink="newsManage" routerLinkActive="active" (click)="updateHeader('Quản lý tin tức')">
+          Tin tức
+        </a>
+      </li>
+      <li>
+        <a routerLink="projectManage" routerLinkActive="active" (click)="updateHeader('Quản lý dự án')">
+          Dự án
+        </a>
+      </li>
+      <li>
+        <a routerLink="servicesManage" routerLinkActive="active" (click)="updateHeader('Quản lý dịch vụ')">
+          Dịch vụ
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <div class="header">
+      <span>{{ headerTitle }}</span>
+      <div class="user-profile">
+        <img src="/assets/haonguyen.png" alt="User Avatar" />
+        <span>Hao Nguyen</span>
+      </div>
+    </div>
+
+    <div class="content-body">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

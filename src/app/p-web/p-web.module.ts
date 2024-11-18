@@ -104,7 +104,6 @@ import { CustomerDialogComponent } from './shared/components/C-cart/customer-dia
     P007NewDetailComponent,
     NewDetailComponent,
     CustomerDialogComponent
-    // NewBennerComponent,
   ],
   imports: [
     CommonModule,

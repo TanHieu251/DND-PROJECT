@@ -1,8 +1,29 @@
+import { DecimalPipe } from "@angular/common";
+import { CustomerDialogComponent } from '../p-web/shared/components/C-cart/customer-dialog/customer-dialog.component';
+
 export interface Item {
   title: string;
   subcategories: string[];
   isOpen: boolean;
 }
+// export interface Customer {
+//   id: number;
+//   name: string;
+//   email: string;
+//   phone: number;
+//   location: string;
+// }
+// const CustomerData: Customer[] = [
+//   {id: 1, name: 'hao nguyen', email: 'haonguyen@gmail.com', phone: 84999333999, location:'DT, Cl'},
+
+// ];
+export const status = [
+  { id: 1, name: 'Đang soạn thảo' },
+  { id: 2, name: 'Gửi duyệt' },
+  { id: 3, name: 'Đã duyệt' },
+  { id: 4, name: 'Ngưng áp dụng' },
+  { id: 5, name: 'Trả về' },
+];
 
 export interface Product {
   id: string;
@@ -19,7 +40,25 @@ export interface Product {
   thumbnail: string;
   quantity: number;
 }
+// export interface ProductManage {
+//   id: number;
+//   name: string;
+//   email: string;
+//   phone: string;
+//   location: string;
+// }
 
+export const ManageProduct = [
+  {
+    id: 1,
+    title: 'Quản lý sản phẩm',
+    subcategories: ['Sản phẩm điện tử', 'Sản phẩm điều khiển'],
+    isOpen: false,
+    price:'',
+    quantity: '',
+    image: '',
+  }
+]
 export interface News {
   id: number;
   title: string;

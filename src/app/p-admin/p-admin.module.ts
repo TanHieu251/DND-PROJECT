@@ -7,13 +7,21 @@ import {TableComponent} from "./shared/components/table/table.component";
 import {StatusPipe} from "./shared/pipe/status.pipe";
 import {AddSPipe} from "./shared/pipe/second-time.pipe";
 import {MatPaginator} from "@angular/material/paginator";
+import { ManageComponent } from './shared/components/admin-manage/sidebar_manage/manage.component';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { LayoutAdminComponent } from './shared/components/admin-manage/layout-admin/layout-admin.component';
+import { ProductManageComponent } from './shared/components/admin-manage/product-manage/product-manage.component';
 
 @NgModule({
 
   declarations: [
     TableComponent,
     StatusPipe,
-    AddSPipe
+    AddSPipe,
+    LayoutAdminComponent,
+    ManageComponent,
+    ProductManageComponent,
+    TableComponent,
   ],
   imports: [
     CommonModule,
@@ -21,6 +29,9 @@ import {MatPaginator} from "@angular/material/paginator";
     MatTableModule,
     MatCheckboxModule,
     MatPaginator,
+    RouterLink,
+    RouterOutlet
+    // ManageComponent
   ],
 })
 export class PAdminModule {}

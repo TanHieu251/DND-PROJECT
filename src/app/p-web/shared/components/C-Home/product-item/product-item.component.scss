@@ -9,6 +9,7 @@
 
       .navigation-button {
         position: absolute;
+        // display: ;
         top: 40%;
         border-radius: 50%;
         transform: translateY(-50%);
@@ -35,7 +36,7 @@
       .products-wrapper {
         display: grid;
         gap: 10px;
-        width: 100%;
+        width: 90%;
         // max-height: 500px;
           padding: 10px;
           display: grid;
