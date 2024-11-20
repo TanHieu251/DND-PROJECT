@@ -77,7 +77,5 @@ export class TableComponent implements OnInit {
     this.onClickAction.emit(item);
   }
 
-  //#endregion
 
-  //#endregion
 }

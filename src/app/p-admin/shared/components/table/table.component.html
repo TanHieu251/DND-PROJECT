@@ -1,8 +1,10 @@
 <div class="mat-elevation-z8 myCustomTable">
+
+  <!-- <app-drawer-create></app-drawer-create> -->
+
   <table mat-table [dataSource]="dataSource">
     <!-- Ng-content để chèn cột từ component cha -->
     <ng-container *ngFor="let column of displayedColumns" [matColumnDef]="column">
-
 
       <!-- Regular Columns -->
       <ng-container *ngIf="column !== 'select' && column !== 'popup'">
@@ -19,10 +21,11 @@
               <span class="show-popup">...</span>
             </button>
           </div>
-
         </td>
       </ng-container>
+
     </ng-container>
+
 
     <!-- Header Row -->
     <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
