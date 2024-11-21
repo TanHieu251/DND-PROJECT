@@ -8,6 +8,7 @@ import { OrderManageComponent } from './pages/admin-manage/order-manage/order-ma
 import { ProductManageComponent } from './pages/admin-manage/product-manage/product-manage.component';
 import { ProjectManageComponent } from './pages/admin-manage/project-manage/project-manage.component';
 import { ServiceManageComponent } from './pages/admin-manage/service-manage/service-manage.component';
+import { P001ProductCategoryComponent } from './pages/p001-product-category/p001-product-category.component';
 
 const routes: Routes = [
     {
@@ -15,6 +16,7 @@ const routes: Routes = [
       component: LayoutComponent,
       children: [
         { path: '', redirectTo: 'productManage', pathMatch: 'full' },
+        { path: 'product-category', component: P001ProductCategoryComponent },
         { path: 'productManage', component: ProductManageComponent },
         { path: 'projectManage', component: ProjectManageComponent },
         { path: 'newsManage', component: NewsManageComponent },

@@ -1,55 +1,61 @@
-<div class="app-category">
-    <mat-drawer-container [hasBackdrop]="true">
-        <mat-drawer #drawer [mode]="'over'" position="end" [opened]="isDrawerOpen" aria-label="Side drawer">
-            <div class="drawer">
-                <div
-                    class="drawer-header w-full h-14 border-blue-500 border-b-2 flex items-center text-xl justify-between px-2">
-                    <span class=" text-blue-500 font-medium">LOẠI SẢN PHẨM</span>
-                    <div class="btn-delete bg-red-500 text-white rounded px-4 cursor-pointer hover:opacity-70"
-                        (click)="onDelete()">Xoá</div>
-                </div>
-                <div class="drawer-container">
-                    <div class="drawer-content">
-                        <div class="group-form  w-full ">
-                            <div class="w-full pb-2 text-label uppercase"><span class="label">Loại sản phẩm </span>
-                            </div>
-                            <input [(ngModel)]="dataItem.Name" class="ipn" type="text" placeholder="Tên loại sản phẩm">
-                        </div>
-                        <div class="group-form  w-full pt-5" *ngIf="!isAddNew">
-                            <div class="w-full pb-2 text-label uppercase"><span class="label">Trạng thái </span>
-                            </div>
-                            <button class="dropdown" nz-button nz-dropdown [nzDropdownMenu]="menu4" nzTrigger="click">
-                                {{dataItem.StatusName}}
-                                <span nz-icon nzType="down"></span>
-                            </button>
-                            <nz-dropdown-menu #menu4="nzDropdownMenu">
-                                <ul nz-menu>
-                                    <li nz-menu-item (click)="onChangeStatus()" *ngFor="let item of ListStatusOption">
-                                        {{item.StatusName}}</li>
+<div class="mat-elevation-z8 myCustomTable">
 
-                                </ul>
-                            </nz-dropdown-menu>
+    <div class="app-category">
+        <mat-drawer-container [hasBackdrop]="true">
+            <mat-drawer #drawer [mode]="'over'" position="end" [opened]="isDrawerOpen" aria-label="Side drawer">
+                <div class="drawer">
+                    <div
+                        class="drawer-header w-full h-14 border-blue-500 border-b-2 flex items-center text-xl justify-between px-2">
+                        <span class=" text-blue-500 font-medium">LOẠI SẢN PHẨM</span>
+                        <div *ngIf="!isAddNew" class="btn-delete bg-red-500 text-white rounded px-4 cursor-pointer hover:opacity-70"
+                            (click)="onDelete()">Xoá</div>
+                    </div>
+                    <div class="drawer-container">
+                        <div class="drawer-content">
+                            <div class="group-form  w-full ">
+                                <div class="w-full pb-2 text-label uppercase"><span class="label">Loại sản phẩm </span>
+                                </div>
+                                <input [(ngModel)]="dataItem.Name" class="ipn" type="text"
+                                    placeholder="Tên loại sản phẩm">
+                            </div>
+                            <div class="group-form  w-full pt-5" *ngIf="!isAddNew">
+                                <div class="w-full pb-2 text-label uppercase"><span class="label">Trạng thái </span>
+                                </div>
+                                <button class="dropdown" nz-button nz-dropdown [nzDropdownMenu]="menu4"
+                                    nzTrigger="click">
+                                    {{dataItem.StatusName}}
+                                    <span nz-icon nzType="down"></span>
+                                </button>
+                                <nz-dropdown-menu #menu4="nzDropdownMenu">
+                                    <ul nz-menu>
+                                        <li nz-menu-item (click)="onChangeStatus()"
+                                            *ngFor="let item of ListStatusOption">
+                                            {{item.StatusName}}</li>
+
+                                    </ul>
+                                </nz-dropdown-menu>
+                            </div>
+                        </div>
+                        <div class="drawer-footer pt-8">
+                            <button class="btn close  text-black uppercase" (click)="toggleDrawer()">ĐÓNG</button>
+                            <button class="btn confirm  text-white uppercase" (click)="onUpdate()"
+                                *ngIf="isAddNew==true">Thêm mới</button>
+                            <button class="btn confirm  text-white uppercase" (click)="onUpdate()" *ngIf="!isAddNew">Cập
+                                Nhật</button>
                         </div>
                     </div>
-                    <div class="drawer-footer pt-8">
-                        <button class="btn close  text-black uppercase" (click)="toggleDrawer()">ĐÓNG</button>
-                        <button class="btn confirm  text-white uppercase" (click)="onUpdate()"
-                            *ngIf="isAddNew==true">Thêm mới</button>
-                        <button class="btn confirm  text-white uppercase" (click)="onUpdate()" *ngIf="!isAddNew">Cập
-                            Nhật</button>
+                </div>
+            </mat-drawer>
+            <mat-drawer-content>
+                <div class="header">
+                    <div class="group-btn">
+                        <button (click)="onAddNew()" class="btn uppercase bg-blue-500 text-white">+ Thêm mới</button>
                     </div>
                 </div>
-            </div>
-        </mat-drawer>
-        <mat-drawer-content>
-            <div class="header">
-                <div class="group-btn">
-                    <button (click)="onAddNew()" class="btn uppercase bg-blue-500 text-white">+ Thêm mới</button>
-                </div>
-            </div>
-            <app-table class="app-table" [data]="data" (onClickAction)="onClickAction($event)"
-                [displayedColumns]="displayedColumns">
-            </app-table>
-        </mat-drawer-content>
-    </mat-drawer-container>
+                <app-table class="app-table" [data]="data" (onClickAction)="onClickAction($event)"
+                    [displayedColumns]="displayedColumns">
+                </app-table>
+            </mat-drawer-content>
+        </mat-drawer-container>
+    </div>
 </div>

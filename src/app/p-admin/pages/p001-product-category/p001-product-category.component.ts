@@ -59,6 +59,8 @@ export class P001ProductCategoryComponent {
   onUpdate() {
     this.isAddNew = false;
     this.isDrawerOpen = false;
+    this.dataItem.DateTime = new Date();
+    console.log(this.dataItem);
   }
   onDelete() {
     console.log(this.dataItem);

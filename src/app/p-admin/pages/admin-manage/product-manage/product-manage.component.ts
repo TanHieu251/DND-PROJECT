@@ -11,9 +11,9 @@ import { NzUploadFile } from 'ng-zorro-antd/upload';
 @Component({
   selector: 'app-product-manage',
   templateUrl: './product-manage.component.html',
-  styleUrls: ['./product-manage.component.scss']
+  styleUrls: ['./product-manage.component.scss'],
 })
-export class ProductManageComponent implements OnInit  {
+export class ProductManageComponent implements OnInit {
   visible = false;
   productForm!: FormGroup;
   date = null;
@@ -31,25 +31,22 @@ export class ProductManageComponent implements OnInit  {
     'popup',
   ];
 
-  products :any []= [
+  products: any[] = [
     {
-      id: "DND01",
+      id: 'DND01',
       name: 'Sản phẩm A',
       price: 100000,
       category: 'Loại 1',
       status: 'Còn hàng',
       image: 'path-to-image',
     },
-
-  ]
+  ];
 
   dataSource = new MatTableDataSource<any>(this.products);
   selection = new SelectionModel<any>(true, []);
 
-
   statuses = ['Active', 'Inactive'];
-  defaultFileList: NzUploadFile[] = [
-  ];
+  defaultFileList: NzUploadFile[] = [];
 
   fileList1 = [...this.defaultFileList];
 
@@ -84,11 +81,12 @@ export class ProductManageComponent implements OnInit  {
     // Handle image file change
     console.log(event.target.files);
   }
-  close(){}
+
+  close() {
+    this.closeDrawer();
+  }
+  
   onChange(result: Date): void {
     console.log('onChange: ', result);
   }
-
 }
-
-
