@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TableComponent } from './shared/components/table/table.component';
 import { LayoutComponent } from './shared/components/layout/layout.component';
-import { ProductManageComponent } from './shared/components/admin-manage/product-manage/product-manage.component';
-import { CustomerManageComponent } from './shared/components/admin-manage/customer-manage/customer-manage.component';
-import { NewsManageComponent } from './shared/components/admin-manage/news-manage/news-manage.component';
-import { OrderManageComponent } from './shared/components/admin-manage/order-manage/order-manage.component';
-import { ProjectManageComponent } from './shared/components/admin-manage/project-manage/project-manage.component';
-import { ServiceManageComponent } from './shared/components/admin-manage/service-manage/service-manage.component';
+import { CustomerManageComponent } from './pages/admin-manage/customer-manage/customer-manage.component';
+import { NewsManageComponent } from './pages/admin-manage/news-manage/news-manage.component';
+import { OrderManageComponent } from './pages/admin-manage/order-manage/order-manage.component';
+import { ProductManageComponent } from './pages/admin-manage/product-manage/product-manage.component';
+import { ProjectManageComponent } from './pages/admin-manage/project-manage/project-manage.component';
+import { ServiceManageComponent } from './pages/admin-manage/service-manage/service-manage.component';
 
 const routes: Routes = [
     {

@@ -16,25 +16,22 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { ManageComponent } from './shared/components/admin-manage/sidebar_manage/manage.component';
-import { ProductManageComponent } from './shared/components/admin-manage/product-manage/product-manage.component';
-import { LayoutAdminComponent } from './shared/components/admin-manage/layout-admin/layout-admin.component';
-import { CustomerManageComponent } from './shared/components/admin-manage/customer-manage/customer-manage.component';
-import { ProjectManageComponent } from './shared/components/admin-manage/project-manage/project-manage.component';
-import { NewsManageComponent } from './shared/components/admin-manage/news-manage/news-manage.component';
-import { OrderManageComponent } from './shared/components/admin-manage/order-manage/order-manage.component';
-import { ServiceManageComponent } from './shared/components/admin-manage/service-manage/service-manage.component';
+
 import { NzDrawerModule } from 'ng-zorro-antd/drawer';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzSelectModule } from 'ng-zorro-antd/select';
-import { DrawerCreateComponent } from './shared/components/create/drawer-create/drawer-create.component';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
-import { en_US, NzI18nService, zh_CN } from 'ng-zorro-antd/i18n';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
-import { CreateProjectComponent } from './shared/components/create/create-project/create-project.component';
+import { CustomerManageComponent } from './pages/admin-manage/customer-manage/customer-manage.component';
+import { NewsManageComponent } from './pages/admin-manage/news-manage/news-manage.component';
+import { OrderManageComponent } from './pages/admin-manage/order-manage/order-manage.component';
+import { ProductManageComponent } from './pages/admin-manage/product-manage/product-manage.component';
+import { ProjectManageComponent } from './pages/admin-manage/project-manage/project-manage.component';
+import { ServiceManageComponent } from './pages/admin-manage/service-manage/service-manage.component';
+import { ManageComponent } from './pages/admin-manage/sidebar_manage/manage.component';
 
 
 @NgModule({
@@ -52,8 +49,8 @@ import { CreateProjectComponent } from './shared/components/create/create-projec
     OrderManageComponent,
     ServiceManageComponent,
     LayoutComponent,
-    DrawerCreateComponent,
-    CreateProjectComponent
+    // DrawerCreateComponent,
+    // CreateProjectComponent
 
 
   ],
