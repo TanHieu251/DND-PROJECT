@@ -1,0 +1,71 @@
+::ng-deep{
+  app-p007-customer-manage{
+    // .mat-elevation-z8.myCustomTable {
+    //   nz-drawer {
+    //     .ant-drawer-body {
+    //       display: flex;
+    //       flex-direction: column;
+    //       padding: 16px;
+
+    //       form {
+    //         display: flex;
+    //         flex-direction: column;
+
+    //         nz-form-item {
+    //           margin-bottom: 16px;
+
+    //           nz-form-label {
+    //             font-weight: 600;
+    //             margin-bottom: 8px;
+    //             display: block;
+    //           }
+
+    //           nz-form-control {
+    //             input[nz-input],
+    //             textarea[nz-input] {
+    //               width: 100%;
+    //               padding: 8px;
+    //               border: 1px solid #d9d9d9;
+    //               border-radius: 4px;
+    //               font-size: 14px;
+
+    //               &:focus {
+    //                 border-color: #40a9ff;
+    //                 box-shadow: 0 0 3px rgba(24, 144, 255, 0.5);
+    //               }
+    //             }
+
+    //             textarea[nz-input] {
+    //               resize: vertical;
+    //             }
+
+
+    //           }
+    //         }
+    //       }
+
+    //       .delete-button {
+    //         background-color: #ff4d4f;
+    //         color: white;
+
+    //         &:hover {
+    //           background-color: #d9363e;
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+  }
+}
+
+.phoneCustomer{
+  margin-left: 70px;
+}
+.emailCustomer{
+  margin-left: 60px;
+}
+.description{
+  margin-left: 30px;
+}
+
+

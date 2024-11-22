@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { ProductServicesService } from '../../shared/services/product-services.service';
-import { Until_check } from '../../../p-lib/until/until';
+import { Component, ViewChild } from '@angular/core';
 import { NotificationServiceService } from '../../../p-lib/services/notification-service.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NzUploadFile } from 'ng-zorro-antd/upload';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-p001-product-category',
@@ -9,125 +10,82 @@ import { NotificationServiceService } from '../../../p-lib/services/notification
   styleUrl: './p001-product-category.component.scss',
 })
 export class P001ProductCategoryComponent {
-  data = [
-    {
-      Name: 'Công tắc',
-      Status: 0,
-      StatusName: 'Đang soạn thảo',
-    },
+  visible = false;
+  isEditing = false;
+  currentCategory : any = null;
+  categoryForm!: FormGroup;
+  date = null;
+  value = 0;
 
-    {
-      Name: 'Tủ',
-      Status: 1,
-      StatusName: 'Đang soạn thảo',
-    },
-    {
-      Name: 'Áp suất',
-      Status: 2,
-      StatusName: 'Đang soạn thảo',
-    },
+  defaultFileList: NzUploadFile[] = [
   ];
 
-  //common
-  ListTypeProduct: any[] = [];
-  dataItem: any = {};
-  ListStatusOption: any[] = [];
-  isDrawerOpen: boolean = false;
-  isAddNew: boolean = false;
+  fileList1 = [...this.defaultFileList];
 
-  //table
-  displayedColumns: string[] = ['Name', 'Status', 'StatusName', 'popup'];
+  @ViewChild(MatPaginator, {static:true}) paginator!: MatPaginator;
+  displayedColumnsCategoryProduct: string[] =['Name', 'Status', 'Status Name', 'popup'];
 
-  constructor(
-    private apiService: ProductServicesService,
-    private notifiService: NotificationServiceService
-  ) {}
+  productCategories: any[]=[
+    {Name: 'Cong tac', Status:'0', StatusName:'pending'},
+    {Name: 'O cam', Status:'1', StatusName:'success'},
+    {Name: 'Cau dao', Status:'2', StatusName:'error'},
+  ]
+  constructor(private fb: FormBuilder){}
 
-  //#region Table
-  onClickAction(e: any) {
-    this.dataItem = JSON.parse(JSON.stringify(e));
-    this.toggleDrawer();
-  }
-  //#endregion
+  ngOnInit(): void{
+    this.categoryForm = this.fb.group({
+      Name: ['', Validators.required],
+      Status: ['', Validators.required],
+      StatusName: ['', Validators.required],
 
-  //#region HANDLE
-  onAddNew() {
-    this.isAddNew = true;
-    this.dataItem = {};
-    this.isDrawerOpen = true;
-  }
-  onUpdate() {
-    this.isAddNew = false;
-    this.isDrawerOpen = false;
-    this.dataItem.DateTime = new Date();
-    console.log(this.dataItem);
-  }
-  onDelete() {
-    console.log(this.dataItem);
-  }
-  onChangeStatus() {
-    this.dataItem.Status = 1;
-    this.dataItem.StatusName = 'Duyệt';
-
-    console.log(this.dataItem);
+    })
   }
 
-  onGetStatusOption() {
-    this.ListStatusOption = [];
-    let Status = this.dataItem.Status;
-
-    if (Status == 0) {
-      this.ListStatusOption.push({
-        Status: 1,
-        StatusName: 'Duyệt',
-      });
-    }
-    if (Status == 1) {
-      this.ListStatusOption.push({
-        Status: 1,
-        StatusName: 'Ngưng',
-      });
-    }
-    if (Status == 2) {
-      this.ListStatusOption.push({
-        Status: 0,
-        StatusName: 'Đang soạn',
-      });
-    }
-    return this.ListStatusOption;
+  openDrawerForCreate():void{
+    this.currentCategory = null;
+    this.isEditing = false;
+    this.visible = true;
+    this.categoryForm.reset();
   }
-
-  //#endregion
-
-  //#region DRAWER
-  toggleDrawer() {
-    this.onGetStatusOption();
-    this.isDrawerOpen = !this.isDrawerOpen;
-    this.isAddNew = false;
+  openDrawerForEdit(product: any) :void{
+    this.currentCategory = {...product};
+    this.isEditing = true;
+    this.categoryForm.patchValue({
+      Name: product.Name,
+      Status: product.Status,
+      StatusName: product.StatusName,
+    });
+    this.visible = true;
+    console.log(this.currentCategory);
   }
-
-  //#region API
-
-  /**
-   *
-   * @param data
-   */
-  APIGetListTypeProduct() {
-    this.apiService.GetListTypeProduct().subscribe(
-      (res: any) => {
-        if (Until_check.hasListValue(res)) {
-          this.notifiService.success('Đăng hập thành công');
-          this.ListTypeProduct = res.data;
-        } else {
-          this.notifiService.error('Lấy danh sách không thành công');
-        }
-      },
-      (error) => {
-        this.notifiService.error('Đã xảy ra lỗi khi lấy danh sách', error);
+  saveProduct():void{
+    if (this.isEditing) {
+      const index = this.productCategories.findIndex((p) => p.name === this.currentCategory.name);
+      if(index > 1){
+        this.productCategories[index] = {...this.currentCategory};
       }
-    );
+    }
+    else{
+      const newCategory = {...this.currentCategory, id: Date.now()};
+      this.productCategories.push(newCategory);
+    }
+    this.closeDrawer();
   }
-  //#endregion
-
-  //#endregion
+  deleteProduct(productId: number): void {
+    this.productCategories = this.productCategories.filter((p) => p.id !== productId);
+    this.closeDrawer();
+  }
+  close(){
+    this.visible = false;
+  }
+  openDrawer(): void {
+    this.visible = true; // Mở Drawer
+  }
+  closeDrawer(): void {
+    this.visible = false;
+    this.currentCategory = null;
+  }
+  onChange(result: Date): void {
+    console.log('onChange: ', result);
+  }
 }

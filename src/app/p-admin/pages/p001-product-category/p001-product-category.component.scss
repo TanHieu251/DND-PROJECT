@@ -1,146 +1,151 @@
-::ng-deep {
-    .app-category {
-        width: 100%;
-        height: 100%;
-        position: relative;
+// ::ng-deep {
+//     .app-category {
+//         width: 100%;
+//         height: 100%;
+//         position: relative;
 
-        .mat-drawer-container {
-            position: absolute;
-            width: 100%;
-            height: 100%;
+//         .mat-drawer-container {
+//             position: absolute;
+//             width: 100%;
+//             height: 100%;
 
-            .header {
-                // background-color: #a7b1b9;
-                width: 100%;
-                position: relative;
-                height: 60px;
-                border-bottom: 1px solid black;
+//             .header {
+//                 // background-color: #a7b1b9;
+//                 width: 100%;
+//                 position: relative;
+//                 height: 60px;
+//                 border-bottom: 1px solid black;
 
-                .group-btn {
-                    right: 0;
-                    position: absolute;
-                    display: flex;
-                    align-items: center;
-                    height: 100%;
-                    padding: 0 30px;
+//                 .group-btn {
+//                     right: 0;
+//                     position: absolute;
+//                     display: flex;
+//                     align-items: center;
+//                     height: 100%;
+//                     padding: 0 30px;
 
-                    .btn {
-                        background-color: rgb(10 125 74);
-                        font-size: 16px;
-                        font-weight: 500;
-                        padding: 4px 20px;
-                    }
-                }
+//                     .btn {
+//                         background-color: rgb(10 125 74);
+//                         font-size: 16px;
+//                         font-weight: 500;
+//                         padding: 4px 20px;
+//                     }
+//                 }
 
-            }
+//             }
 
-            .app-table {
-                position: absolute;
-                left: 0;
-                right: 0;
-                bottom: 0;
-            }
-        }
+//             .app-table {
+//                 position: absolute;
+//                 left: 0;
+//                 right: 0;
+//                 bottom: 0;
+//                 top: 60px;
+//             }
+//         }
 
-    }
-}
-
-
-::ng-deep {
-    .mat-drawer-inner-container {
-        background-color: #f6f1f12b;
-    }
-
-    .drawer {
-        position: relative;
-        width: 400px;
-        background-color: #f6f1f12b;
-
-        .drawer-container {
-            padding-top: 20px;
-
-            .drawer-content {
-                padding-left: 10px;
-                font-size: 15px;
-
-                .group-form {
-                    .text-label {
-                        .label {
-                            color: rgb(89 85 85);
-
-                        }
-
-                        font-size: 16px;
-                        font-weight: 600;
-
-                    }
-                }
-
-                .dropdown {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                }
-
-                input,
-                .dropdown {
-                    outline: 1px solid black;
-                    border-radius: 3px;
-                    padding-left: 10px;
-                    font-weight: 500;
-                    height: 35px;
-                    width: 80%;
-                    color: rgb(89 85 85);
+//     }
+// }
 
 
+// ::ng-deep {
+//     .mat-drawer-inner-container {
+//         background-color: #f6f1f12b;
+//     }
+
+//     .drawer {
+//         position: relative;
+//         width: 400px;
+//         background-color: #f6f1f12b;
+
+//         .drawer-container {
+//             padding-top: 20px;
+
+//             .drawer-content {
+//                 padding-left: 10px;
+//                 font-size: 15px;
+
+//                 .group-form {
+//                     .text-label {
+//                         .label {
+//                             color: rgb(89 85 85);
+
+//                         }
+
+//                         font-size: 16px;
+//                         font-weight: 600;
+
+//                     }
+//                 }
+
+//                 .dropdown {
+//                     display: flex;
+//                     justify-content: space-between;
+//                     align-items: center;
+//                 }
+
+//                 input,
+//                 .dropdown {
+//                     outline: 1px solid black;
+//                     border-radius: 3px;
+//                     padding-left: 10px;
+//                     font-weight: 500;
+//                     height: 35px;
+//                     width: 80%;
+//                     color: rgb(89 85 85);
 
 
-                    &:hover {
-
-                        outline: 1px solid #348bd2;
-                    }
-
-                    &:active {
-                        border: none;
-                        outline: none;
-                    }
-
-                    &:focus {
-                        outline: 1px solid #348bd2;
-                    }
-                }
 
 
-            }
-        }
+//                     &:hover {
 
-        .drawer-footer {
-            display: flex;
-            // position: absolute;
-            // bottom: 0;
-            // left: 0;
-            // right: 0;
+//                         outline: 1px solid #348bd2;
+//                     }
 
-            .btn {
-                // width: 200px;
-                flex: 1;
-                background-color: green($color: #000000);
-                height: 40px;
-                font-weight: 500;
+//                     &:active {
+//                         border: none;
+//                         outline: none;
+//                     }
 
-                &.close {
-                    border: 1px solid black;
-                }
+//                     &:focus {
+//                         outline: 1px solid #348bd2;
+//                     }
+//                 }
 
-                &.confirm {
-                    background-color: rgb(10, 125, 74);
-                }
 
-                &:hover {
-                    opacity: 70%;
-                }
-            }
+//             }
+//         }
 
-        }
-    }
+//         .drawer-footer {
+//             display: flex;
+//             // position: absolute;
+//             // bottom: 0;
+//             // left: 0;
+//             // right: 0;
+
+//             .btn {
+//                 // width: 200px;
+//                 flex: 1;
+//                 background-color: green($color: #000000);
+//                 height: 40px;
+//                 font-weight: 500;
+
+//                 &.close {
+//                     border: 1px solid black;
+//                 }
+
+//                 &.confirm {
+//                     background-color: rgb(10, 125, 74);
+//                 }
+
+//                 &:hover {
+//                     opacity: 70%;
+//                 }
+//             }
+
+//         }
+//     }
+// }
+
+.description{
+  margin-left: 20px;
 }

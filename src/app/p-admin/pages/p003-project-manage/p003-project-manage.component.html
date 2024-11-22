@@ -2,7 +2,7 @@
   <!-- Drawer -->
   <nz-drawer
     [nzVisible]="visible"
-    [nzTitle]="isEditing ? 'Cập nhật sản phẩm' : 'Thêm sản phẩm mới'"
+    [nzTitle]="isEditing ? 'Cập nhật tin tức' : 'Thêm tin mới'"
     [nzExtra]="drawerExtra"
     [nzWidth]="720"
     [nzFooter]="footerTpl"
@@ -13,70 +13,43 @@
       *ngIf="isEditing"
       nz-button
       nzDanger
-      (click)="deleteProduct(currentCategory.name)"
+      (click)="deleteProduct(currentProject.name)"
       class="delete-button"
     >
-      Xóa loại sản phẩm
+      Xóa dự án
     </button>
   </ng-template>
-  
+
     <form nz-form *nzDrawerContent>
       <div nz-row [nzGutter]="12">
-        <div nz-col nzSpan="12">
+        <div nz-col nzSpan="16">
           <nz-form-item>
-            <nz-form-label>Loại sản phẩm</nz-form-label>
-            <nz-form-control>
+            <nz-form-label>Tiêu đề dự án</nz-form-label>
+            <nz-form-control
+            class="nameCustomer">
               <input
                 ngModel="product.name"
-                nz-input placeholder="Hãy nhập vào loại sản phẩm..." />
+                nz-input placeholder="Hãy nhập vào tên dự án..." />
             </nz-form-control>
           </nz-form-item>
         </div>
-
       </div>
-
-      <!-- <div nz-row [nzGutter]="12">
-	      <div nz-col nzSpan="12">
-          <nz-form-item>
-            <nz-form-label>Giá sản phẩm</nz-form-label>
-              <nz-form-control>
-                <input nz-input placeholder="Hãy nhập vào giá sản phẩm..." />
-              </nz-form-control>
-          </nz-form-item>
-        </div>
-      </div> -->
-
       <div nz-row [nzGutter]="12">
-        <div nz-col nzSpan="12">
+        <div nz-col nzSpan="16">
           <nz-form-item>
-            <nz-form-label>Loại sản phẩm</nz-form-label>
+            <nz-form-label>Loại dự án</nz-form-label>
             <nz-form-control
             class="selectType"
             >
-              <nz-select ngModel="typeProduct">
-                <nz-option nzValue="type1" nzLabel="type1"></nz-option>
-                <nz-option nzValue="type2" nzLabel="type2"></nz-option>
+              <nz-select ngModel="typeProject">
+                <nz-option nzValue="type1" nzLabel="Tin chính">Tin chính</nz-option>
+                <nz-option nzValue="type2" nzLabel="Tin nổi bật">Tin nổi bật</nz-option>
+                <nz-option nzValue="type2" nzLabel="Tin liên quan">Tin liên quan</nz-option>
               </nz-select>
             </nz-form-control>
           </nz-form-item>
         </div>
-        <div nz-col nzSpan="12">
-            <nz-form-item>
-              <nz-form-label>Trạng thái</nz-form-label>
-              <nz-form-control
-                class="selectType"
-              >
-                <nz-select ngModel="statusProduct">
-                  <nz-option nzValue="status1" nzLabel="status1"></nz-option>
-                  <nz-option nzValue="status2" nzLabel="status2"></nz-option>
-                </nz-select>
-              </nz-form-control>
-            </nz-form-item>
-          </div>
-      </div>
-        <!-- <div nz-row [nzGutter]="12">
-
-        </div> -->
+       </div>
       <div nz-row [nzGutter]="8">
         <div nz-col nzSpan="24">
           <nz-form-item>
@@ -115,7 +88,7 @@
           *ngIf="isEditing"
           nz-button
           nzDanger="danger"
-          (click)="deleteProduct(currentCategory.name)"
+          (click)="deleteProduct(currentProject.name)"
           class="delete-button"
         >
           Xóa sản phẩm
@@ -127,12 +100,12 @@
   </nz-drawer>
 
   <!-- Action Buttons -->
-  <button nz-button nzType="primary" (click)="openDrawerForCreate()">Thêm loại sản phẩm</button>
+  <button nz-button nzType="primary" (click)="openDrawerForCreate()">Thêm dự án mới</button>
 
   <!-- Product Table -->
   <app-table
-    [data]="productCategories"
-    [displayedColumns]="displayedColumnsCategoryProduct"
+    [data]="projects"
+    [displayedColumns]="displayedColumnsProject"
     (onClickAction)="openDrawerForEdit($event)"
   ></app-table>
 </div>

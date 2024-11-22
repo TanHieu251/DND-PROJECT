@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TableComponent } from './shared/components/table/table.component';
 import { LayoutComponent } from './shared/components/layout/layout.component';
-import { CustomerManageComponent } from './pages/admin-manage/customer-manage/customer-manage.component';
-import { NewsManageComponent } from './pages/admin-manage/news-manage/news-manage.component';
-import { OrderManageComponent } from './pages/admin-manage/order-manage/order-manage.component';
-import { ProductManageComponent } from './pages/admin-manage/product-manage/product-manage.component';
-import { ProjectManageComponent } from './pages/admin-manage/project-manage/project-manage.component';
-import { ServiceManageComponent } from './pages/admin-manage/service-manage/service-manage.component';
 import { P001ProductCategoryComponent } from './pages/p001-product-category/p001-product-category.component';
+import { P002ProductManageComponent } from './pages/p002-product-manage/p002-product-manage.component';
+import { P003ProjectManageComponent } from './pages/p003-project-manage/p003-project-manage.component';
+import { P004NewsManageComponent } from './pages/p004-news-manage/p004-news-manage.component';
+import { P005ServicesManageComponent } from './pages/p005-services-manage/p005-services-manage.component';
+import { P006OrderManageComponent } from './pages/p006-order-manage/p006-order-manage.component';
+import { P007CustomerManageComponent } from './pages/p007-customer-manage/p007-customer-manage.component';
 
 const routes: Routes = [
     {
@@ -17,13 +16,13 @@ const routes: Routes = [
       children: [
         { path: '', redirectTo: 'productManage', pathMatch: 'full' },
         { path: 'product-category', component: P001ProductCategoryComponent },
-        { path: 'productManage', component: ProductManageComponent },
-        { path: 'projectManage', component: ProjectManageComponent },
-        { path: 'newsManage', component: NewsManageComponent },
-        { path: 'servicesManage', component: ServiceManageComponent },
-        { path: 'orderManage', component: OrderManageComponent },
-        { path: 'customerManage', component: CustomerManageComponent },
-
+        { path: 'productManage', component: P002ProductManageComponent },
+        { path: 'projectManage', component: P003ProjectManageComponent },
+        { path: 'newsManage', component: P004NewsManageComponent},
+        { path: 'servicesManage', component: P005ServicesManageComponent},
+        { path: 'orderManage', component: P006OrderManageComponent },
+        { path: 'customerManage', component: P007CustomerManageComponent },
+        
       ],
     },
   ];

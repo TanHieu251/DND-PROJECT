@@ -13,10 +13,10 @@
       *ngIf="isEditing"
       nz-button
       nzDanger
-      (click)="deleteProduct(currentCategory.name)"
+      (click)="deleteProduct(currentProduct.name)"
       class="delete-button"
     >
-      Xóa loại sản phẩm
+      Xóa sản phẩm
     </button>
   </ng-template>
   
@@ -24,18 +24,18 @@
       <div nz-row [nzGutter]="12">
         <div nz-col nzSpan="12">
           <nz-form-item>
-            <nz-form-label>Loại sản phẩm</nz-form-label>
+            <nz-form-label>Tên sản phẩm</nz-form-label>
             <nz-form-control>
               <input
                 ngModel="product.name"
-                nz-input placeholder="Hãy nhập vào loại sản phẩm..." />
+                nz-input placeholder="Hãy nhập vào tên sản phẩm..." />
             </nz-form-control>
           </nz-form-item>
         </div>
 
       </div>
 
-      <!-- <div nz-row [nzGutter]="12">
+      <div nz-row [nzGutter]="12">
 	      <div nz-col nzSpan="12">
           <nz-form-item>
             <nz-form-label>Giá sản phẩm</nz-form-label>
@@ -44,12 +44,12 @@
               </nz-form-control>
           </nz-form-item>
         </div>
-      </div> -->
+      </div>
 
       <div nz-row [nzGutter]="12">
         <div nz-col nzSpan="12">
           <nz-form-item>
-            <nz-form-label>Loại sản phẩm</nz-form-label>
+            <nz-form-label>Loại dự án</nz-form-label>
             <nz-form-control
             class="selectType"
             >
@@ -115,7 +115,7 @@
           *ngIf="isEditing"
           nz-button
           nzDanger="danger"
-          (click)="deleteProduct(currentCategory.name)"
+          (click)="deleteProduct(currentProduct.name)"
           class="delete-button"
         >
           Xóa sản phẩm
@@ -127,12 +127,12 @@
   </nz-drawer>
 
   <!-- Action Buttons -->
-  <button nz-button nzType="primary" (click)="openDrawerForCreate()">Thêm loại sản phẩm</button>
+  <button nz-button nzType="primary" (click)="openDrawerForCreate()">Thêm sản phẩm</button>
 
   <!-- Product Table -->
   <app-table
-    [data]="productCategories"
-    [displayedColumns]="displayedColumnsCategoryProduct"
+    [data]="products"
+    [displayedColumns]="displayedColumnsProduct"
     (onClickAction)="openDrawerForEdit($event)"
   ></app-table>
 </div>

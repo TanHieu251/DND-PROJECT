@@ -25,13 +25,13 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
-import { CustomerManageComponent } from './pages/admin-manage/customer-manage/customer-manage.component';
-import { NewsManageComponent } from './pages/admin-manage/news-manage/news-manage.component';
-import { OrderManageComponent } from './pages/admin-manage/order-manage/order-manage.component';
-import { ProductManageComponent } from './pages/admin-manage/product-manage/product-manage.component';
-import { ProjectManageComponent } from './pages/admin-manage/project-manage/project-manage.component';
-import { ServiceManageComponent } from './pages/admin-manage/service-manage/service-manage.component';
-import { ManageComponent } from './pages/admin-manage/sidebar_manage/manage.component';
+import { P002ProductManageComponent } from './pages/p002-product-manage/p002-product-manage.component';
+import { P003ProjectManageComponent } from './pages/p003-project-manage/p003-project-manage.component';
+import { P004NewsManageComponent } from './pages/p004-news-manage/p004-news-manage.component';
+import { P005ServicesManageComponent } from './pages/p005-services-manage/p005-services-manage.component';
+import { P006OrderManageComponent } from './pages/p006-order-manage/p006-order-manage.component';
+import { P007CustomerManageComponent } from './pages/p007-customer-manage/p007-customer-manage.component';
+import { P008SidebarManageComponent } from './pages/p008-sidebar-manage/p008-sidebar-manage.component';
 
 
 @NgModule({
@@ -40,17 +40,14 @@ import { ManageComponent } from './pages/admin-manage/sidebar_manage/manage.comp
     StatusPipe,
     AddSPipe,
     P001ProductCategoryComponent,
-    // LayoutAdminComponent,
-    ManageComponent,
-    ProductManageComponent,
-    CustomerManageComponent,
-    ProjectManageComponent,
-    NewsManageComponent,
-    OrderManageComponent,
-    ServiceManageComponent,
+    P002ProductManageComponent,
+    P003ProjectManageComponent,
+    P004NewsManageComponent,
+    P005ServicesManageComponent,
+    P006OrderManageComponent,
+    P007CustomerManageComponent,
+    P008SidebarManageComponent,
     LayoutComponent,
-    // DrawerCreateComponent,
-    // CreateProjectComponent
 
 
   ],
