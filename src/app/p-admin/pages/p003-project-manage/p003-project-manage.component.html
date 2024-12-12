@@ -1,111 +1,111 @@
-<div class="mat-elevation-z8 myCustomTable">
-  <!-- Drawer -->
-  <nz-drawer
-    [nzVisible]="visible"
-    [nzTitle]="isEditing ? 'Cập nhật tin tức' : 'Thêm tin mới'"
-    [nzExtra]="drawerExtra"
-    [nzWidth]="720"
-    [nzFooter]="footerTpl"
-    (nzOnClose)="closeDrawer()"
-  >
-  <ng-template #drawerExtra>
-    <button
-      *ngIf="isEditing"
-      nz-button
-      nzDanger
-      (click)="deleteProduct(currentProject.name)"
-      class="delete-button"
-    >
-      Xóa dự án
-    </button>
-  </ng-template>
+<div class="project-mana">
+  <div class="mat-elevation-z8 myCustomTable">
+    <!-- Drawer -->
+    <nz-drawer [nzVisible]="visible" [nzTitle]="isEditing ? 'Cập nhật tin tức' : 'Thêm tin mới'" [nzExtra]="drawerExtra"
+      [nzWidth]="720" [nzFooter]="footerTpl" (nzOnClose)="closeDrawer()">
+      <ng-template #drawerExtra>
+        <button *ngIf="isEditing" nz-button nzDanger (click)="deleteProduct(currentProject.name)" class="delete-button">
+          Xóa dự án
+        </button>
+      </ng-template>
 
-    <form nz-form *nzDrawerContent>
-      <div nz-row [nzGutter]="12">
-        <div nz-col nzSpan="16">
-          <nz-form-item>
-            <nz-form-label>Tiêu đề dự án</nz-form-label>
-            <nz-form-control
-            class="nameCustomer">
-              <input
-                ngModel="product.name"
-                nz-input placeholder="Hãy nhập vào tên dự án..." />
-            </nz-form-control>
-          </nz-form-item>
+      <form nz-form *nzDrawerContent [formGroup]="projectForm">
+        <div nz-row [nzGutter]="12">
+          <div nz-col nzSpan="16">
+            <nz-form-item>
+              <nz-form-label>Tiêu đề dự án</nz-form-label>
+              <nz-form-control class="nameCustomer">
+                <input formControlName="Name" nz-input placeholder="Hãy nhập vào tên dự án..." />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
         </div>
-      </div>
-      <div nz-row [nzGutter]="12">
-        <div nz-col nzSpan="16">
+
+        <div nz-row [nzGutter]="12">
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label>Loại dự án</nz-form-label>
+              <nz-form-control class="selectType">
+                <nz-select formControlName="TypeData" ngModel={{currentProject?.TypeData}}>
+                  <nz-option *ngFor="let item of ListTypeProject" nzValue={{item.TypeData}}
+                    nzLabel={{item.TypeName}}></nz-option>
+                </nz-select>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+        <div nz-row [nzGutter]="12">
+          <div nz-col nzSpan="16">
+            <nz-form-item>
+              <nz-form-label>Chi tiết dự án</nz-form-label>
+              <nz-form-control class="nameCustomer">
+                <input formControlName="Feature" nz-input placeholder="Hãy nhập mô tả dự án" />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+        <div nz-col nzSpan="12" *ngIf="isEditing">
           <nz-form-item>
-            <nz-form-label>Loại dự án</nz-form-label>
-            <nz-form-control
-            class="selectType"
-            >
-              <nz-select ngModel="typeProject">
-                <nz-option nzValue="type1" nzLabel="Tin chính">Tin chính</nz-option>
-                <nz-option nzValue="type2" nzLabel="Tin nổi bật">Tin nổi bật</nz-option>
-                <nz-option nzValue="type2" nzLabel="Tin liên quan">Tin liên quan</nz-option>
+            <nz-form-label>Trạng thái</nz-form-label>
+            <nz-form-control class="selectType">
+              <nz-select formControlName="Status" ngModel={{currentProject?.Status}}>
+                <nz-option *ngFor="let item of listOptionStatus" nzValue={{item.Status}}
+                  nzLabel={{item.StatusName}}></nz-option>
+
               </nz-select>
             </nz-form-control>
           </nz-form-item>
         </div>
-       </div>
-      <div nz-row [nzGutter]="8">
-        <div nz-col nzSpan="24">
-          <nz-form-item>
-            <nz-form-label>Description</nz-form-label>
-            <nz-form-control  class="description">
-              <textarea
-                nz-input
-                placeholder="please enter url description"
-                [nzAutosize]="{ minRows: 8, maxRows: 8 }"
-              ></textarea>
-            </nz-form-control>
-          </nz-form-item>
+        <div nz-row [nzGutter]="8">
+          <div nz-col nzSpan="24">
+            <nz-form-item>
+              <nz-form-label>Description</nz-form-label>
+              <nz-form-control class="description">
+                <textarea formControlName="Description" nz-input placeholder="please enter url description"
+                  [nzAutosize]="{ minRows: 8, maxRows: 8 }"></textarea>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
         </div>
-      </div>
-      <div nz-row [nzGutter]="12">
-        <div nz-col nzSpan="16">
-          <nz-form-item>
-            <nz-form-label>Image</nz-form-label>
-            <nz-upload
-              nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-              nzListType="picture"
-              [(nzFileList)]="fileList1"
-            >
-          <button nz-button>
-            <span nz-icon nzType="upload"></span>
-            Upload
-          </button>
-        </nz-upload>
-          </nz-form-item>
+        <div nz-row [nzGutter]="12">
+          <div nz-col nzSpan="16">
+            <nz-form-item>
+              <nz-form-label>Image</nz-form-label>
+              <nz-upload nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76" nzListType="picture"
+                [(nzFileList)]="fileList1" formControlName="Description">
+                <button nz-button>
+                  <span nz-icon nzType="upload"></span>
+                  Upload
+                </button>
+              </nz-upload>
+            </nz-form-item>
+          </div>
         </div>
-      </div>
-    </form>
-    <ng-template #footerTpl>
-      <div style="float: right">
-        <!-- <button
-          *ngIf="isEditing"
-          nz-button
-          nzDanger="danger"
-          (click)="deleteProduct(currentProject.name)"
-          class="delete-button"
-        >
-          Xóa sản phẩm
-        </button> -->
-        <button nz-button style="margin-right: 8px;" (click)="closeDrawer()">Cancel</button>
-        <button nz-button style="margin-right: 8px;" nzType="primary" (click)="saveProduct()">Submit</button>
-      </div>
-    </ng-template>
-  </nz-drawer>
+      </form>
+      <ng-template #footerTpl>
+        <div style="float: right">
+          <!-- <button
+            *ngIf="isEditing"
+            nz-button
+            nzDanger="danger"
+            (click)="deleteProduct(currentProject.name)"
+            class="delete-button"
+          >
+            Xóa sản phẩm
+          </button> -->
+          <button nz-button style="margin-right: 8px;" (click)="closeDrawer()">Cancel</button>
+          <button nz-button style="margin-right: 8px;" nzType="primary" (click)="saveProduct()">Submit</button>
+        </div>
+      </ng-template>
+    </nz-drawer>
 
-  <!-- Action Buttons -->
-  <button nz-button nzType="primary" (click)="openDrawerForCreate()">Thêm dự án mới</button>
+    <!-- Action Buttons -->
+    <div class="app-table">
+      <button nz-button nzType="primary" (click)="openDrawerForCreate()">Thêm dự án mới</button>
 
-  <!-- Product Table -->
-  <app-table
-    [data]="projects"
-    [displayedColumns]="displayedColumnsProject"
-    (onClickAction)="openDrawerForEdit($event)"
-  ></app-table>
+      <!-- Product Table -->
+      <app-table [data]="projects" [displayedColumns]="displayedColumnsProject"
+        (onClickAction)="openDrawerForEdit($event)"></app-table>
+    </div>
+  </div>
 </div>

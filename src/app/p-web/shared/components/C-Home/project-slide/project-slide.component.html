@@ -19,15 +19,15 @@
       </div>
 
       <div class="navigation-buttons" *ngIf="isResponsive">
-        <button class="fa-solid fa-arrow-left" (click)="prevSlide()"></button>
-        <button class="fa-solid fa-arrow-right" (click)="nextSlide()"></button>
+        <button class="fa-solid fa-arrow-left icon-slide" (click)="prevSlide()"></button>
+        <button class="fa-solid fa-arrow-right icon-slide" (click)="nextSlide()"></button>
       </div>
 
-      <div class="change-route absolute top-20 text-black z-10 right-8 underline">
-        <span [routerLink]="'/projects'">Xem tất cả dự án
-          <i class="fas fa-arrow-right ml-3 icon"></i>
-        </span>
-      </div>
+
+    </div>
+    <div class="change-route  text-black z-10  underline ">
+      <button class="link" [routerLink]="'/projects'">Xem tất cả
+      </button>
     </div>
   </div>
 </div>

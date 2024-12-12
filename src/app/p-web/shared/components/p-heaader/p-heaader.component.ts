@@ -161,8 +161,8 @@ export class HeaderComponent implements OnInit {
     this.paginateProducts();
   } else if (this.selectedMenu === 'Dịch vụ'){
     this.serviceData = this.originalServiceData.filter(service =>
-      service.title.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
-      service.description.toString().includes(this.searchTerm)
+      service.Name.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+      service.Description.toString().includes(this.searchTerm)
     );
     this.paginateServices();
   }

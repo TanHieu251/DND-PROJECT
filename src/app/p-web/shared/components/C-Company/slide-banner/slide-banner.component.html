@@ -1,8 +1,8 @@
-<div class="banner">
-  <img class="banner-image w-full"
-    src="assets/gioithieu2.jpg" >
-<div class="banner-content">
-  <span class="text industry">Giới thiệu</span>
-  <!-- <span class="text electric">ELECTRIC</span> -->
-</div>
+<div class="product-banner">
+  <div class="banner-cover" *ngFor="let product of productsBanner">
+    <div class="image">
+      <img [src]="product.image" alt="Product Image">
+    </div>
+
+  </div>
 </div>

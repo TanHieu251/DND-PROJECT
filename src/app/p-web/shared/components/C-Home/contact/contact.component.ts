@@ -26,22 +26,5 @@ export class ContactComponent {
   ]
 
   constructor(private elementRef: ElementRef, private router: Router) {}
-  goToContact(){
-    this.router.navigate(['/contacts']).then(() =>{
-      window.scrollTo({top: 0, behavior:'smooth'});
-    })
-  }
-  @HostListener('window:scroll', ['$event'])
-  onScroll(): void {
-    const containerPosition = this.elementRef.nativeElement.getBoundingClientRect().top;
-    const screenPosition = window.innerHeight;
-
-    if (containerPosition < screenPosition) {
-      this.textActive = true;
-      this.imgActive = true;
-    } else{
-      this.textActive=false;
-      this.imgActive=false;
-    }
-  }
+  
 }

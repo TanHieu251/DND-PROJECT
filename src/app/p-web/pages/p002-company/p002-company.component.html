@@ -1,4 +1,25 @@
 <app-slide-banner></app-slide-banner>
-<!-- <app-oustanding-content></app-oustanding-content> -->
-<app-c-content></app-c-content>
+<div class="main-title">
+    <div class="about-us flex flex-row w-full items-center  relative">
+        <div class="about-left w-1/2   items-center  flex flex-row justify-end ">
+            <div class="about-left-content w-3/5 items-center">
+                <div class="about-name ">Về chúng tôi <span class="text-name text-6xl"> {{dataCompany.name}}</span>
+                </div>
+                <div class="about-company uppercase">{{dataCompany.about}}</div>
+                <div class="about-description">{{dataCompany.description}}</div>
+
+            </div>
+        </div>
+        <div class="img rounded-lg">
+            <video class="rounded-lg" [muted]="true" autoplay loop src="../../../../assets/company.mp4"></video>
+        </div>
+
+
+    </div>
+
+</div>
+<!-- <div class="h-[200px] w-full bg-blue-600 mt-6">
+    <img src="https://www.oyo.co.jp/bousai-gensai/assets/images/020_mainvisual.jpg" class="w-full h-full object-cover" alt="">
+</div> -->
+<app-c-content [Company]="dataCompany"></app-c-content>
 <app-c-members></app-c-members>

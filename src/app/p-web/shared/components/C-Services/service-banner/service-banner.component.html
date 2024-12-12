@@ -1,12 +1,8 @@
-<div class="slider-container">
-  <div class="slides" [style.transform]="'translateX(' + slidePosition + '%)'">
-    <div class="slide" *ngFor="let slide of slides">
-      <img [src]="slide.image" alt="Slide Image">
-      <h2>{{ slide.title }}</h2>
-      <p>{{ slide.description }}</p>
+<div class="product-banner">
+  <div class="banner-cover" *ngFor="let product of productsBanner">
+    <div class="image">
+      <img [src]="product.image" alt="Product Image">
     </div>
-  </div>
 
-  <button class="fa-solid fa-arrow-left" (click)="prevSlide()"></button>
-  <button class="fa-solid fa-arrow-right" (click)="nextSlide()"></button>
+  </div>
 </div>

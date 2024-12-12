@@ -98,7 +98,7 @@
 
 //                     &:hover {
 
-//                         outline: 1px solid #348bd2;
+//                         outline: 1px solid #0052cc;
 //                     }
 
 //                     &:active {
@@ -107,7 +107,7 @@
 //                     }
 
 //                     &:focus {
-//                         outline: 1px solid #348bd2;
+//                         outline: 1px solid #0052cc;
 //                     }
 //                 }
 
@@ -146,6 +146,16 @@
 //     }
 // }
 
-.description{
-  margin-left: 20px;
+::ng-deep {
+  .product-category {
+    height: 100%;
+    position: relative;
+
+    .app-table {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
 }

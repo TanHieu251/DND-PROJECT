@@ -1,7 +1,7 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PWebRoutingModule } from './p-web.routing.module';
-import { PFooterComponent } from '../p-footer/p-footer/p-footer.component';
+import { PFooterComponent } from './shared/components/p-footer/p-footer.component';
 import { RouterLink, RouterOutlet, Routes } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
 import { P001HomeComponent } from './pages/p001-home/p001-home.component';
@@ -50,7 +50,6 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { P007NewsComponent } from './pages/p007-news/p007-news/p007-news.component';
 import { NewsContentComponent } from './shared/components/C-News/news-content/news-content.component';
 import { NewBannerComponent } from './shared/components/C-News/new-benner/new-benner.component';
-import { OustandingContentComponent } from './shared/components/C-Company/oustanding-content/oustanding-content.component';
 import { NewsRealationComponent } from './shared/components/C-News/news-realation/news-realation.component';
 import { P007NewDetailComponent } from './pages/p007-new-detail/p007-new-detail/p007-new-detail.component';
 import { NewDetailComponent } from './shared/components/C-News/new-detail/new-detail.component';
@@ -69,7 +68,6 @@ import { CustomerDialogComponent } from './shared/components/C-cart/customer-dia
     ProductItemComponent,
     MoreInformationComponent,
     P002CompanyComponent,
-    OustandingContentComponent,
     SlideBannerComponent,
     CContentComponent,
     CMembersComponent,

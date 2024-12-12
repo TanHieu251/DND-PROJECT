@@ -8,24 +8,25 @@ import { P004NewsManageComponent } from './pages/p004-news-manage/p004-news-mana
 import { P005ServicesManageComponent } from './pages/p005-services-manage/p005-services-manage.component';
 import { P006OrderManageComponent } from './pages/p006-order-manage/p006-order-manage.component';
 import { P007CustomerManageComponent } from './pages/p007-customer-manage/p007-customer-manage.component';
+import { P009ProjectCategoryComponent } from './pages/p009-project-category/p009-project-category.component';
 
 const routes: Routes = [
-    {
-      path: '',
-      component: LayoutComponent,
-      children: [
-        { path: '', redirectTo: 'productManage', pathMatch: 'full' },
-        { path: 'product-category', component: P001ProductCategoryComponent },
-        { path: 'productManage', component: P002ProductManageComponent },
-        { path: 'projectManage', component: P003ProjectManageComponent },
-        { path: 'newsManage', component: P004NewsManageComponent},
-        { path: 'servicesManage', component: P005ServicesManageComponent},
-        { path: 'orderManage', component: P006OrderManageComponent },
-        { path: 'customerManage', component: P007CustomerManageComponent },
-        
-      ],
-    },
-  ];
+  {
+    path: '',
+    component: LayoutComponent,
+    children: [
+      { path: '', redirectTo: 'productManage', pathMatch: 'full' },
+      { path: 'product-category', component: P001ProductCategoryComponent },
+      { path: 'productManage', component: P002ProductManageComponent },
+      { path: 'projectManage', component: P003ProjectManageComponent },
+      { path: 'newsManage', component: P004NewsManageComponent },
+      { path: 'servicesManage', component: P005ServicesManageComponent },
+      { path: 'orderManage', component: P006OrderManageComponent },
+      { path: 'customerManage', component: P007CustomerManageComponent },
+      { path: 'project-category', component: P009ProjectCategoryComponent },
+    ],
+  },
+];
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],

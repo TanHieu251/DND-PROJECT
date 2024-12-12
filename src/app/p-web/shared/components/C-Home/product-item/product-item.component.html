@@ -2,12 +2,13 @@
   <!-- <button class="navigation-button left" (click)="prevSlide()"><i class="fa-solid fa-arrow-left"></i></button> -->
 
   <div class="products-wrapper">
-    <div *ngFor="let item of visibleProducts" class="product-container" (click)="viewDetailProduct(item.name)">
+    <div *ngFor="let item of visibleProducts" class="product-container shadow-md"
+      (click)="viewDetailProduct(item.name)">
       <div class="product-content relative">
         <div class="product-img">
           <img class="img" [src]="item.thumbnail" alt="">
         </div>
-        <div class="product-info text-black">
+        <div class="product-info text-black px-4">
           <div class="name underline italic">
             <span [routerLink]="['/product', item.name]">{{ item.name }}</span>
           </div>
@@ -15,20 +16,16 @@
             <span>{{ item.description }}</span>
           </div>
         </div>
-        <div class="product-footer absolute">
-          <div class="price"><span>{{ item.price }}</span></div>
+        <div class="product-footer absolute bottom-4 px-4">
+          <div class="price font-bold"><span>{{ item.price }} VNĐ</span></div>
           <div class="stock">
-            <span *ngIf="item.stockQuantity" class="text-[#17ED45]">Còn hàng</span>
-            <span *ngIf="!item.stockQuantity" class="text-[#ED3717]">Hết hàng</span>
+            <span *ngIf="item.stockQuantity" class="text-[#17ED45] font-bold">Còn hàng</span>
+            <span *ngIf="!item.stockQuantity" class="text-[#ED3717] font-bold">Hết hàng</span>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="button-responsiive" *ngIf="isResponsive">
-    <button class="navigation-button left" (click)="prevSlide()"><i class="fa-solid fa-arrow-left"></i></button>
 
-    <button class="navigation-button right" (click)="nextSlide()"><i class="fa-solid fa-arrow-right"></i></button>
-  </div>
 
 </div>

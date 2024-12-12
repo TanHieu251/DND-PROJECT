@@ -1,8 +1,8 @@
 <div class="new-container">
   <div class="news-section">
-    <div class="main-news" *ngFor="let newsItem of mainData">
-      <img [src]="newsItem.imgSrc" alt="Main News Image" class="main-news-image">
-      <p (click)="goToProjectDetail(newsItem.title)" class="new-title">{{ newsItem.title }}</p>
+    <div class="main-news">
+      <img [src]="mainData.imgSrc" alt="Main News Image" class="main-news-image">
+      <p (click)="goToProjectDetail(mainData.title)" class="new-title">{{ mainData.title }}</p>
     </div>
 
     <div class="other-news">

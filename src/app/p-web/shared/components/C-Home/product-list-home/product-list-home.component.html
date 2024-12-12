@@ -1,20 +1,21 @@
 <div class="list-container">
-    <div class="background"></div>
+  <div class="background"></div>
 
-    <div class="list-content z-10 pt-[80px]">
+  <div class="list-content z-10 pt-[80px]">
 
-        <div class="title">
-            <span class="text-title text-center  ">Sản Phẩm Của Chúng Tôi</span>
-        </div>
-        <div class=" list-item-none pt-20">
-            <app-product-item class="flex flex-row justify-center flex-nowrap gap-3"
-                [products]="products">
-              </app-product-item>
-        </div>
-        <div class="change-route absolute bottom-10 text-black z-10 left-8 underline ">
-            <span  [routerLink]="['/products']">Xem tất cả sản phẩm
-              <i class="fas fa-arrow-right ml-3 icon"></i>
-            </span>
-          </div>
+    <div class="title">
+      <span class="text-title text-center  ">Sản Phẩm Của Chúng Tôi</span>
     </div>
+    <div class=" list-item-none pt-20 flex items-center w-full justify-center" >
+      <i class="fa-solid fa-chevron-left icon-slide" (click)="prevSlide()"></i>
+      <app-product-item class="flex flex-row justify-center flex-nowrap gap-3" [products]="visibleProducts">
+      </app-product-item>
+      <i class="fa-solid fa-chevron-right icon-slide" (click)="nextSlide()"></i>
+    </div>
+    <div class="change-route absolute bottom-10 text-black z-10 left-8 underline ">
+      <span [routerLink]="['/products']">Xem tất cả sản phẩm
+        <i class="fas fa-arrow-right ml-3 icon"></i>
+      </span>
+    </div>
+  </div>
 </div>

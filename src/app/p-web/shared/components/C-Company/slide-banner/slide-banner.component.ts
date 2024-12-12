@@ -6,5 +6,10 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
   styleUrl: './slide-banner.component.scss'
 })
 export class SlideBannerComponent {
-
+  productsBanner = [
+    {
+      image: 'assets/bannerProduct.png',
+      name: 'search'
+    }
+  ]
 }

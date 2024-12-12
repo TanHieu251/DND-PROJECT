@@ -5,7 +5,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 10px 60px;
-      background-color: #348bd2;
+      background-color: #0052cc;
       position: fixed;
       top: 0;
       left: 0;
@@ -99,7 +99,7 @@
           right: -100%;
           width: 40%;
           height: 100vh;
-          background-color: #348bd2;
+          background-color: #0052cc;
           transition: right 0.3s ease;
           z-index: 999;
           flex-direction: column;
@@ -125,7 +125,7 @@
           }
         }
         .active-link::after{
-          width: 0;
+          // width: 0;
         }
       }
       .menu-toggle, .close-menu {

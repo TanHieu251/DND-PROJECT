@@ -3,7 +3,7 @@
     .side-bar {
       width: 200px;
       height: 100vh;
-      background-color: #348bd2;
+      background-color: #0052cc;
       color: white;
       padding: 20px 0;
 
@@ -72,6 +72,9 @@
               color: #ecf0f1;
             }
           }
+        }
+        .body{
+          height: calc(100vh - 130px);
         }
 
         router-outlet {

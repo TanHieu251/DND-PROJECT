@@ -1,0 +1,56 @@
+::ng-deep {
+  app-p-footer {
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      background-color: #f0f0f0;
+      // position: relative;
+      z-index: 1000;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      // top: 100px;
+      // padding-top: 100px;
+      margin-top: 100px;
+    }
+
+    .footer-logo img {
+      width: 150px;
+    }
+
+    .footer-info {
+      flex: 1;
+      margin: 0 20px;
+    }
+
+    .footer-info h3 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .footer-info p {
+      margin: 5px 0;
+    }
+
+    .footer-info a {
+      margin-right: 10px;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .footer-info a:hover {
+      color: #348BD2;
+    }
+
+    .footer-info i {
+      margin-right: 10px;
+      color: #333;
+    }
+
+    .footer-info i:hover {
+      color: #0056b3;
+    }
+  }
+}

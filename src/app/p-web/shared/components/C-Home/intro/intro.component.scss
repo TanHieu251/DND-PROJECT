@@ -1,71 +1,63 @@
-::ng-deep{
-  app-intro{
-  .about-us {
-    background-color: rgb(241 250 254);
-    // height: 90vh;
-    border-top: 1px solid blue;
-    position: relative;
-    // margin-top: 30rem;
-    // padding: 1rem 0;
-    // display: flex;
-    // flex-direction: row;
-    // align-items: center;
-    // width: 100%;
-    // position: relative;
-
-
-    .about-left {
-      // z-index: 1;
-      // width: 50%;
+::ng-deep {
+  app-intro {
+    .about-us {
+      background-color: rgb(241 250 254);
+      // height: 90vh;
+      border-top: 1px solid blue;
+      position: relative;
+      // margin-top: 30rem;
+      // padding: 1rem 0;
       // display: flex;
-      // justify-content: center;
+      // flex-direction: row;
+      // align-items: center;
+      // width: 100%;
+      // position: relative;
 
-      .about-left-content {
-        width: 60%;
-        text-align: left;
 
-        .about-name {
-          font-size: 40px;
-          line-height: 90px;
+      .about-left {
+        // z-index: 1;
+        // width: 50%;
+        // display: flex;
+        // justify-content: center;
 
-          .text-name {
-            color: #348BD2;
-            font-weight: 700;
-            font-size: 80px;
+        .about-left-content {
+          width: 60%;
+          text-align: left;
+
+          .about-name {
+            font-size: 40px;
+            line-height: 90px;
+
+            .text-name {
+              color: #0052cc;
+              font-weight: 700;
+              font-size: 80px;
+            }
+          }
+
+          .about-company {
+            font-size: 20px;
+            line-height: 30px;
+            color: rgb(0 82 128);
+          }
+
+          .about-description {
+            font-size: 20px;
+            line-height: 30px;
+            margin-top: 4rem;
+            margin-bottom: 2rem;
+          }
+
+          .link-active {
+            font-size: 20px;
+            line-height: 30px;
+            // color: rgb(0 82 128);
+
+
           }
         }
 
-        .about-company {
-          font-size: 20px;
-          line-height: 30px;
-          color: rgb(0 82 128);
-        }
-
-        .about-description {
-          font-size: 20px;
-          line-height: 30px;
-          margin-top: 4rem;
-          margin-bottom: 2rem;
-        }
-
-        .link-active {
-          font-size: 20px;
-          line-height: 30px;
-          color: rgb(0 82 128);
-
-          &:hover {
-            .text {
-              opacity: 70%;
-            }
-
-            .icon {
-              opacity: 70%;
-            }
-          }
-        }
       }
-
-    }
 
       .about-right {
         z-index: 1;
@@ -112,7 +104,7 @@
           }
 
           &::before {
-            background: linear-gradient(184.72deg, hsla(0, 0%, 100%, 0) 44.15%, #348bd2 99.9%);
+            background: linear-gradient(184.72deg, hsla(0, 0%, 100%, 0) 44.15%, #0052cc 99.9%);
             position: absolute !important;
             bottom: 0px !important;
             right: 0px !important;
@@ -144,7 +136,8 @@
               opacity: 100;
               transition: opacity 0.3s;
             }
-            &:hover .overlay-hover{
+
+            &:hover .overlay-hover {
               opacity: 1;
             }
           }
@@ -153,37 +146,46 @@
       }
 
     }
-    @media(max-width:780px){
+
+    @media(max-width:780px) {
       flex-direction: column;
 
       .about-left,
-      .about-right{
+      .about-right {
         width: 100%;
       }
+
       // background-image: url('/assets/baotrihethong.jpg');
       background-size: cover;
       background-position: center;
       // color: white;
 
-      .about-right, .box-link{
-        display: none ;
+      .about-right,
+      .box-link {
+        display: none;
       }
 
-      .about-left-content{
-        .text-name{
+      .about-left-content {
+        .text-name {
           font-size: 2rem;
         }
-        .about-name{
+
+        .about-name {
           color: #00093a;
           font-size: 1.5rem;
         }
-        .about-company, .about-description, .link-active{
+
+        .about-company,
+        .about-description,
+        .link-active {
           font-size: 0.9rem;
         }
-        .about-description{
+
+        .about-description {
           color: #00093a;
         }
-        .box-link{
+
+        .box-link {
           width: 80%;
           height: 150px;
           // opacity: 100;
@@ -192,4 +194,3 @@
     }
   }
 }
-

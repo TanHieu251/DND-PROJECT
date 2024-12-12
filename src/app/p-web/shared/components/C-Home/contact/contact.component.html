@@ -1,16 +1,5 @@
-<div class="contact-container" *ngFor="let contact of contacts">
-  <div class="image-box" [class.active]="imgActive">
-    <img [src]="contact.imageSrc" alt="image description">
-  </div>
-  <div class="contact-content absolute">
-    <div class="text-container relative " [class.active]="textActive">
-      <h2 class="welcome-text"><span class="highlight">{{ contact.title }}</span></h2>
-      <p>{{ contact.description }}</p>
-      <div class="button">
-        <button (click)="goToContact()" [routerLink]="'/contacts'" class="company-btn">{{ contact.buttonText }}</button>
-      </div>
-    </div>
-  </div>
-
-
+<div
+  class="contact h-[100px] text-[18px] font-bold w-full bg-[#0052cc] flex justify-around items-center text-white gap">
+  <div class="uppercase">Kết nối với chúng tôi</div>
+  <div class="cursor-pointer px-5 py-2 border border-white hover:bg-white hover:text-[#0052cc] hover:animate-pulse uppercase" routerLink="/contacts">Contact</div>
 </div>

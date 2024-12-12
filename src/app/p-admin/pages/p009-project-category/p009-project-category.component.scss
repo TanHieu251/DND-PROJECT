@@ -1,0 +1,13 @@
+::ng-deep {
+    .product-category {
+        height: 100%;
+        position: relative;
+
+        .app-table {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+}

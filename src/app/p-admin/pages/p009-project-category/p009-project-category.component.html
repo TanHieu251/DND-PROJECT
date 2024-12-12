@@ -1,0 +1,60 @@
+<div class="product-category">
+    <div class="mat-elevation-z8 myCustomTable">
+      <!-- Drawer -->
+      <nz-drawer [nzVisible]="visible" [nzTitle]="isEditing ? 'Cập nhật loại dự án' : 'Thêm loại dự án mới'"
+        [nzExtra]="drawerExtra" [nzWidth]="720" [nzFooter]="footerTpl" (nzOnClose)="closeDrawer()">
+        <ng-template #drawerExtra>
+          <button *ngIf="isEditing" nz-button nzDanger (click)="deleteProduct(currentCategory.name)"
+            class="delete-button">
+            Xóa loại dự án
+          </button>
+        </ng-template>
+  
+        <form nz-form *nzDrawerContent [formGroup]="categoryForm">
+          <div nz-row [nzGutter]="12">
+            <div nz-col nzSpan="12">
+              <nz-form-item>
+                <nz-form-label>Loại dự án</nz-form-label>
+                <nz-form-control>
+                  <input formControlName="Name" nz-input placeholder="Hãy nhập vào loại dự án..." />
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+  
+          </div>
+          <div nz-col nzSpan="12" *ngIf="isEditing">
+            <nz-form-item>
+              <nz-form-label>Trạng thái</nz-form-label>
+              <nz-form-control class="selectType">
+                <nz-select formControlName="Status" ngModel={{currentCategory?.Status}}>
+                  <nz-option *ngFor="let item of listOptionStatus" nzValue={{item.Status}}
+                    nzLabel={{item.StatusName}}></nz-option>
+  
+                </nz-select>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+  
+  
+  
+        </form>
+        <ng-template #footerTpl>
+          <div style="float: right">
+  
+            <button nz-button style="margin-right: 8px;" (click)="closeDrawer()">Cancel</button>
+            <button nz-button style="margin-right: 8px;" nzType="primary" (click)="saveProduct()">Submit</button>
+          </div>
+        </ng-template>
+      </nz-drawer>
+  
+      <!-- Action Buttons -->
+  
+      <!-- Product Table -->
+      <div class="app-table">
+        <button nz-button nzType="primary" (click)="openDrawerForCreate()">Thêm loại dự án</button>
+  
+        <app-table [data]="productCategories" [displayedColumns]="displayedColumnsCategoryProduct"
+          (onClickAction)="openDrawerForEdit($event)"></app-table>
+      </div>
+    </div>
+  </div>

@@ -32,7 +32,7 @@ import { P005ServicesManageComponent } from './pages/p005-services-manage/p005-s
 import { P006OrderManageComponent } from './pages/p006-order-manage/p006-order-manage.component';
 import { P007CustomerManageComponent } from './pages/p007-customer-manage/p007-customer-manage.component';
 import { P008SidebarManageComponent } from './pages/p008-sidebar-manage/p008-sidebar-manage.component';
-
+import { P009ProjectCategoryComponent } from './pages/p009-project-category/p009-project-category.component';
 
 @NgModule({
   declarations: [
@@ -48,8 +48,7 @@ import { P008SidebarManageComponent } from './pages/p008-sidebar-manage/p008-sid
     P007CustomerManageComponent,
     P008SidebarManageComponent,
     LayoutComponent,
-
-
+    P009ProjectCategoryComponent,
   ],
   imports: [
     CommonModule,
@@ -73,7 +72,6 @@ import { P008SidebarManageComponent } from './pages/p008-sidebar-manage/p008-sid
     NzGridModule,
     NzUploadModule,
     NzInputNumberModule,
-
   ],
 })
 export class PAdminModule {}

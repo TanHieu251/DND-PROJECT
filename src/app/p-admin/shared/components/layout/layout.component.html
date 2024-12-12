@@ -1,22 +1,20 @@
 <div class="layout">
-    <div class="layout-sidebar">
-      <!-- <app-manage></app-manage> -->
-       <app-p008-sidebar-manage></app-p008-sidebar-manage>
-    </div>
-    <div class="layout-body">
-      <div class="header-bar">
-        <h1>{{title}}</h1>
-       <div class="account">
-          <img src="/assets/5g.png" alt="">
-          <h5>admin</h5>
-       </div>
-      </div>
-      <div class="account-admin">
-
-      </div>
-      <div class="body">
-        <router-outlet></router-outlet>
-
+  <div class="layout-sidebar">
+    <!-- <app-manage></app-manage> -->
+    <app-p008-sidebar-manage></app-p008-sidebar-manage>
+  </div>
+  <div class="layout-body">
+    <div class="header-bar">
+      <h1>{{title}}</h1>
+      <div class="account">
+        <img src="/assets/5g.png" alt="">
+        <h5>admin</h5>
       </div>
     </div>
+    <div class="account-admin">
+    </div>
+    <div class="body">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>

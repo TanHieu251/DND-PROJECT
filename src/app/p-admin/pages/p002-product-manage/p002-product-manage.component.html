@@ -1,138 +1,158 @@
-<div class="mat-elevation-z8 myCustomTable">
-  <!-- Drawer -->
-  <nz-drawer
-    [nzVisible]="visible"
-    [nzTitle]="isEditing ? 'Cập nhật sản phẩm' : 'Thêm sản phẩm mới'"
-    [nzExtra]="drawerExtra"
-    [nzWidth]="720"
-    [nzFooter]="footerTpl"
-    (nzOnClose)="closeDrawer()"
-  >
-  <ng-template #drawerExtra>
-    <button
-      *ngIf="isEditing"
-      nz-button
-      nzDanger
-      (click)="deleteProduct(currentProduct.name)"
-      class="delete-button"
-    >
-      Xóa sản phẩm
-    </button>
-  </ng-template>
-  
-    <form nz-form *nzDrawerContent>
-      <div nz-row [nzGutter]="12">
-        <div nz-col nzSpan="12">
-          <nz-form-item>
-            <nz-form-label>Tên sản phẩm</nz-form-label>
-            <nz-form-control>
-              <input
-                ngModel="product.name"
-                nz-input placeholder="Hãy nhập vào tên sản phẩm..." />
-            </nz-form-control>
-          </nz-form-item>
-        </div>
+<div class="product-mana">
+  <div class="mat-elevation-z8 myCustomTable">
+    <!-- Drawer -->
+    <nz-drawer [nzVisible]="visible" [nzTitle]="isEditing ? 'Cập nhật sản phẩm' : 'Thêm sản phẩm mới'"
+      [nzExtra]="drawerExtra" [nzWidth]="720" [nzFooter]="footerTpl" (nzOnClose)="closeDrawer()">
+      <ng-template #drawerExtra>
+        <button *ngIf="isEditing" nz-button nzDanger (click)="deleteProduct(currentProduct.name)" class="delete-button">
+          Xóa sản phẩm
+        </button>
+      </ng-template>
 
-      </div>
-
-      <div nz-row [nzGutter]="12">
-	      <div nz-col nzSpan="12">
-          <nz-form-item>
-            <nz-form-label>Giá sản phẩm</nz-form-label>
-              <nz-form-control>
-                <input nz-input placeholder="Hãy nhập vào giá sản phẩm..." />
-              </nz-form-control>
-          </nz-form-item>
-        </div>
-      </div>
-
-      <div nz-row [nzGutter]="12">
-        <div nz-col nzSpan="12">
-          <nz-form-item>
-            <nz-form-label>Loại dự án</nz-form-label>
-            <nz-form-control
-            class="selectType"
-            >
-              <nz-select ngModel="typeProduct">
-                <nz-option nzValue="type1" nzLabel="type1"></nz-option>
-                <nz-option nzValue="type2" nzLabel="type2"></nz-option>
-              </nz-select>
-            </nz-form-control>
-          </nz-form-item>
-        </div>
-        <div nz-col nzSpan="12">
+      <form nz-form *nzDrawerContent [formGroup]="productForm">
+        <div nz-row [nzGutter]="12">
+          <div nz-col nzSpan="12">
             <nz-form-item>
-              <nz-form-label>Trạng thái</nz-form-label>
-              <nz-form-control
-                class="selectType"
-              >
-                <nz-select ngModel="statusProduct">
-                  <nz-option nzValue="status1" nzLabel="status1"></nz-option>
-                  <nz-option nzValue="status2" nzLabel="status2"></nz-option>
+              <nz-form-label>Tên sản phẩm</nz-form-label>
+              <nz-form-control>
+                <input formControlName="Name" nz-input placeholder="Hãy nhập vào tên sản phẩm..." />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+
+        <div nz-row [nzGutter]="12">
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label>Giá sản phẩm</nz-form-label>
+              <nz-form-control>
+                <input formControlName="Price" nz-input placeholder="Hãy nhập vào giá sản phẩm..." />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+
+        <div nz-row [nzGutter]="12">
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label>Số lượng</nz-form-label>
+              <nz-form-control>
+                <input formControlName="StockQuantity" nz-input placeholder="Hãy nhập vào số lượng sản phẩm..." />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+
+        <div nz-row [nzGutter]="12">
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label>Loại sản phẩm</nz-form-label>
+              <nz-form-control class="selectType">
+                <nz-select formControlName="TypeData" ngModel={{currentProduct?.TypeData}}>
+                  <nz-option *ngFor="let item of ListTypeProduct" nzValue={{item.TypeData}}
+                    nzLabel={{item.TypeName}}></nz-option>
                 </nz-select>
               </nz-form-control>
             </nz-form-item>
           </div>
-      </div>
-        <!-- <div nz-row [nzGutter]="12">
+          <div nz-col nzSpan="12" *ngIf="isEditing">
+            <nz-form-item>
+              <nz-form-label>Trạng thái</nz-form-label>
+              <nz-form-control class="selectType">
+                <nz-select formControlName="Status" ngModel={{currentProduct?.Status}}>
+                  <nz-option *ngFor="let item of listOptionStatus" nzValue={{item.Status}}
+                    nzLabel={{item.StatusName}}></nz-option>
 
-        </div> -->
-      <div nz-row [nzGutter]="8">
-        <div nz-col nzSpan="24">
-          <nz-form-item>
-            <nz-form-label>Description</nz-form-label>
-            <nz-form-control  class="description">
-              <textarea
-                nz-input
-                placeholder="please enter url description"
-                [nzAutosize]="{ minRows: 8, maxRows: 8 }"
-              ></textarea>
-            </nz-form-control>
-          </nz-form-item>
+                </nz-select>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
         </div>
-      </div>
-      <div nz-row [nzGutter]="12">
-        <div nz-col nzSpan="16">
-          <nz-form-item>
-            <nz-form-label>Image</nz-form-label>
-            <nz-upload
-              nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-              nzListType="picture"
-              [(nzFileList)]="fileList1"
-            >
-          <button nz-button>
-            <span nz-icon nzType="upload"></span>
-            Upload
-          </button>
-        </nz-upload>
-          </nz-form-item>
+
+        <div nz-row [nzGutter]="12">
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label>Tính năng sản phẩm</nz-form-label>
+              <nz-form-control>
+                <input formControlName="Feature" nz-input placeholder="Hãy nhập vào tính năng sản phẩm..." />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
         </div>
-      </div>
-    </form>
-    <ng-template #footerTpl>
-      <div style="float: right">
-        <!-- <button
-          *ngIf="isEditing"
-          nz-button
-          nzDanger="danger"
-          (click)="deleteProduct(currentProduct.name)"
-          class="delete-button"
-        >
-          Xóa sản phẩm
-        </button> -->
-        <button nz-button style="margin-right: 8px;" (click)="closeDrawer()">Cancel</button>
-        <button nz-button style="margin-right: 8px;" nzType="primary" (click)="saveProduct()">Submit</button>
-      </div>
-    </ng-template>
-  </nz-drawer>
 
-  <!-- Action Buttons -->
-  <button nz-button nzType="primary" (click)="openDrawerForCreate()">Thêm sản phẩm</button>
+        <div nz-row [nzGutter]="12">
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label>Tính năng sản phẩm</nz-form-label>
+              <nz-form-control>
+                <input formControlName="Specfication" nz-input
+                  placeholder="Hãy nhập vào Thông số kỹ thuật sản phẩm..." />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
 
-  <!-- Product Table -->
-  <app-table
-    [data]="products"
-    [displayedColumns]="displayedColumnsProduct"
-    (onClickAction)="openDrawerForEdit($event)"
-  ></app-table>
+        <div nz-row [nzGutter]="12">
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label>Đánh giá sản phẩm</nz-form-label>
+              <nz-form-control>
+                <input formControlName="Review" nz-input placeholder="Hãy nhập vào đánh giá sản phẩm..." />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+
+        <div nz-row [nzGutter]="8">
+          <div nz-col nzSpan="24">
+            <nz-form-item>
+              <nz-form-label>Description</nz-form-label>
+              <nz-form-control class="description">
+                <textarea nz-input placeholder="please enter url description" formControlName="Description"
+                  [nzAutosize]="{ minRows: 8, maxRows: 8 }"></textarea>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+        <div nz-row [nzGutter]="12">
+          <div nz-col nzSpan="16">
+            <nz-form-item>
+              <nz-form-label>Image</nz-form-label>
+              <nz-upload nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76" nzListType="picture"
+                [(nzFileList)]="fileList1" formControlName="ListImages">
+                <button nz-button>
+                  <span nz-icon nzType="upload"></span>
+                  Upload
+                </button>
+              </nz-upload>
+            </nz-form-item>
+          </div>
+        </div>
+      </form>
+      <ng-template #footerTpl>
+        <div style="float: right">
+          <!-- <button
+            *ngIf="isEditing"
+            nz-button
+            nzDanger="danger"
+            (click)="deleteProduct(currentProduct.name)"
+            class="delete-button"
+          >
+            Xóa sản phẩm
+          </button> -->
+          <button nz-button style="margin-right: 8px;" (click)="closeDrawer()">Cancel</button>
+          <button nz-button style="margin-right: 8px;" nzType="primary" (click)="saveProduct()">Submit</button>
+        </div>
+      </ng-template>
+    </nz-drawer>
+
+    <!-- Action Buttons -->
+    <div class="app-table">
+      <button nz-button nzType="primary" (click)="openDrawerForCreate()">Thêm sản phẩm</button>
+
+      <!-- Product Table -->
+      <app-table [data]="products" [displayedColumns]="displayedColumnsProduct"
+        (onClickAction)="openDrawerForEdit($event)"></app-table>
+    </div>
+  </div>
 </div>
